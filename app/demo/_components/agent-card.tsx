@@ -1,17 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface Agent {
   id: string;
+  slug: string;
   title: string;
   name: string;
   description: string;
   mascot: string;
-  comingSoon?: boolean;
 }
 
 export function AgentCard({ agent }: { agent: Agent }) {
   return (
-    <div className="flex min-h-[200px] flex-col rounded-none border border-zinc-800 bg-zinc-900/80 px-8 pt-7 pb-8">
+    <Link
+      href={`/demo/${agent.slug}`}
+      className="flex min-h-[200px] flex-col rounded-none border border-zinc-800 bg-zinc-900/80 px-8 pt-7 pb-8 transition hover:bg-zinc-800/60"
+    >
       {/* Mascot */}
       <Image
         src={agent.mascot}
@@ -29,6 +33,6 @@ export function AgentCard({ agent }: { agent: Agent }) {
       <p className="mt-2.5 text-base leading-relaxed text-zinc-400">
         {agent.description}
       </p>
-    </div>
+    </Link>
   );
 }

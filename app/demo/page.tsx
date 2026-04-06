@@ -1,73 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AgentCard } from "./_components/agent-card";
-
-/* ── Top 6: featured agents (matching getharmony.ai/agents) ── */
-const featuredAgents = [
-  {
-    id: "inbox-cleaner",
-    title: "Inbox Cleaner Agent",
-    name: "Neaty",
-    description:
-      "Filters and organizes incoming messages to keep your inbox clean",
-    mascot: "/assets/sukie/agent-mascots/angel.png",
-  },
-  {
-    id: "auto-followup",
-    title: "Auto Followup Agent",
-    name: "Chaser",
-    description: "Tracks unanswered threads and sends follow-ups automatically",
-    mascot: "/assets/sukie/agent-mascots/ninja.png",
-  },
-  {
-    id: "drafting",
-    title: "Drafting Agent",
-    name: "Donna",
-    description: "Drafts emails, messages and calendar events in your tone",
-    mascot: "/assets/sukie/agent-mascots/wizard.png",
-  },
-  {
-    id: "support",
-    title: "Support Agent",
-    name: "Helpy",
-    description: "Handles support requests and resolves issues on your behalf",
-    mascot: "/assets/sukie/agent-mascots/bot-sukie.png",
-  },
-  {
-    id: "daily-reports",
-    title: "Daily Reports Agent",
-    name: "Reporty",
-    description: "Generates recurring reports from your data and conversations",
-    mascot: "/assets/sukie/agent-mascots/with-magnifying-glass.png",
-  },
-  {
-    id: "data-extraction",
-    title: "Data Extraction Agent",
-    name: "Sherlock",
-    description:
-      "Extracts and structures information from documents and emails",
-    mascot: "/assets/sukie/agent-mascots/data-extractor-sukie.png",
-  },
-];
-
-/* ── Extra agents from Harmony Desktop + others ── */
-const moreAgents = [
-  {
-    id: "meet-scheduler",
-    title: "Meet Scheduler Agent",
-    name: "Slotty",
-    description: "Schedules meetings by reading your emails and messages",
-    mascot: "/assets/sukie/agent-mascots/with-calendar.png",
-  },
-  {
-    id: "master-networker",
-    title: "Master Networker Agent",
-    name: "Linky",
-    description:
-      "Finds mutual connections and helps you reach the right people",
-    mascot: "/assets/sukie/agent-mascots/with-coffee-and-clock.png",
-  },
-];
+import agents from "./_data/agents.json";
 
 function ArrowIcon() {
   return (
@@ -155,18 +89,22 @@ export default function DemoPage() {
           Meet Your Agent Friends
         </h1>
 
-        {/* Featured agents */}
         <div className="grid gap-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          {featuredAgents.map((agent) => (
+          {agents.map((agent) => (
             <AgentCard key={agent.id} agent={agent} />
           ))}
-        </div>
-
-        {/* More agents */}
-        <div className="grid gap-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-7">
-          {moreAgents.map((agent) => (
-            <AgentCard key={agent.id} agent={agent} />
-          ))}
+          {/* Get Your Own Agent CTA */}
+          <a
+            href="https://tally.so/r/m60LZY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-[200px] flex-col items-center justify-center rounded-none border border-dashed border-zinc-700 px-8 pt-7 pb-8 text-zinc-400 transition hover:border-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/40"
+          >
+            <svg className="h-6 w-6 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            <span className="text-lg font-normal">Get Your Own Agent</span>
+          </a>
         </div>
       </main>
 
