@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GetAgentCta } from "./get-agent-cta";
 import { MermaidDiagram } from "./mermaid-diagram";
+import { VoicePlayer } from "./voice-player";
 
 interface Agent {
   id: string;
@@ -15,6 +16,7 @@ interface Agent {
   integrations: string[];
   roles: string[];
   diagram: string;
+  voiceIntro?: string;
 }
 
 const integrationLabels: Record<string, string> = {
@@ -69,10 +71,13 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
           height={56}
           className="h-14 w-14 object-contain"
         />
-        <div>
-          <h1 className="text-2xl font-medium text-zinc-100 tracking-tight">
-            {agent.title}
-          </h1>
+        <div className="flex-1">
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-medium text-zinc-100 tracking-tight">
+              {agent.title}
+            </h1>
+            {agent.voiceIntro && <VoicePlayer src={agent.voiceIntro} />}
+          </div>
           <p className="text-base text-zinc-400 mt-1">
             {agent.name} {agent.description.charAt(0).toLowerCase() + agent.description.slice(1)}
           </p>

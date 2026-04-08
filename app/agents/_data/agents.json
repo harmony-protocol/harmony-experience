@@ -6,6 +6,7 @@
     "name": "Cali",
     "description": "Manages your calendar, schedules meetings, and talks on your behalf",
     "mascot": "/assets/sukie/agent-mascots/with-calendar.png",
+    "voiceIntro": "/assets/voice-intros/cali.mp3",
     "benefits": [
       "Save hours every week on back-and-forth scheduling",
       "Never miss a meeting request buried in your inbox",
