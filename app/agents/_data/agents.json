@@ -1,0 +1,178 @@
+[
+  {
+    "id": "meet-scheduler",
+    "slug": "cali",
+    "title": "Meet Scheduler Agent",
+    "name": "Cali",
+    "description": "Manages your calendar, schedules meetings, and talks on your behalf",
+    "mascot": "/assets/sukie/agent-mascots/with-calendar.png",
+    "benefits": [
+      "Save hours every week on back-and-forth scheduling",
+      "Never miss a meeting request buried in your inbox",
+      "Eliminate time zone confusion across global teams"
+    ],
+    "features": [
+      "Detects scheduling intent from emails and Slack messages",
+      "Checks your calendar for real-time availability",
+      "Handles time zone conversions automatically",
+      "Sends meeting invites and confirmations on your behalf",
+      "Reschedules and resolves conflicts without manual input"
+    ],
+    "integrations": ["gmail", "slack", "google_calendar", "zoom", "microsoft_teams"],
+    "roles": ["Realtors", "Consultants", "Recruiters"]
+  },
+  {
+    "id": "inbox-cleaner",
+    "slug": "tidy",
+    "title": "Inbox Cleaner Agent",
+    "name": "Tidy",
+    "description": "Filters and organizes your incoming messages to keep your inbox clutter-free",
+    "mascot": "/assets/sukie/agent-mascots/angel.png",
+    "benefits": [
+      "Reclaim focus by removing inbox noise instantly",
+      "Never miss an important message buried under newsletters",
+      "Keep your inbox organized without lifting a finger"
+    ],
+    "features": [
+      "Applies custom Gmail filtering rules automatically",
+      "Filters and categorizes Slack messages by priority",
+      "Organizes emails into smart inbox categories",
+      "Learns your priorities and adapts over time",
+      "Surfaces urgent messages that need immediate attention"
+    ],
+    "integrations": ["gmail", "slack", "microsoft_teams", "telegram"],
+    "roles": ["Founders", "Executives", "Product Managers"]
+  },
+  {
+    "id": "auto-followup",
+    "slug": "chaser",
+    "title": "Auto Followup Agent",
+    "name": "Chaser",
+    "description": "Tracks unanswered threads and sends timely follow-ups on your behalf",
+    "mascot": "/assets/sukie/agent-mascots/ninja.png",
+    "benefits": [
+      "Close deals faster by never letting a thread go cold",
+      "Maintain relationships without manual tracking",
+      "Reduce dropped conversations by up to 90%"
+    ],
+    "features": [
+      "Monitors sent messages for unanswered threads",
+      "Sends polite follow-ups at configurable intervals",
+      "Writes in your tone and communication style",
+      "Escalates stale threads when needed",
+      "Respects do-not-follow-up rules and quiet hours"
+    ],
+    "integrations": ["gmail", "slack", "hubspot", "microsoft_teams"],
+    "roles": ["Sales Teams", "Recruiters", "Engineering Managers"]
+  },
+  {
+    "id": "drafting",
+    "slug": "donna",
+    "title": "Drafting Agent",
+    "name": "Donna",
+    "description": "Drafts emails, messages, tickets, calendar events and more in your tone",
+    "mascot": "/assets/sukie/agent-mascots/wizard.png",
+    "benefits": [
+      "Reply to emails in seconds instead of minutes",
+      "Maintain a consistent voice across all communications",
+      "Free up mental energy for high-value work"
+    ],
+    "features": [
+      "Auto-drafts emails and messages using your writing style",
+      "Creates calendar event descriptions automatically",
+      "Adapts tone based on recipient and context",
+      "Uses your saved templates for recurring messages",
+      "Handles replies, forwards, and new compositions"
+    ],
+    "integrations": ["gmail", "slack", "google_calendar", "jira", "notion", "claude"],
+    "roles": ["Executives", "Lawyers", "Consultants", "VCs", "TPMs", "Support Teams"]
+  },
+  {
+    "id": "support",
+    "slug": "remy",
+    "title": "Support Agent",
+    "name": "Remy",
+    "description": "Handles support requests and resolves issues on your behalf",
+    "mascot": "/assets/sukie/agent-mascots/bot-sukie.png",
+    "benefits": [
+      "Respond to support tickets instantly, 24/7",
+      "Reduce resolution time by surfacing relevant solutions",
+      "Scale your support without growing headcount"
+    ],
+    "features": [
+      "Responds to incoming support tickets and messages",
+      "Diagnoses issues from user descriptions",
+      "Finds solutions from your knowledge base and docs",
+      "Escalates complex issues to the right team member",
+      "Tracks resolution progress and follows up"
+    ],
+    "integrations": ["gmail", "slack", "jira", "hubspot", "notion"],
+    "roles": ["Service Businesses", "SaaS Teams", "Clinics"]
+  },
+  {
+    "id": "daily-reports",
+    "slug": "briefs",
+    "title": "Daily Reports Agent",
+    "name": "Briefs",
+    "description": "Generates and delivers recurring reports from your data and conversations",
+    "mascot": "/assets/sukie/agent-mascots/with-magnifying-glass.png",
+    "benefits": [
+      "Start every day with a clear picture of what matters",
+      "Stop wasting time manually compiling updates",
+      "Catch trends and issues before they escalate"
+    ],
+    "features": [
+      "Generates daily and weekly summary reports",
+      "Pulls data from emails, messages, and integrations",
+      "Highlights key changes and action items",
+      "Tracks metrics and trends over time",
+      "Delivers reports on your preferred schedule"
+    ],
+    "integrations": ["gmail", "slack", "google_sheets", "notion", "jira"],
+    "roles": ["Founders", "Engineering Managers", "Operations Managers"]
+  },
+  {
+    "id": "data-extraction",
+    "slug": "sherlock",
+    "title": "Data Extraction Agent",
+    "name": "Sherlock",
+    "description": "Extracts and structures information from documents, emails, and attachments",
+    "mascot": "/assets/sukie/agent-mascots/data-extractor-sukie.png",
+    "benefits": [
+      "Eliminate manual data entry from documents and emails",
+      "Get structured data from unstructured sources instantly",
+      "Feed clean data directly into your workflows"
+    ],
+    "features": [
+      "Extracts key fields from PDFs, invoices, and documents",
+      "Parses email content and attachments automatically",
+      "Structures data into tables, records, and spreadsheets",
+      "Identifies entities, dates, and amounts",
+      "Exports to your preferred format and destination"
+    ],
+    "integrations": ["gmail", "google_sheets", "notion", "airtable", "jira"],
+    "roles": ["Clinics", "Lawyers", "Logistics Companies"]
+  },
+  {
+    "id": "relationship-manager",
+    "slug": "ally",
+    "title": "Relationship Manager Agent",
+    "name": "Ally",
+    "description": "Finds mutual connections and helps you reach the right people",
+    "mascot": "/assets/sukie/agent-mascots/princess.png",
+    "benefits": [
+      "Unlock warm introductions through your existing network",
+      "Never forget to follow up with key contacts",
+      "Build stronger professional relationships effortlessly"
+    ],
+    "features": [
+      "Maps your professional network across platforms",
+      "Identifies mutual connections for warm intros",
+      "Suggests the best path to reach any contact",
+      "Tracks relationship history and touchpoints",
+      "Reminds you to stay in touch with key people"
+    ],
+    "integrations": ["gmail", "slack", "hubspot", "google_calendar", "telegram"],
+    "roles": ["VCs", "Realtors", "Sales Teams"]
+  }
+]

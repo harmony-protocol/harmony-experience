@@ -13,7 +13,7 @@ interface Agent {
 export function AgentCard({ agent }: { agent: Agent }) {
   return (
     <Link
-      href={`/demo/${agent.slug}`}
+      href={`/agents/${agent.slug}`}
       className="flex min-h-[200px] flex-col rounded-none border border-zinc-800 bg-zinc-900/80 px-8 pt-7 pb-8 transition hover:bg-zinc-800/60"
     >
       {/* Mascot */}
