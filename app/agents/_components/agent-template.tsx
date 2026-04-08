@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GetAgentCta } from "./get-agent-cta";
+import { MermaidDiagram } from "./mermaid-diagram";
 
 interface Agent {
   id: string;
@@ -13,6 +14,7 @@ interface Agent {
   features: string[];
   integrations: string[];
   roles: string[];
+  diagram: string;
 }
 
 const integrationLabels: Record<string, string> = {
@@ -110,27 +112,6 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
         </ul>
       </div>
 
-      {/* Features */}
-      <div className="mb-12">
-        <h2
-          className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5"
-          style={{ fontFamily: "var(--font-jetbrains)", fontSize: 13 }}
-        >
-          Features
-        </h2>
-        <ul className="flex flex-col gap-4">
-          {agent.features.map((feature) => (
-            <li
-              key={feature}
-              className="flex items-start gap-3 text-base text-zinc-400"
-            >
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600" />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       {/* Best for */}
       <div className="mb-12">
         <h2
@@ -152,7 +133,7 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
       </div>
 
       {/* Integrations */}
-      <div>
+      <div className="mb-12">
         <h2
           className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5"
           style={{ fontFamily: "var(--font-jetbrains)", fontSize: 13 }}
@@ -166,7 +147,7 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
               className="flex items-center gap-2.5 rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-2.5"
             >
               <Image
-                src={integration === "claude" ? `/assets/integrations/icon/svg/claude.svg` : `/assets/integrations/icon/${integration}.webp`}
+                src={["claude", "telegram"].includes(integration) ? `/assets/integrations/icon/svg/${integration}.svg` : `/assets/integrations/icon/${integration}.webp`}
                 alt={integrationLabels[integration] || integration}
                 width={20}
                 height={20}
@@ -178,6 +159,38 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="mb-12">
+        <h2
+          className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5"
+          style={{ fontFamily: "var(--font-jetbrains)", fontSize: 13 }}
+        >
+          How It Works
+        </h2>
+        <MermaidDiagram chart={agent.diagram} />
+      </div>
+
+      {/* Features */}
+      <div className="mb-12">
+        <h2
+          className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5"
+          style={{ fontFamily: "var(--font-jetbrains)", fontSize: 13 }}
+        >
+          Features
+        </h2>
+        <ul className="flex flex-col gap-4">
+          {agent.features.map((feature) => (
+            <li
+              key={feature}
+              className="flex items-start gap-3 text-base text-zinc-400"
+            >
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600" />
+              {feature}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* CTA */}

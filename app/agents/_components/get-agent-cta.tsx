@@ -10,7 +10,7 @@ export function GetAgentCta({ agentName }: { agentName: string }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="mt-16 inline-flex items-center justify-center rounded-none border border-zinc-700 bg-white px-8 py-3 text-base font-medium text-black transition hover:bg-zinc-200 cursor-pointer"
+        className="mt-8 inline-flex items-center justify-center rounded-none border border-zinc-700 bg-white px-8 py-3 text-base font-medium text-black transition hover:bg-zinc-200 cursor-pointer"
       >
         Get {agentName}
       </button>
