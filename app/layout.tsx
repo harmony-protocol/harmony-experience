@@ -22,6 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Harmony - AI Agents for Work",
   description: "Stop syncing, start shipping",
+  icons: {
+    icon: "/assets/sukie/white/icon.webp",
+  },
 };
 
 export default function RootLayout({
