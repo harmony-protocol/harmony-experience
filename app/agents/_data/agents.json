@@ -18,8 +18,8 @@
       "Sends meeting invites and confirmations on your behalf",
       "Reschedules and resolves conflicts without manual input"
     ],
-    "integrations": ["gmail", "slack", "google_calendar", "zoom", "microsoft_teams"],
-    "roles": ["Realtors", "Consultants", "Recruiters"],
+    "integrations": ["gmail", "slack", "google_calendar", "microsoft_teams"],
+    "roles": ["Realtor", "Consultant", "Recruiter", "VC", "HR"],
     "diagram": "graph TD\n  A[Email or Slack Message] --> B[Detect Scheduling Intent]\n  B --> C[Check Your Calendar]\n  C --> D{Time Slot Available?}\n  D -- Yes --> E[Book Meeting]\n  D -- No --> F[Suggest Alternatives]\n  F --> C\n  E --> G[Send Confirmation]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E,G success\n  class F alt"
   },
   {
@@ -42,7 +42,7 @@
       "Surfaces urgent messages that need immediate attention"
     ],
     "integrations": ["gmail", "slack", "microsoft_teams", "telegram"],
-    "roles": ["Founders", "Executives", "Product Managers"],
+    "roles": ["Founder", "Executive", "Product Manager"],
     "diagram": "graph TD\n  A[New Message Arrives] --> B[Analyze Content]\n  B --> C{Priority Level?}\n  C -- Urgent --> D[Surface to Top]\n  C -- Normal --> E[Categorize by Topic]\n  C -- Low/Spam --> F[Filter Out]\n  D --> G[Notify You]\n  E --> G\n  F --> H[Archive or Delete]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  classDef neutral fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  class A input\n  class B process\n  class C decision\n  class D success\n  class E neutral\n  class F alt\n  class G success\n  class H alt"
   },
   {
@@ -65,7 +65,7 @@
       "Respects do-not-follow-up rules and quiet hours"
     ],
     "integrations": ["gmail", "slack", "hubspot", "microsoft_teams"],
-    "roles": ["Sales Teams", "Recruiters", "Engineering Managers"],
+    "roles": ["Sales Team", "Recruiter", "Engineering Manager", "HR"],
     "diagram": "graph TD\n  A[You Send or Receive an Email/Slack Message] --> B[Start Tracking]\n  B --> C[Wait for Reply]\n  C --> D{Reply Received?}\n  D -- Yes --> E[Mark Resolved]\n  D -- No --> F[Draft Follow-up in Your Tone]\n  F --> G[Send Follow-up]\n  G --> C\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F,G action"
   },
   {
@@ -88,7 +88,7 @@
       "Handles replies, forwards, and new compositions"
     ],
     "integrations": ["gmail", "slack", "google_calendar", "jira", "notion", "claude"],
-    "roles": ["Executives", "Lawyers", "Consultants", "VCs", "TPMs", "Support Teams"],
+    "roles": ["Executive", "Lawyer", "Consultant", "VC", "TPM", "Support Team", "HR"],
     "diagram": "graph TD\n  A[New Email or Thread] --> B[Analyze Context]\n  B --> C[Match Your Writing Style]\n  C --> D[Select Template if Available]\n  D --> E[Generate Draft]\n  E --> F[Prepare Draft in AI Inbox]\n  F --> G[You Approve or Edit]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D,E action\n  class F process\n  class G success"
   },
   {
@@ -111,7 +111,7 @@
       "Tracks resolution progress and follows up"
     ],
     "integrations": ["gmail", "slack", "jira", "hubspot", "notion"],
-    "roles": ["Service Businesses", "SaaS Teams", "Clinics"],
+    "roles": ["Service Business", "SaaS Team", "Clinic"],
     "diagram": "graph TD\n  A[Support Ticket Arrives] --> B[Understand the Issue]\n  B --> C[Search Knowledge Base]\n  C --> D{Solution Found?}\n  D -- Yes --> E[Send Resolution]\n  D -- No --> F[Escalate to Team]\n  E --> G[Track Until Resolved]\n  F --> G\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F alt\n  class G success"
   },
   {
@@ -134,7 +134,7 @@
       "Delivers reports on your preferred schedule"
     ],
     "integrations": ["gmail", "slack", "google_sheets", "notion", "jira"],
-    "roles": ["Founders", "Engineering Managers", "Operations Managers"],
+    "roles": ["Founder", "Engineering Manager", "Operations Manager"],
     "diagram": "graph TD\n  A[Schedule Triggers] --> B[Pull Data from Sources]\n  B --> C[Analyze Changes]\n  C --> D[Highlight Action Items]\n  D --> E[Generate Report]\n  E --> F[Deliver to You]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D action\n  class E process\n  class F success"
   },
   {
@@ -157,7 +157,7 @@
       "Exports to your preferred format and destination"
     ],
     "integrations": ["gmail", "google_sheets", "notion", "airtable", "jira"],
-    "roles": ["Clinics", "Lawyers", "Logistics Companies"],
+    "roles": ["Clinic", "Lawyer", "Logistics Firm", "HR"],
     "diagram": "graph TD\n  A[Document or Email Arrives] --> B[Identify Document Type]\n  B --> C[Extract Key Fields]\n  C --> D[Structure into Records]\n  D --> E[Validate Data]\n  E --> F[Export to Destination]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  class A input\n  class B process\n  class C,D action\n  class E process\n  class F success"
   },
   {
@@ -180,7 +180,7 @@
       "Reminds you to stay in touch with key people"
     ],
     "integrations": ["gmail", "slack", "hubspot", "google_calendar", "telegram"],
-    "roles": ["Founders", "VCs", "Realtors", "Sales Teams"],
+    "roles": ["Founder", "VC", "Realtor", "Sales Team"],
     "diagram": "graph TD\n  A[Target Contact] --> B[Map Your Network]\n  B --> C[Find Mutual Connections]\n  C --> D{Warm Path Exists?}\n  D -- Yes --> E[Suggest Introduction]\n  D -- No --> F[Recommend Cold Approach]\n  E --> G[Track Relationship]\n  F --> G\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F alt\n  class G success"
   }
 ]

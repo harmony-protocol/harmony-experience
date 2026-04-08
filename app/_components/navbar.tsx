@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -53,12 +53,33 @@ function CloseIcon() {
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY < 80) {
+        setVisible(true);
+      } else if (currentY < lastScrollY.current) {
+        setVisible(true);
+      } else if (currentY > lastScrollY.current) {
+        setVisible(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50"
-        style={{ width: "100%" }}
+        className="fixed top-0 left-0 right-0 z-50 transition-transform duration-300"
+        style={{
+          width: "100%",
+          transform: visible ? "translateY(0)" : "translateY(-100%)",
+        }}
       >
         <div
           className="mx-auto flex items-center justify-between"

@@ -42,14 +42,14 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
       {/* Back link */}
       <Link
         href="/agents"
-        className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-zinc-300 mb-8"
+        className="inline-flex items-center gap-2.5 text-base text-zinc-500 transition hover:text-zinc-300 mb-8"
       >
         <svg
           className="h-4 w-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={1.5}
+          strokeWidth={2}
         >
           <path
             strokeLinecap="round"
@@ -74,7 +74,7 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
             {agent.title}
           </h1>
           <p className="text-base text-zinc-400 mt-1">
-            {agent.description}
+            {agent.name} {agent.description.charAt(0).toLowerCase() + agent.description.slice(1)}
           </p>
         </div>
       </div>
