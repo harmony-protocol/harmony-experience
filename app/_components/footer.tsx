@@ -101,7 +101,7 @@ export function Footer() {
             style={{ paddingBottom: 256 }}
           >
             {/* Company Info */}
-            <div className="col-span-2 flex flex-col gap-6 px-5 md:px-0" style={{ paddingRight: 20 }}>
+            <div className="col-span-2 flex flex-col gap-6" style={{ paddingRight: 24 }}>
               <div className="flex flex-col gap-2">
                 <Link href="/" className="block" style={{ width: 127, aspectRatio: "3.5" }}>
                   <Image
@@ -132,7 +132,7 @@ export function Footer() {
             </div>
 
             {/* Product */}
-            <div className="flex flex-col gap-4 px-5 md:px-0">
+            <div className="flex flex-col gap-4" style={{ paddingRight: 24 }}>
               <h4
                 className="text-sm font-medium uppercase tracking-wider"
                 style={{ color: "rgb(121, 125, 133)", fontFamily: "var(--font-jetbrains)", fontSize: 14 }}
@@ -154,7 +154,7 @@ export function Footer() {
             </div>
 
             {/* Links */}
-            <div className="flex flex-col gap-4 px-5 md:px-0">
+            <div className="flex flex-col gap-4" style={{ paddingRight: 24 }}>
               <h4
                 className="text-sm font-medium uppercase tracking-wider"
                 style={{ color: "rgb(121, 125, 133)", fontFamily: "var(--font-jetbrains)", fontSize: 14 }}
