@@ -23,3 +23,6 @@
 
 ## Ally — Relationship Manager Agent
 [excited] "Hi! I'm Ally, your relationship manager agent. I map out your entire professional network — who you know, who they know, and the connections in between. When you need to reach someone, I find the warmest path to get there. [amused] You know that thing where you realize you were just two introductions away from someone the whole time? [giggles] I catch those. I also keep track of your relationship history and nudge you when it's time to check in with someone. [warmly] Relationships are everything. [whispers] And I never forget a single one."
+
+## Ruby — Onboarding Agent
+[excited] "Hi! I'm Ruby, your onboarding agent. When a new intern, hire, or teammate joins, I'm the first friendly face they meet. I walk them through setup, hand them their checklist, and answer every "wait, where do I find…" question from your docs and wiki. [amused] You know those twelve questions every new person asks in their first week? [giggles] I've got answers for all of them, and I never get tired of explaining. I introduce them to the right people, explain the project context, and quietly flag blockers to their manager. [warmly] Everyone deserves a great first week. [whispers] I make sure they get one."

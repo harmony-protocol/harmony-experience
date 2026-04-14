@@ -183,5 +183,28 @@
     "integrations": ["gmail", "slack", "hubspot", "google_calendar", "telegram"],
     "roles": ["Founder", "VC", "Realtor", "Sales Team"],
     "diagram": "graph TD\n  A[Target Contact] --> B[Map Your Network]\n  B --> C[Find Mutual Connections]\n  C --> D{Warm Path Exists?}\n  D -- Yes --> E[Suggest Introduction]\n  D -- No --> F[Recommend Cold Approach]\n  E --> G[Track Relationship]\n  F --> G\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F alt\n  class G success"
+  },
+  {
+    "id": "onboarding",
+    "slug": "ruby",
+    "title": "Onboarding Agent",
+    "name": "Ruby",
+    "description": "Helps new hires and teammates ramp up on your project and company",
+    "mascot": "/assets/sukie/agent-mascots/pink-hair-girl-sukie.png",
+    "benefits": [
+      "Cut ramp-up time for new hires from weeks to days",
+      "Free up senior teammates from answering the same questions",
+      "Give every newcomer a consistent, welcoming first week"
+    ],
+    "features": [
+      "Answers newcomer questions from your docs, wiki, and codebase",
+      "Walks new hires through setup checklists and access requests",
+      "Introduces them to the right people and teams to meet",
+      "Explains project context, conventions, and tribal knowledge",
+      "Tracks onboarding progress and flags blockers to managers"
+    ],
+    "integrations": ["gmail", "slack", "notion", "jira", "google_calendar", "microsoft_teams"],
+    "roles": ["Engineering Manager", "HR", "Founder", "TPM", "Operations Manager"],
+    "diagram": "graph TD\n  A[New Hire Joins] --> B[Send Welcome & Setup Checklist]\n  B --> C[Answer Questions from Docs]\n  C --> D{Needs Human Help?}\n  D -- Yes --> E[Introduce to Right Teammate]\n  D -- No --> F[Walk Through Project Context]\n  E --> G[Track Progress]\n  F --> G\n  G --> H[Report Blockers to Manager]\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E alt\n  class F process\n  class G,H success"
   }
 ]
