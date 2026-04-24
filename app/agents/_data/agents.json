@@ -72,7 +72,7 @@
   {
     "id": "drafting",
     "slug": "donna",
-    "title": "Drafting Agent",
+    "title": "Drafting & Automations Agent",
     "name": "Donna",
     "description": "Drafts emails, messages, tickets, calendar events and more in your tone",
     "mascot": "/assets/sukie/agent-mascots/wizard.png",
@@ -98,7 +98,7 @@
     "title": "Support Agent",
     "name": "Remy",
     "description": "Handles support requests and resolves issues on your behalf",
-    "mascot": "/assets/sukie/agent-mascots/bot-sukie.png",
+    "mascot": "/assets/sukie/agent-mascots/glowing-blue.png",
     "benefits": [
       "Respond to support tickets instantly, 24/7",
       "Reduce resolution time by surfacing relevant solutions",
@@ -167,7 +167,7 @@
     "title": "Relationship Manager Agent",
     "name": "Ally",
     "description": "Finds mutual connections and helps you reach the right people",
-    "mascot": "/assets/sukie/agent-mascots/princess.png",
+    "mascot": "/assets/sukie/agent-mascots/pink-unicorn.png",
     "benefits": [
       "Unlock warm introductions through your existing network",
       "Never forget to follow up with key contacts",
@@ -185,12 +185,35 @@
     "diagram": "graph TD\n  A[Target Contact] --> B[Map Your Network]\n  B --> C[Find Mutual Connections]\n  C --> D{Warm Path Exists?}\n  D -- Yes --> E[Suggest Introduction]\n  D -- No --> F[Recommend Cold Approach]\n  E --> G[Track Relationship]\n  F --> G\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F alt\n  class G success"
   },
   {
+    "id": "routine-work",
+    "slug": "chime",
+    "title": "Routine Work Agent",
+    "name": "Chime",
+    "description": "Performs recurring tasks on a schedule — weekly updates, monthly reviews, daily housekeeping",
+    "mascot": "/assets/sukie/agent-mascots/with-coffee-and-clock.png",
+    "benefits": [
+      "Never forget a recurring task again",
+      "Free your team from repetitive busywork",
+      "Keep operations running like clockwork without manual triggers"
+    ],
+    "features": [
+      "Runs tasks on daily, weekly, or monthly schedules",
+      "Sends recurring updates and status messages automatically",
+      "Performs routine housekeeping across your tools",
+      "Triggers workflows at the right time without manual input",
+      "Tracks completion and reports on schedule health"
+    ],
+    "integrations": ["gmail", "slack", "google_calendar", "notion", "jira", "google_sheets"],
+    "roles": ["Operations Manager", "Engineering Manager", "Founder", "TPM"],
+    "diagram": "graph TD\n  A[Schedule Triggers] --> B[Identify Task to Run]\n  B --> C[Pull Required Context]\n  C --> D[Execute Recurring Action]\n  D --> E{Completed Successfully?}\n  E -- Yes --> F[Log Completion]\n  E -- No --> G[Notify You of Issue]\n  F --> H[Wait for Next Schedule]\n  G --> H\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D process\n  class E decision\n  class F success\n  class G alt\n  class H process"
+  },
+  {
     "id": "onboarding",
     "slug": "ruby",
     "title": "Onboarding Agent",
     "name": "Ruby",
     "description": "Helps new hires and teammates ramp up on your project and company",
-    "mascot": "/assets/sukie/agent-mascots/pink-hair-girl-sukie.png",
+    "mascot": "/assets/sukie/agent-mascots/contruction-worker.png",
     "benefits": [
       "Cut ramp-up time for new hires from weeks to days",
       "Free up senior teammates from answering the same questions",
