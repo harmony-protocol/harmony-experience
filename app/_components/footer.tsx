@@ -19,17 +19,17 @@ function ArrowIcon() {
 
 export function Footer() {
   return (
-    <div className="relative">
+    <div className="relative bg-[#020202]">
       {/* Chip image */}
       <div
-        className="pointer-events-none absolute left-0 right-0 z-0 flex justify-center top-[130px] md:top-[70px]"
+        className="pointer-events-none absolute left-0 right-0 z-0 flex justify-center top-[120px] md:top-[-30px]"
       >
         <Image
           src="/assets/footer-chip-image.avif"
           alt=""
           width={3126}
           height={2146}
-          className="w-full max-w-[700px] object-contain"
+          className="w-full max-w-[780px] object-contain md:max-w-[900px] lg:max-w-[960px]"
         />
       </div>
 
