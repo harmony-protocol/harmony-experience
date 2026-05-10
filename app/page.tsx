@@ -10,12 +10,12 @@ export default function Home() {
 
   return (
     <main className="relative isolate overflow-hidden bg-[#020202] text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,#141416_0%,#070708_44%,#020202_100%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_60vmax_at_50%_0%,#141416_0%,#070708_44%,#020202_100%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,244,245,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(244,244,245,0.05)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.12] [mask-image:linear-gradient(to_bottom,black_0%,transparent_72%)]" />
 
       <div
-        className="mx-auto"
-        style={{ maxWidth: 1224, width: "97%", padding: "140px 5px 128px 0" }}
+        className="mx-auto pt-24 pb-32 pr-[5px] md:pt-[140px]"
+        style={{ maxWidth: 1224, width: "97%" }}
       >
         <h1
           className="max-w-3xl font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.15] tracking-[-0.025em] md:text-4xl"

@@ -90,12 +90,12 @@ function PrimaryCTA({ size = "md" }: { size?: "md" | "lg" }) {
 export function MarketingPage({ audience }: { audience: AudienceConfig }) {
   return (
     <main className="relative isolate overflow-hidden bg-[#020202] text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,#141416_0%,#070708_44%,#020202_100%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_60vmax_at_50%_0%,#141416_0%,#070708_44%,#020202_100%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,244,245,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(244,244,245,0.05)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.12] [mask-image:linear-gradient(to_bottom,black_0%,transparent_72%)]" />
 
       <div
-        className="mx-auto"
-        style={{ maxWidth: 720, width: "92%", padding: "200px 0 128px" }}
+        className="mx-auto pt-32 pb-32 md:pt-[200px]"
+        style={{ maxWidth: 720, width: "92%" }}
       >
         {/* 1. HERO */}
         <section>
@@ -194,11 +194,11 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
           <section className="mt-32">
             <Eyebrow>{audience.personas.eyebrow}</Eyebrow>
             <SectionHeading>{audience.personas.headline}</SectionHeading>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-2">
               {audience.personas.items.map((persona) => (
                 <span
                   key={persona}
-                  className="rounded-full border border-zinc-800 bg-zinc-900/50 px-5 py-2.5 text-lg text-zinc-200"
+                  className="rounded-full border border-zinc-800 bg-zinc-900/50 px-3.5 py-1.5 text-sm text-zinc-300"
                 >
                   {persona}
                 </span>

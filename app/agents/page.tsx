@@ -4,7 +4,7 @@ import agents from "./_data/agents.json";
 export default function AgentsPage() {
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,#141416_0%,#070708_44%,#020202_100%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_60vmax_at_50%_0%,#141416_0%,#070708_44%,#020202_100%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,244,245,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(244,244,245,0.05)_1px,transparent_1px)] bg-[size:56px_56px] opacity-[0.18] [mask-image:linear-gradient(to_bottom,black_0%,transparent_72%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-48 bg-[linear-gradient(to_bottom,rgba(244,244,245,0.055),transparent)]" />
 
