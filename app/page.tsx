@@ -28,7 +28,7 @@ export default function Home() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Choose your niche.
+          Select business type
         </h1>
 
         <ul className="mt-10 grid gap-x-12 md:grid-cols-2 lg:grid-cols-3">
