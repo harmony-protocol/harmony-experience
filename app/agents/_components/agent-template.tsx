@@ -62,7 +62,7 @@ export function AgentTemplate({ agent }: { agent: Agent }) {
         Back
       </Link>
 
-      {/* Header — mascot + title + description inline, matching harmony-desktop */}
+      {/* Header, mascot + title + description inline, matching harmony-desktop */}
       <div className="flex items-start gap-4 mb-12">
         <Image
           src={agent.mascot}

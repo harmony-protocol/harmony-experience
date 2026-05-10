@@ -138,7 +138,7 @@ export function Navbar() {
       {/* Full-screen mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-[100] bg-[#020202] flex flex-col">
-          {/* Top bar with logo and close — matches main navbar positioning */}
+          {/* Top bar with logo and close, matches main navbar positioning */}
           <div
             className="mx-auto flex items-center justify-between"
             style={{
@@ -170,7 +170,7 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Nav links — start right after the header, not centered */}
+          {/* Nav links, start right after the header, not centered */}
           <div
             className="mx-auto flex flex-col gap-10"
             style={{

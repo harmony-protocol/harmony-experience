@@ -51,7 +51,7 @@ export function Footer() {
           className="relative mx-auto flex flex-col items-center"
           style={{ maxWidth: 1224, gap: 80 }}
         >
-          {/* Vertical grid lines — 2 on mobile, 4 on desktop */}
+          {/* Vertical grid lines, 2 on mobile, 4 on desktop */}
           <div
             className="pointer-events-none absolute inset-0 grid grid-cols-2 md:grid-cols-4"
             aria-hidden="true"
@@ -66,7 +66,7 @@ export function Footer() {
             <div />
           </div>
 
-          {/* Social Links Row — 2x2 on mobile, 1x4 on desktop */}
+          {/* Social Links Row, 2x2 on mobile, 1x4 on desktop */}
           <div className="grid w-full grid-cols-2 md:grid-cols-4">
             {[
               { label: "LinkedIn", href: "https://linkedin.com/company/getharmony" },

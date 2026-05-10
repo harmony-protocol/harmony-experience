@@ -1,0 +1,1685 @@
+{
+  "tutors": {
+    "title": "Harmony for Tutors",
+    "shortLabel": "Tutors",
+    "tagline": "Run your tutoring practice on autopilot.",
+    "metaDescription": "Run your tutoring practice on autopilot. Harmony handles parent messages, lesson reports, scheduling, and admin, so you can focus on teaching.",
+    "hero": {
+      "headline": "Run your tutoring practice on autopilot.",
+      "subtitle": "Stop chasing leads, drafting reports, and rebooking parents at midnight. Harmony does it in seconds, while you teach, sleep, or actually have a weekend."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "WhatsApp",
+        "src": "/assets/integrations/icon/svg/whatsapp.svg"
+      },
+      {
+        "name": "Zoom",
+        "src": "/assets/integrations/icon/zoom.webp"
+      },
+      {
+        "name": "Google Meet",
+        "src": "/assets/integrations/icon/gmeet.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "TutorBird",
+        "src": "/assets/integrations/icon/tutorbird.png"
+      },
+      {
+        "name": "Google Ads",
+        "src": "/assets/integrations/icon/googleads.png"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a tutor. You're three jobs.",
+      "intro": "Marketer. Receptionist. Bookkeeper. Lesson planner. Teaching is the part you trained for, everything else just lands on you.",
+      "items": [
+        "A parent message at 9pm you forgot to reply to.",
+        "Writing the same lesson report ten times a week.",
+        "Practice papers, invoices, and updates piling up.",
+        "Leads going cold while you're in a lesson."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You teach. Harmony does everything around it.",
+      "body": "Picture this: a parent inquiry hits at 9pm and a reply goes out in 60 seconds. A lesson ends and the parent report is already drafted. A practice paper is built and checked before the next session. Harmony does all of it, in the background, while you teach."
+    },
+    "personas": {
+      "eyebrow": "Built for tutors like you",
+      "headline": "Whatever you teach, however you teach it.",
+      "items": [
+        "Solo Tutors",
+        "Tutoring Centres",
+        "Test Prep Coaches",
+        "Online Tutors",
+        "Music Teachers",
+        "Language Coaches",
+        "Diet Coaches",
+        "Fitness Coaches",
+        "Life Coaches",
+        "Yoga Instructors"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they book the next tutor.",
+        "items": [
+          "Respond to inquiries within minutes, day or night",
+          "Auto-qualify with a few smart questions",
+          "Book the trial lesson while interest is hot",
+          "Re-engage no-replies before they go cold"
+        ]
+      },
+      {
+        "eyebrow": "Your marketing",
+        "title": "Never lose a lead again.",
+        "items": [
+          "Respond to leads faster",
+          "Schedule appointments",
+          "Plan marketing content",
+          "Run outreach across channels"
+        ]
+      },
+      {
+        "eyebrow": "Your parent updates",
+        "title": "Parents stay in the loop, automatically.",
+        "items": [
+          "Generate reports after lessons",
+          "Maintain relationships after lessons",
+          "Increase referrals",
+          "Share progress updates"
+        ]
+      },
+      {
+        "eyebrow": "Your lessons",
+        "title": "Show up prepared, every time.",
+        "items": [
+          "Prepare for lessons beforehand",
+          "Create custom practice papers",
+          "Record and analyze the lessons",
+          "Track student progress"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "The boring stuff, handled.",
+        "items": [
+          "Post-call admin work",
+          "Manage invoices",
+          "Document processing",
+          "Report generation",
+          "Enterprise search"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a tutor to teach. Start teaching again.",
+      "body": "Customized to your scheduler, your lesson formats, and your parent communications. Live in two weeks, then we keep tuning it with you, so you can take back the hours that aren't teaching."
+    }
+  },
+  "startups": {
+    "title": "Harmony for Startups",
+    "shortLabel": "Startups",
+    "tagline": "Run your startup on autopilot.",
+    "metaDescription": "Run your startup on autopilot. Harmony handles communication, management, and admin overhead, so your team ships, not shuffles.",
+    "hero": {
+      "headline": "Run your startup on autopilot.",
+      "subtitle": "Stop drowning your team in standups, status updates, and CRM hygiene. Harmony writes them, sends them, and keeps everything fresh, while your team ships product."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Jira",
+        "src": "/assets/integrations/icon/jira.webp"
+      },
+      {
+        "name": "GitHub",
+        "src": "/assets/integrations/icon/github.webp"
+      },
+      {
+        "name": "Linear",
+        "src": "/assets/integrations/icon/svg/linear.svg"
+      },
+      {
+        "name": "Figma",
+        "src": "/assets/integrations/icon/figma.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "Every founder is doing four jobs at once.",
+      "intro": "Engineering. Sales. HR. Ops. The work you started the company to do gets crowded out by the work that just lands on you.",
+      "items": [
+        "Standup status spread across Slack, Jira, and three docs.",
+        "Follow-ups falling through the cracks after every call.",
+        "A CRM nobody has time to actually update.",
+        "Hours every week on reports nobody asked twice for."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "Your team builds. Harmony does everything around it.",
+      "body": "Picture this: every standup, every follow-up, every CRM entry, every weekly report, written by Harmony, ready for one-tap approval. Your team approves. It moves. While they ship."
+    },
+    "personas": {
+      "eyebrow": "Built for teams like yours",
+      "headline": "However you ship, whoever you are.",
+      "items": [
+        "Founders",
+        "Engineering Leaders",
+        "Sales Leaders",
+        "Operators",
+        "People & HR",
+        "Agency Owners"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your engineering",
+        "title": "Move faster, with everyone aligned.",
+        "items": [
+          "Track tasks",
+          "Automate followups",
+          "Increase alignment",
+          "Increase visibility",
+          "Generate reports"
+        ]
+      },
+      {
+        "eyebrow": "Your sales",
+        "title": "Close more, log nothing.",
+        "items": [
+          "Track commitments",
+          "Automate followups",
+          "Auto-draft emails",
+          "Auto-update CRM",
+          "Analyze sales calls"
+        ]
+      },
+      {
+        "eyebrow": "Your HR",
+        "title": "Hire and onboard, hands-off.",
+        "items": [
+          "Schedule interviews",
+          "Answer FAQs with AI",
+          "Automate rescheduling",
+          "Automate onboarding",
+          "Foster relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your delivery",
+        "title": "Programs that run themselves.",
+        "items": [
+          "Manage programs",
+          "Automate followups",
+          "Generate reports",
+          "Reduce response time",
+          "Analyze chats"
+        ]
+      },
+      {
+        "eyebrow": "Your internal workflows",
+        "title": "Approvals, reports, and busywork, gone.",
+        "items": [
+          "Automate reports",
+          "Automate approvals",
+          "Automate vendor chat",
+          "Document processing",
+          "Enterprise search"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You started a company to build. Start building again.",
+      "body": "Customized to your stack, your CRM, and your processes. Live in two weeks, while traditional agency builds take six months."
+    }
+  },
+  "realtors": {
+    "title": "Harmony for Realtors",
+    "shortLabel": "Realtors",
+    "tagline": "Run your real estate business on autopilot.",
+    "metaDescription": "Run your real estate business on autopilot. Harmony handles client follow-ups, listing updates, and transaction admin, so you stay in front of clients and on top of deals.",
+    "hero": {
+      "headline": "Run your real estate business on autopilot.",
+      "subtitle": "Stop losing portal leads to faster agents. Harmony replies in minutes, books the showing, and updates your CRM, while you're at the listing, in a closing, or finally home for dinner."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "WhatsApp",
+        "src": "/assets/integrations/icon/svg/whatsapp.svg"
+      },
+      {
+        "name": "Phone",
+        "src": "/assets/integrations/icon/phone_apple.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a realtor. You're four jobs.",
+      "intro": "Lead responder. Transaction coordinator. Marketer. CRM secretary. Showings are the part you got into this for, everything else just lands on you.",
+      "items": [
+        "A Zillow lead at 11pm you forgot to reply to.",
+        "Drafting twenty follow-up emails after every open house.",
+        "A CRM you keep meaning to update.",
+        "Closing paperwork eating your evenings."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You sell. Harmony does everything around it.",
+      "body": "Picture this: a Zillow lead lands at 11pm and a reply goes out in 60 seconds. A showing wraps and the follow-up is already drafted. A listing posts and the marketing emails are out the door. Harmony does all of it, in the background, while you sell."
+    },
+    "personas": {
+      "eyebrow": "Built for agents like you",
+      "headline": "Whatever you sell, however you sell it.",
+      "items": [
+        "Solo Agents",
+        "Real Estate Teams",
+        "Brokerage Owners",
+        "Property Managers",
+        "Mortgage Brokers",
+        "Investor Agents"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they swipe to the next listing.",
+        "items": [
+          "Respond to portal inquiries instantly",
+          "Auto-qualify buyers and sellers fast",
+          "Book the showing while interest is hot",
+          "Re-engage cold leads before they vanish"
+        ]
+      },
+      {
+        "eyebrow": "Your leads",
+        "title": "Never lose a portal lead again.",
+        "items": [
+          "Respond to portal inquiries instantly",
+          "Qualify leads automatically",
+          "Book showings without back-and-forth",
+          "Re-engage cold leads"
+        ]
+      },
+      {
+        "eyebrow": "Your listings",
+        "title": "Listings that market themselves.",
+        "items": [
+          "Generate listing descriptions",
+          "Schedule open houses",
+          "Send showing reminders",
+          "Track listing engagement"
+        ]
+      },
+      {
+        "eyebrow": "Your clients",
+        "title": "Buyers and sellers stay in the loop.",
+        "items": [
+          "Send market updates automatically",
+          "Share closing checklists",
+          "Maintain post-close relationships",
+          "Increase referrals"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "Paperwork, handled.",
+        "items": [
+          "Draft offer letters",
+          "Track contract milestones",
+          "Generate transaction reports",
+          "Document processing"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became an agent to close deals. Start closing again.",
+      "body": "Customized to your CRM, your portals, and your transaction tools. Live in two weeks, then we keep tuning it with you, so you can stay in front of every lead and on top of every deal."
+    }
+  },
+  "lawyers": {
+    "title": "Harmony for Lawyers",
+    "shortLabel": "Lawyers",
+    "tagline": "Run your practice on autopilot.",
+    "metaDescription": "Run your practice on autopilot. Harmony handles client communication, intake, routine drafting, and billing admin, so you can focus on the matter at hand.",
+    "hero": {
+      "headline": "Run your practice on autopilot.",
+      "subtitle": "Stop drafting the same retainer ten times a month. Harmony writes the intake, schedules the consult, drafts the routine matters, and tracks your hours, while you focus on the actual law."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Teams",
+        "src": "/assets/integrations/icon/microsoft_teams.webp"
+      },
+      {
+        "name": "Google Docs",
+        "src": "/assets/integrations/icon/google_docs.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Confluence",
+        "src": "/assets/integrations/icon/confluence.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a lawyer. You're four jobs.",
+      "intro": "Intake coordinator. Billing manager. Email responder. Document drafter. The legal work is the part you trained for, everything else just lands on you.",
+      "items": [
+        "A client email at 9pm you forgot to reply to.",
+        "Drafting the same retainer letter for the tenth time this month.",
+        "Time entries you'll catch up on... eventually.",
+        "Intake calls eating your morning."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You practice. Harmony does everything around it.",
+      "body": "Picture this: a new client inquiry comes in and the intake is qualified before you call back. A consult ends and the engagement letter is already drafted. A retainer hour is logged the moment the call ends. Harmony does all of it, in the background, while you practice."
+    },
+    "personas": {
+      "eyebrow": "Built for practices like yours",
+      "headline": "Whatever you practice, however you practice it.",
+      "items": [
+        "Solo Practitioners",
+        "Small Firms",
+        "Boutique Practices",
+        "In-House Counsel",
+        "Corporate Lawyers",
+        "Contract Attorneys"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they call another firm.",
+        "items": [
+          "Respond to inquiries within minutes, day or night",
+          "Auto-qualify with intake questions",
+          "Book the consultation while urgency is high",
+          "Re-engage no-replies before they retain elsewhere"
+        ]
+      },
+      {
+        "eyebrow": "Your client communications",
+        "title": "Clients stay in the loop, automatically.",
+        "items": [
+          "Respond to client inquiries faster",
+          "Schedule consultations",
+          "Send case updates",
+          "Maintain relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your matters",
+        "title": "Routine drafting, handled.",
+        "items": [
+          "Draft retainer letters and NDAs",
+          "Track case milestones",
+          "Generate matter summaries",
+          "Organize matter documents"
+        ]
+      },
+      {
+        "eyebrow": "Your intake",
+        "title": "New clients, qualified before you call.",
+        "items": [
+          "Pre-qualify inbound leads",
+          "Schedule consultations automatically",
+          "Collect intake forms",
+          "Route to the right attorney"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "Billing and admin, off your plate.",
+        "items": [
+          "Track billable hours",
+          "Generate invoices",
+          "Document processing",
+          "Enterprise search across matters"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a lawyer to practice law. Start practicing again.",
+      "body": "Customized to your case management, your billing system, and your matter workflows. Live in two weeks, then we keep tuning it with you, so you can take back the hours that aren't billable today."
+    }
+  },
+  "agencies": {
+    "title": "Harmony for Agencies",
+    "shortLabel": "Agencies",
+    "tagline": "Run your agency on autopilot.",
+    "metaDescription": "Run your agency on autopilot. Harmony handles client check-ins, status updates, project admin, and new business follow-ups, so your team delivers great work.",
+    "hero": {
+      "headline": "Run your agency on autopilot.",
+      "subtitle": "Stop trading creative hours for status updates. Harmony drafts the recaps, schedules the check-ins, generates the weekly reports, and chases new business, while your team makes the work clients actually pay for."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Asana",
+        "src": "/assets/integrations/icon/asana.webp"
+      },
+      {
+        "name": "Figma",
+        "src": "/assets/integrations/icon/figma.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "Granola",
+        "src": "/assets/integrations/icon/granola.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just an agency. You're five jobs.",
+      "intro": "Account manager. Project lead. New business. Reporting. Client therapist. The actual work is the part you started the agency for, everything else just lands on you.",
+      "items": [
+        "Twelve client Slacks all asking 'any update?' at the same time.",
+        "Recap emails after every single client call.",
+        "Weekly reports nobody reads but everyone expects.",
+        "New business pitches stealing your weekends."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "Your team delivers. Harmony does everything around it.",
+      "body": "Picture this: every client call ends with the recap already drafted, every Friday the weekly report is ready before the team logs in, every pitch follow-up goes out on time. Harmony does all of it, in the background, while your team ships great work."
+    },
+    "personas": {
+      "eyebrow": "Built for agencies like yours",
+      "headline": "Whatever you build for clients, however you bill it.",
+      "items": [
+        "Marketing Agencies",
+        "Creative Studios",
+        "Dev Shops",
+        "Consulting Firms",
+        "PR Agencies",
+        "Boutique Studios"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your client communications",
+        "title": "Clients feel looked after.",
+        "items": [
+          "Respond to client requests faster",
+          "Send weekly status updates",
+          "Schedule check-ins",
+          "Foster relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your projects",
+        "title": "Projects move without nagging.",
+        "items": [
+          "Track project tasks",
+          "Automate followups",
+          "Generate status reports",
+          "Increase visibility across teams"
+        ]
+      },
+      {
+        "eyebrow": "Your new business",
+        "title": "A pipeline that runs itself.",
+        "items": [
+          "Auto-draft proposal emails",
+          "Schedule pitch meetings",
+          "Auto-update CRM",
+          "Analyze sales calls"
+        ]
+      },
+      {
+        "eyebrow": "Your operations",
+        "title": "Time, billing, and approvals, handled.",
+        "items": [
+          "Track time and billing",
+          "Generate invoices",
+          "Approval workflows",
+          "Document processing"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You started an agency to make great work. Start making it again.",
+      "body": "Customized to your project tools, your CRM, and your reporting cadence. Live in two weeks, while traditional agency builds take a quarter to ship."
+    }
+  },
+  "investors": {
+    "title": "Harmony for Investors",
+    "shortLabel": "Investors",
+    "tagline": "Run your portfolio on autopilot.",
+    "metaDescription": "Run your portfolio on autopilot. Harmony handles dealflow triage, founder updates, LP reporting, and warm intros, so you can focus on backing great companies.",
+    "hero": {
+      "headline": "Run your portfolio on autopilot.",
+      "subtitle": "Stop drowning in pitch decks and founder updates. Harmony triages the inbox, summarizes the portfolio threads, drafts your LP letters, and surfaces the intros worth making, while you back the next big one."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Airtable",
+        "src": "/assets/integrations/icon/airtable.webp"
+      },
+      {
+        "name": "LinkedIn",
+        "src": "/assets/integrations/icon/linkedin.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "Telegram",
+        "src": "/assets/integrations/icon/svg/telegram.svg"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just an investor. You're four jobs.",
+      "intro": "Dealflow screener. LP communicator. Portfolio supporter. Network maintainer. The investing thesis is what got you here, everything else just lands on you.",
+      "items": [
+        "An inbox full of pitch decks you'll skim eventually.",
+        "Portfolio updates buried in thirty founder threads.",
+        "LP reports that take a week to write every quarter.",
+        "Intros and follow-ups slipping through the cracks."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You invest. Harmony does everything around it.",
+      "body": "Picture this: every pitch deck triaged before you open the email, every portfolio update summarized, every quarterly LP letter drafted before quarter-end. Harmony does all of it, in the background, while you invest."
+    },
+    "personas": {
+      "eyebrow": "Built for investors like you",
+      "headline": "Whatever you back, however you back it.",
+      "items": [
+        "Angel Investors",
+        "VC Partners",
+        "Family Offices",
+        "Solo Capitalists",
+        "Investment Syndicates",
+        "Fund of Funds"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your dealflow",
+        "title": "Pitch decks, triaged for you.",
+        "items": [
+          "Triage inbound pitch decks",
+          "Auto-summarize founder updates",
+          "Schedule first calls",
+          "Track passes and follow-ups"
+        ]
+      },
+      {
+        "eyebrow": "Your portfolio",
+        "title": "Stay close, without the chaos.",
+        "items": [
+          "Pull updates across portfolio threads",
+          "Generate quarterly digests",
+          "Track founder asks",
+          "Spot signals across companies"
+        ]
+      },
+      {
+        "eyebrow": "Your LPs",
+        "title": "Reports that write themselves.",
+        "items": [
+          "Draft quarterly LP letters",
+          "Generate fund updates",
+          "Schedule annual meeting comms",
+          "Maintain LP relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your network",
+        "title": "Warm intros, on tap.",
+        "items": [
+          "Surface relevant intros",
+          "Draft intro emails",
+          "Track who you owe a reply",
+          "Maintain founder and exec relationships"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You started a fund to back great companies. Start backing them again.",
+      "body": "Customized to your dealflow inbox, your portfolio tools, and your LP reporting cadence. Live in two weeks, then we keep tuning it with you, so you can spend more time with founders and less time with your inbox."
+    }
+  },
+  "sales": {
+    "title": "Harmony for Sales Reps",
+    "shortLabel": "Sales Reps",
+    "tagline": "Hit quota without the busywork.",
+    "metaDescription": "Hit quota without the busywork. Harmony drafts your follow-ups, updates your CRM, and preps you for every call, so you can sell instead of type.",
+    "hero": {
+      "headline": "Hit quota without the busywork.",
+      "subtitle": "Stop typing follow-ups, updating Salesforce, and writing prep notes. Harmony does it after every call, while you're already dialing the next one."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "LinkedIn",
+        "src": "/assets/integrations/icon/linkedin.webp"
+      },
+      {
+        "name": "Otter",
+        "src": "/assets/integrations/icon/otter.webp"
+      },
+      {
+        "name": "Granola",
+        "src": "/assets/integrations/icon/granola.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a seller. You're four jobs.",
+      "intro": "Email writer. CRM updater. Note taker. Pipeline forecaster. Selling is the part you got into this for, everything else just lands on you.",
+      "items": [
+        "Notes from yesterday's call you never wrote up.",
+        "Twenty follow-up emails that should've gone out at 5pm.",
+        "A CRM that'll bite you at the next QBR.",
+        "Prospects going cold while you're in your next demo."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You sell. Harmony does everything around it.",
+      "body": "Picture this: every call ends with the follow-up drafted, the CRM updated, the next-step email queued, the at-risk deals flagged. Harmony does all of it, in the background, while you sell."
+    },
+    "personas": {
+      "eyebrow": "Built for sellers like you",
+      "headline": "Whatever you sell, however you sell it.",
+      "items": [
+        "Account Executives",
+        "SDRs",
+        "BDRs",
+        "Sales Engineers",
+        "Channel Partners",
+        "Solo Sellers"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your follow-ups",
+        "title": "No more 'I'll send that tomorrow.'",
+        "items": [
+          "Draft follow-up emails after every call",
+          "Send next-step proposals",
+          "Re-engage stalled deals",
+          "Time-zone aware reminders"
+        ]
+      },
+      {
+        "eyebrow": "Your CRM",
+        "title": "Updated, automatically.",
+        "items": [
+          "Auto-log calls and emails",
+          "Update deal stages",
+          "Capture commitments and next steps",
+          "Keep contacts fresh"
+        ]
+      },
+      {
+        "eyebrow": "Your call prep",
+        "title": "Show up ready, every time.",
+        "items": [
+          "Pre-call account research",
+          "Generate pre-call briefs",
+          "Surface buying signals",
+          "Talk-track suggestions"
+        ]
+      },
+      {
+        "eyebrow": "Your pipeline",
+        "title": "Forecasts you can trust.",
+        "items": [
+          "Track commitments across deals",
+          "Surface at-risk opportunities",
+          "Generate weekly pipeline summaries",
+          "Identify next-best actions"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a seller to close. Start closing again.",
+      "body": "Customized to your CRM, your sales engagement tools, and your call recorder. Live in two weeks, then we keep tuning it with you, so the only thing you spend time on is closing."
+    }
+  },
+  "engineering": {
+    "title": "Harmony for Engineering Leaders",
+    "shortLabel": "Engineering Leaders",
+    "tagline": "Lead engineering, not standups.",
+    "metaDescription": "Lead engineering, not standups. Harmony pulls status from Slack, Jira, and GitHub, drafts your reports, and preps your 1:1s, so you can focus on shipping.",
+    "hero": {
+      "headline": "Lead engineering, not standups.",
+      "subtitle": "Stop running five status standups and twelve 1:1 prep docs a week. Harmony pulls the status from Slack, Jira, and GitHub, drafts the reports, and preps every 1:1, while your team ships."
+    },
+    "integrations": [
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "GitHub",
+        "src": "/assets/integrations/icon/github.webp"
+      },
+      {
+        "name": "GitLab",
+        "src": "/assets/integrations/icon/svg/gitlab.svg"
+      },
+      {
+        "name": "Jira",
+        "src": "/assets/integrations/icon/jira.webp"
+      },
+      {
+        "name": "Linear",
+        "src": "/assets/integrations/icon/svg/linear.svg"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Confluence",
+        "src": "/assets/integrations/icon/confluence.webp"
+      },
+      {
+        "name": "PagerDuty",
+        "src": "/assets/integrations/icon/pagerduty.webp"
+      },
+      {
+        "name": "Sentry",
+        "src": "/assets/integrations/icon/svg/sentry.svg"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a leader. You're four jobs.",
+      "intro": "Status reporter. Standup runner. 1:1 prepper. Cross-team translator. Technical leadership is what you got promoted for, everything else just lands on you.",
+      "items": [
+        "Five status standups across teams every week.",
+        "Sprint planning that takes longer than the sprint.",
+        "Incident retros buried in Slack threads.",
+        "1:1 prep when you've got twelve reports."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "Your team builds. Harmony does everything around it.",
+      "body": "Picture this: every Monday the standup summary is already in your inbox, every 1:1 brief is ready before the meeting, every release note drafts itself from merged PRs. Harmony does all of it, in the background, while your team builds."
+    },
+    "personas": {
+      "eyebrow": "Built for engineering leaders like you",
+      "headline": "Whatever you ship, however you ship it.",
+      "items": [
+        "CTOs",
+        "VPs of Engineering",
+        "Engineering Managers",
+        "Tech Leads",
+        "Platform Leads",
+        "Staff Engineers"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your team velocity",
+        "title": "Track the work without nagging.",
+        "items": [
+          "Daily standup summaries from Slack, Jira, and GitHub",
+          "Sprint planning prep",
+          "Track stale tickets",
+          "Surface blockers automatically"
+        ]
+      },
+      {
+        "eyebrow": "Your reporting",
+        "title": "Status updates that write themselves.",
+        "items": [
+          "Generate weekly engineering reports",
+          "Roll up team progress for execs",
+          "Draft release notes from PRs",
+          "Compile incident retros"
+        ]
+      },
+      {
+        "eyebrow": "Your 1:1s",
+        "title": "Walk in prepared.",
+        "items": [
+          "Pre-1:1 briefs per report",
+          "Track action items across syncs",
+          "Surface what changed since last 1:1",
+          "Career growth check-ins"
+        ]
+      },
+      {
+        "eyebrow": "Your cross-team work",
+        "title": "Stay aligned without meetings.",
+        "items": [
+          "Auto-sync to product and design",
+          "Draft RFC summaries",
+          "Track dependencies",
+          "Surface decisions that affect your team"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a leader to ship great software. Start shipping it again.",
+      "body": "Customized to your Slack, your Jira, your GitHub, and your reporting cadence. Live in two weeks, then we keep tuning it with you, so you can lead engineering instead of running standups."
+    }
+  },
+  "marketers": {
+    "title": "Harmony for Marketers",
+    "shortLabel": "Marketers",
+    "tagline": "Run marketing without running on empty.",
+    "metaDescription": "Run marketing without running on empty. Harmony drafts your briefs, manages your content calendar, chases your vendors, and writes your reports.",
+    "hero": {
+      "headline": "Run marketing without running on empty.",
+      "subtitle": "Stop spending Friday writing the dashboard nobody opens. Harmony drafts the briefs, schedules the content, chases the agency, and rolls up the numbers, while you do the strategy you got hired for."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Asana",
+        "src": "/assets/integrations/icon/asana.webp"
+      },
+      {
+        "name": "Figma",
+        "src": "/assets/integrations/icon/figma.webp"
+      },
+      {
+        "name": "PostHog",
+        "src": "/assets/integrations/icon/posthog.webp"
+      },
+      {
+        "name": "Mixpanel",
+        "src": "/assets/integrations/icon/mixpanel.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Google Ads",
+        "src": "/assets/integrations/icon/googleads.png"
+      },
+      {
+        "name": "Ahrefs",
+        "src": "/assets/integrations/icon/ahrefs.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a marketer. You're five jobs.",
+      "intro": "Brief writer. Approval chaser. Reporting machine. Vendor manager. Strategy is what you got hired for, everything else just lands on you.",
+      "items": [
+        "A brief inbox at one thousand unread.",
+        "A content calendar that's three weeks behind.",
+        "Agency Slacks needing 'just a quick approval.'",
+        "Reports nobody opens but everyone wants."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You strategize. Harmony does everything around it.",
+      "body": "Picture this: every campaign brief drafted before the kickoff, every social post scheduled a week ahead, every weekly performance report compiled and explained. Harmony does all of it, in the background, while you build the brand."
+    },
+    "personas": {
+      "eyebrow": "Built for marketers like you",
+      "headline": "Whatever you market, however you measure it.",
+      "items": [
+        "CMOs",
+        "Growth Marketers",
+        "Content Marketers",
+        "Brand Marketers",
+        "Performance Marketers",
+        "Lifecycle Marketers"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your campaigns",
+        "title": "Briefs to launch, faster.",
+        "items": [
+          "Draft campaign briefs",
+          "Track launch checklists",
+          "Coordinate across teams",
+          "Generate launch retrospectives"
+        ]
+      },
+      {
+        "eyebrow": "Your content",
+        "title": "A calendar that runs itself.",
+        "items": [
+          "Plan the content calendar",
+          "Draft outlines from briefs",
+          "Schedule social posts",
+          "Repurpose across channels"
+        ]
+      },
+      {
+        "eyebrow": "Your vendors",
+        "title": "Approvals and chasing, handled.",
+        "items": [
+          "Track agency deliverables",
+          "Auto-draft approval emails",
+          "Manage vendor invoices",
+          "Maintain agency relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your reporting",
+        "title": "Numbers that explain themselves.",
+        "items": [
+          "Generate weekly performance reports",
+          "Compile campaign retros",
+          "Surface what's working",
+          "Auto-sync from analytics tools"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a marketer to do creative work. Start doing it again.",
+      "body": "Customized to your stack, your channels, and your reporting cadence. Live in two weeks, then we keep tuning it with you, so you can do creative work instead of chasing approvals."
+    }
+  },
+  "healthcare": {
+    "title": "Harmony for Healthcare Professionals",
+    "shortLabel": "Healthcare",
+    "tagline": "Spend more time with patients, less on paperwork.",
+    "metaDescription": "Spend more time with patients, less on paperwork. Harmony handles patient messages, charting drafts, intake, and front-desk admin, so you can focus on care.",
+    "hero": {
+      "headline": "Spend more time with patients, less on paperwork.",
+      "subtitle": "Stop charting until 9pm and chasing intake forms in the morning. Harmony drafts the notes, runs the intake, and handles the front desk, while you actually see patients."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Teams",
+        "src": "/assets/integrations/icon/microsoft_teams.webp"
+      },
+      {
+        "name": "WhatsApp",
+        "src": "/assets/integrations/icon/svg/whatsapp.svg"
+      },
+      {
+        "name": "iMessage",
+        "src": "/assets/integrations/icon/imessage.webp"
+      },
+      {
+        "name": "Phone",
+        "src": "/assets/integrations/icon/phone_apple.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a clinician. You're four jobs.",
+      "intro": "Receptionist. Charter. Insurance navigator. Inbox responder. Patient care is what you trained for, everything else just lands on you.",
+      "items": [
+        "Patient messages piling up between sessions.",
+        "Charting that eats your evenings.",
+        "Insurance and intake forms drowning the front desk.",
+        "Follow-ups falling through after every appointment."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You treat. Harmony does everything around it.",
+      "body": "Picture this: every patient message triaged in minutes, every session note drafted from the recording, every intake form completed before the first visit, every appointment confirmed without a phone call. Harmony does all of it, in the background, while you treat."
+    },
+    "personas": {
+      "eyebrow": "Built for clinicians like you",
+      "headline": "Whatever you practice, however you practice it.",
+      "items": [
+        "Solo Practitioners",
+        "Therapists",
+        "Clinic Owners",
+        "Specialists",
+        "Allied Health",
+        "Integrative Practices"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they call the next clinic.",
+        "items": [
+          "Respond to patient inquiries quickly",
+          "Auto-qualify intake fit",
+          "Book the first visit while urgency is high",
+          "Re-engage no-replies with care"
+        ]
+      },
+      {
+        "eyebrow": "Your patient communications",
+        "title": "Patients feel taken care of.",
+        "items": [
+          "Respond to patient messages faster",
+          "Schedule and confirm appointments",
+          "Send appointment reminders",
+          "Maintain patient relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your charting",
+        "title": "Notes ready for your review.",
+        "items": [
+          "Draft session notes from recordings",
+          "Generate treatment summaries",
+          "Capture next-step plans",
+          "Maintain compliant records"
+        ]
+      },
+      {
+        "eyebrow": "Your intake",
+        "title": "New patients, ready when they walk in.",
+        "items": [
+          "Pre-qualify inbound inquiries",
+          "Collect intake forms",
+          "Verify insurance",
+          "Schedule first visits"
+        ]
+      },
+      {
+        "eyebrow": "Your front desk",
+        "title": "The admin work, off your plate.",
+        "items": [
+          "Process referrals and prior authorizations",
+          "Generate billing summaries",
+          "Document processing",
+          "Search across charts and history"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a clinician to care for people. Start caring again.",
+      "body": "Customized to your EHR, your scheduling system, and your intake forms, with HIPAA-compliant deployments where required. Live in two weeks, then we keep tuning it with you, so you can spend the day with patients, not paperwork."
+    }
+  },
+  "consultants": {
+    "title": "Harmony for Consultants",
+    "shortLabel": "Consultants",
+    "tagline": "Run your consulting practice on autopilot.",
+    "metaDescription": "Run your consulting practice on autopilot. Harmony handles client communication, deliverable drafts, scheduling, and billing admin, so you can focus on the advisory work.",
+    "hero": {
+      "headline": "Run your consulting practice on autopilot.",
+      "subtitle": "Stop spending Sunday on the deck for Monday. Harmony drafts the deliverables, schedules the check-ins, tracks your time, and chases the no-replies, while you do the actual advisory work."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Google Docs",
+        "src": "/assets/integrations/icon/google_docs.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Asana",
+        "src": "/assets/integrations/icon/asana.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a consultant. You're four jobs.",
+      "intro": "Project lead. Account manager. New business. Bookkeeper. The expertise is what clients pay for, everything else just lands on you.",
+      "items": [
+        "Client check-ins falling through between projects.",
+        "Deliverable drafts started ten times this month.",
+        "Time tracking you swear you'll catch up on.",
+        "Proposal docs eating your weekends."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You advise. Harmony does everything around it.",
+      "body": "Picture this: every client call ends with the recap drafted, every deliverable starts itself before you open the doc, every weekly progress update goes out without you typing it. Harmony does all of it, in the background, while you advise."
+    },
+    "personas": {
+      "eyebrow": "Built for consultants like you",
+      "headline": "Whatever you advise on, however you bill it.",
+      "items": [
+        "Solo Consultants",
+        "Boutique Firms",
+        "Strategy Advisors",
+        "Management Consultants",
+        "Tech Consultants",
+        "Independent Specialists"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they book the next consultant.",
+        "items": [
+          "Respond to inbound inquiries within minutes",
+          "Auto-qualify with discovery questions",
+          "Book the intro call while interest is hot",
+          "Re-engage no-replies before they go cold"
+        ]
+      },
+      {
+        "eyebrow": "Your client communications",
+        "title": "Clients feel looked after.",
+        "items": [
+          "Respond to client requests faster",
+          "Send weekly progress updates",
+          "Schedule check-ins",
+          "Maintain client relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your deliverables",
+        "title": "Drafts ready for your edit.",
+        "items": [
+          "Draft client deliverables",
+          "Generate executive summaries",
+          "Compile meeting notes",
+          "Share project artifacts"
+        ]
+      },
+      {
+        "eyebrow": "Your new business",
+        "title": "A pipeline that runs itself.",
+        "items": [
+          "Auto-draft proposal emails",
+          "Schedule discovery calls",
+          "Auto-update CRM",
+          "Re-engage past clients"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "Time, billing, and admin, off your plate.",
+        "items": [
+          "Track time and billing",
+          "Generate invoices",
+          "Document processing",
+          "Search across projects"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a consultant to advise. Start advising again.",
+      "body": "Customized to your CRM, your billing, and your delivery tools. Live in two weeks, then we keep tuning it with you, so you can take back the weekends you usually lose to client work."
+    }
+  },
+  "staffing-firms": {
+    "title": "Harmony for Staffing Firms",
+    "shortLabel": "Staffing Firms",
+    "tagline": "Run your staffing firm on autopilot.",
+    "metaDescription": "Run your staffing firm on autopilot. Harmony handles candidate outreach, client comms, interview scheduling, and the admin between placements, so your recruiters spend their time placing.",
+    "hero": {
+      "headline": "Run your staffing firm on autopilot.",
+      "subtitle": "Stop losing candidates to faster recruiters. Harmony screens inbound, drafts outreach, schedules panels across time zones, and updates your ATS, while your team makes placements."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "LinkedIn",
+        "src": "/assets/integrations/icon/linkedin.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a recruiter. You're four jobs.",
+      "intro": "Sourcer. Scheduler. Account manager. Admin. Placing great people is what you got into this for, everything else just lands on you.",
+      "items": [
+        "Candidate threads going cold while you're on a hiring manager call.",
+        "Interview scheduling across three time zones and four panels.",
+        "Client updates piling up after every shortlist.",
+        "Submittals, contracts, and timesheets, everywhere."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You place. Harmony does everything around it.",
+      "body": "Picture this: every inbound CV scored within minutes, every outreach personalized and sent, every interview panel scheduled across time zones without a back-and-forth. Harmony does all of it, in the background, while your team places."
+    },
+    "personas": {
+      "eyebrow": "Built for recruiters like you",
+      "headline": "Whoever you place, however you place them.",
+      "items": [
+        "Boutique Recruiters",
+        "Staffing Agencies",
+        "Executive Search",
+        "Tech Recruiters",
+        "Healthcare Staffing",
+        "Contract Specialists"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your candidates",
+        "title": "Sourcing and outreach, on autopilot.",
+        "items": [
+          "Source from inbound and lists",
+          "Draft personalized outreach",
+          "Re-engage past candidates",
+          "Triage applicant inboxes"
+        ]
+      },
+      {
+        "eyebrow": "Your clients",
+        "title": "Hiring managers feel looked after.",
+        "items": [
+          "Send weekly shortlist updates",
+          "Schedule interview panels",
+          "Auto-draft submittal emails",
+          "Maintain client relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your scheduling",
+        "title": "Interview coordination, hands-off.",
+        "items": [
+          "Schedule across panels",
+          "Handle time zone juggling",
+          "Send reminders",
+          "Reschedule without back-and-forth"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "Submittals, contracts, and timesheets, handled.",
+        "items": [
+          "Track candidate stages in your ATS",
+          "Draft contracts and offers",
+          "Process timesheets",
+          "Generate placement reports"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You started a staffing firm to make great matches. Start matching again.",
+      "body": "Customized to your ATS, your client portal, and your placement workflow. Live in two weeks, then we keep tuning it with you, so your recruiters spend their day placing, not coordinating."
+    }
+  },
+  "mortgage-brokers": {
+    "title": "Harmony for Mortgage Brokers",
+    "shortLabel": "Mortgage Brokers",
+    "tagline": "Run your mortgage practice on autopilot.",
+    "metaDescription": "Run your mortgage practice on autopilot. Harmony handles client follow-ups, lender comms, document collection, and rate updates, so you can focus on closing loans.",
+    "hero": {
+      "headline": "Run your mortgage practice on autopilot.",
+      "subtitle": "Stop losing pre-approval leads to the bank down the street. Harmony replies in minutes, qualifies the borrower, chases the docs, and updates your realtor partners, while you close loans."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "WhatsApp",
+        "src": "/assets/integrations/icon/svg/whatsapp.svg"
+      },
+      {
+        "name": "Phone",
+        "src": "/assets/integrations/icon/phone_apple.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      },
+      {
+        "name": "Salesforce",
+        "src": "/assets/integrations/icon/salesforce.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just a broker. You're four jobs.",
+      "intro": "Loan officer. Document chaser. Rate watcher. Realtor liaison. Closing loans is what you got licensed for, everything else just lands on you.",
+      "items": [
+        "A pre-approval lead at 11pm you forgot to reply to.",
+        "Chasing borrowers for the same documents three times.",
+        "Lender portals you have to check separately every morning.",
+        "Realtor partner updates piling up after every listing."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You close. Harmony does everything around it.",
+      "body": "Picture this: every pre-approval inquiry replied to in 60 seconds, every borrower nudged for the missing W-2, every realtor partner updated on the closing pipeline. Harmony does all of it, in the background, while you fund."
+    },
+    "personas": {
+      "eyebrow": "Built for brokers like you",
+      "headline": "Whatever you finance, however you fund it.",
+      "items": [
+        "Solo Brokers",
+        "Mortgage Teams",
+        "Brokerage Owners",
+        "Loan Officers",
+        "Refinance Specialists",
+        "Commercial Brokers"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they walk into the bank.",
+        "items": [
+          "Respond to pre-approval inquiries instantly",
+          "Auto-qualify borrower fit",
+          "Book the discovery call while urgency is high",
+          "Re-engage cold leads before they refinance elsewhere"
+        ]
+      },
+      {
+        "eyebrow": "Your leads",
+        "title": "Never lose a pre-approval inquiry.",
+        "items": [
+          "Respond to inquiries instantly",
+          "Qualify borrowers automatically",
+          "Schedule discovery calls",
+          "Re-engage cold leads"
+        ]
+      },
+      {
+        "eyebrow": "Your borrowers",
+        "title": "Documents in, on time.",
+        "items": [
+          "Auto-request docs by stage",
+          "Send reminders for missing items",
+          "Verify completeness",
+          "Maintain status updates"
+        ]
+      },
+      {
+        "eyebrow": "Your lenders",
+        "title": "Stay on top of every file.",
+        "items": [
+          "Track files across lender portals",
+          "Surface conditions and updates",
+          "Draft status emails",
+          "Compare rate sheets"
+        ]
+      },
+      {
+        "eyebrow": "Your partners",
+        "title": "Realtors and past clients stay in the loop.",
+        "items": [
+          "Send realtor partner updates",
+          "Share weekly closing pipeline",
+          "Generate marketing assets",
+          "Maintain post-close relationships"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became a broker to close loans. Start closing again.",
+      "body": "Customized to your LOS, your lender portals, and your CRM. Live in two weeks, then we keep tuning it with you, so you can spend the day closing loans instead of chasing paperwork."
+    }
+  }
+}
