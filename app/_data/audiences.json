@@ -1818,5 +1818,142 @@
       "headline": "You became an accountant to advise. Start advising again.",
       "body": "Customized to your ledger, your tax software, and your client portal. Live in two weeks, then we keep tuning it with you, so you can take back the hours that aren't advisory today."
     }
+  },
+  "human-resources": {
+    "title": "Harmony for Human Resources",
+    "shortLabel": "Human Resources",
+    "tagline": "Run HR without running on empty.",
+    "metaDescription": "Run HR without running on empty. Harmony schedules interviews, reschedules without back-and-forth, answers employee FAQs, and runs onboarding, so you can focus on people.",
+    "hero": {
+      "headline": "Run HR without running on empty.",
+      "subtitle": "Stop juggling four-person interview panels, the same benefits question fifty times, and onboarding handoffs that go cold. Harmony schedules it, reschedules it, answers it, and runs it, while you do the people work you got into HR for."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Teams",
+        "src": "/assets/integrations/icon/microsoft_teams.webp"
+      },
+      {
+        "name": "LinkedIn",
+        "src": "/assets/integrations/icon/linkedin.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Confluence",
+        "src": "/assets/integrations/icon/confluence.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just in HR. You're five jobs.",
+      "intro": "Recruiter coordinator. Onboarding lead. Policy desk. Benefits help line. Employee relations. People work is what you got into this for, everything else just lands on you.",
+      "items": [
+        "Four-person interview panels across three time zones.",
+        "The same benefits question, fifty times a week.",
+        "A candidate dropped because the reschedule never went out.",
+        "Onboarding handoffs going cold between IT, payroll, and the manager."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You support people. Harmony does everything around it.",
+      "body": "Picture this: every interview scheduled across the panel in one pass, every reschedule handled before anyone notices, every FAQ answered in seconds, every new hire onboarded without a single dropped task. Harmony does all of it, in the background, while you do the people work."
+    },
+    "personas": {
+      "eyebrow": "Built for HR teams like yours",
+      "headline": "However you hire, onboard, and support.",
+      "items": [
+        "People Leaders",
+        "HR Business Partners",
+        "Recruiters",
+        "Talent Acquisition",
+        "People Ops",
+        "Onboarding Specialists"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Your interviews",
+        "title": "Panels scheduled in one pass.",
+        "items": [
+          "Schedule across panels and time zones",
+          "Handle reschedules without back-and-forth",
+          "Send interview reminders and prep notes",
+          "Coordinate debriefs after the loop"
+        ]
+      },
+      {
+        "eyebrow": "Your FAQs",
+        "title": "Policy and benefits questions, answered in seconds.",
+        "items": [
+          "Answer policy and benefits FAQs in Slack or Teams",
+          "Surface the right doc instantly",
+          "Escalate the cases that actually need a human",
+          "Keep answers current as policy changes"
+        ]
+      },
+      {
+        "eyebrow": "Your onboarding",
+        "title": "New hires, ready on day one.",
+        "items": [
+          "Trigger IT, payroll, and manager handoffs",
+          "Track onboarding checklists per hire",
+          "Send day-one and week-one comms",
+          "Schedule onboarding 1:1s and reviews"
+        ]
+      },
+      {
+        "eyebrow": "Your employee comms",
+        "title": "Announcements and check-ins, on time.",
+        "items": [
+          "Draft company-wide announcements",
+          "Send engagement surveys and chase responses",
+          "Run anniversary and review reminders",
+          "Maintain people relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "The HR busywork, off your plate.",
+        "items": [
+          "Process PTO and leave requests",
+          "Generate offer letters and contracts",
+          "Document processing",
+          "Enterprise search across people files"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You got into HR for people. Get back to them.",
+      "body": "Customized to your ATS, your HRIS, and your comms stack. Live in two weeks, then we keep tuning it with you, so your day goes to people work instead of coordination."
+    }
   }
 }
