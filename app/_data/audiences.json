@@ -1681,5 +1681,142 @@
       "headline": "You became a broker to close loans. Start closing again.",
       "body": "Customized to your LOS, your lender portals, and your CRM. Live in two weeks, then we keep tuning it with you, so you can spend the day closing loans instead of chasing paperwork."
     }
+  },
+  "accounting-firms": {
+    "title": "Harmony for Accounting Firms",
+    "shortLabel": "Accounting Firms",
+    "tagline": "Run your accounting firm on autopilot.",
+    "metaDescription": "Run your accounting firm on autopilot. Harmony handles client comms, source-doc chasing, workpaper prep, and billing admin, so your team focuses on advisory work.",
+    "hero": {
+      "headline": "Run your accounting firm on autopilot.",
+      "subtitle": "Stop chasing source docs, drafting the same engagement letter, and rebuilding workpapers at midnight. Harmony does it in seconds, while you advise, close the books, or finally have a weekend."
+    },
+    "integrations": [
+      {
+        "name": "Gmail",
+        "src": "/assets/integrations/icon/gmail.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
+      },
+      {
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Sheets",
+        "src": "/assets/integrations/icon/google_sheets.webp"
+      },
+      {
+        "name": "Google Docs",
+        "src": "/assets/integrations/icon/google_docs.webp"
+      },
+      {
+        "name": "Google Drive",
+        "src": "/assets/integrations/icon/google_drive.webp"
+      },
+      {
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
+      },
+      {
+        "name": "Teams",
+        "src": "/assets/integrations/icon/microsoft_teams.webp"
+      },
+      {
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
+      }
+    ],
+    "pain": {
+      "eyebrow": "Sound familiar?",
+      "headline": "You're not just an accountant. You're four jobs.",
+      "intro": "Bookkeeper. Tax preparer. Client manager. Compliance officer. Advising clients is what they pay you for, everything else just lands on you.",
+      "items": [
+        "A client email at 9pm about a missing receipt.",
+        "Chasing the same source documents three times before the deadline.",
+        "Engagement letters rewritten for every new client.",
+        "Year-end work eating your weekends."
+      ]
+    },
+    "turn": {
+      "eyebrow": "What if it ran itself?",
+      "headline": "You advise. Harmony does everything around it.",
+      "body": "Picture this: a new client inquiry hits and the intake is qualified before you call back. A return wraps and the client letter is already drafted. A receipt lands in the inbox and it's categorized before you open it. Harmony does all of it, in the background, while you advise."
+    },
+    "personas": {
+      "eyebrow": "Built for firms like yours",
+      "headline": "Whatever you file, however you bill it.",
+      "items": [
+        "Solo CPAs",
+        "Small Firms",
+        "Bookkeeping Practices",
+        "Tax Preparers",
+        "Audit Firms",
+        "Advisory Practices"
+      ]
+    },
+    "features": [
+      {
+        "eyebrow": "Speed to lead",
+        "title": "Reply before they call the next firm.",
+        "items": [
+          "Respond to inquiries within minutes, day or night",
+          "Auto-qualify with intake questions",
+          "Book the discovery call while urgency is high",
+          "Re-engage no-replies before they engage elsewhere"
+        ]
+      },
+      {
+        "eyebrow": "Your client communications",
+        "title": "Clients stay in the loop, automatically.",
+        "items": [
+          "Respond to client questions faster",
+          "Schedule planning calls",
+          "Send filing and deadline reminders",
+          "Maintain year-round relationships"
+        ]
+      },
+      {
+        "eyebrow": "Your bookkeeping",
+        "title": "Books that close themselves.",
+        "items": [
+          "Categorize transactions automatically",
+          "Reconcile accounts on schedule",
+          "Flag anomalies for review",
+          "Draft monthly close reports"
+        ]
+      },
+      {
+        "eyebrow": "Your tax and audit work",
+        "title": "Workpapers, ready for your review.",
+        "items": [
+          "Chase source docs by client and stage",
+          "Organize workpapers and supporting files",
+          "Draft client letters and engagement docs",
+          "Track filing and audit deadlines"
+        ]
+      },
+      {
+        "eyebrow": "Your admin work",
+        "title": "Billing, invoicing, and admin, off your plate.",
+        "items": [
+          "Generate invoices from time tracked",
+          "Track billable hours per engagement",
+          "Document processing",
+          "Enterprise search across client files"
+        ]
+      }
+    ],
+    "closing": {
+      "eyebrow": "Get started",
+      "headline": "You became an accountant to advise. Start advising again.",
+      "body": "Customized to your ledger, your tax software, and your client portal. Live in two weeks, then we keep tuning it with you, so you can take back the hours that aren't advisory today."
+    }
   }
 }
