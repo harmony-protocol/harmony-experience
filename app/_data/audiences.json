@@ -790,11 +790,11 @@
   "sales": {
     "title": "Harmony for Sales Reps",
     "shortLabel": "Sales Reps",
-    "tagline": "Hit quota without the busywork.",
-    "metaDescription": "Hit quota without the busywork. Harmony drafts your follow-ups, updates your CRM, and preps you for every call, so you can sell instead of type.",
+    "tagline": "Sell more, type less.",
+    "metaDescription": "Sell more, type less. Harmony drafts your follow-ups, updates your CRM, and preps you for every call, so your day goes to selling instead of admin.",
     "hero": {
-      "headline": "Hit quota without the busywork.",
-      "subtitle": "Stop typing follow-ups, updating Salesforce, and writing prep notes. Harmony does it after every call, while you're already dialing the next one."
+      "headline": "Sell more, type less.",
+      "subtitle": "Stop spending two-thirds of your day on follow-ups, CRM hygiene, and prep notes. Harmony does it after every call, while you're already dialing the next one."
     },
     "integrations": [
       {

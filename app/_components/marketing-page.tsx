@@ -55,7 +55,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2
-      className="max-w-2xl font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.15] tracking-[-0.025em] md:text-4xl"
+      className="max-w-2xl pb-1 font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.2] tracking-[-0.025em] md:text-4xl"
       style={{
         backgroundImage:
           "linear-gradient(115deg,#fafaf9 0%,#d6d3d1 34%,#a1a1aa 58%,#e7e5e4 82%,#71717a 100%)",
@@ -100,7 +100,7 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
         {/* 1. HERO */}
         <section>
           <h1
-            className="max-w-3xl font-['New_York',Georgia,ui-serif,serif] text-5xl font-medium leading-[1.05] tracking-[-0.035em] md:text-6xl"
+            className="max-w-3xl pb-2 font-['New_York',Georgia,ui-serif,serif] text-5xl font-medium leading-[1.1] tracking-[-0.035em] md:text-6xl"
             style={{
               backgroundImage:
                 "linear-gradient(115deg,#fafaf9 0%,#d6d3d1 34%,#a1a1aa 58%,#e7e5e4 82%,#71717a 100%)",

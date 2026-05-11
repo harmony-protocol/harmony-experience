@@ -18,7 +18,7 @@ export default function Home() {
         style={{ maxWidth: 1224, width: "97%" }}
       >
         <h1
-          className="max-w-3xl font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.15] tracking-[-0.025em] md:text-4xl"
+          className="max-w-3xl pb-1 font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.2] tracking-[-0.025em] md:text-4xl"
           style={{
             backgroundImage:
               "linear-gradient(115deg,#fafaf9 0%,#d6d3d1 34%,#a1a1aa 58%,#e7e5e4 82%,#71717a 100%)",
@@ -35,7 +35,7 @@ export default function Home() {
           {entries.map(([slug, audience]) => (
             <li
               key={slug}
-              className="border-b border-zinc-800/80 last:border-b-0"
+              className="border-b border-zinc-800/80"
             >
               <Link
                 href={`/${slug}`}
