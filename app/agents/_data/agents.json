@@ -138,37 +138,37 @@
     "diagram": "graph TD\n  A[You Send or Receive an Email/Slack Message] --> B[Start Tracking]\n  B --> C[Wait for Reply]\n  C --> D{Reply Received?}\n  D -- Yes --> E[Mark Resolved]\n  D -- No --> F[Draft Follow-up in Your Tone]\n  F --> G[Send Follow-up]\n  G --> C\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F,G action"
   },
   {
-    "id": "support",
-    "slug": "remy",
-    "title": "Support Agent",
-    "name": "Remy",
-    "description": "Handles support requests and resolves issues on your behalf",
-    "mascot": "/assets/sukie/agent-mascots/glowing-blue.png",
+    "id": "pdf-expert",
+    "slug": "paige",
+    "title": "PDF Expert Agent",
+    "name": "Paige",
+    "description": "Reads, summarizes, and answers questions about your PDFs",
+    "mascot": "/assets/sukie/agent-mascots/bot-sukie.png",
     "benefits": [
-      "Respond to support tickets instantly, 24/7",
-      "Reduce resolution time by surfacing relevant solutions",
-      "Scale your support without growing headcount"
+      "Skip the hundred-page read and get the parts that matter",
+      "Ask any question and get an answer grounded in the source",
+      "Compare contracts, proposals, and reports side by side in seconds"
     ],
     "features": [
-      "Responds to incoming support tickets and messages",
-      "Diagnoses issues from user descriptions",
-      "Finds solutions from your knowledge base and docs",
-      "Escalates complex issues to the right team member",
-      "Tracks resolution progress and follows up"
+      "Summarizes long PDFs into the points that actually matter",
+      "Answers questions about any PDF with cited passages",
+      "Compares multiple PDFs and highlights what changed",
+      "Finds clauses, figures, and sections across a stack of files",
+      "Pulls quotes and tables ready to drop into your reply or doc"
     ],
     "integrations": [
       "gmail",
       "slack",
-      "jira",
-      "hubspot",
-      "notion"
+      "notion",
+      "claude"
     ],
     "roles": [
-      "Service Business",
-      "SaaS Team",
-      "Clinic"
+      "Lawyer",
+      "Consultant",
+      "VC",
+      "Researcher"
     ],
-    "diagram": "graph TD\n  A[Support Ticket Arrives] --> B[Understand the Issue]\n  B --> C[Search Knowledge Base]\n  C --> D{Solution Found?}\n  D -- Yes --> E[Send Resolution]\n  D -- No --> F[Escalate to Team]\n  E --> G[Track Until Resolved]\n  F --> G\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  classDef alt fill:#ec4899,stroke:#ec4899,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E success\n  class F alt\n  class G success"
+    "diagram": "graph TD\n  A[PDF Arrives or You Upload One] --> B[Read and Understand]\n  B --> C[Index Sections and Citations]\n  C --> D{What Do You Need?}\n  D -- Summary --> E[Generate Clean Summary]\n  D -- Question --> F[Answer with Citations]\n  D -- Compare --> G[Highlight Differences]\n  E --> H[Deliver to You]\n  F --> H\n  G --> H\n  classDef input fill:#0d9488,stroke:#0d9488,color:#fff,rx:8\n  classDef process fill:#3b82f6,stroke:#3b82f6,color:#fff,rx:8\n  classDef decision fill:#f59e0b,stroke:#f59e0b,color:#fff\n  classDef action fill:#8b5cf6,stroke:#8b5cf6,color:#fff,rx:8\n  classDef success fill:#22c55e,stroke:#22c55e,color:#fff,rx:8\n  class A input\n  class B,C process\n  class D decision\n  class E,F,G action\n  class H success"
   },
   {
     "id": "daily-reports",
@@ -242,7 +242,7 @@
     "slug": "ally",
     "title": "Relationships Agent",
     "name": "Ally",
-    "description": "Finds mutual connections and helps you reach the right people",
+    "description": "Keeps your network warm with timely check-ins and thoughtful touchpoints",
     "mascot": "/assets/sukie/agent-mascots/pink-unicorn.png",
     "benefits": [
       "Unlock warm introductions through your existing network",
