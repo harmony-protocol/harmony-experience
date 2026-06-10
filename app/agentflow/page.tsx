@@ -11,18 +11,19 @@ import {
   Globe,
   Landmark,
   Lock,
+  MessagesSquare,
   Monitor,
   Repeat,
   Rocket,
   Server,
   ShoppingBag,
+  Sparkles,
   Users,
+  UsersRound,
 } from "lucide-react";
 import { AgentflowNav } from "./_components/nav";
 import { Solutions } from "./_components/solutions";
 import { Features } from "./_components/features";
-import { PixelStrip } from "./_components/pixel-strip";
-import { Process } from "./_components/process";
 import { Comparison } from "./_components/comparison";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
@@ -343,6 +344,24 @@ const whatWeDo = [
   },
 ];
 
+const extendedTeam = [
+  {
+    icon: <UsersRound className="h-5 w-5" strokeWidth={1.6} />,
+    title: "An extension of your team",
+    body: "We work like an in-house team, not a vendor you have to chase. Your goals are our goals.",
+  },
+  {
+    icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Top-tier service",
+    body: "Senior people on your account and fast responses. No ticket queues, no junior handoffs.",
+  },
+  {
+    icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.6} />,
+    title: "We work where you work",
+    body: "We collaborate with you in Slack and Trello, so you always see what is happening and what is next.",
+  },
+];
+
 const securityCards = [
   {
     icon: <Lock className="h-5 w-5" strokeWidth={1.6} />,
@@ -522,8 +541,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> automate work operations
           </Heading>
           <p className="mt-6 max-w-md text-balance text-base leading-7 text-white/55 md:text-lg md:leading-8">
-            We help B2B founders and agency owners automate the messy daily
-            work with personalized AI systems
+            We help B2B founders and agency owners automate messy daily work
+            and scale faster with AI systems
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton />
@@ -640,7 +659,7 @@ export default function AgentflowPage() {
       <Band id="results">
         <Eyebrow>What We Do</Eyebrow>
         <div className="mt-5">
-          <Heading>What we do for you</Heading>
+          <Heading>How we help you scale faster</Heading>
         </div>
         <Sub className="mt-5">
           Every system we build comes back to the same three outcomes for
@@ -689,48 +708,35 @@ export default function AgentflowPage() {
         </div>
       </Band>
 
-      {/* 4. WHAT WE BUILD (black) */}
+      {/* 4. PROCESS (black) */}
       <Band
-        id="solutions"
+        id="process"
         dark
         bgImage="/assets/green-animation-bg.png"
       >
-        <Eyebrow dark>What We Build</Eyebrow>
+        <Eyebrow dark>Process</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Agents, workflows, and dashboards</Heading>
+          <Heading dark>From audit to autopilot</Heading>
         </div>
         <Sub dark className="mt-5">
-          All built on our state-of-the-art Harmony AI platform, customized to
-          your business, and run for you.
+          A done-for-you rollout. Here is exactly what happens, from the first
+          48 hours through ongoing optimization.
         </Sub>
         <Solutions />
       </Band>
 
       {/* 4b. CAPABILITIES (white) */}
       <Band id="capabilities">
-        <Eyebrow>Capabilities</Eyebrow>
+        <Eyebrow>The Platform</Eyebrow>
         <div className="mt-5">
-          <Heading>Everything you need to automate intelligently</Heading>
+          <Heading>Everything built on our state-of-the-art platform</Heading>
         </div>
         <Sub className="mt-5">
-          A comprehensive platform built for teams that demand reliability,
-          security, and scalability, without sacrificing speed of
-          implementation.
+          Everything runs on our own platform: a fast, visual interface to
+          build, deploy, and watch your automations, with a deep library of
+          capabilities and integrations built in.
         </Sub>
         <Features />
-      </Band>
-
-      {/* 5. PROCESS (white) */}
-      <Band id="process">
-        <Eyebrow>Process</Eyebrow>
-        <div className="mt-5">
-          <Heading>From audit to autopilot in two weeks</Heading>
-        </div>
-        <Sub className="mt-5">
-          We find the bottlenecks, fix them with AI, and keep improving every
-          week after. Done for you, start to finish.
-        </Sub>
-        <Process />
       </Band>
 
       {/* 7b. WHY US (white) */}
@@ -755,9 +761,8 @@ export default function AgentflowPage() {
           <Heading dark>Predictable pricing, no surprises</Heading>
         </div>
         <Sub dark className="mt-5">
-          One flat monthly fee, built and run by us. No per-seat costs, no
-          hourly billing, and no annual lock-in, so you always know exactly what
-          you pay. Starts at $500/month for small teams.
+          One plan for your whole team. One flat monthly fee, built and run by
+          us.
         </Sub>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -787,7 +792,7 @@ export default function AgentflowPage() {
                     {plan.price}
                   </span>
                   {plan.period && (
-                    <span className="pb-1 text-[14px] text-white/55">
+                    <span className="pb-1.5 text-xl text-white/55">
                       {plan.period}
                     </span>
                   )}
@@ -912,41 +917,103 @@ export default function AgentflowPage() {
         </div>
       </Band>
 
+      {/* 10a. EXTENDED TEAM (black) */}
+      <Band id="extended-team" dark>
+        <Eyebrow dark>How We Work</Eyebrow>
+        <div className="mt-5">
+          <Heading dark>Like an extended team, not a vendor</Heading>
+        </div>
+        <Sub dark className="mt-5">
+          You get top-tier service and real collaboration in the tools you
+          already use.
+        </Sub>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {extendedTeam.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col border border-white/10 bg-white/[0.03] p-7 md:p-8"
+            >
+              <span
+                className="flex h-11 w-11 items-center justify-center border border-[#9ff690]/40 text-white"
+                style={{ backgroundColor: "rgba(159,246,144,0.12)" }}
+              >
+                {item.icon}
+              </span>
+              <h3
+                className="mt-6 text-xl text-white"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                {item.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-7 text-white/55">
+                {item.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Band>
+
+      {/* 10b. FOUNDER NOTE (black) */}
+      <Band id="founder" dark>
+        <Eyebrow dark>Founder&apos;s Note</Eyebrow>
+        <div className="mt-10 grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_1fr] lg:gap-16">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src="/assets/founder-vishal.avif"
+              alt="Vishal Singh, Founder of Harmony AI"
+              fill
+              sizes="(max-width: 1024px) 100vw, 400px"
+              className="object-cover"
+            />
+          </div>
+
+          <div>
+            <div className="space-y-5 text-[17px] leading-8 text-white/70 md:text-[19px] md:leading-9">
+              <p>Hey,</p>
+              <p>I used to run an agency that was growing at a good pace.</p>
+              <p>
+                But managing my team, vendors, and clients across multiple time
+                zones became harder than the work itself.
+              </p>
+              <p>I eventually had to shut it down.</p>
+              <p>
+                That experience led me to start Harmony, to solve this for
+                everyone.
+              </p>
+            </div>
+
+            <div className="mt-9">
+              <Image
+                src="/assets/founder-signature.avif"
+                alt="Vishal Singh signature"
+                width={420}
+                height={150}
+                className="h-16 w-auto opacity-90"
+              />
+              <p className="mt-4 text-[17px] font-medium text-white">
+                Vishal Singh
+              </p>
+              <p className="mt-0.5 text-[15px] text-white/50">
+                Founder, Harmony AI
+              </p>
+            </div>
+          </div>
+        </div>
+      </Band>
+
       {/* 11. FINAL CTA (black) */}
       <section className="relative isolate overflow-hidden bg-black">
-        <div className="relative mx-auto w-[92%] max-w-[1200px] overflow-hidden border-x border-white/10">
+        <div className="relative mx-auto w-[92%] max-w-[1320px] overflow-hidden border-x border-white/10">
           {/* top corner + edge dots */}
           <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
           <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
 
-          {/* center glow */}
+          {/* uniform dot grid, fading toward the center */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-[38%] -z-10 h-[360px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
-            style={{ backgroundColor: "rgba(159,246,144,0.12)" }}
+            className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle,rgba(159,246,144,0.16)_1px,transparent_1.5px)] bg-[size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_38%,transparent_62%,black)]"
           />
-
-          {/* decorative shape backdrop */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[55%] [mask-image:linear-gradient(to_top,black,transparent)]"
-          >
-            <Image
-              src="https://framerusercontent.com/images/VaW4uDxm7TAqreKkRe1n5ClJIWc.png?width=1320&height=608"
-              alt=""
-              fill
-              sizes="1200px"
-              className="object-cover object-bottom opacity-50"
-            />
-          </div>
-
-          {/* twinkling pixel field along the bottom */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 overflow-hidden [mask-image:linear-gradient(to_top,black_10%,transparent)]"
-          >
-            <PixelStrip className="h-full px-4" />
-          </div>
 
           <div className="relative z-[1] flex flex-col items-center py-24 text-center md:py-32">
             <Eyebrow dark>Get Started</Eyebrow>
@@ -968,8 +1035,8 @@ export default function AgentflowPage() {
 
       {/* 12. FOOTER (black) */}
       <footer className="relative overflow-hidden border-t border-white/10 bg-black">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-7 bg-[radial-gradient(circle,rgba(159,246,144,0.34)_1px,transparent_1.5px)] bg-[size:20px_20px] opacity-30" />
         <div className="relative mx-auto w-[92%] max-w-[1320px] border-x border-white/10">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-7 bg-[radial-gradient(circle,rgba(159,246,144,0.34)_1px,transparent_1.5px)] bg-[size:20px_20px] opacity-30" />
           <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
           <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
           {[14, 26, 38, 54, 74, 92].map((left) => (

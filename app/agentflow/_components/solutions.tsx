@@ -15,24 +15,31 @@ type Solution = {
 const solutions: Solution[] = [
   {
     id: "solution-01",
-    label: "AI Agents",
-    title: "Agents that work like you",
-    body: "Personal AI assistants that know your business, make decisions, and execute the followups, drafts, and updates you do by hand today. Tuned to your clients, your tone, and your tools.",
-    chips: ["Knows your context", "Makes decisions", "Executes end to end"],
+    label: "First 48 Hours",
+    title: "Audit and plan",
+    body: "We map your week and your numbers, pinpoint the top 3 time leaks, and hand you a clear plan for what we will automate first.",
+    chips: ["Time-leak audit", "Top 3 priorities", "Clear action plan"],
   },
   {
     id: "solution-02",
-    label: "Workflows",
-    title: "Workflows that run themselves",
-    body: "Your repeat processes chained end to end: a lead comes in, gets qualified, the CRM updates, and the follow-up goes out. No copy-paste between tools, no dropped handoffs.",
-    chips: ["Multi-step flows", "Conditional logic", "Task handoffs"],
+    label: "First Week",
+    title: "Build and deploy",
+    body: "We build, test, and ship the core agents and workflows for your biggest bottlenecks, wired into the tools you already use and running live.",
+    chips: ["Core workflows", "Wired into your tools", "Live in production"],
   },
   {
     id: "solution-03",
-    label: "Dashboards",
-    title: "Dashboards that prove it",
-    body: "Every system ships with a live dashboard. Watch hours saved, response times, and tasks completed, so you always know what ran in the background while you worked.",
-    chips: ["Hours saved", "Response times", "Tasks completed"],
+    label: "First Month",
+    title: "Expand and connect",
+    body: "We extend automation across more of your stack and teams, then stand up live dashboards so you can see exactly what is running in the background.",
+    chips: ["More workflows", "Connected stack", "Live dashboards"],
+  },
+  {
+    id: "solution-04",
+    label: "Ongoing",
+    title: "Optimize and scale",
+    body: "We keep hunting for new bottlenecks, tune what is live, and roll out fresh automations as you grow. The system gets better every week, and you never manage it yourself.",
+    chips: ["Find new bottlenecks", "Continuous improvement", "Fully managed"],
   },
 ];
 
@@ -292,7 +299,50 @@ function AnalyticsVisual() {
   );
 }
 
-const visuals = [AgentsVisual, WorkflowVisual, AnalyticsVisual];
+function OptimizeVisual() {
+  const weeks = [
+    { label: "Week 1", val: "12 hrs saved" },
+    { label: "Week 2", val: "19 hrs saved" },
+    { label: "Week 4", val: "27 hrs saved" },
+  ];
+  return (
+    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
+      <MockLabel>Improving every week</MockLabel>
+      <div className="flex flex-col gap-2.5">
+        {weeks.map((w, i) => (
+          <div
+            key={w.label}
+            className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0a0a0a] px-4 py-3"
+          >
+            <span className="flex items-center gap-2.5 text-[12px] font-medium text-white">
+              <span
+                className="h-1.5 w-1.5"
+                style={{ backgroundColor: ACCENT, opacity: 0.4 + i * 0.3 }}
+              />
+              {w.label}
+            </span>
+            <span className="text-[12px] text-white/70">{w.val}</span>
+          </div>
+        ))}
+      </div>
+      <span
+        className="inline-flex items-center gap-2 self-start rounded-md border px-3 py-1.5 text-[11px] text-white/65"
+        style={{
+          borderColor: "rgba(159,246,144,0.25)",
+          backgroundColor: "rgba(159,246,144,0.06)",
+        }}
+      >
+        <span
+          className="h-1.5 w-1.5 animate-pulse rounded-full"
+          style={{ backgroundColor: ACCENT }}
+        />
+        Continuously optimized
+      </span>
+    </div>
+  );
+}
+
+const visuals = [AgentsVisual, WorkflowVisual, AnalyticsVisual, OptimizeVisual];
 
 export function Solutions() {
   const [active, setActive] = useState(0);

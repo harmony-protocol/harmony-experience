@@ -3,12 +3,18 @@ const ACCENT = "#9ff690";
 export function PixelStrip({
   className = "",
   count = 420,
+  align = "bottom",
 }: {
   className?: string;
   count?: number;
+  align?: "top" | "bottom";
 }) {
   return (
-    <div className={`pointer-events-none flex flex-wrap content-end gap-[3px] ${className}`}>
+    <div
+      className={`pointer-events-none flex flex-wrap gap-[3px] ${
+        align === "top" ? "content-start" : "content-end"
+      } ${className}`}
+    >
       {Array.from({ length: count }).map((_, i) => {
         const lit = (i * 37) % 11 === 0;
         return (

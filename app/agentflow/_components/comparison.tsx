@@ -58,21 +58,21 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
 function CheckBadge({ accent = false }: { accent?: boolean }) {
   return (
     <span
-      className="inline-flex h-6 w-6 items-center justify-center rounded-full"
+      className="inline-flex h-5 w-5 items-center justify-center rounded-full"
       style={{
         backgroundColor: accent ? ACCENT : "#111",
         color: accent ? "#000" : "#fff",
       }}
     >
-      <Check className="h-3.5 w-3.5" strokeWidth={2.6} />
+      <Check className="h-3 w-3" strokeWidth={2.6} />
     </span>
   );
 }
 
 function XBadge() {
   return (
-    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/[0.06] text-black/30">
-      <X className="h-3.5 w-3.5" strokeWidth={2.4} />
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/[0.06] text-black/30">
+      <X className="h-3 w-3" strokeWidth={2.4} />
     </span>
   );
 }

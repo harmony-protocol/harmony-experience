@@ -10,8 +10,8 @@ const CTA_ACCENT = "#9ff690";
 const links = [
   { label: "Who We Help", href: "#who-we-help" },
   { label: "Workflows", href: "#workflows" },
-  { label: "What We Build", href: "#solutions" },
   { label: "Process", href: "#process" },
+  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
