@@ -994,7 +994,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* 11. FINAL CTA (black) */}
-      <section className="relative isolate overflow-hidden bg-black">
+      <section className="relative isolate overflow-hidden border-t border-white/10 bg-black">
         <div className="relative mx-auto w-[92%] max-w-[1320px] overflow-hidden border-x border-white/10">
           {/* top corner + edge dots */}
           <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
