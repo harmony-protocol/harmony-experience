@@ -3,17 +3,20 @@ import { Bot, Database, Mail, Smartphone, Video } from "lucide-react";
 
 const ACCENT = "#9ff690";
 
+const LOGO_DIR = "/assets/integrations/full-color-logos";
 const INTEGRATIONS = [
-  { name: "Gmail", src: "/assets/integrations/full-color-logos/gmail.webp" },
-  { name: "Slack", src: "/assets/integrations/full-color-logos/slack.webp" },
-  { name: "HubSpot", src: "/assets/integrations/full-color-logos/hubspot.webp" },
-  { name: "Notion", src: "/assets/integrations/full-color-logos/notion.webp" },
-  { name: "Google Sheets", src: "/assets/integrations/full-color-logos/google-sheets.webp" },
-  { name: "Google Calendar", src: "/assets/integrations/full-color-logos/google-calendar.webp" },
-  { name: "Airtable", src: "/assets/integrations/full-color-logos/airtable.webp" },
-  { name: "Zoom", src: "/assets/integrations/full-color-logos/zoom.webp" },
-  { name: "Granola", src: "/assets/integrations/full-color-logos/granola.webp" },
-  { name: "Jira", src: "/assets/integrations/full-color-logos/jira.webp" },
+  { name: "Gmail", src: `${LOGO_DIR}/gmail.webp`, w: 545, h: 114 },
+  { name: "Slack", src: `${LOGO_DIR}/slack.webp`, w: 545, h: 114 },
+  { name: "HubSpot", src: `${LOGO_DIR}/hubspot.webp`, w: 545, h: 114 },
+  { name: "Notion", src: `${LOGO_DIR}/notion.webp`, w: 545, h: 114 },
+  { name: "Google Sheets", src: `${LOGO_DIR}/google-sheets.webp`, w: 545, h: 114 },
+  { name: "Google Calendar", src: `${LOGO_DIR}/google-calendar.webp`, w: 545, h: 114 },
+  { name: "Airtable", src: `${LOGO_DIR}/airtable.webp`, w: 600, h: 126 },
+  { name: "Zoom", src: `${LOGO_DIR}/zoom.webp`, w: 545, h: 114 },
+  { name: "Stripe", src: `${LOGO_DIR}/stripe.webp`, w: 3809, h: 1633 },
+  { name: "QuickBooks", src: `${LOGO_DIR}/quickbooks.png`, w: 2345, h: 600 },
+  { name: "Granola", src: `${LOGO_DIR}/granola.webp`, w: 545, h: 114 },
+  { name: "Jira", src: `${LOGO_DIR}/jira.webp`, w: 545, h: 114 },
 ];
 
 const MAC_FEATURES = [
@@ -135,8 +138,8 @@ function IntegrationsCard() {
             <Image
               src={app.src}
               alt={app.name}
-              width={478}
-              height={100}
+              width={app.w}
+              height={app.h}
               className="h-[22px] w-auto object-contain"
             />
           </span>

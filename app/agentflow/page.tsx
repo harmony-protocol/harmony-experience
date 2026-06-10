@@ -601,7 +601,7 @@ export default function AgentflowPage() {
                 {[...trustedLogos, ...trustedLogos].map((logo, index) => (
                   <div
                     key={`${logo.name}-${index}`}
-                    className="flex h-9 shrink-0 items-center justify-center"
+                    className="flex h-12 shrink-0 items-center justify-center"
                     aria-hidden={index >= trustedLogos.length}
                   >
                     <Image
@@ -609,7 +609,7 @@ export default function AgentflowPage() {
                       alt={index < trustedLogos.length ? logo.name : ""}
                       width={logo.width}
                       height={logo.height}
-                      className="h-auto max-h-[30px] w-auto invert opacity-75"
+                      className="h-8 w-auto invert opacity-75"
                     />
                   </div>
                 ))}
