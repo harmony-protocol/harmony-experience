@@ -326,41 +326,50 @@ export function Solutions() {
       `}</style>
 
       {/* Scroll-spy sidebar */}
-      <div className="sticky top-24 hidden self-start lg:block">
-        {solutions.map((s, i) => (
-          <button
-            key={s.id}
-            type="button"
-            onClick={() =>
-              document
-                .getElementById(s.id)
-                ?.scrollIntoView({ behavior: "smooth", block: "center" })
-            }
-            className={`relative flex w-full items-center gap-2.5 border-b py-3.5 pl-3 text-left text-[12px] font-semibold uppercase tracking-[0.08em] transition ${
-              i === active
-                ? "border-[#9ff690]/45 text-white"
-                : "border-white/15 text-white/35 hover:text-white/70"
-            }`}
-          >
-            {i === active && (
+      <div className="sticky top-24 hidden flex-col gap-7 self-start lg:flex">
+        {solutions.map((s, i) => {
+          const isActive = i === active;
+          return (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() =>
+                document
+                  .getElementById(s.id)
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" })
+              }
+              className="group flex w-full flex-col gap-3.5 text-left"
+            >
               <span
-                aria-hidden
-                className="pointer-events-none absolute -bottom-px left-0 h-px w-8"
-                style={{ backgroundColor: ACCENT }}
-              />
-            )}
-            <span
-              className="h-1.5 w-1.5 transition"
-              style={{
-                backgroundColor:
-                  i === active ? ACCENT : "rgba(255,255,255,0.25)",
-                boxShadow:
-                  i === active ? "0 0 12px rgba(159,246,144,0.7)" : "none",
-              }}
-            />
-            {s.label}
-          </button>
-        ))}
+                className={`flex items-center gap-2.5 text-[12px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-300 ${
+                  isActive
+                    ? "text-white opacity-100"
+                    : "text-white opacity-30 group-hover:opacity-60"
+                }`}
+              >
+                <span
+                  className="h-1.5 w-1.5 transition-opacity duration-300"
+                  style={{
+                    backgroundColor: ACCENT,
+                    boxShadow: isActive
+                      ? "0 0 12px rgba(159,246,144,0.7)"
+                      : "none",
+                  }}
+                />
+                {s.label}
+              </span>
+              <span className="h-[2px] w-full overflow-hidden bg-white/10">
+                <span
+                  className="block h-full origin-left transition-transform duration-500 ease-out"
+                  style={{
+                    backgroundColor: ACCENT,
+                    transform: isActive ? "scaleX(1)" : "scaleX(0)",
+                  }}
+                />
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {/* Stacked solution cards */}
@@ -371,11 +380,11 @@ export function Solutions() {
             <div
               key={s.id}
               id={s.id}
-              className="relative scroll-mt-28 border border-white/10 bg-gradient-to-b from-[#0a0a0a] to-[#050505]"
+              className="relative scroll-mt-28 border border-white/10"
             >
               <CornerDots />
               <div className="grid md:grid-cols-2">
-                <div className="flex flex-col p-7 md:p-9">
+                <div className="flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#050505] p-7 md:p-9">
                   <h3
                     className="text-2xl text-white md:text-[30px] md:leading-[1.2]"
                     style={{ fontFamily: "var(--font-schibsted)" }}
@@ -396,7 +405,7 @@ export function Solutions() {
                     ))}
                   </div>
                 </div>
-                <div className="relative min-h-[360px] border-t border-white/10 md:border-l md:border-t-0">
+                <div className="relative min-h-[360px] border-t border-white/10 bg-white/[0.04] backdrop-blur-md md:border-l md:border-t-0">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-32 -top-24 h-[280px] w-[420px] rounded-full blur-[100px]"

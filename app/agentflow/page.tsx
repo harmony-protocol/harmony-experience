@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { AgentflowNav } from "./_components/nav";
 import { Solutions } from "./_components/solutions";
-import { PlatformTraits } from "./_components/platform-traits";
+import { Features } from "./_components/features";
+import { PixelStrip } from "./_components/pixel-strip";
 import { Process } from "./_components/process";
 import { CountUp } from "./_components/count-up";
 import { Faq } from "./_components/faq";
@@ -61,7 +62,7 @@ function Eyebrow({
     <span
       className={`inline-flex items-center gap-1.5 rounded-[4px] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] ${
         dark
-          ? "border border-[#9ff690]/60 bg-[rgba(159,246,144,0.10)] text-white"
+          ? "border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-white"
           : "bg-black text-white"
       }`}
     >
@@ -221,7 +222,7 @@ function Band({
   return (
     <section
       id={id}
-      className={`relative overflow-hidden ${dark ? "bg-black" : "bg-[#fafafa]"}`}
+      className={`relative overflow-clip ${dark ? "bg-black" : "bg-[#fafafa]"}`}
     >
       {bgImage && (
         <div
@@ -401,46 +402,48 @@ const securityCards = [
 
 const pricingPlans = [
   {
-    name: "Free",
-    description: "Get started at no cost",
-    price: "$0",
-    cta: "Get started",
+    name: "Starter",
+    description: "For small teams getting their first systems live",
+    price: "$500",
+    period: "/month",
+    cta: "Book a Call",
     highlighted: false,
     features: [
-      "Up to 5 AI agents",
-      "1,000 tasks per month",
-      "Basic integrations",
+      "Up to 2 AI workflows built for you",
+      "Connected to your existing tools",
+      "Built, managed, and run for you",
+      "Monthly performance reporting",
       "Email support",
-      "API access",
     ],
   },
   {
-    name: "Plus",
-    description: "Level up your AI workflows",
-    price: "$29",
-    cta: "Get started",
+    name: "Growth",
+    description: "For growing teams scaling their operations",
+    price: "$1,500",
+    period: "/month",
+    cta: "Book a Call",
     highlighted: true,
     features: [
-      "Up to 5 AI agents",
-      "1,000 tasks per month",
-      "Advanced integrations",
+      "Up to 6 AI workflows built for you",
+      "Dedicated agents and live dashboards",
+      "Priority integrations and handoffs",
+      "Weekly optimization and tuning",
       "Priority support",
-      "Custom workflows",
     ],
   },
   {
-    name: "Pro",
-    description: "Maximize team collaboration",
-    price: "$49",
-    cta: "Get started",
+    name: "Scale",
+    description: "For established teams that need custom scope",
+    price: "Custom",
+    period: "",
+    cta: "Talk to Sales",
     highlighted: false,
     features: [
-      "Unlimited AI agents",
-      "Unlimited tasks",
-      "Custom integrations",
-      "Dedicated support",
-      "Custom SLA",
-      "On-premise deployment",
+      "Unlimited workflows and agents",
+      "Custom integrations and SLAs",
+      "Dedicated solutions engineer",
+      "Private or VPC deployment",
+      "Hands-on onboarding and training",
     ],
   },
 ];
@@ -509,9 +512,15 @@ export default function AgentflowPage() {
         }
         .af-bg-translate { animation: af-bg-translate 26s ease-in-out infinite; will-change: transform; }
         .af-bg-scale     { animation: af-bg-scale 19s ease-in-out infinite; will-change: transform; }
+        @keyframes af-eq { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+        .af-eq-bar { transform-origin: top; animation: af-eq 1.4s ease-in-out infinite; }
+        @keyframes af-caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .af-caret { animation: af-caret 1.1s steps(1) infinite; }
+        @keyframes af-pixel { 0%, 100% { opacity: 0.12; } 50% { opacity: 1; } }
+        .af-pixel { animation: af-pixel 2.6s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
-          .af-bg-translate, .af-bg-scale { animation: none; }
+          .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel { animation: none; }
         }
       `}</style>
 
@@ -703,9 +712,20 @@ export default function AgentflowPage() {
           your business, and run for you.
         </Sub>
         <Solutions />
+      </Band>
 
-        {/* Platform traits */}
-        <PlatformTraits />
+      {/* 4b. CAPABILITIES (white) */}
+      <Band id="capabilities">
+        <Eyebrow>Capabilities</Eyebrow>
+        <div className="mt-5">
+          <Heading>Everything you need to automate intelligently</Heading>
+        </div>
+        <Sub className="mt-5">
+          A comprehensive platform built for teams that demand reliability,
+          security, and scalability, without sacrificing speed of
+          implementation.
+        </Sub>
+        <Features />
       </Band>
 
       {/* 5. PROCESS (white) */}
@@ -878,28 +898,16 @@ export default function AgentflowPage() {
 
       {/* 8. PRICING (black) */}
       <Band id="pricing" dark>
-        <Eyebrow dark>Talk to Sales</Eyebrow>
+        <Eyebrow dark>Pricing</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Flexible pricing for any scale</Heading>
+          <Heading dark>Pricing that scales with your team</Heading>
         </div>
         <Sub dark className="mt-5">
-          Choose the plan that fits your needs. Every plan is designed around
-          managed AI workflows, integrations, and support.
+          Done-for-you AI systems, built and run by us. No per-seat fees and no
+          annual lock-in. Prices start at $500/month for small teams.
         </Sub>
 
-        <div className="mt-12 inline-flex border border-white/10 bg-black p-1">
-          <span
-            className="px-5 py-2 text-[14px] font-medium uppercase text-black"
-            style={{ backgroundColor: CTA_ACCENT }}
-          >
-            Monthly
-          </span>
-          <span className="px-5 py-2 text-[14px] font-medium uppercase text-white/70">
-            Yearly
-          </span>
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
             <div
               key={plan.name}
@@ -925,9 +933,11 @@ export default function AgentflowPage() {
                   >
                     {plan.price}
                   </span>
-                  <span className="pb-1 text-[14px] text-white/55">
-                    /month, per user
-                  </span>
+                  {plan.period && (
+                    <span className="pb-1 text-[14px] text-white/55">
+                      {plan.period}
+                    </span>
+                  )}
                 </div>
 
                 <a
@@ -1058,23 +1068,54 @@ export default function AgentflowPage() {
 
       {/* 11. FINAL CTA (black) */}
       <section className="relative isolate overflow-hidden bg-black">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[360px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
-          style={{ backgroundColor: "rgba(159,246,144,0.12)" }}
-        />
-        <div className="mx-auto flex w-[92%] max-w-[1200px] flex-col items-center py-24 text-center md:py-32">
-          <Eyebrow dark>Get Started</Eyebrow>
-          <div className="mt-5 flex flex-col items-center">
-            <Heading dark>Ready to get your week back?</Heading>
+        <div className="relative mx-auto w-[92%] max-w-[1200px] overflow-hidden border-x border-white/10">
+          {/* top corner + edge dots */}
+          <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
+          <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
+
+          {/* center glow */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-[38%] -z-10 h-[360px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
+            style={{ backgroundColor: "rgba(159,246,144,0.12)" }}
+          />
+
+          {/* decorative shape backdrop */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[55%] [mask-image:linear-gradient(to_top,black,transparent)]"
+          >
+            <Image
+              src="https://framerusercontent.com/images/VaW4uDxm7TAqreKkRe1n5ClJIWc.png?width=1320&height=608"
+              alt=""
+              fill
+              sizes="1200px"
+              className="object-cover object-bottom opacity-50"
+            />
           </div>
-          <p className="mt-5 max-w-lg text-base leading-7 text-white/55 md:text-[17px] md:leading-8">
-            Book a call and we will map your biggest time leaks and money
-            leaks live, then show you the personalized system that plugs them.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton />
-            <GhostButton href="#process">How it works</GhostButton>
+
+          {/* twinkling pixel field along the bottom */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 overflow-hidden [mask-image:linear-gradient(to_top,black_10%,transparent)]"
+          >
+            <PixelStrip className="h-full px-4" />
+          </div>
+
+          <div className="relative z-[1] flex flex-col items-center py-24 text-center md:py-32">
+            <Eyebrow dark>Get Started</Eyebrow>
+            <div className="mt-5 flex flex-col items-center">
+              <Heading dark>Ready to get your week back?</Heading>
+            </div>
+            <p className="mt-5 max-w-xl text-base leading-7 text-white/55 md:text-[17px] md:leading-8">
+              Join the teams using Harmony to scale operations, cut costs, and
+              deliver results faster. Book a call and we will map your biggest
+              time leaks live, then show you the system that plugs them.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <PrimaryButton />
+              <GhostButton href="#process">How it works</GhostButton>
+            </div>
           </div>
         </div>
       </section>

@@ -19,7 +19,7 @@ export function AgentflowNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
       <nav className="mx-auto flex h-16 w-[92%] max-w-[1200px] items-center justify-between">
         <div className="flex items-center gap-10">
           <Link href="/agentflow" className="block w-[118px]" aria-label="Harmony home">
