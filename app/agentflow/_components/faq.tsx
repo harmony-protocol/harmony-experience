@@ -4,32 +4,32 @@ import { useState } from "react";
 
 const items = [
   {
-    q: "What exactly do you build for us?",
-    a: "Personalized AI agents, workflows, and dashboards wired into your tools. They handle the followups, reporting, scheduling, and admin that currently eat your week, in the background, every day.",
+    q: "What is Harmony, exactly?",
+    a: "Harmony is a done-for-you service that comes with its own platform. We take on your requests and build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team, all in our desktop app. Instead of you wiring up DIY tools, we find the operational bottlenecks in your day to day work and solve them properly, so you actually save time and attention. Our goal is to replace a human VA at a fraction of the cost.",
   },
   {
-    q: "Will it work with the tools we already use?",
-    a: "Yes. Email, Slack, calendars, CRMs, ticketing, Notion, Airtable, spreadsheets, and most tools with an API. We build around your existing stack, so nothing has to migrate.",
+    q: "How fast will I receive my new automation requests?",
+    a: "We try to deliver within 48 hours for simple requests. For new integrations and more complex workflows, it can take up to a week.",
   },
   {
-    q: "How is this different from hiring a VA?",
-    a: "A VA needs hiring, training, and management, and can walk out the door with the process in their head. Your Harmony system works around the clock, never forgets a step, and costs less than a single hire.",
+    q: "How is Harmony giving unlimited access for a fixed price?",
+    a: "We have gone deep into research and engineered the top workflows to run with high accuracy and low token consumption. To get technical, we built our own caching library, tool execution engine, tools, and data processing algorithms to make Harmony faster, better, and cheaper than OpenClaw for major business use cases. We have also set a new state of the art on some of these use cases in terms of accuracy, with results soon to be published.",
   },
   {
-    q: "Do we need any technical skills?",
-    a: "None. We audit, build, deploy, and maintain everything for you. You just tell us what is eating your week, and you talk to your system in plain English.",
+    q: "What if I don't like the output Harmony produces?",
+    a: "No worries. We keep fine tuning it to your needs until it actually solves your problem end to end.",
   },
   {
-    q: "How long until we are live?",
-    a: "About two weeks, including the audit, the build, and wiring into your tools. Then we keep tuning the system with you as your business changes.",
+    q: "How is Harmony different from ChatGPT or OpenClaw?",
+    a: "ChatGPT and OpenClaw are general purpose, DIY tools. Harmony is an operations automation service for small firms, agencies, and startups. It is set up and managed by our team instead of being DIY, with an extreme focus on usability and reliability. It is a business grade product.",
   },
   {
-    q: "How do we know it is actually working?",
-    a: "Every system ships with a live dashboard tracking hours saved, lead response times, and tasks completed. We baseline these during the audit, so progress is measurable from day one.",
+    q: "How do I migrate to Harmony from OpenClaw, Zo, or Viktor?",
+    a: "We do it for you. If you are a startup, agency, or small firm, just book a call. We will go through all your workflows, set up the integrations, build your dashboards, and migrate everything for you.",
   },
   {
-    q: "What does it cost?",
-    a: "One simple monthly plan that covers your whole team, for less than the cost of a single hire. Pricing can vary by use case, so book a call and we will scope it together.",
+    q: "Is my data secure?",
+    a: "Yes. We enforce org level data isolation at the database level and have multiple security checks in place.",
   },
 ];
 
