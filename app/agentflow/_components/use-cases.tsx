@@ -305,7 +305,7 @@ function Tree({
     <div>
       <div className="flex items-start gap-2.5">
         <span
-          className={`mt-[10px] h-2 w-2 shrink-0 rounded-full ${
+          className={`mt-[10px] h-2 w-2 shrink-0 ${
             light ? "bg-[#9ff690]" : "bg-emerald-400"
           }`}
         />

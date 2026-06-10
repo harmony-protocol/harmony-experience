@@ -5,21 +5,25 @@ import {
   Building2,
   ChartNoAxesCombined,
   CircleDollarSign,
+  Clock,
   CodeXml,
   Database,
   Globe,
   Landmark,
   Lock,
   Monitor,
+  Repeat,
   Rocket,
   Server,
   ShoppingBag,
+  Users,
 } from "lucide-react";
 import { AgentflowNav } from "./_components/nav";
 import { Solutions } from "./_components/solutions";
 import { Features } from "./_components/features";
 import { PixelStrip } from "./_components/pixel-strip";
 import { Process } from "./_components/process";
+import { Comparison } from "./_components/comparison";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
 
@@ -321,6 +325,24 @@ const whoWeHelp = [
   },
 ];
 
+const whatWeDo = [
+  {
+    icon: <Clock className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Free founders from busywork",
+    body: "We take the admin and followups off your plate, so your hours go to leading and growing the business.",
+  },
+  {
+    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Fix operational drag",
+    body: "Shifting demands, freelancer churn, and manual work become clean systems that run on their own.",
+  },
+  {
+    icon: <Users className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Boost team efficiency",
+    body: "More output without more input. We automate repetitive work so the same team delivers more.",
+  },
+];
+
 const securityCards = [
   {
     icon: <Lock className="h-5 w-5" strokeWidth={1.6} />,
@@ -469,12 +491,6 @@ export default function AgentflowPage() {
       <section className="relative isolate overflow-hidden bg-black">
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[20%] -z-10 h-[480px] w-[820px] -translate-x-1/2 rounded-full blur-[150px]"
-          style={{ backgroundColor: "rgba(159,246,144,0.13)" }}
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
-        <div
-          aria-hidden
           className="pointer-events-none absolute bottom-10 left-0 z-0 hidden w-[280px] xl:block"
         >
           <Image
@@ -620,6 +636,43 @@ export default function AgentflowPage() {
         </div>
       </section>
 
+      {/* 2b. WHAT WE DO (white) */}
+      <Band id="results">
+        <Eyebrow>What We Do</Eyebrow>
+        <div className="mt-5">
+          <Heading>What we do for you</Heading>
+        </div>
+        <Sub className="mt-5">
+          Every system we build comes back to the same three outcomes for
+          founder-led B2B teams.
+        </Sub>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {whatWeDo.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col border border-black/10 bg-white p-7 md:p-8"
+            >
+              <span
+                className="flex h-11 w-11 items-center justify-center border border-black/10 text-black"
+                style={{ backgroundColor: "rgba(159,246,144,0.14)" }}
+              >
+                {item.icon}
+              </span>
+              <h3
+                className="mt-6 text-xl text-black"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                {item.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
+                {item.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Band>
+
       {/* 3. WORKFLOWS WE RUN (white) */}
       <Band id="workflows">
         <Eyebrow>What We Take Over</Eyebrow>
@@ -680,15 +733,31 @@ export default function AgentflowPage() {
         <Process />
       </Band>
 
+      {/* 7b. WHY US (white) */}
+      <Band id="why-us">
+        <div className="flex flex-col items-center text-center">
+          <Eyebrow>Why Us</Eyebrow>
+          <div className="mt-5">
+            <Heading>Not another tool. Not another agency.</Heading>
+          </div>
+          <Sub className="mt-5">
+            Harmony is an AI-native operations partner that ships outcomes, not
+            software you have to run yourself.
+          </Sub>
+        </div>
+        <Comparison />
+      </Band>
+
       {/* 8. PRICING (black) */}
       <Band id="pricing" dark>
         <Eyebrow dark>Pricing</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Pricing that scales with your team</Heading>
+          <Heading dark>Predictable pricing, no surprises</Heading>
         </div>
         <Sub dark className="mt-5">
-          Done-for-you AI systems, built and run by us. No per-seat fees and no
-          annual lock-in. Prices start at $500/month for small teams.
+          One flat monthly fee, built and run by us. No per-seat costs, no
+          hourly billing, and no annual lock-in, so you always know exactly what
+          you pay. Starts at $500/month for small teams.
         </Sub>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
