@@ -1,0 +1,1175 @@
+import type { Metadata } from "next";
+import { Cabin, Schibsted_Grotesk } from "next/font/google";
+import Image from "next/image";
+import {
+  Building2,
+  ChartNoAxesCombined,
+  CircleDollarSign,
+  CodeXml,
+  Database,
+  Globe,
+  Landmark,
+  Lock,
+  Monitor,
+  Rocket,
+  Server,
+  ShoppingBag,
+} from "lucide-react";
+import { AgentflowNav } from "./_components/nav";
+import { Solutions } from "./_components/solutions";
+import { PlatformTraits } from "./_components/platform-traits";
+import { Process } from "./_components/process";
+import { CountUp } from "./_components/count-up";
+import { Faq } from "./_components/faq";
+import { UseCases } from "./_components/use-cases";
+
+const schibsted = Schibsted_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-schibsted",
+});
+
+const cabin = Cabin({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-cabin",
+});
+
+const ACCENT = "#9ff690";
+const CTA_ACCENT = "#9ff690";
+const CAL_URL = "https://cal.com/harmony-vishal/discovery";
+
+// Paste the YouTube video id of the VSL here (the part after watch?v=).
+const VSL_YOUTUBE_ID = "";
+
+export const metadata: Metadata = {
+  title: "We help B2B founders automate work operations | Harmony AI",
+  description:
+    "Harmony builds personalized AI systems for B2B founders and agency owners. The followups, reporting, and admin run in the background, so you can lead the business instead of the busywork.",
+};
+
+/* ------------------------------ ATOMS ------------------------------ */
+
+function Eyebrow({
+  children,
+  dark = false,
+}: {
+  children: React.ReactNode;
+  dark?: boolean;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-[4px] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] ${
+        dark
+          ? "border border-[#9ff690]/60 bg-[rgba(159,246,144,0.10)] text-white"
+          : "bg-black text-white"
+      }`}
+    >
+      <span
+        className="h-1.5 w-1.5 rounded-full"
+        style={{ backgroundColor: ACCENT }}
+      />
+      {children}
+    </span>
+  );
+}
+
+function Heading({
+  as: Tag = "h2",
+  dark = false,
+  children,
+}: {
+  as?: "h1" | "h2" | "h3";
+  dark?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <Tag
+      className={`${dark ? "text-white" : "text-black"} font-normal ${
+        Tag === "h1"
+          ? "text-[40px] leading-[1.1] md:text-[56px]"
+          : "max-w-2xl text-[32px] leading-[1.1] md:text-[46px]"
+      }`}
+      style={{ fontFamily: "var(--font-schibsted)" }}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+function Sub({
+  dark = false,
+  className = "",
+  children,
+}: {
+  dark?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <p
+      className={`max-w-lg text-base leading-7 md:text-[17px] md:leading-8 ${dark ? "text-white/55" : "text-[#4d4d4d]"} ${className}`}
+    >
+      {children}
+    </p>
+  );
+}
+
+function ArrowIcon({ className = "h-3 w-3" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 14 14" className={className} fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 7h10M12 7L8 3M12 7l-4 4" />
+    </svg>
+  );
+}
+
+function PrimaryButton({
+  href = CAL_URL,
+}: {
+  href?: string;
+}) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group inline-flex h-12 items-center gap-3 overflow-hidden pl-2 pr-5 text-base font-medium text-black transition hover:brightness-95"
+      style={{ backgroundColor: CTA_ACCENT }}
+    >
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-black">
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          width={16}
+          height={15}
+          className="h-[15px] w-4"
+        />
+      </span>
+      <span className="h-6 overflow-hidden">
+        <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-6">
+          <span className="flex h-6 items-center">Book a Call</span>
+          <span className="flex h-6 items-center" aria-hidden="true">
+            Book a Call
+          </span>
+        </span>
+      </span>
+    </a>
+  );
+}
+
+function GhostButton({
+  children,
+  href,
+  dark = true,
+}: {
+  children: React.ReactNode;
+  href: string;
+  dark?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      className={`inline-flex h-12 items-center border px-6 text-base font-medium transition ${
+        dark
+          ? "border-[#b5f4a2] text-white hover:bg-white/10"
+          : "border-black/20 text-black hover:bg-black/5"
+      }`}
+    >
+      {children}
+    </a>
+  );
+}
+
+function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm8 191.63V152h24a8 8 0 0 0 0-16h-24v-24a16 16 0 0 1 16-16h16a8 8 0 0 0 0-16h-16a32 32 0 0 0-32 32v24H96a8 8 0 0 0 0 16h24v63.63a88 88 0 1 1 16 0Z" />
+    </svg>
+  );
+}
+
+function XIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
+      <path d="m214.75 211.71-62.6-98.38 61.77-67.95a8 8 0 0 0-11.84-10.76l-58.84 64.72-40.49-63.63A8 8 0 0 0 96 32H48a8 8 0 0 0-6.75 12.3l62.6 98.37-61.77 68a8 8 0 1 0 11.84 10.76l58.84-64.72 40.49 63.63A8 8 0 0 0 160 224h48a8 8 0 0 0 6.75-12.29ZM164.39 208 62.57 48h29l101.86 160Z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16Zm0 192H40V40h176ZM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140ZM100 84a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z" />
+    </svg>
+  );
+}
+
+function Band({
+  id,
+  dark = false,
+  children,
+  className = "",
+  bgImage,
+}: {
+  id?: string;
+  dark?: boolean;
+  children: React.ReactNode;
+  className?: string;
+  bgImage?: string;
+}) {
+  return (
+    <section
+      id={id}
+      className={`relative overflow-hidden ${dark ? "bg-black" : "bg-[#fafafa]"}`}
+    >
+      {bgImage && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+        >
+          <div className="af-bg-translate absolute -inset-[20%]">
+            <div
+              className="af-bg-scale h-full w-full bg-cover bg-center opacity-80"
+              style={{
+                backgroundImage: `url(${bgImage})`,
+                mixBlendMode: "screen",
+              }}
+            />
+          </div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(80% 70% at 50% 50%, transparent 30%, rgba(0,0,0,0.7) 100%)",
+            }}
+          />
+        </div>
+      )}
+      <div
+        className={`relative z-[1] mx-auto w-[92%] max-w-[1200px] scroll-mt-20 py-20 md:py-28 ${className}`}
+      >
+        {children}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------ CONTENT ------------------------------ */
+
+const trustedLogos = [
+  {
+    name: "Sparklé",
+    src: "https://framerusercontent.com/images/0tQJ7SlKdpCZUVbUjxOEy57XRhA.svg",
+    width: 96,
+    height: 30,
+  },
+  {
+    name: "Craftgram",
+    src: "https://framerusercontent.com/images/hsbt5NG4UUe3LO7ERSFGv8A0PrA.svg",
+    width: 94,
+    height: 27,
+  },
+  {
+    name: "Pulse",
+    src: "https://framerusercontent.com/images/O7fimt1JVKhKUjjZOGgeAWTdLQ.svg",
+    width: 120,
+    height: 25,
+  },
+  {
+    name: "Swift",
+    src: "https://framerusercontent.com/images/yg73mxfKVqYxGdl9PXd5goIE.svg",
+    width: 80,
+    height: 21,
+  },
+  {
+    name: "ZenZap",
+    src: "https://framerusercontent.com/images/6Fbv7vEmmB0WPOWiVDEZNhoZ0.svg",
+    width: 68,
+    height: 19,
+  },
+];
+
+const challenges = [
+  {
+    title: "Admin Eats Your Day",
+    body: "Client emails, scheduling, invoices, and CRM updates pile up daily. Every hour you spend there is an hour not spent on growth.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round">
+        <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
+        <circle cx="12" cy="12" r="2.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Leads Slip Through",
+    body: "An inquiry lands at 9pm and waits until morning. By then the prospect has already called the next firm on their list.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Reporting Eats Your Week",
+    body: "Client updates, dashboards, and status reports get built by hand every week, from data scattered across a dozen tools.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round">
+        <path d="M4 7h12M16 7l-3-3M16 7l-3 3M20 17H8M8 17l3-3M8 17l3 3" />
+      </svg>
+    ),
+  },
+];
+
+const whoWeHelp = [
+  {
+    icon: <Globe className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Marketing Agencies",
+  },
+  {
+    icon: <Rocket className="h-5 w-5" strokeWidth={1.6} />,
+    title: "B2B Startups",
+  },
+  {
+    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Consultancies",
+  },
+  {
+    icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Ecommerce Agencies",
+  },
+  {
+    icon: <CodeXml className="h-5 w-5" strokeWidth={1.6} />,
+    title: "IT Services Firms",
+  },
+  {
+    icon: <Monitor className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Coaches and Tutors",
+  },
+  {
+    icon: <CircleDollarSign className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Accounting Firms",
+  },
+  {
+    icon: <Building2 className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Real Estate Services",
+  },
+  {
+    icon: <Landmark className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Investment Firms",
+  },
+];
+
+const sellingPoints = [
+  {
+    title: "Reduce operational drag",
+    body: "The repeat work that slows every project down runs in the background instead of on your team's plate.",
+  },
+  {
+    title: "Free founders from the day-to-day",
+    body: "You stop being the bottleneck. The followups, reports, and admin run while you lead the business.",
+  },
+  {
+    title: "Make the whole team faster",
+    body: "Everyone gets hours back each week to spend on clients, delivery, and growth instead of busywork.",
+  },
+];
+
+const bigStats = [
+  { value: 200, suffix: "+", label: "Workflows automated" },
+  { value: 3, prefix: "$", suffix: "M+", label: "Saved in ops costs" },
+  { value: 10, suffix: "x", label: "Faster lead response" },
+];
+
+const securityCards = [
+  {
+    icon: <Lock className="h-5 w-5" strokeWidth={1.6} />,
+    title: "End-to-End Encryption",
+    body: "All data encrypted in transit and at rest using AES-256.",
+  },
+  {
+    icon: <Database className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Zero Data Retention",
+    body: "Your data is never stored or used for model training.",
+  },
+  {
+    icon: <Server className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Private Deployment",
+    body: "Deploy in your own VPC for complete data sovereignty.",
+  },
+];
+
+const pricingPlans = [
+  {
+    name: "Free",
+    description: "Get started at no cost",
+    price: "$0",
+    cta: "Get started",
+    highlighted: false,
+    features: [
+      "Up to 5 AI agents",
+      "1,000 tasks per month",
+      "Basic integrations",
+      "Email support",
+      "API access",
+    ],
+  },
+  {
+    name: "Plus",
+    description: "Level up your AI workflows",
+    price: "$29",
+    cta: "Get started",
+    highlighted: true,
+    features: [
+      "Up to 5 AI agents",
+      "1,000 tasks per month",
+      "Advanced integrations",
+      "Priority support",
+      "Custom workflows",
+    ],
+  },
+  {
+    name: "Pro",
+    description: "Maximize team collaboration",
+    price: "$49",
+    cta: "Get started",
+    highlighted: false,
+    features: [
+      "Unlimited AI agents",
+      "Unlimited tasks",
+      "Custom integrations",
+      "Dedicated support",
+      "Custom SLA",
+      "On-premise deployment",
+    ],
+  },
+];
+
+const footerColumns = [
+  {
+    title: "Main",
+    links: [
+      { label: "Home", href: "./" },
+      { label: "About", href: "./about" },
+      { label: "Pricing", href: "./pricing" },
+      { label: "Case Study", href: "./case-study" },
+      { label: "Blog", href: "./blog" },
+      { label: "Contact", href: "./contact" },
+    ],
+  },
+  {
+    title: "Useful",
+    links: [
+      { label: "Solution", href: "./solution" },
+      { label: "Team", href: "./about#team" },
+      { label: "Career", href: "./about#career" },
+      { label: "Docs", href: "./docs/introduction" },
+      { label: "Waitlist", href: "./waitlist-page" },
+      { label: "Changelog", href: "./changelog" },
+    ],
+  },
+  {
+    title: "Others",
+    links: [
+      { label: "Privacy Policy", href: "./legal-page/privacy" },
+      { label: "Terms & Conditions", href: "./legal-page/terms" },
+      { label: "404", href: "./404" },
+    ],
+  },
+];
+
+/* ------------------------------ PAGE ------------------------------ */
+
+export default function AgentflowPage() {
+  return (
+    <div
+      className={`${schibsted.variable} ${cabin.variable} bg-black text-white`}
+      style={{ fontFamily: "var(--font-cabin)" }}
+    >
+      <style>{`
+        @keyframes af-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .af-marquee { animation: af-marquee 36s linear infinite; }
+        .af-logo-marquee { animation: af-marquee 24s linear infinite; }
+        .af-marquee.rev { animation-direction: reverse; animation-duration: 44s; }
+        @keyframes af-vmarquee { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+        .af-vmarquee { animation: af-vmarquee 22s linear infinite; }
+        .af-vmarquee.fast { animation-duration: 17s; }
+        .af-vmarquee.rev { animation-direction: reverse; animation-duration: 26s; }
+        @keyframes af-ping-soft { 0% { transform: scale(0.85); opacity: 0.85; } 100% { transform: scale(2.2); opacity: 0; } }
+        .af-ping-soft { animation: af-ping-soft 1.8s cubic-bezier(0,0,0.2,1) infinite; }
+        @keyframes af-bg-translate {
+          0%   { transform: translate3d(-3%, -2%, 0); }
+          50%  { transform: translate3d(3%, 2%, 0); }
+          100% { transform: translate3d(-3%, -2%, 0); }
+        }
+        @keyframes af-bg-scale {
+          0%   { transform: scale(1); }
+          50%  { transform: scale(1.25); }
+          100% { transform: scale(1); }
+        }
+        .af-bg-translate { animation: af-bg-translate 26s ease-in-out infinite; will-change: transform; }
+        .af-bg-scale     { animation: af-bg-scale 19s ease-in-out infinite; will-change: transform; }
+        @media (prefers-reduced-motion: reduce) {
+          .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
+          .af-bg-translate, .af-bg-scale { animation: none; }
+        }
+      `}</style>
+
+      <AgentflowNav />
+
+      {/* 1. HERO (black) */}
+      <section className="relative isolate overflow-hidden bg-black">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-[20%] -z-10 h-[480px] w-[820px] -translate-x-1/2 rounded-full blur-[150px]"
+          style={{ backgroundColor: "rgba(159,246,144,0.13)" }}
+        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-10 left-0 z-0 hidden w-[280px] xl:block"
+        >
+          <Image
+            src="/assets/hero-bg-image-left.avif"
+            alt=""
+            width={1404}
+            height={3408}
+            sizes="280px"
+            className="h-auto w-full object-contain object-top"
+          />
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-20 right-0 z-0 hidden w-[280px] xl:block"
+        >
+          <Image
+            src="/assets/hero-bg-image-right.avif"
+            alt=""
+            width={1684}
+            height={4088}
+            sizes="280px"
+            className="h-auto w-full object-contain object-top"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-20 pt-36 text-center md:pt-44">
+          <Heading as="h1" dark>
+            We help B2B founders
+            <br className="hidden md:block" /> automate work operations
+          </Heading>
+          <p className="mt-6 max-w-md text-balance text-base leading-7 text-white/55 md:text-lg md:leading-8">
+            We help B2B founders and agency owners automate the messy daily
+            work with personalized AI systems
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <PrimaryButton />
+            <GhostButton href="#process">How it works</GhostButton>
+          </div>
+
+          {/* YouTube VSL */}
+          <div className="mt-16 w-full max-w-[880px]">
+            <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-2 shadow-[0_0_100px_rgba(159,246,144,0.1)]">
+              {VSL_YOUTUBE_ID ? (
+                <iframe
+                  className="aspect-video w-full rounded-xl bg-black"
+                  src={`https://www.youtube-nocookie.com/embed/${VSL_YOUTUBE_ID}`}
+                  title="Harmony video sales letter"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl bg-[#070707]">
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-24 right-0 h-[300px] w-[420px] rounded-full blur-[90px]"
+                    style={{ backgroundColor: "rgba(61,142,47,0.35)" }}
+                  />
+                  <div className="flex flex-col items-center gap-4">
+                    <span
+                      className="flex h-14 w-14 items-center justify-center rounded-full text-black"
+                      style={{ backgroundColor: ACCENT }}
+                    >
+                      <svg viewBox="0 0 16 16" className="h-5 w-5 translate-x-px" fill="currentColor">
+                        <path d="M4 2.5v11l9-5.5z" />
+                      </svg>
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-white/45">
+                      Watch the 2 minute walkthrough
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Trusted by strip */}
+        <div className="relative z-10 border-y border-white/[0.06] bg-black text-white">
+          <div className="relative mx-auto flex w-[96%] max-w-[1320px] flex-col border-x border-white/[0.06] px-5 py-6 md:h-[132px] md:flex-row md:items-center md:px-10 md:py-0">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:25%_100%]"
+            />
+            <p className="relative max-w-[260px] shrink-0 text-left text-[17px] leading-7 text-white/70">
+              Trusted by forward-thinking teams worldwide
+            </p>
+            <div className="relative mt-5 min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)] md:mt-0 md:pl-10">
+              <div className="af-logo-marquee flex w-max items-center gap-12 pr-12">
+                {[...trustedLogos, ...trustedLogos].map((logo, index) => (
+                  <div
+                    key={`${logo.name}-${index}`}
+                    className="flex h-9 shrink-0 items-center justify-center"
+                    aria-hidden={index >= trustedLogos.length}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={index < trustedLogos.length ? logo.name : ""}
+                      width={logo.width}
+                      height={logo.height}
+                      className="h-auto max-h-[30px] w-auto invert opacity-75"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. WHO WE WORK WITH (black) */}
+      <section id="who-we-help" className="overflow-hidden bg-black">
+        <div className="relative mx-auto w-[96%] max-w-[1320px] scroll-mt-20 border-x border-white/[0.06] px-4 pb-24 pt-20 md:px-8 md:pb-36 md:pt-28">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[size:25%_100%]"
+          />
+          <div className="relative">
+            <h2
+              className="mx-auto max-w-[680px] text-center text-[32px] font-normal leading-[1.1] text-white md:text-[46px]"
+              style={{ fontFamily: "var(--font-schibsted)" }}
+            >
+              For overloaded leaders
+              <br />
+              facing <span className="text-[#9ff690]">time shortage</span>
+            </h2>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+              {whoWeHelp.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex min-h-20 items-center gap-4 rounded-[4px] border border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition hover:border-[#9ff690]/35 hover:bg-[#101210]"
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690]">
+                    {item.icon}
+                  </span>
+                  <h3 className="text-[16px] font-medium text-white md:text-[17px]">
+                    {item.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WORKFLOWS WE RUN (white) */}
+      <Band id="workflows">
+        <Eyebrow>What We Take Over</Eyebrow>
+        <div className="mt-5">
+          <Heading>Agents, workflows, and dashboards</Heading>
+        </div>
+        <Sub className="mt-5">
+          We detect time sinks across your organization, then automate them
+          with connected agents, workflows, dashboards, and integrations.
+        </Sub>
+
+        <div className="mt-12">
+          <UseCases tabStyle="agentflow" />
+        </div>
+      </Band>
+
+      {/* 4. WHAT WE BUILD (black) */}
+      <Band
+        id="solutions"
+        dark
+        bgImage="/assets/green-animation-bg.png"
+      >
+        <Eyebrow dark>What We Build</Eyebrow>
+        <div className="mt-5">
+          <Heading dark>Agents, workflows, and dashboards</Heading>
+        </div>
+        <Sub dark className="mt-5">
+          All built on our state-of-the-art Harmony AI platform, customized to
+          your business, and run for you.
+        </Sub>
+        <Solutions />
+
+        {/* Platform traits */}
+        <PlatformTraits />
+      </Band>
+
+      {/* 5. PROCESS (white) */}
+      <Band id="process">
+        <Eyebrow>Process</Eyebrow>
+        <div className="mt-5">
+          <Heading>From audit to autopilot in two weeks</Heading>
+        </div>
+        <Sub className="mt-5">
+          We find the bottlenecks, fix them with AI, and keep improving every
+          week after. Done for you, start to finish.
+        </Sub>
+        <Process />
+      </Band>
+
+      {/* 6. OUTCOMES (white) */}
+      <Band id="outcomes" className="!pt-0">
+        <Eyebrow>Outcomes</Eyebrow>
+        <div className="mt-5">
+          <Heading>We plug the time leaks and the money leaks</Heading>
+        </div>
+        <Sub className="mt-5">
+          Every system we ship is aimed at the same three outcomes. Here is
+          what founders and agency owners get back.
+        </Sub>
+
+        {/* Selling points */}
+        <div className="mt-12 grid gap-10 border-y border-black/10 py-10 md:grid-cols-3 md:gap-8">
+          {sellingPoints.map((point) => (
+            <div key={point.title}>
+              <span
+                className="block h-2 w-2"
+                style={{ backgroundColor: ACCENT }}
+              />
+              <h3
+                className="mt-4 text-xl text-black"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                {point.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
+                {point.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {/* Featured testimonial */}
+          <div className="relative min-h-[420px] overflow-hidden rounded-xl lg:col-span-2">
+            <Image
+              src="/assets/dummy-images/dummy-boy-image-2.webp"
+              alt="Harmony customer"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30" />
+            <span
+              className="absolute left-6 top-6 text-lg font-medium text-white"
+              style={{ fontFamily: "var(--font-schibsted)" }}
+            >
+              Craftgram
+            </span>
+            <div className="absolute bottom-6 left-6 right-6">
+              <p
+                className="text-3xl text-white"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                10,000+
+              </p>
+              <p className="mt-2 max-w-md text-base leading-7 text-white/85">
+                &quot;Harmony took the followups, reporting, and client admin
+                off my plate. Over ten thousand tasks have run without us
+                touching them, and I got two days a week back.&quot;
+              </p>
+            </div>
+            <span className="absolute bottom-6 right-6 flex h-9 w-9 items-center justify-center rounded-md bg-white/15 text-white backdrop-blur">
+              <ArrowIcon />
+            </span>
+          </div>
+
+          {/* Stat cards */}
+          <div className="flex flex-col gap-5">
+            {[
+              { logo: "Sparklé", value: "60s", label: "Lead response time" },
+              { logo: "Swift", value: "47%", label: "Less manual admin" },
+            ].map((card) => (
+              <div
+                key={card.logo}
+                className="relative flex flex-1 flex-col rounded-xl border border-black/10 bg-white p-6"
+              >
+                <span
+                  className="text-lg font-medium text-black"
+                  style={{ fontFamily: "var(--font-schibsted)" }}
+                >
+                  {card.logo}
+                </span>
+                <div className="mt-auto pt-8">
+                  <p
+                    className="text-4xl text-black"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {card.value}
+                  </p>
+                  <p className="mt-1.5 text-[15px] text-[#4d4d4d]">
+                    {card.label}
+                  </p>
+                </div>
+                <span className="absolute bottom-6 right-6 flex h-8 w-8 items-center justify-center rounded-md border border-black/15 text-black">
+                  <ArrowIcon />
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Big stat row */}
+        <div className="mt-12 grid gap-10 border-t border-black/10 pt-10 sm:grid-cols-3">
+          {bigStats.map((stat) => (
+            <div key={stat.label}>
+              <p
+                className="text-5xl text-black md:text-6xl"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                <CountUp
+                  value={stat.value}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                />
+              </p>
+              <p className="mt-2 text-[15px] text-[#4d4d4d]">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </Band>
+
+      {/* 7. SECURITY (black) */}
+      <Band id="security" dark>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+          <div>
+            <Eyebrow dark>Security</Eyebrow>
+            <div className="mt-5">
+              <Heading as="h3" dark>
+                Enterprise-grade security
+              </Heading>
+            </div>
+            <Sub dark className="mt-5">
+              Your client data is non-negotiable. We hold the highest
+              standards of security and compliance, so it stays yours.
+            </Sub>
+          </div>
+          <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
+            {securityCards.map((card) => (
+              <div key={card.title} className="flex flex-col sm:px-7 sm:first:pl-0 sm:last:pr-0">
+                <span style={{ color: ACCENT }}>{card.icon}</span>
+                <h3
+                  className="mt-5 text-lg text-white"
+                  style={{ fontFamily: "var(--font-schibsted)" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-7 text-white/50">
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Band>
+
+      {/* 8. PRICING (black) */}
+      <Band id="pricing" dark>
+        <Eyebrow dark>Talk to Sales</Eyebrow>
+        <div className="mt-5">
+          <Heading dark>Flexible pricing for any scale</Heading>
+        </div>
+        <Sub dark className="mt-5">
+          Choose the plan that fits your needs. Every plan is designed around
+          managed AI workflows, integrations, and support.
+        </Sub>
+
+        <div className="mt-12 inline-flex border border-white/10 bg-black p-1">
+          <span
+            className="px-5 py-2 text-[14px] font-medium uppercase text-black"
+            style={{ backgroundColor: CTA_ACCENT }}
+          >
+            Monthly
+          </span>
+          <span className="px-5 py-2 text-[14px] font-medium uppercase text-white/70">
+            Yearly
+          </span>
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {pricingPlans.map((plan) => (
+            <div
+              key={plan.name}
+              className="relative flex min-h-[560px] flex-col border border-white/10 bg-black p-7 md:p-9"
+            >
+              <span className="absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
+              <span className="absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
+              <div className="flex flex-1 flex-col">
+                <h3
+                  className="text-2xl text-white"
+                  style={{ fontFamily: "var(--font-schibsted)" }}
+                >
+                  {plan.name}
+                </h3>
+                <p className="mt-4 text-[15px] text-white/55">
+                  {plan.description}
+                </p>
+
+                <div className="mt-16 flex items-end gap-2">
+                  <span
+                    className="text-5xl leading-none text-white"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {plan.price}
+                  </span>
+                  <span className="pb-1 text-[14px] text-white/55">
+                    /month, per user
+                  </span>
+                </div>
+
+                <a
+                  href={CAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-9 flex h-12 items-center justify-center border text-[14px] font-medium uppercase transition ${
+                    plan.highlighted
+                      ? "border-transparent text-black hover:brightness-95"
+                      : "border-[#9ff690] text-white hover:bg-white/10"
+                  }`}
+                  style={
+                    plan.highlighted
+                      ? { backgroundColor: CTA_ACCENT }
+                      : undefined
+                  }
+                >
+                  {plan.cta}
+                </a>
+
+                <div className="mt-10 border-t border-white/10 pt-9">
+                  <p className="text-[15px] font-medium text-white/45">
+                    What&apos;s Included
+                  </p>
+                  <ul className="mt-7 space-y-5">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-3 text-[16px] text-white/85"
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0"
+                          style={{ backgroundColor: ACCENT }}
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Band>
+
+      {/* 9. FAQ (white) */}
+      <Band id="faq" className="!pt-0">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+          <div className="flex flex-col items-start">
+            <Eyebrow>FAQ</Eyebrow>
+            <div className="mt-5">
+              <Heading as="h3">Got any questions? We have answers</Heading>
+            </div>
+            <div className="mt-10 flex -space-x-2">
+              {[
+                "/assets/dummy-images/dummy-girl-image-1.webp",
+                "/assets/dummy-images/dummy-boy-image-3.webp",
+              ].map((src) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full border-2 border-[#fafafa] object-cover"
+                />
+              ))}
+            </div>
+            <p className="mt-4 text-[17px] font-medium text-black">
+              Have more questions?
+            </p>
+            <p className="mt-1 text-[15px] text-[#4d4d4d]">
+              Reach out and we will walk you through it.
+            </p>
+            <a
+              href={CAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
+            >
+              Contact us
+            </a>
+          </div>
+          <Faq />
+        </div>
+      </Band>
+
+      {/* 10. THE PROBLEM (white) */}
+      <Band>
+        <Eyebrow>The Problem</Eyebrow>
+        <div className="mt-5">
+          <Heading>Your day fills up before the real work starts</Heading>
+        </div>
+        <Sub className="mt-5">
+          Founders and agency owners spend their best hours on followups,
+          reporting, and admin. The messy daily work does not scale your
+          business, it just eats it.
+        </Sub>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {challenges.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-xl border border-black/10 bg-white p-3"
+            >
+              <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-lg bg-black">
+                <div
+                  aria-hidden
+                  className="absolute -bottom-16 -right-10 h-[180px] w-[260px] rounded-full blur-[60px]"
+                  style={{ backgroundColor: "rgba(61,142,47,0.45)" }}
+                />
+                <span className="relative">{card.icon}</span>
+              </div>
+              <div className="px-3 pb-4 pt-5">
+                <h3
+                  className="text-xl text-black"
+                  style={{ fontFamily: "var(--font-schibsted)" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
+                  {card.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Band>
+
+      {/* 11. FINAL CTA (black) */}
+      <section className="relative isolate overflow-hidden bg-black">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[360px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
+          style={{ backgroundColor: "rgba(159,246,144,0.12)" }}
+        />
+        <div className="mx-auto flex w-[92%] max-w-[1200px] flex-col items-center py-24 text-center md:py-32">
+          <Eyebrow dark>Get Started</Eyebrow>
+          <div className="mt-5 flex flex-col items-center">
+            <Heading dark>Ready to get your week back?</Heading>
+          </div>
+          <p className="mt-5 max-w-lg text-base leading-7 text-white/55 md:text-[17px] md:leading-8">
+            Book a call and we will map your biggest time leaks and money
+            leaks live, then show you the personalized system that plugs them.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <PrimaryButton />
+            <GhostButton href="#process">How it works</GhostButton>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. FOOTER (black) */}
+      <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-7 bg-[radial-gradient(circle,rgba(159,246,144,0.34)_1px,transparent_1.5px)] bg-[size:20px_20px] opacity-30" />
+        <div className="relative mx-auto w-[92%] max-w-[1320px] border-x border-white/10">
+          <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
+          <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
+          {[14, 26, 38, 54, 74, 92].map((left) => (
+            <span
+              key={left}
+              className="pointer-events-none absolute -top-1 h-2 w-2"
+              style={{ left: `${left}%`, backgroundColor: ACCENT }}
+            />
+          ))}
+
+          <div className="grid gap-14 border-y border-white/10 px-7 py-20 md:px-10 lg:grid-cols-[1.7fr_1fr_1fr_1fr] lg:py-24">
+            <div>
+              <a href="./" className="block w-[150px]" aria-label="Harmony home">
+                <Image
+                  src="/assets/logo-full-dark.png"
+                  alt="Harmony"
+                  width={633}
+                  height={161}
+                  className="h-auto w-full"
+                />
+              </a>
+              <p className="mt-9 max-w-md text-[18px] leading-8 text-white/45">
+                Harmony builds personalized AI systems that give founders and
+                teams their time back.
+              </p>
+            </div>
+
+            {footerColumns.map((col) => (
+              <div key={col.title}>
+                <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-white/55">
+                  {col.title}
+                </p>
+                <ul className="mt-6 space-y-5">
+                  {col.links.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-[18px] text-white/42 transition hover:text-white"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-6 border-b border-white/10 px-7 py-9 text-[16px] text-white/55 md:flex-row md:items-center md:justify-between md:px-10">
+            <p>
+              © 2026&nbsp; Design &amp; Developed by{" "}
+              <a
+                href="https://www.framer.com/@helloamani/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white transition hover:text-[#9ff690]"
+              >
+                Amani Design
+              </a>
+            </p>
+            <div className="flex items-center gap-8 text-white/55">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
+                <FacebookIcon />
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="transition hover:text-white">
+                <XIcon />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition hover:text-white">
+                <LinkedinIcon />
+              </a>
+            </div>
+          </div>
+
+          <div className="relative h-36 overflow-hidden px-7 md:h-48 md:px-10">
+            <p
+              aria-hidden="true"
+              className="absolute left-7 top-0 select-none whitespace-nowrap text-[96px] font-semibold leading-none tracking-normal text-transparent md:left-10 md:text-[190px]"
+              style={{
+                fontFamily: "var(--font-schibsted)",
+                WebkitTextStroke: "1px rgba(159,246,144,0.28)",
+              }}
+            >
+              Harmony AI
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

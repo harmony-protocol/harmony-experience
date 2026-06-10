@@ -38,7 +38,7 @@ const agencyReality = [
 
 /* ----------------------------- ATOMS ----------------------------- */
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p
       className="mb-3 text-sm font-medium uppercase text-zinc-500"
@@ -52,7 +52,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+export function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2
       className="max-w-2xl pb-1 font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.2] tracking-[-0.025em] md:text-4xl"
@@ -70,16 +70,24 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PrimaryCTA({ size = "md" }: { size?: "md" | "lg" }) {
+export function PrimaryCTA({
+  size = "md",
+  label = "Book a Call",
+  href = "https://cal.com/harmony-vishal/discovery",
+}: {
+  size?: "md" | "lg";
+  label?: string;
+  href?: string;
+}) {
   const padding = size === "lg" ? "px-5 py-2.5" : "px-4 py-2";
   return (
     <a
-      href="https://cal.com/harmony-vishal/discovery"
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2 rounded-lg bg-zinc-100 ${padding} text-base font-medium text-zinc-950 transition hover:bg-white`}
     >
-      Book a Call
+      {label}
       <ArrowRight className="h-4 w-4" strokeWidth={2} />
     </a>
   );
