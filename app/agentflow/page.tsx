@@ -499,6 +499,17 @@ export default function AgentflowPage() {
         .af-flow { opacity: 0; animation: af-flow 1.6s ease-in-out infinite; }
         @keyframes af-spin { to { transform: rotate(360deg); } }
         .af-spin { animation: af-spin 4s linear infinite; }
+        @keyframes af-done-in { 0%, 67% { opacity: 0; } 69%, 100% { opacity: 1; } }
+        @keyframes af-done-out { 0%, 67% { opacity: 1; } 69%, 100% { opacity: 0; } }
+        .af-done-in { opacity: 0; animation: af-done-in 22s linear infinite; }
+        .af-done-out { animation: af-done-out 22s linear infinite; }
+        @keyframes af-build {
+          0%   { transform: scaleX(0); opacity: 1; }
+          45%  { transform: scaleX(1); }
+          85%  { transform: scaleX(1); opacity: 1; }
+          100% { transform: scaleX(1); opacity: 0; }
+        }
+        .af-build { transform-origin: left; animation: af-build 5.4s ease-in-out infinite; }
         @keyframes af-fill {
           0%   { transform: scaleX(0); }
           30%  { transform: scaleX(1); }
@@ -509,7 +520,8 @@ export default function AgentflowPage() {
         @media (prefers-reduced-motion: reduce) {
           .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
           .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel,
-          .af-glow, .af-dash, .af-flow, .af-spin, .af-fill { animation: none; }
+          .af-glow, .af-dash, .af-flow, .af-spin, .af-fill, .af-build,
+          .af-done-in, .af-done-out { animation: none; }
         }
       `}</style>
 

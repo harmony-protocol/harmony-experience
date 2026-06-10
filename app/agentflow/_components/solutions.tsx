@@ -32,7 +32,7 @@ const solutions: Solution[] = [
     id: "solution-03",
     label: "First Month",
     title: "Solve more problems",
-    body: "With the core systems live, we keep building: new systems for new problems, across more of your stack and teams. Each one takes another job off your plate.",
+    body: "We keep building: new systems for new problems. Each one takes another job off your plate.",
     chips: ["More systems built", "More problems solved", "Across your stack"],
   },
   {
@@ -250,20 +250,6 @@ const LINE_ACCENT = "rgba(159,246,144,0.55)";
 function WorkflowVisual() {
   return (
     <div className="flex h-full flex-col items-center justify-center p-6 md:p-8">
-      <span
-        className="flex h-10 w-10 items-center justify-center rounded-xl"
-        style={{ backgroundColor: ACCENT }}
-      >
-        <Image
-          src="/icon.png"
-          alt=""
-          width={64}
-          height={64}
-          className="h-5 w-5 invert mix-blend-multiply"
-        />
-      </span>
-      <span className="h-4 w-px" style={{ backgroundColor: LINE_ACCENT }} />
-
       <div className="w-full max-w-[340px] rounded-lg border border-white/10 bg-[#0a0a0a]">
         <div className="flex items-center justify-between px-4 py-2.5">
           <span className="text-[13px] font-medium text-white">Harmony</span>
@@ -275,17 +261,32 @@ function WorkflowVisual() {
         </div>
         <div className="flex items-center justify-between border-t border-white/10 px-4 py-2.5">
           <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-white/70">
-            <span
-              className="af-spin h-3 w-3 rounded-full border-[1.5px]"
+            <svg
+              viewBox="0 0 16 16"
+              className="af-spin h-3.5 w-3.5 text-white/80"
               style={{
-                borderColor: "rgba(255,255,255,0.15)",
-                borderTopColor: ACCENT,
-                animationDuration: "0.9s",
+                animationDuration: "0.8s",
+                animationTimingFunction: "steps(8)",
               }}
-            />
+              aria-hidden
+            >
+              {Array.from({ length: 8 }, (_, i) => (
+                <line
+                  key={i}
+                  x1="8"
+                  y1="1.5"
+                  x2="8"
+                  y2="4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  opacity={(i + 1) / 8}
+                  transform={`rotate(${i * 45} 8 8)`}
+                />
+              ))}
+            </svg>
             Building
           </span>
-          <span className="text-[10px] text-white/35">Shipping week one</span>
         </div>
       </div>
 
@@ -299,10 +300,10 @@ function WorkflowVisual() {
       </div>
 
       <div className="grid w-full max-w-[340px] grid-cols-3 gap-2.5">
-        {AGENT_ROWS.map((agent) => (
+        {AGENT_ROWS.map((agent, cardIndex) => (
           <div
             key={agent.name}
-            className="rounded-lg border border-white/[0.08] bg-[#0a0a0a] p-2.5"
+            className="rounded-lg border border-white/[0.08] bg-[#0a0a0a] p-3"
           >
             <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-white">
               <span
@@ -312,26 +313,26 @@ function WorkflowVisual() {
               {agent.name}
             </span>
             <p className="mt-0.5 text-[10px] text-white/40">Working</p>
-            <div className="mt-1.5 flex items-end gap-[3px]">
-              {Array.from({ length: 7 }, (_, i) => (
+            <div className="mt-3 flex flex-col gap-1.5">
+              {[100, 72, 48].map((w, i) => (
                 <span
-                  key={i}
-                  className="af-eq-bar h-4 flex-1 rounded-[2px]"
-                  style={{
-                    backgroundColor: agent.color,
-                    opacity: 0.85,
-                    transformOrigin: "bottom",
-                    animationDelay: `${i * 0.12}s`,
-                  }}
-                />
+                  key={w}
+                  className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]"
+                  style={{ width: `${w}%` }}
+                >
+                  <span
+                    className="af-build block h-full rounded-full"
+                    style={{
+                      backgroundColor: `${agent.color}99`,
+                      animationDelay: `${-(cardIndex * 0.6 + (2 - i) * 0.9)}s`,
+                    }}
+                  />
+                </span>
               ))}
             </div>
           </div>
         ))}
       </div>
-
-      <span className="h-4 w-px" style={{ backgroundColor: LINE_ACCENT }} />
-      <GlowBorderChip>Live in week one</GlowBorderChip>
     </div>
   );
 }
@@ -347,8 +348,7 @@ const PROBLEM_FEED = [
 
 function SolveVisual() {
   return (
-    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
-      <MockLabel>New systems for new problems</MockLabel>
+    <div className="flex h-full flex-col justify-center gap-5 py-6 pl-7 pr-6 md:py-8 md:pl-12 md:pr-8">
       <div
         className="h-[190px] overflow-hidden"
         style={{
@@ -359,18 +359,34 @@ function SolveVisual() {
         }}
       >
         <div className="af-vmarquee flex flex-col gap-5 pb-5">
-          {[...PROBLEM_FEED, ...PROBLEM_FEED].map((p, i) => (
-            <div
-              key={`${p.label}-${i}`}
-              aria-hidden={i >= PROBLEM_FEED.length}
-              className="flex items-center gap-2.5"
-            >
-              {p.done ? <CheckDot /> : <SpinnerDot />}
-              <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-white/55">
-                {p.label}
-              </span>
-            </div>
-          ))}
+          {[...PROBLEM_FEED, ...PROBLEM_FEED].map((p, i) => {
+            const delay = `${((i % PROBLEM_FEED.length) * (22 / PROBLEM_FEED.length) - 19.35).toFixed(2)}s`;
+            return (
+              <div
+                key={`${p.label}-${i}`}
+                aria-hidden={i >= PROBLEM_FEED.length}
+                className="flex items-center gap-2.5"
+              >
+                <span className="relative h-4 w-4 shrink-0">
+                  <span
+                    className="af-done-out absolute inset-0 flex"
+                    style={{ animationDelay: delay }}
+                  >
+                    <SpinnerDot />
+                  </span>
+                  <span
+                    className="af-done-in absolute inset-0 flex"
+                    style={{ animationDelay: delay }}
+                  >
+                    <CheckDot />
+                  </span>
+                </span>
+                <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-white/55">
+                  {p.label}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
       <GlowBorderChip className="self-start">
@@ -385,7 +401,6 @@ const IMPROVE_BARS = [6, 8, 10, 12, 14, 17, 20, 24, 28, 33, 39, 46, 54, 64, 75, 
 function ImproveVisual() {
   return (
     <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
-      <MockLabel>Improving every week</MockLabel>
       <div className="flex h-[150px] items-end justify-between">
         {IMPROVE_BARS.map((h, i) => (
           <span
@@ -407,7 +422,7 @@ function ImproveVisual() {
           >
             27h
           </p>
-          <p className="mt-1 text-[12px] text-white/45">
+          <p className="mt-1 text-[15px] leading-7 text-white/55">
             saved every week by month one
           </p>
         </div>
