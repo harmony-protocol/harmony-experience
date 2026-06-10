@@ -20,7 +20,6 @@ import { Solutions } from "./_components/solutions";
 import { Features } from "./_components/features";
 import { PixelStrip } from "./_components/pixel-strip";
 import { Process } from "./_components/process";
-import { CountUp } from "./_components/count-up";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
 
@@ -113,14 +112,6 @@ function Sub({
     >
       {children}
     </p>
-  );
-}
-
-function ArrowIcon({ className = "h-3 w-3" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 14 14" className={className} fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 7h10M12 7L8 3M12 7l-4 4" />
-    </svg>
   );
 }
 
@@ -291,37 +282,6 @@ const trustedLogos = [
   },
 ];
 
-const challenges = [
-  {
-    title: "Admin Eats Your Day",
-    body: "Client emails, scheduling, invoices, and CRM updates pile up daily. Every hour you spend there is an hour not spent on growth.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round">
-        <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
-        <circle cx="12" cy="12" r="2.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Leads Slip Through",
-    body: "An inquiry lands at 9pm and waits until morning. By then the prospect has already called the next firm on their list.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Reporting Eats Your Week",
-    body: "Client updates, dashboards, and status reports get built by hand every week, from data scattered across a dozen tools.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke={ACCENT} strokeWidth={1.5} strokeLinecap="round">
-        <path d="M4 7h12M16 7l-3-3M16 7l-3 3M20 17H8M8 17l3-3M8 17l3 3" />
-      </svg>
-    ),
-  },
-];
-
 const whoWeHelp = [
   {
     icon: <Globe className="h-5 w-5" strokeWidth={1.6} />,
@@ -359,27 +319,6 @@ const whoWeHelp = [
     icon: <Landmark className="h-5 w-5" strokeWidth={1.6} />,
     title: "Investment Firms",
   },
-];
-
-const sellingPoints = [
-  {
-    title: "Reduce operational drag",
-    body: "The repeat work that slows every project down runs in the background instead of on your team's plate.",
-  },
-  {
-    title: "Free founders from the day-to-day",
-    body: "You stop being the bottleneck. The followups, reports, and admin run while you lead the business.",
-  },
-  {
-    title: "Make the whole team faster",
-    body: "Everyone gets hours back each week to spend on clients, delivery, and growth instead of busywork.",
-  },
-];
-
-const bigStats = [
-  { value: 200, suffix: "+", label: "Workflows automated" },
-  { value: 3, prefix: "$", suffix: "M+", label: "Saved in ops costs" },
-  { value: 10, suffix: "x", label: "Faster lead response" },
 ];
 
 const securityCards = [
@@ -741,161 +680,6 @@ export default function AgentflowPage() {
         <Process />
       </Band>
 
-      {/* 6. OUTCOMES (white) */}
-      <Band id="outcomes" className="!pt-0">
-        <Eyebrow>Outcomes</Eyebrow>
-        <div className="mt-5">
-          <Heading>We plug the time leaks and the money leaks</Heading>
-        </div>
-        <Sub className="mt-5">
-          Every system we ship is aimed at the same three outcomes. Here is
-          what founders and agency owners get back.
-        </Sub>
-
-        {/* Selling points */}
-        <div className="mt-12 grid gap-10 border-y border-black/10 py-10 md:grid-cols-3 md:gap-8">
-          {sellingPoints.map((point) => (
-            <div key={point.title}>
-              <span
-                className="block h-2 w-2"
-                style={{ backgroundColor: ACCENT }}
-              />
-              <h3
-                className="mt-4 text-xl text-black"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                {point.title}
-              </h3>
-              <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
-                {point.body}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {/* Featured testimonial */}
-          <div className="relative min-h-[420px] overflow-hidden rounded-xl lg:col-span-2">
-            <Image
-              src="/assets/dummy-images/dummy-boy-image-2.webp"
-              alt="Harmony customer"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30" />
-            <span
-              className="absolute left-6 top-6 text-lg font-medium text-white"
-              style={{ fontFamily: "var(--font-schibsted)" }}
-            >
-              Craftgram
-            </span>
-            <div className="absolute bottom-6 left-6 right-6">
-              <p
-                className="text-3xl text-white"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                10,000+
-              </p>
-              <p className="mt-2 max-w-md text-base leading-7 text-white/85">
-                &quot;Harmony took the followups, reporting, and client admin
-                off my plate. Over ten thousand tasks have run without us
-                touching them, and I got two days a week back.&quot;
-              </p>
-            </div>
-            <span className="absolute bottom-6 right-6 flex h-9 w-9 items-center justify-center rounded-md bg-white/15 text-white backdrop-blur">
-              <ArrowIcon />
-            </span>
-          </div>
-
-          {/* Stat cards */}
-          <div className="flex flex-col gap-5">
-            {[
-              { logo: "Sparklé", value: "60s", label: "Lead response time" },
-              { logo: "Swift", value: "47%", label: "Less manual admin" },
-            ].map((card) => (
-              <div
-                key={card.logo}
-                className="relative flex flex-1 flex-col rounded-xl border border-black/10 bg-white p-6"
-              >
-                <span
-                  className="text-lg font-medium text-black"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {card.logo}
-                </span>
-                <div className="mt-auto pt-8">
-                  <p
-                    className="text-4xl text-black"
-                    style={{ fontFamily: "var(--font-schibsted)" }}
-                  >
-                    {card.value}
-                  </p>
-                  <p className="mt-1.5 text-[15px] text-[#4d4d4d]">
-                    {card.label}
-                  </p>
-                </div>
-                <span className="absolute bottom-6 right-6 flex h-8 w-8 items-center justify-center rounded-md border border-black/15 text-black">
-                  <ArrowIcon />
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Big stat row */}
-        <div className="mt-12 grid gap-10 border-t border-black/10 pt-10 sm:grid-cols-3">
-          {bigStats.map((stat) => (
-            <div key={stat.label}>
-              <p
-                className="text-5xl text-black md:text-6xl"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                <CountUp
-                  value={stat.value}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                />
-              </p>
-              <p className="mt-2 text-[15px] text-[#4d4d4d]">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </Band>
-
-      {/* 7. SECURITY (black) */}
-      <Band id="security" dark>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
-          <div>
-            <Eyebrow dark>Security</Eyebrow>
-            <div className="mt-5">
-              <Heading as="h3" dark>
-                Enterprise-grade security
-              </Heading>
-            </div>
-            <Sub dark className="mt-5">
-              Your client data is non-negotiable. We hold the highest
-              standards of security and compliance, so it stays yours.
-            </Sub>
-          </div>
-          <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
-            {securityCards.map((card) => (
-              <div key={card.title} className="flex flex-col sm:px-7 sm:first:pl-0 sm:last:pr-0">
-                <span style={{ color: ACCENT }}>{card.icon}</span>
-                <h3
-                  className="mt-5 text-lg text-white"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-7 text-white/50">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Band>
-
       {/* 8. PRICING (black) */}
       <Band id="pricing" dark>
         <Eyebrow dark>Pricing</Eyebrow>
@@ -983,8 +767,42 @@ export default function AgentflowPage() {
         </div>
       </Band>
 
+      {/* SECURITY (black) */}
+      <Band id="security" dark>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+          <div>
+            <Eyebrow dark>Security</Eyebrow>
+            <div className="mt-5">
+              <Heading as="h3" dark>
+                Enterprise-grade security
+              </Heading>
+            </div>
+            <Sub dark className="mt-5">
+              Your client data is non-negotiable. We hold the highest
+              standards of security and compliance, so it stays yours.
+            </Sub>
+          </div>
+          <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
+            {securityCards.map((card) => (
+              <div key={card.title} className="flex flex-col sm:px-7 sm:first:pl-0 sm:last:pr-0">
+                <span style={{ color: ACCENT }}>{card.icon}</span>
+                <h3
+                  className="mt-5 text-lg text-white"
+                  style={{ fontFamily: "var(--font-schibsted)" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-7 text-white/50">
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Band>
+
       {/* 9. FAQ (white) */}
-      <Band id="faq" className="!pt-0">
+      <Band id="faq">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
           <div className="flex flex-col items-start">
             <Eyebrow>FAQ</Eyebrow>
@@ -1022,47 +840,6 @@ export default function AgentflowPage() {
             </a>
           </div>
           <Faq />
-        </div>
-      </Band>
-
-      {/* 10. THE PROBLEM (white) */}
-      <Band>
-        <Eyebrow>The Problem</Eyebrow>
-        <div className="mt-5">
-          <Heading>Your day fills up before the real work starts</Heading>
-        </div>
-        <Sub className="mt-5">
-          Founders and agency owners spend their best hours on followups,
-          reporting, and admin. The messy daily work does not scale your
-          business, it just eats it.
-        </Sub>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {challenges.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-xl border border-black/10 bg-white p-3"
-            >
-              <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-lg bg-black">
-                <div
-                  aria-hidden
-                  className="absolute -bottom-16 -right-10 h-[180px] w-[260px] rounded-full blur-[60px]"
-                  style={{ backgroundColor: "rgba(61,142,47,0.45)" }}
-                />
-                <span className="relative">{card.icon}</span>
-              </div>
-              <div className="px-3 pb-4 pt-5">
-                <h3
-                  className="text-xl text-black"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
-                  {card.body}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </Band>
 

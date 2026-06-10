@@ -7,24 +7,24 @@ const ACCENT = "#9ff690";
 const steps = [
   {
     n: "Week 1",
-    title: "The audit",
-    body: "We map your week and your numbers to find the time leaks and money leaks: the bottlenecks quietly draining hours and revenue from the business.",
+    title: "Auditing",
+    body: "We map your week and your numbers to quickly surface the top 3 pain points: the bottlenecks quietly draining the most hours and revenue, so we know exactly where to start.",
   },
   {
     n: "Week 2",
-    title: "Fix and deploy",
-    body: "We build the agents, workflows, and dashboards that fix your top bottlenecks, test them on real scenarios, and ship them live inside your stack.",
+    title: "Implement and deploy",
+    body: "We build, test, and ship the agents and workflows that fix those top 3 pain points, live inside your existing stack, so the work starts running without you.",
   },
   {
     n: "Ongoing",
     title: "Keep improving",
-    body: "We watch the dashboards with you, keep tuning the system as your business changes, and add new automations as you grow. You never manage it yourself.",
+    body: "We watch the dashboards with you, tune the system as your business changes, and roll out new automations as you grow. You never have to manage it yourself.",
   },
 ];
 
 function GlowVisual() {
   return (
-    <div className="relative h-full overflow-hidden rounded-xl bg-black">
+    <div className="relative h-full min-h-[420px] overflow-hidden bg-black">
       <div
         aria-hidden
         className="absolute -right-20 top-1/4 h-[360px] w-[360px] rounded-full blur-[90px]"
@@ -48,7 +48,7 @@ function GlowVisual() {
 
 function CanvasVisual() {
   return (
-    <div className="flex h-full flex-col rounded-xl bg-black p-6 md:p-8">
+    <div className="flex h-full min-h-[420px] flex-col bg-black p-6 md:p-8">
       <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-white/40">
         Workflow Canvas
       </p>
@@ -75,7 +75,7 @@ function CanvasVisual() {
 
 function DashboardVisual() {
   return (
-    <div className="flex h-full flex-col gap-3 rounded-xl bg-black p-6 md:p-8">
+    <div className="flex h-full min-h-[420px] flex-col gap-3 bg-black p-6 md:p-8">
       <div className="flex items-center justify-between">
         <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-white/40">
           Live Dashboard
@@ -125,43 +125,164 @@ function DashboardVisual() {
 
 const visuals = [GlowVisual, CanvasVisual, DashboardVisual];
 
+function CornerTicks() {
+  const pos = [
+    "-left-[3px] -top-[3px]",
+    "-right-[3px] -top-[3px]",
+    "-left-[3px] -bottom-[3px]",
+    "-right-[3px] -bottom-[3px]",
+  ];
+  return (
+    <>
+      {pos.map((p) => (
+        <span
+          key={p}
+          aria-hidden
+          className={`pointer-events-none absolute z-10 h-1.5 w-1.5 ${p}`}
+          style={{ backgroundColor: ACCENT }}
+        />
+      ))}
+    </>
+  );
+}
+
 export function Process() {
   const [active, setActive] = useState(0);
   const Visual = visuals[active];
 
   return (
-    <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
+    <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+      {/* Timeline */}
       <div>
         {steps.map((step, i) => {
           const isActive = i === active;
+          const isDone = i < active;
+          const isLast = i === steps.length - 1;
           return (
-            <div key={step.n} className="border-b border-black/10 first:border-t">
+            <div key={step.n} className="relative flex gap-5">
+              {/* Rail node */}
+              <div className="relative z-10">
+                <button
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`${step.n}: ${step.title}`}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center text-[13px] font-semibold transition-all duration-300"
+                  style={{
+                    backgroundColor: isActive
+                      ? ACCENT
+                      : isDone
+                        ? "rgba(159,246,144,0.18)"
+                        : "transparent",
+                    border: isActive
+                      ? `1px solid ${ACCENT}`
+                      : isDone
+                        ? "1px solid rgba(159,246,144,0.55)"
+                        : "1px solid rgba(0,0,0,0.15)",
+                    color: isActive
+                      ? "#000"
+                      : isDone
+                        ? "#2f7a22"
+                        : "rgba(0,0,0,0.4)",
+                    boxShadow: isActive
+                      ? "0 0 0 4px rgba(159,246,144,0.18)"
+                      : "none",
+                  }}
+                >
+                  {isDone ? (
+                    <svg
+                      viewBox="0 0 12 12"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.4}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M2 6.5L4.5 9 10 3" />
+                    </svg>
+                  ) : (
+                    String(i + 1).padStart(2, "0")
+                  )}
+                </button>
+              </div>
+
+              {/* Connector */}
+              {!isLast && (
+                <span
+                  aria-hidden
+                  className="absolute top-10 z-0 w-px transition-colors duration-300"
+                  style={{
+                    left: 20,
+                    bottom: 0,
+                    transform: "translateX(-50%)",
+                    backgroundColor: isDone
+                      ? "rgba(159,246,144,0.55)"
+                      : "rgba(0,0,0,0.12)",
+                  }}
+                />
+              )}
+
+              {/* Content */}
               <button
                 type="button"
                 onClick={() => setActive(i)}
-                className="flex w-full items-center justify-between py-5 text-left"
+                className={`flex-1 text-left transition-all duration-300 ${
+                  isLast ? "pb-0" : "pb-10"
+                }`}
               >
                 <span
-                  className={`text-xl transition ${isActive ? "text-black" : "text-black/40 hover:text-black/70"}`}
+                  className="inline-flex items-center gap-1.5 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.08em]"
+                  style={{
+                    backgroundColor: isActive
+                      ? "rgba(159,246,144,0.16)"
+                      : "rgba(0,0,0,0.05)",
+                    border: isActive
+                      ? "1px solid rgba(159,246,144,0.5)"
+                      : "1px solid rgba(0,0,0,0.08)",
+                    color: isActive ? "#2f7a22" : "rgba(0,0,0,0.45)",
+                  }}
+                >
+                  <span
+                    className="h-1.5 w-1.5"
+                    style={{
+                      backgroundColor: isActive ? ACCENT : "rgba(0,0,0,0.3)",
+                    }}
+                  />
+                  {step.n}
+                </span>
+                <h3
+                  className={`mt-3 text-[22px] leading-tight transition-colors duration-300 md:text-[26px] ${
+                    isActive ? "text-black" : "text-black/45"
+                  }`}
                   style={{ fontFamily: "var(--font-schibsted)" }}
                 >
                   {step.title}
-                </span>
-                <span className="text-[13px] font-medium uppercase tracking-[0.04em] text-black/35">
-                  {step.n}
-                </span>
+                </h3>
+                <div
+                  className="grid transition-all duration-300"
+                  style={{
+                    gridTemplateRows: isActive ? "1fr" : "0fr",
+                    opacity: isActive ? 1 : 0,
+                  }}
+                >
+                  <p className="overflow-hidden">
+                    <span className="mt-3 block max-w-md text-[15px] leading-7 text-[#4d4d4d]">
+                      {step.body}
+                    </span>
+                  </p>
+                </div>
               </button>
-              {isActive && (
-                <p className="max-w-md pb-6 text-[15px] leading-7 text-[#4d4d4d]">
-                  {step.body}
-                </p>
-              )}
             </div>
           );
         })}
       </div>
-      <div className="min-h-[420px]">
-        <Visual />
+
+      {/* Visual */}
+      <div className="relative lg:sticky lg:top-28 lg:self-start">
+        <div className="relative min-h-[420px] border border-black/10 bg-black">
+          <CornerTicks />
+          <Visual />
+        </div>
       </div>
     </div>
   );
