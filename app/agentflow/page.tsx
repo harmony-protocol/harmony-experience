@@ -497,10 +497,19 @@ export default function AgentflowPage() {
           100% { transform: translateY(var(--af-flow-dist, 12px)); opacity: 0; }
         }
         .af-flow { opacity: 0; animation: af-flow 1.6s ease-in-out infinite; }
+        @keyframes af-spin { to { transform: rotate(360deg); } }
+        .af-spin { animation: af-spin 4s linear infinite; }
+        @keyframes af-fill {
+          0%   { transform: scaleX(0); }
+          30%  { transform: scaleX(1); }
+          85%  { transform: scaleX(1); }
+          100% { transform: scaleX(0); }
+        }
+        .af-fill { transform: scaleX(0); animation: af-fill 5.4s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
           .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel,
-          .af-glow, .af-dash, .af-flow { animation: none; }
+          .af-glow, .af-dash, .af-flow, .af-spin, .af-fill { animation: none; }
         }
       `}</style>
 

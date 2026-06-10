@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const ACCENT = "#9ff690";
 
@@ -70,279 +71,353 @@ function MockLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AgentsVisual() {
-  const prompts = [
-    "Follow up with new leads",
-    "Draft the weekly client report",
-    "Chase this month's invoices",
-    "Prep notes for tomorrow's calls",
+function SpinnerDot() {
+  return (
+    <span
+      className="af-spin h-4 w-4 shrink-0 rounded-full border-[1.5px]"
+      style={{
+        borderColor: "rgba(255,255,255,0.18)",
+        borderTopColor: ACCENT,
+        animationDuration: "0.9s",
+      }}
+    />
+  );
+}
+
+function CheckDot() {
+  return (
+    <span
+      className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border"
+      style={{ borderColor: "rgba(159,246,144,0.5)", color: ACCENT }}
+    >
+      <svg
+        viewBox="0 0 12 12"
+        className="h-2 w-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 6.5L4.5 9 10 3" />
+      </svg>
+    </span>
+  );
+}
+
+/* Chip with a slowly rotating accent sweep running around its border. */
+function GlowBorderChip({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`relative inline-flex overflow-hidden rounded-md p-px ${className}`}
+    >
+      <span
+        aria-hidden
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <span
+          className="af-spin block aspect-square w-[280px]"
+          style={{ background: `conic-gradient(transparent 240deg, ${ACCENT})` }}
+        />
+      </span>
+      <span
+        className="relative rounded-[5px] border bg-black px-3 py-1.5 text-[11px] text-white/75"
+        style={{ borderColor: "rgba(159,246,144,0.12)" }}
+      >
+        {children}
+      </span>
+    </span>
+  );
+}
+
+function AuditVisual() {
+  const leaks = [
+    { task: "Inbox and follow-ups", hours: "9h", pct: 90 },
+    { task: "Reports and updates", hours: "6h", pct: 60 },
+    { task: "Scheduling and admin", hours: "4h", pct: 40 },
+  ];
+  const plan = [
+    { step: "01", title: "Automate lead follow-up", when: "Week 1" },
+    { step: "02", title: "Auto-draft client reports", when: "Week 2" },
+    { step: "03", title: "Wire up invoice chasing", when: "Week 3" },
   ];
   return (
-    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
-      <MockLabel>Automate tasks with AI agents</MockLabel>
-      <div
-        className="rounded-lg border bg-black/60 p-3.5"
-        style={{ borderColor: "rgba(159,246,144,0.45)" }}
-      >
-        <div className="flex items-center gap-2.5">
-          <svg
-            viewBox="0 0 16 16"
-            className="h-3.5 w-3.5 text-white/45"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.6}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="7" cy="7" r="5" />
-            <path d="M14 14l-3-3" />
-          </svg>
-          <p className="flex-1 text-[13px] text-white/80">
-            Search what you want the agents to do
-            <span className="ml-0.5 animate-pulse" style={{ color: ACCENT }}>
-              |
+    <div className="flex h-full flex-col justify-center p-6 md:p-8">
+      <div className="relative mx-auto w-full max-w-[400px] overflow-hidden rounded-[4px] border border-white/10 bg-[#121211] px-6 py-5 shadow-[0_30px_70px_-28px_rgba(0,0,0,0.9)]">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.14]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+        <div className="relative">
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <Image
+              src="/assets/logo-full-dark.png"
+              alt="Harmony"
+              width={633}
+              height={161}
+              className="h-4 w-auto"
+            />
+            <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-white/40">
+              Audit report
             </span>
+          </div>
+
+          <p className="mt-3 text-[10px] text-white/45">
+            Prepared for your team, 48 hours after kickoff
           </p>
-        </div>
-        <span
-          className="mt-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[11px] font-medium text-black"
-          style={{ backgroundColor: ACCENT }}
-        >
-          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="currentColor">
-            <path d="M6 0l1.4 4.6L12 6l-4.6 1.4L6 12l-1.4-4.6L0 6l4.6-1.4L6 0z" />
-          </svg>
-          Run AI Agents
-        </span>
-      </div>
-      <ul className="space-y-2.5">
-        {prompts.map((p, i) => (
-          <li key={p} className="flex items-center gap-2.5">
-            <span
-              className="flex h-4 w-4 items-center justify-center rounded-full border text-[#9ff690]"
-              style={{
-                borderColor:
-                  i < 2 ? "rgba(159,246,144,0.5)" : "rgba(255,255,255,0.18)",
-              }}
-            >
-              {i < 2 ? (
-                <svg
-                  viewBox="0 0 12 12"
-                  className="h-2 w-2"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+          <p
+            className="mt-0.5 text-[19px] text-white"
+            style={{ fontFamily: "var(--font-schibsted)" }}
+          >
+            Where your 19 hours go
+          </p>
+
+          <div className="mt-3 flex flex-col gap-2">
+            {leaks.map((l) => (
+              <div key={l.task} className="flex items-center gap-2.5">
+                <span className="w-[126px] shrink-0 truncate text-[10.5px] text-white/70">
+                  {l.task}
+                </span>
+                <span className="h-1.5 flex-1 overflow-hidden bg-white/10">
+                  <span
+                    className="block h-full"
+                    style={{ width: `${l.pct}%`, backgroundColor: ACCENT }}
+                  />
+                </span>
+                <span className="w-6 shrink-0 text-right text-[10.5px] text-white/45">
+                  {l.hours}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-4 border-t border-white/10 pt-3 text-[9px] font-semibold uppercase tracking-[0.1em] text-white/40">
+            The plan
+          </p>
+          <div className="mt-2 flex flex-col gap-1.5">
+            {plan.map((p, i) => (
+              <div key={p.step} className="flex items-center gap-2.5">
+                <span
+                  className="flex h-4 w-4 shrink-0 items-center justify-center text-[9px] font-semibold text-black"
+                  style={{ backgroundColor: ACCENT }}
                 >
-                  <path d="M2 6.5L4.5 9 10 3" />
-                </svg>
-              ) : null}
+                  {i + 1}
+                </span>
+                <span className="flex-1 truncate text-[10.5px] text-white/75">
+                  {p.title}
+                </span>
+                <span className="text-[9.5px] text-white/40">{p.when}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-4 flex items-end justify-between border-t border-white/10 pt-3">
+            <Image
+              src="/assets/founder-signature.avif"
+              alt="Signature of Vishal Singh"
+              width={512}
+              height={217}
+              className="h-7 w-auto mix-blend-screen"
+            />
+            <span className="text-[9.5px] text-white/45">
+              Vishal Singh, Founder
             </span>
-            <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-white/55">
-              {p}
-            </span>
-          </li>
-        ))}
-      </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 const AGENT_ROWS = [
-  { name: "Agent 1", color: ACCENT, role: "Drafting outbound" },
-  { name: "Agent 2", color: "#f69090", role: "Qualifying leads" },
-  { name: "Agent 3", color: "#90a8f6", role: "Updating CRM" },
+  { name: "Agent 1", color: ACCENT },
+  { name: "Agent 2", color: "#f69090" },
+  { name: "Agent 3", color: "#90a8f6" },
 ];
+
+const LINE_ACCENT = "rgba(159,246,144,0.55)";
 
 function WorkflowVisual() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-3 p-6 md:p-8">
+    <div className="flex h-full flex-col items-center justify-center p-6 md:p-8">
       <span
-        className="flex h-9 w-9 items-center justify-center rounded-lg"
+        className="flex h-10 w-10 items-center justify-center rounded-xl"
         style={{ backgroundColor: ACCENT }}
       >
-        <svg viewBox="0 0 16 16" className="h-4 w-4 text-black" fill="currentColor">
-          <path d="M8 0l1.8 6.2L16 8l-6.2 1.8L8 16l-1.8-6.2L0 8l6.2-1.8L8 0z" />
-        </svg>
+        <Image
+          src="/icon.png"
+          alt=""
+          width={64}
+          height={64}
+          className="h-5 w-5 invert mix-blend-multiply"
+        />
       </span>
-      <span className="h-3 w-px bg-white/15" />
-      <div className="w-full max-w-[320px] rounded-lg border border-white/10 bg-[#0a0a0a] px-4 py-3">
-        <div className="flex items-center justify-between">
-          <span className="text-[12px] font-medium text-white">Harmony</span>
+      <span className="h-4 w-px" style={{ backgroundColor: LINE_ACCENT }} />
+
+      <div className="w-full max-w-[340px] rounded-lg border border-white/10 bg-[#0a0a0a]">
+        <div className="flex items-center justify-between px-4 py-2.5">
+          <span className="text-[13px] font-medium text-white">Harmony</span>
           <span className="flex gap-0.5 text-white/30">
             <span className="h-1 w-1 rounded-full bg-current" />
             <span className="h-1 w-1 rounded-full bg-current" />
             <span className="h-1 w-1 rounded-full bg-current" />
           </span>
         </div>
-        <div className="mt-2 flex items-center justify-between">
-          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-white/55">
+        <div className="flex items-center justify-between border-t border-white/10 px-4 py-2.5">
+          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-white/70">
             <span
-              className="h-1.5 w-1.5 animate-pulse rounded-full"
-              style={{ backgroundColor: ACCENT }}
+              className="af-spin h-3 w-3 rounded-full border-[1.5px]"
+              style={{
+                borderColor: "rgba(255,255,255,0.15)",
+                borderTopColor: ACCENT,
+                animationDuration: "0.9s",
+              }}
             />
-            Processing
+            Building
           </span>
-          <span className="text-[10px] text-white/35">Run for 10 minutes</span>
+          <span className="text-[10px] text-white/35">Shipping week one</span>
         </div>
       </div>
-      <span className="h-3 w-px bg-white/15" />
-      <div className="flex w-full max-w-[320px] flex-col gap-2">
+
+      <div className="relative h-6 w-full max-w-[340px]">
+        <span
+          className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2"
+          style={{ backgroundColor: LINE_ACCENT }}
+        />
+        <span className="absolute left-[16.66%] top-0 h-full w-px -translate-x-1/2 bg-white/15" />
+        <span className="absolute left-[83.33%] top-0 h-full w-px -translate-x-1/2 bg-white/15" />
+      </div>
+
+      <div className="grid w-full max-w-[340px] grid-cols-3 gap-2.5">
         {AGENT_ROWS.map((agent) => (
           <div
             key={agent.name}
-            className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0a0a0a] px-3 py-2"
+            className="rounded-lg border border-white/[0.08] bg-[#0a0a0a] p-2.5"
           >
-            <span className="flex items-center gap-2 text-[12px] font-medium text-white">
+            <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-white">
               <span
-                className="h-1.5 w-1.5 rounded-full"
+                className="h-1.5 w-1.5"
                 style={{ backgroundColor: agent.color }}
               />
               {agent.name}
             </span>
-            <span className="text-[10px] text-white/35">{agent.role}</span>
-            <span
-              className="text-[11px] font-medium"
-              style={{
-                background: `linear-gradient(90deg, rgba(255,255,255,0.35), ${agent.color}, rgba(255,255,255,0.35))`,
-                backgroundSize: "200% 100%",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                animation: "af-shimmer 2.2s linear infinite",
-              }}
-            >
-              Working
-            </span>
+            <p className="mt-0.5 text-[10px] text-white/40">Working</p>
+            <div className="mt-1.5 flex items-end gap-[3px]">
+              {Array.from({ length: 7 }, (_, i) => (
+                <span
+                  key={i}
+                  className="af-eq-bar h-4 flex-1 rounded-[2px]"
+                  style={{
+                    backgroundColor: agent.color,
+                    opacity: 0.85,
+                    transformOrigin: "bottom",
+                    animationDelay: `${i * 0.12}s`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
         ))}
       </div>
-      <span
-        className="mt-1 rounded-md border px-3 py-1.5 text-[11px] italic text-white/60"
+
+      <span className="h-4 w-px" style={{ backgroundColor: LINE_ACCENT }} />
+      <GlowBorderChip>Live in week one</GlowBorderChip>
+    </div>
+  );
+}
+
+const PROBLEM_FEED = [
+  { label: "Lead follow-up", done: true },
+  { label: "Weekly client reports", done: true },
+  { label: "Invoice chasing", done: true },
+  { label: "Meeting prep notes", done: false },
+  { label: "CRM data hygiene", done: false },
+  { label: "Hiring pipeline", done: false },
+];
+
+function SolveVisual() {
+  return (
+    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
+      <MockLabel>New systems for new problems</MockLabel>
+      <div
+        className="h-[190px] overflow-hidden"
         style={{
-          borderColor: "rgba(159,246,144,0.25)",
-          backgroundColor: "rgba(159,246,144,0.06)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
         }}
       >
-        Thought for 10 minutes...
-      </span>
+        <div className="af-vmarquee flex flex-col gap-5 pb-5">
+          {[...PROBLEM_FEED, ...PROBLEM_FEED].map((p, i) => (
+            <div
+              key={`${p.label}-${i}`}
+              aria-hidden={i >= PROBLEM_FEED.length}
+              className="flex items-center gap-2.5"
+            >
+              {p.done ? <CheckDot /> : <SpinnerDot />}
+              <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-white/55">
+                {p.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <GlowBorderChip className="self-start">
+        One new system every week
+      </GlowBorderChip>
     </div>
   );
 }
 
-const CHART_BARS = [8, 10, 9, 13, 12, 16, 15, 20, 19, 25, 24, 31, 30, 39, 38, 49, 48, 62, 60, 78, 76, 96];
+const IMPROVE_BARS = [6, 8, 10, 12, 14, 17, 20, 24, 28, 33, 39, 46, 54, 64, 75, 88, 100];
 
-function StatCard({
-  label,
-  value,
-  delta,
-}: {
-  label: string;
-  value: string;
-  delta: string;
-}) {
+function ImproveVisual() {
   return (
-    <div className="rounded-lg border border-white/10 bg-[#0a0a0a] p-3.5">
-      <MockLabel>{label}</MockLabel>
-      <div className="mt-2 flex items-baseline justify-between gap-2">
-        <span
-          className="text-2xl text-white"
-          style={{ fontFamily: "var(--font-schibsted)" }}
-        >
-          {value}
-        </span>
-        <span
-          className="inline-flex items-center gap-0.5 text-[11px] font-medium"
-          style={{ color: ACCENT }}
-        >
-          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="currentColor">
-            <path d="M6 2l4 5H8v3H4V7H2l4-5z" />
-          </svg>
-          {delta}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function AnalyticsVisual() {
-  return (
-    <div className="flex h-full flex-col gap-4 p-6 md:p-8">
-      <div className="grid grid-cols-2 gap-3">
-        <StatCard label="Avg Response Time" value="1.4s" delta="+12.5%" />
-        <StatCard label="AI Resolution Rate" value="78.2%" delta="+3.1%" />
-      </div>
-      <div className="flex flex-1 items-end gap-[5px] pt-2">
-        {CHART_BARS.map((h, i) => (
+    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
+      <MockLabel>Improving every week</MockLabel>
+      <div className="flex h-[150px] items-end justify-between">
+        {IMPROVE_BARS.map((h, i) => (
           <span
             key={i}
-            className="flex-1 rounded-t-[2px]"
+            className="w-[5px] rounded-full"
             style={{
               height: `${h}%`,
-              backgroundColor: ACCENT,
-              opacity: 0.35 + (i / CHART_BARS.length) * 0.65,
+              background:
+                "linear-gradient(to bottom, #d9ffcc 0%, #9ff690 35%, rgba(159,246,144,0.05) 100%)",
             }}
           />
         ))}
       </div>
       <div className="flex items-end justify-between gap-3">
-        <p
-          className="text-4xl text-white md:text-5xl"
-          style={{ fontFamily: "var(--font-schibsted)" }}
-        >
-          94%
-        </p>
-        <p className="max-w-[180px] text-right text-[12px] leading-5 text-white/45">
-          Less of your week spent on manual admin
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function OptimizeVisual() {
-  const weeks = [
-    { label: "Week 1", val: "12 hrs saved" },
-    { label: "Week 2", val: "19 hrs saved" },
-    { label: "Week 4", val: "27 hrs saved" },
-  ];
-  return (
-    <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
-      <MockLabel>Improving every week</MockLabel>
-      <div className="flex flex-col gap-2.5">
-        {weeks.map((w, i) => (
-          <div
-            key={w.label}
-            className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0a0a0a] px-4 py-3"
+        <div>
+          <p
+            className="text-4xl text-white"
+            style={{ fontFamily: "var(--font-schibsted)" }}
           >
-            <span className="flex items-center gap-2.5 text-[12px] font-medium text-white">
-              <span
-                className="h-1.5 w-1.5"
-                style={{ backgroundColor: ACCENT, opacity: 0.4 + i * 0.3 }}
-              />
-              {w.label}
-            </span>
-            <span className="text-[12px] text-white/70">{w.val}</span>
-          </div>
-        ))}
+            27h
+          </p>
+          <p className="mt-1 text-[12px] text-white/45">
+            saved every week by month one
+          </p>
+        </div>
+        <GlowBorderChip>Continuously optimized</GlowBorderChip>
       </div>
-      <span
-        className="inline-flex items-center gap-2 self-start rounded-md border px-3 py-1.5 text-[11px] text-white/65"
-        style={{
-          borderColor: "rgba(159,246,144,0.25)",
-          backgroundColor: "rgba(159,246,144,0.06)",
-        }}
-      >
-        <span
-          className="h-1.5 w-1.5 animate-pulse rounded-full"
-          style={{ backgroundColor: ACCENT }}
-        />
-        Continuously optimized
-      </span>
     </div>
   );
 }
 
-const visuals = [AgentsVisual, WorkflowVisual, AnalyticsVisual, OptimizeVisual];
+const visuals = [AuditVisual, WorkflowVisual, SolveVisual, ImproveVisual];
 
 export function Solutions() {
   const [active, setActive] = useState(0);
@@ -455,14 +530,14 @@ export function Solutions() {
                     {s.chips.map((chip) => (
                       <span
                         key={chip}
-                        className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[12.5px] text-white/75"
+                        className="border border-white/10 bg-white/[0.08] px-3 py-1.5 text-[12.5px] text-white/75"
                       >
                         {chip}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="relative min-h-[360px] border-t border-white/10 bg-white/[0.04] backdrop-blur-md md:border-l md:border-t-0">
+                <div className="relative min-h-[360px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-32 -top-24 h-[280px] w-[420px] rounded-full blur-[100px]"
