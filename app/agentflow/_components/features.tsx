@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Bot, Database, Mail, Smartphone, Video } from "lucide-react";
+import { CountUp } from "./count-up";
+import { DashBars } from "./dash-bars";
 
 const ACCENT = "#9ff690";
 
@@ -34,12 +36,12 @@ function MockLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PulseDot() {
+function PulseDot({ delay = "0s" }: { delay?: string }) {
   return (
     <span className="relative inline-flex h-1.5 w-1.5 items-center justify-center">
       <span
         className="af-ping-soft absolute inline-flex h-full w-full rounded-full"
-        style={{ backgroundColor: ACCENT }}
+        style={{ backgroundColor: ACCENT, animationDelay: delay }}
       />
       <span
         className="relative inline-flex h-1.5 w-1.5 rounded-full"
@@ -91,11 +93,20 @@ function EaseOfUseCard() {
           <span className="ml-2 text-[11px] text-white/40">Harmony for Mac</span>
         </div>
         <div className="flex flex-col">
-          {MAC_FEATURES.map((f) => (
+          {MAC_FEATURES.map((f, i) => (
             <div
               key={f.label}
-              className="flex items-center gap-3 border-b border-white/5 px-4 py-2.5 last:border-b-0"
+              className="relative flex items-center gap-3 border-b border-white/5 px-4 py-2.5 last:border-b-0"
             >
+              <span
+                aria-hidden
+                className="af-glow pointer-events-none absolute inset-0"
+                style={{
+                  backgroundColor: "rgba(159,246,144,0.06)",
+                  animationDuration: "7.2s",
+                  animationDelay: `${i * 1.8}s`,
+                }}
+              />
               <span
                 className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[5px]"
                 style={{ backgroundColor: "rgba(159,246,144,0.1)", color: ACCENT }}
@@ -129,20 +140,34 @@ function IntegrationsCard() {
         </p>
       </div>
 
-      <div className="mt-10 flex flex-wrap gap-2.5">
-        {INTEGRATIONS.map((app) => (
-          <span
-            key={app.name}
-            className="flex items-center rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 backdrop-blur"
+      <div className="mt-10 flex flex-col gap-2.5">
+        {[INTEGRATIONS.slice(0, 6), INTEGRATIONS.slice(6)].map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className="overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]"
           >
-            <Image
-              src={app.src}
-              alt={app.name}
-              width={app.w}
-              height={app.h}
-              className="h-[22px] w-auto object-contain"
-            />
-          </span>
+            <div
+              className={`af-logo-marquee flex w-max items-center gap-2.5 pr-2.5 ${
+                rowIndex === 1 ? "rev" : ""
+              }`}
+            >
+              {[...row, ...row].map((app, index) => (
+                <span
+                  key={`${app.name}-${index}`}
+                  aria-hidden={index >= row.length}
+                  className="flex shrink-0 items-center rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 backdrop-blur"
+                >
+                  <Image
+                    src={app.src}
+                    alt={app.name}
+                    width={app.w}
+                    height={app.h}
+                    className="h-[22px] w-auto object-contain"
+                  />
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -199,7 +224,7 @@ function AgentsVisual() {
         <MockLabel>Your agents</MockLabel>
         <span className="text-[10px] text-white/45">3 deployed</span>
       </div>
-      {agents.map((a) => (
+      {agents.map((a, i) => (
         <div
           key={a.name}
           className="flex items-center gap-2.5 rounded-md border border-white/10 bg-[#0c0c0c] px-3 py-2.5"
@@ -219,12 +244,14 @@ function AgentsVisual() {
               a.on ? "text-white/70" : "text-white/35"
             }`}
           >
-            <span
-              className="h-1.5 w-1.5 rounded-full"
-              style={{
-                backgroundColor: a.on ? ACCENT : "rgba(255,255,255,0.25)",
-              }}
-            />
+            {a.on ? (
+              <PulseDot delay={`${i * 0.6}s`} />
+            ) : (
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
+              />
+            )}
             {a.status}
           </span>
         </div>
@@ -235,24 +262,29 @@ function AgentsVisual() {
 
 function WorkflowStep({
   children,
-  muted = false,
+  delay,
 }: {
   children: React.ReactNode;
-  muted?: boolean;
+  delay: string;
 }) {
   return (
-    <div
-      className={`flex items-center gap-2.5 rounded-md border px-3 py-2 ${
-        muted
-          ? "border-white/10 bg-[#0c0c0c]"
-          : "border-[rgba(159,246,144,0.35)] bg-[rgba(159,246,144,0.07)]"
-      }`}
-    >
+    <div className="relative flex items-center gap-2.5 rounded-md border border-white/10 bg-[#0c0c0c] px-3 py-2">
       <span
-        className="h-1.5 w-1.5 shrink-0 rounded-full"
-        style={{ backgroundColor: muted ? "rgba(255,255,255,0.3)" : ACCENT }}
+        aria-hidden
+        className="af-glow pointer-events-none absolute inset-0 rounded-md border"
+        style={{
+          borderColor: "rgba(159,246,144,0.35)",
+          backgroundColor: "rgba(159,246,144,0.07)",
+          animationDelay: delay,
+        }}
       />
-      <span className="text-[12px] text-white/80">{children}</span>
+      <span className="relative h-1.5 w-1.5 shrink-0 rounded-full bg-white/30">
+        <span
+          className="af-glow absolute inset-0 rounded-full"
+          style={{ backgroundColor: ACCENT, animationDelay: delay }}
+        />
+      </span>
+      <span className="relative text-[12px] text-white/80">{children}</span>
     </div>
   );
 }
@@ -261,9 +293,9 @@ function WorkflowVisual() {
   return (
     <div className="relative z-[1] flex h-full flex-col justify-center gap-2 px-5 py-5">
       <MockLabel>Multi-step workflow</MockLabel>
-      <WorkflowStep>New lead comes in</WorkflowStep>
+      <WorkflowStep delay="0s">New lead comes in</WorkflowStep>
       <div className="ml-3 h-2.5 w-px bg-white/15" />
-      <WorkflowStep>Qualify with AI</WorkflowStep>
+      <WorkflowStep delay="1.8s">Qualify with AI</WorkflowStep>
       <div className="ml-3 flex items-center gap-2">
         <span className="h-2.5 w-px bg-white/15" />
         <span
@@ -272,14 +304,12 @@ function WorkflowVisual() {
           if score &gt; 80
         </span>
       </div>
-      <WorkflowStep>Update CRM and notify rep</WorkflowStep>
+      <WorkflowStep delay="3.6s">Update CRM and notify rep</WorkflowStep>
     </div>
   );
 }
 
-const DASH_BARS = [40, 62, 30, 78, 52, 88, 46, 70, 58, 84, 50, 92];
-
-function StatTile({ value, label }: { value: string; label: string }) {
+function StatTile({ value, label }: { value: React.ReactNode; label: string }) {
   return (
     <div className="flex-1 rounded-md border border-white/10 bg-[#0c0c0c] px-3 py-2">
       <span
@@ -304,21 +334,10 @@ function DashboardVisual() {
         </span>
       </div>
       <div className="flex gap-2">
-        <StatTile value="128" label="tasks today" />
-        <StatTile value="27h" label="saved this week" />
+        <StatTile value={<CountUp value={128} />} label="tasks today" />
+        <StatTile value={<CountUp value={27} suffix="h" />} label="saved this week" />
       </div>
-      <div className="flex h-12 items-end gap-[3px]">
-        {DASH_BARS.map((h, i) => (
-          <span
-            key={i}
-            className="flex-1 rounded-t-[2px]"
-            style={{
-              height: `${h}%`,
-              backgroundColor: i % 3 === 0 ? ACCENT : "rgba(255,255,255,0.14)",
-            }}
-          />
-        ))}
-      </div>
+      <DashBars />
     </div>
   );
 }

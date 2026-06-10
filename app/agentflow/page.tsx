@@ -435,8 +435,6 @@ const footerColumns = [
       { label: "Home", href: "./" },
       { label: "About", href: "./about" },
       { label: "Pricing", href: "./pricing" },
-      { label: "Case Study", href: "./case-study" },
-      { label: "Blog", href: "./blog" },
       { label: "Contact", href: "./contact" },
     ],
   },
@@ -444,19 +442,8 @@ const footerColumns = [
     title: "Useful",
     links: [
       { label: "Solution", href: "./solution" },
-      { label: "Team", href: "./about#team" },
-      { label: "Career", href: "./about#career" },
-      { label: "Docs", href: "./docs/introduction" },
-      { label: "Waitlist", href: "./waitlist-page" },
-      { label: "Changelog", href: "./changelog" },
-    ],
-  },
-  {
-    title: "Others",
-    links: [
       { label: "Privacy Policy", href: "./legal-page/privacy" },
       { label: "Terms & Conditions", href: "./legal-page/terms" },
-      { label: "404", href: "./404" },
     ],
   },
 ];
@@ -473,6 +460,7 @@ export default function AgentflowPage() {
         @keyframes af-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .af-marquee { animation: af-marquee 36s linear infinite; }
         .af-logo-marquee { animation: af-marquee 24s linear infinite; }
+        .af-logo-marquee.rev { animation-direction: reverse; animation-duration: 30s; }
         .af-marquee.rev { animation-direction: reverse; animation-duration: 44s; }
         @keyframes af-vmarquee { from { transform: translateY(0); } to { transform: translateY(-50%); } }
         .af-vmarquee { animation: af-vmarquee 22s linear infinite; }
@@ -498,9 +486,12 @@ export default function AgentflowPage() {
         .af-caret { animation: af-caret 1.1s steps(1) infinite; }
         @keyframes af-pixel { 0%, 100% { opacity: 0.12; } 50% { opacity: 1; } }
         .af-pixel { animation: af-pixel 2.6s ease-in-out infinite; }
+        @keyframes af-glow { 0%, 33.3%, 100% { opacity: 0; } 8%, 25% { opacity: 1; } }
+        .af-glow { opacity: 0; animation: af-glow 5.4s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
-          .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel { animation: none; }
+          .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel,
+          .af-glow { animation: none; }
         }
       `}</style>
 
@@ -1039,54 +1030,52 @@ export default function AgentflowPage() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-7 bg-[radial-gradient(circle,rgba(159,246,144,0.34)_1px,transparent_1.5px)] bg-[size:20px_20px] opacity-30" />
           <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
           <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
-          {[14, 26, 38, 54, 74, 92].map((left) => (
-            <span
-              key={left}
-              className="pointer-events-none absolute -top-1 h-2 w-2"
-              style={{ left: `${left}%`, backgroundColor: ACCENT }}
-            />
-          ))}
-
-          <div className="grid gap-14 border-y border-white/10 px-7 py-20 md:px-10 lg:grid-cols-[1.7fr_1fr_1fr_1fr] lg:py-24">
+          <div className="flex flex-col gap-14 border-y border-white/10 px-7 py-20 md:px-10 lg:flex-row lg:items-start lg:justify-between lg:py-24">
             <div>
               <a href="./" className="block w-[150px]" aria-label="Harmony home">
                 <Image
-                  src="/assets/logo-full-dark.png"
+                  src="/assets/harmony-dark-logo-tm.avif"
                   alt="Harmony"
-                  width={633}
-                  height={161}
+                  width={512}
+                  height={114}
                   className="h-auto w-full"
                 />
               </a>
-              <p className="mt-9 max-w-md text-[18px] leading-8 text-white/45">
-                Harmony builds personalized AI systems that give founders and
-                teams their time back.
+              <p
+                className="mt-8 max-w-sm text-[18px] leading-[1.4] text-white"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                Stop stressing. Start scaling.
+              </p>
+              <p className="mt-8 font-mono text-[13px] uppercase leading-6 tracking-[0.12em] text-white/40">
+                © 2026 Sarg Innovation Labs
+                <br />
+                All rights reserved
               </p>
             </div>
 
-            {footerColumns.map((col) => (
-              <div key={col.title}>
-                <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-white/55">
-                  {col.title}
-                </p>
-                <ul className="mt-6 space-y-5">
-                  {col.links.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="text-[18px] text-white/42 transition hover:text-white"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="flex gap-16 sm:gap-24 lg:gap-28">
+              {footerColumns.map((col) => (
+                <div key={col.title}>
+                  <p className="text-[18px] text-white/30">{col.title}</p>
+                  <ul className="mt-6 space-y-5">
+                    {col.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          className="text-[18px] text-white/42 transition hover:text-white"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-col gap-6 border-b border-white/10 px-7 py-9 text-[16px] text-white/55 md:flex-row md:items-center md:justify-between md:px-10">
-            <p>© 2026&nbsp; Sarg Inovation Labs Pvt. Ltd.</p>
+          <div className="flex border-b border-white/10 px-7 py-9 text-[16px] text-white/55 md:justify-end md:px-10">
             <div className="flex items-center gap-8 text-white/55">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
                 <FacebookIcon />
@@ -1101,24 +1090,22 @@ export default function AgentflowPage() {
           </div>
 
           <div
-            className="relative h-36 overflow-hidden px-7 md:h-48 md:px-10"
+            className="relative h-32 overflow-hidden px-7 md:h-44 md:px-10"
             style={{
               maskImage:
-                "linear-gradient(to bottom, black 0%, transparent 88%)",
+                "linear-gradient(to bottom, black 0%, black 80%, transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, black 0%, transparent 88%)",
+                "linear-gradient(to bottom, black 0%, black 80%, transparent 100%)",
             }}
           >
-            <p
+            <Image
+              src="/assets/Harmony-AI-Outline-Green-Gradient.svg"
+              alt=""
               aria-hidden="true"
-              className="absolute left-7 top-0 select-none whitespace-nowrap text-[96px] font-semibold leading-none tracking-normal text-transparent md:left-10 md:text-[190px]"
-              style={{
-                fontFamily: "var(--font-schibsted)",
-                WebkitTextStroke: "1px rgba(159,246,144,0.22)",
-              }}
-            >
-              Harmony AI
-            </p>
+              width={1169}
+              height={192}
+              className="pointer-events-none absolute left-7 top-0 h-auto w-[calc(100%-1.75rem)] select-none opacity-80 md:left-10 md:w-[calc(100%-2.5rem)]"
+            />
           </div>
         </div>
       </footer>
