@@ -60,14 +60,14 @@ function Eyebrow({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-[4px] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] ${
+      className={`inline-flex items-center gap-1.5 px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] ${
         dark
           ? "border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-white"
           : "bg-black text-white"
       }`}
     >
       <span
-        className="h-1.5 w-1.5 rounded-full"
+        className="h-1.5 w-1.5"
         style={{ backgroundColor: ACCENT }}
       />
       {children}
@@ -182,7 +182,7 @@ function GhostButton({
   );
 }
 
-function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
+function FacebookIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
       <path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm8 191.63V152h24a8 8 0 0 0 0-16h-24v-24a16 16 0 0 1 16-16h16a8 8 0 0 0 0-16h-16a32 32 0 0 0-32 32v24H96a8 8 0 0 0 0 16h24v63.63a88 88 0 1 1 16 0Z" />
@@ -190,7 +190,7 @@ function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-function XIcon({ className = "h-5 w-5" }: { className?: string }) {
+function XIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
       <path d="m214.75 211.71-62.6-98.38 61.77-67.95a8 8 0 0 0-11.84-10.76l-58.84 64.72-40.49-63.63A8 8 0 0 0 96 32H48a8 8 0 0 0-6.75 12.3l62.6 98.37-61.77 68a8 8 0 1 0 11.84 10.76l58.84-64.72 40.49 63.63A8 8 0 0 0 160 224h48a8 8 0 0 0 6.75-12.29ZM164.39 208 62.57 48h29l101.86 160Z" />
@@ -198,7 +198,7 @@ function XIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-function LinkedinIcon({ className = "h-5 w-5" }: { className?: string }) {
+function LinkedinIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 256 256" className={className} fill="currentColor" aria-hidden="true">
       <path d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16Zm0 192H40V40h176ZM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140ZM100 84a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z" />
@@ -1173,17 +1173,7 @@ export default function AgentflowPage() {
           </div>
 
           <div className="flex flex-col gap-6 border-b border-white/10 px-7 py-9 text-[16px] text-white/55 md:flex-row md:items-center md:justify-between md:px-10">
-            <p>
-              © 2026&nbsp; Design &amp; Developed by{" "}
-              <a
-                href="https://www.framer.com/@helloamani/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white transition hover:text-[#9ff690]"
-              >
-                Amani Design
-              </a>
-            </p>
+            <p>© 2026&nbsp; Sarg Inovation Labs Pvt. Ltd.</p>
             <div className="flex items-center gap-8 text-white/55">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
                 <FacebookIcon />
@@ -1197,13 +1187,21 @@ export default function AgentflowPage() {
             </div>
           </div>
 
-          <div className="relative h-36 overflow-hidden px-7 md:h-48 md:px-10">
+          <div
+            className="relative h-36 overflow-hidden px-7 md:h-48 md:px-10"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, black 0%, transparent 88%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, black 0%, transparent 88%)",
+            }}
+          >
             <p
               aria-hidden="true"
               className="absolute left-7 top-0 select-none whitespace-nowrap text-[96px] font-semibold leading-none tracking-normal text-transparent md:left-10 md:text-[190px]"
               style={{
                 fontFamily: "var(--font-schibsted)",
-                WebkitTextStroke: "1px rgba(159,246,144,0.28)",
+                WebkitTextStroke: "1px rgba(159,246,144,0.22)",
               }}
             >
               Harmony AI
