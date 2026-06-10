@@ -30,14 +30,14 @@ const solutions: Solution[] = [
   {
     id: "solution-03",
     label: "First Month",
-    title: "Expand and connect",
-    body: "We extend automation across more of your stack and teams, then stand up live dashboards so you can see exactly what is running in the background.",
-    chips: ["More workflows", "Connected stack", "Live dashboards"],
+    title: "Solve more problems",
+    body: "With the core systems live, we keep building: new systems for new problems, across more of your stack and teams. Each one takes another job off your plate.",
+    chips: ["More systems built", "More problems solved", "Across your stack"],
   },
   {
     id: "solution-04",
     label: "Ongoing",
-    title: "Optimize and scale",
+    title: "Improve and scale",
     body: "We keep hunting for new bottlenecks, tune what is live, and roll out fresh automations as you grow. The system gets better every week, and you never manage it yourself.",
     chips: ["Find new bottlenecks", "Continuous improvement", "Fully managed"],
   },
@@ -435,6 +435,13 @@ export function Solutions() {
               <CornerDots />
               <div className="grid md:grid-cols-2">
                 <div className="flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#050505] p-7 md:p-9">
+                  <span className="mb-4 inline-flex w-fit items-center gap-1.5 border border-[#9ff690] bg-[rgba(162,249,147,0.10)] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] text-white">
+                    <span
+                      className="h-1.5 w-1.5"
+                      style={{ backgroundColor: ACCENT }}
+                    />
+                    {s.label}
+                  </span>
                   <h3
                     className="text-2xl text-white md:text-[30px] md:leading-[1.2]"
                     style={{ fontFamily: "var(--font-schibsted)" }}

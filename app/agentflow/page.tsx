@@ -488,10 +488,19 @@ export default function AgentflowPage() {
         .af-pixel { animation: af-pixel 2.6s ease-in-out infinite; }
         @keyframes af-glow { 0%, 33.3%, 100% { opacity: 0; } 8%, 25% { opacity: 1; } }
         .af-glow { opacity: 0; animation: af-glow 5.4s ease-in-out infinite; }
+        @keyframes af-dash { to { stroke-dashoffset: -16; } }
+        .af-dash { animation: af-dash 1.2s linear infinite; }
+        @keyframes af-flow {
+          0%   { transform: translateY(0); opacity: 0; }
+          20%  { opacity: 1; }
+          80%  { opacity: 1; }
+          100% { transform: translateY(var(--af-flow-dist, 12px)); opacity: 0; }
+        }
+        .af-flow { opacity: 0; animation: af-flow 1.6s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .af-marquee, .af-logo-marquee, .af-vmarquee, .af-ping-soft,
           .af-bg-translate, .af-bg-scale, .af-eq-bar, .af-caret, .af-pixel,
-          .af-glow { animation: none; }
+          .af-glow, .af-dash, .af-flow { animation: none; }
         }
       `}</style>
 
@@ -720,12 +729,11 @@ export default function AgentflowPage() {
       <Band id="capabilities">
         <Eyebrow>The Platform</Eyebrow>
         <div className="mt-5">
-          <Heading>Everything built on our state-of-the-art platform</Heading>
+          <Heading>One platform runs it all</Heading>
         </div>
         <Sub className="mt-5">
-          Everything runs on our own platform: a fast, visual interface to
-          build, deploy, and watch your automations, with a deep library of
-          capabilities and integrations built in.
+          Everything we build for you runs on our own platform. Easy to use,
+          easy to watch, with hundreds of integrations built in.
         </Sub>
         <Features />
       </Band>
