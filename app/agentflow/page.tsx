@@ -171,7 +171,7 @@ function GhostButton({
   return (
     <a
       href={href}
-      className={`inline-flex h-10 items-center border px-3 text-base font-medium transition ${
+      className={`inline-flex h-10 items-center border px-5 text-base font-medium transition ${
         dark
           ? "border-[#b5f4a2] text-white hover:bg-white/10"
           : "border-black/20 text-black hover:bg-black/5"
@@ -397,15 +397,15 @@ const securityCards = [
   },
   {
     icon: <Server className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Private Deployment",
-    body: "Deploy in your own VPC for complete data sovereignty.",
+    title: "Data isolation",
+    body: "Org-level isolation with row level security (RLS) at the database, so each team's data stays separate.",
   },
 ];
 
 const pricingPlans = [
   {
     name: "Growth",
-    description: "For small teams getting their first systems live",
+    description: "Founder-led small teams",
     price: "$500",
     period: "/month",
     cta: "Book a Call",
@@ -437,7 +437,7 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    description: "For established teams that need custom scope",
+    description: "Large teams, custom needs",
     price: "Custom",
     period: "",
     cta: "Talk to Sales",
