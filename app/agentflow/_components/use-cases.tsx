@@ -316,7 +316,7 @@ function Tree({
           >
             {wf.name}
           </h4>
-          <p className={`mt-2 text-[15px] leading-7 ${light ? "text-[#4d4d4d]" : "text-zinc-500"}`}>
+          <p className={`mt-2 text-[17px] leading-8 ${light ? "text-[#4d4d4d]" : "text-zinc-500"}`}>
             {wf.desc}
           </p>
         </div>

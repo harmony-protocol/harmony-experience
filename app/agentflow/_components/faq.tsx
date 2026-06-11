@@ -59,7 +59,7 @@ export function Faq() {
               </span>
             </button>
             {isOpen && (
-              <p className="max-w-xl pb-6 text-[15px] leading-7 text-[#4d4d4d]">
+              <p className="max-w-xl pb-6 text-[17px] leading-8 text-[#4d4d4d]">
                 {item.a}
               </p>
             )}

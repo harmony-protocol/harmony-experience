@@ -39,7 +39,7 @@ const solutions: Solution[] = [
     id: "solution-04",
     label: "Ongoing",
     title: "Improve and scale",
-    body: "We keep hunting for new bottlenecks, tune what is live, and roll out fresh automations as you grow. The system gets better every week, and you never manage it yourself.",
+    body: "We keep finding bottlenecks and shipping new automations as you grow, so the system gets better every week, with no work from you.",
     chips: ["Find new bottlenecks", "Continuous improvement", "Fully managed"],
   },
 ];
@@ -422,7 +422,7 @@ function ImproveVisual() {
           >
             27h
           </p>
-          <p className="mt-1 text-[15px] leading-7 text-white/55">
+          <p className="mt-1 text-[17px] leading-8 text-white/55">
             saved every week by month one
           </p>
         </div>
@@ -513,7 +513,7 @@ export function Solutions() {
       </div>
 
       {/* Stacked solution cards */}
-      <div className="space-y-10">
+      <div className="space-y-5">
         {solutions.map((s, i) => {
           const Visual = visuals[i];
           return (
@@ -524,7 +524,7 @@ export function Solutions() {
             >
               <CornerDots />
               <div className="grid md:grid-cols-2">
-                <div className="flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#050505] p-7 md:p-9">
+                <div className="flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#050505] p-6 md:p-8">
                   <span className="mb-4 inline-flex w-fit items-center gap-1.5 border border-[#9ff690] bg-[rgba(162,249,147,0.10)] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] text-white">
                     <span
                       className="h-1.5 w-1.5"
@@ -538,10 +538,10 @@ export function Solutions() {
                   >
                     {s.title}
                   </h3>
-                  <p className="mt-4 max-w-sm text-[15px] leading-7 text-white/55">
+                  <p className="mt-4 max-w-sm text-[17px] leading-8 text-white/55">
                     {s.body}
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-2 md:mt-auto md:pt-10">
+                  <div className="mt-6 flex flex-wrap gap-2 md:mt-auto md:pt-6">
                     {s.chips.map((chip) => (
                       <span
                         key={chip}
@@ -552,7 +552,7 @@ export function Solutions() {
                     ))}
                   </div>
                 </div>
-                <div className="relative min-h-[360px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">
+                <div className="relative min-h-[300px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-32 -top-24 h-[280px] w-[420px] rounded-full blur-[100px]"

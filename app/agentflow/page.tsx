@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
 import Image from "next/image";
 import {
+  Bot,
   Building2,
   ChartNoAxesCombined,
   CircleDollarSign,
@@ -10,6 +11,7 @@ import {
   Database,
   Globe,
   Landmark,
+  LayoutDashboard,
   Lock,
   MessagesSquare,
   Monitor,
@@ -20,10 +22,11 @@ import {
   Sparkles,
   Users,
   UsersRound,
+  Workflow,
 } from "lucide-react";
 import { AgentflowNav } from "./_components/nav";
 import { Solutions } from "./_components/solutions";
-import { Features, IntegrationsGrid } from "./_components/features";
+import { IntegrationsRow } from "./_components/features";
 import { Comparison } from "./_components/comparison";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
@@ -131,26 +134,27 @@ function PrimaryButton({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="group inline-flex h-12 items-center gap-3 overflow-hidden pl-2 pr-5 text-base font-medium text-black transition hover:brightness-95"
+      className="group inline-flex h-10 items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-black">
+      <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
         <Image
           src="/assets/talk-to-sales-icon.svg"
           alt=""
           width={16}
           height={15}
-          className="h-[15px] w-4"
+          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:translate-x-6"
+        />
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          aria-hidden
+          width={16}
+          height={15}
+          className="absolute h-[15px] w-4 -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0"
         />
       </span>
-      <span className="h-6 overflow-hidden">
-        <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-6">
-          <span className="flex h-6 items-center">Book a Call</span>
-          <span className="flex h-6 items-center" aria-hidden="true">
-            Book a Call
-          </span>
-        </span>
-      </span>
+      <span>Book a Call</span>
     </a>
   );
 }
@@ -167,7 +171,7 @@ function GhostButton({
   return (
     <a
       href={href}
-      className={`inline-flex h-12 items-center border px-6 text-base font-medium transition ${
+      className={`inline-flex h-10 items-center border px-3 text-base font-medium transition ${
         dark
           ? "border-[#b5f4a2] text-white hover:bg-white/10"
           : "border-black/20 text-black hover:bg-black/5"
@@ -330,12 +334,12 @@ const whatWeDo = [
   {
     icon: <Clock className="h-5 w-5" strokeWidth={1.6} />,
     title: "Free founders from busywork",
-    body: "We take the admin and followups off your plate, so your hours go to leading and growing the business.",
+    body: "Client calls, project management, follow-ups, reporting. We take it off your plate so your time goes to growth.",
   },
   {
     icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
     title: "Fix operational drag",
-    body: "Shifting demands, freelancer churn, and manual work become clean systems that run on their own.",
+    body: "Shifting demands, subcontractor churn, and manual work become clean systems that run on their own.",
   },
   {
     icon: <Users className="h-5 w-5" strokeWidth={1.6} />,
@@ -362,6 +366,24 @@ const extendedTeam = [
   },
 ];
 
+const platformCapabilities = [
+  {
+    icon: <Bot className="h-5 w-5" strokeWidth={1.6} />,
+    title: "AI agents",
+    body: "Your tasks, done with no code.",
+  },
+  {
+    icon: <Workflow className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Workflows",
+    body: "Multi-step flows, on autopilot.",
+  },
+  {
+    icon: <LayoutDashboard className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Dashboards",
+    body: "See what is running, live.",
+  },
+];
+
 const securityCards = [
   {
     icon: <Lock className="h-5 w-5" strokeWidth={1.6} />,
@@ -380,21 +402,56 @@ const securityCards = [
   },
 ];
 
-const pricingPlan = {
-  price: "$500",
-  period: "/month",
-  badge: "3 spots left this month",
-  notes: ["One feature request at a time", "Pricing may differ by use case"],
-  cta: "Book an Intro Call",
-  features: [
-    "In-depth audit of your current flows",
-    "Personalized AI executive assistants",
-    "Custom dashboards and automations",
-    "Weekly check-ins and upgrades",
-    "Integrations across email, Slack, CRM, and Notion",
-    "In-house AI expert support",
-  ],
-};
+const pricingPlans = [
+  {
+    name: "Growth",
+    description: "For small teams getting their first systems live",
+    price: "$500",
+    period: "/month",
+    cta: "Book a Call",
+    highlighted: false,
+    features: [
+      "In-depth audit of your current flows",
+      "Personalized AI executive assistants",
+      "Custom dashboards and automations",
+      "Weekly check-ins and upgrades",
+      "Email, Slack, and CRM integrations",
+      "One feature request at a time",
+    ],
+  },
+  {
+    name: "Scale",
+    description: "For growing teams scaling their operations",
+    price: "$1,500",
+    period: "/month",
+    cta: "Book a Call",
+    highlighted: true,
+    features: [
+      "Everything in Growth",
+      "Unlimited feature requests",
+      "Dedicated AI engineer",
+      "Voice and phone agents",
+      "Custom agents on your data",
+      "Private deployment in your cloud",
+    ],
+  },
+  {
+    name: "Enterprise",
+    description: "For established teams that need custom scope",
+    price: "Custom",
+    period: "",
+    cta: "Talk to Sales",
+    highlighted: false,
+    features: [
+      "Everything in Scale",
+      "Autonomous ops team, 24/7",
+      "Private models, fine-tuned for you",
+      "Dedicated engineering pod",
+      "Any integration you need",
+      "Guaranteed SLAs and migration",
+    ],
+  },
+];
 
 const footerColumns = [
   {
@@ -677,7 +734,7 @@ export default function AgentflowPage() {
               >
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
+              <p className="mt-2 text-[17px] leading-8 text-[#4d4d4d]">
                 {item.body}
               </p>
             </div>
@@ -751,7 +808,7 @@ export default function AgentflowPage() {
               >
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-7 text-[#4d4d4d]">
+              <p className="mt-2 text-[17px] leading-8 text-[#4d4d4d]">
                 {item.body}
               </p>
             </div>
@@ -759,29 +816,43 @@ export default function AgentflowPage() {
         </div>
       </Band>
 
-      {/* 4b. CAPABILITIES (black), one bento lattice */}
+      {/* 4b. CAPABILITIES (black), one video, three capabilities, a logo row */}
       <Band id="capabilities" dark>
-        <div className="flex flex-col gap-5 pt-6 md:pt-10">
-          <div className="grid gap-5 lg:grid-cols-12">
-            {/* Text column, standard section header plus changing logo grid */}
+        <div className="pt-6 md:pt-10">
+          <div className="grid gap-x-5 gap-y-12 lg:grid-cols-12">
+            {/* Text column: header + the three capabilities as a clean list */}
             <div className="flex flex-col lg:col-span-4 lg:pt-6">
-              <div className="lg:pr-14">
-                <div>
-                  <Eyebrow dark>Our Platform</Eyebrow>
-                </div>
+              <div className="lg:pr-10">
+                <Eyebrow dark>Our Platform</Eyebrow>
                 <div className="mt-5">
-                  <Heading dark>One platform runs it all</Heading>
+                  <Heading dark>One platform powers it all</Heading>
                 </div>
                 <Sub dark className="mt-5">
-                  Everything we build for you is powered by our own platform.
+                  Everything we build runs on our own powerful platform your
+                  team will enjoy using.
                 </Sub>
               </div>
-              <div className="-ml-5 mt-12">
-                <IntegrationsGrid />
+
+              <div className="mt-10 flex flex-col gap-7 lg:mt-12 lg:pr-6">
+                {platformCapabilities.map((cap) => (
+                  <div key={cap.title} className="flex items-center gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-[#9ff690]">
+                      {cap.icon}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-medium text-white md:text-[17px]">
+                        {cap.title}
+                      </h3>
+                      <p className="mt-1 text-base leading-8 text-white/55 md:text-[17px]">
+                        {cap.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Video cell, aspect locked to the recording so nothing crops */}
+            {/* Video, the one product visual for the section */}
             <div className="aspect-[956/1200] overflow-hidden rounded-lg border border-white/10 bg-black md:aspect-[2022/1498] lg:col-span-8">
               <video
                 className="hidden h-full w-full object-cover md:block"
@@ -802,7 +873,15 @@ export default function AgentflowPage() {
             </div>
           </div>
 
-          <Features />
+          {/* Quiet integrations row closes the section */}
+          <div className="mt-20">
+            <p className="text-center text-[13px] uppercase tracking-[0.14em] text-white/35">
+              Connects to 50+ work apps
+            </p>
+            <div className="mt-9">
+              <IntegrationsRow />
+            </div>
+          </div>
         </div>
       </Band>
 
@@ -836,109 +915,115 @@ export default function AgentflowPage() {
           us.
         </Sub>
 
-        <div className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2">
-          <div className="flex flex-col justify-between bg-black p-8 md:p-12">
-            <div>
-              <span
-                className="inline-flex items-center gap-2 border border-[#9ff690]/40 px-3 py-1.5 text-[12px] uppercase tracking-[0.08em] text-white/80"
-                style={{ backgroundColor: "rgba(159,246,144,0.1)" }}
-              >
-                <span
-                  className="h-1.5 w-1.5"
-                  style={{ backgroundColor: ACCENT }}
-                />
-                {pricingPlan.badge}
-              </span>
-
-              <div className="mt-10 flex items-end gap-2">
-                <span
-                  className="text-6xl leading-none text-white"
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {pricingPlans.map((plan) => (
+            <div
+              key={plan.name}
+              className="relative flex min-h-[560px] flex-col border border-white/10 bg-black p-7 md:p-9"
+            >
+              <span className="absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
+              <span className="absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
+              <div className="flex flex-1 flex-col">
+                <h3
+                  className="text-2xl text-white"
                   style={{ fontFamily: "var(--font-schibsted)" }}
                 >
-                  {pricingPlan.price}
-                </span>
-                <span className="pb-2 text-xl text-white/55">
-                  {pricingPlan.period}
-                </span>
-              </div>
-              <p className="mt-4 text-[15px] text-white/55">
-                One simple price for your whole team.
-              </p>
-            </div>
+                  {plan.name}
+                </h3>
+                <p className="mt-4 text-[15px] text-white/55">
+                  {plan.description}
+                </p>
 
-            <div className="mt-10">
-              <a
-                href={CAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-12 items-center justify-center border border-transparent text-[14px] font-medium uppercase text-black transition hover:brightness-95"
-                style={{ backgroundColor: CTA_ACCENT }}
-              >
-                {pricingPlan.cta}
-              </a>
-              <div className="mt-5 flex flex-col gap-1.5">
-                {pricingPlan.notes.map((note) => (
-                  <span key={note} className="text-[13px] text-white/40">
-                    {note}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-black p-8 md:p-12">
-            <p className="text-[15px] font-medium text-white/45">
-              What&apos;s included
-            </p>
-            <ul className="mt-7 space-y-5">
-              {pricingPlan.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-center gap-3 text-[16px] text-white/85"
-                >
+                <div className="mt-16 flex items-end gap-2">
                   <span
-                    className="h-1.5 w-1.5 shrink-0"
-                    style={{ backgroundColor: ACCENT }}
-                  />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+                    className="text-5xl leading-none text-white"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {plan.price}
+                  </span>
+                  {plan.period && (
+                    <span className="pb-1.5 text-xl text-white/55">
+                      {plan.period}
+                    </span>
+                  )}
+                </div>
+
+                <a
+                  href={CAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-9 flex h-12 items-center justify-center border text-[14px] font-medium uppercase transition ${
+                    plan.highlighted
+                      ? "border-transparent text-black hover:brightness-95"
+                      : "border-[#9ff690] text-white hover:bg-white/10"
+                  }`}
+                  style={
+                    plan.highlighted
+                      ? { backgroundColor: CTA_ACCENT }
+                      : undefined
+                  }
+                >
+                  {plan.cta}
+                </a>
+
+                <div className="mt-10 border-t border-white/10 pt-9">
+                  <p className="text-[15px] font-medium text-white/45">
+                    What&apos;s Included
+                  </p>
+                  <ul className="mt-7 space-y-5">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-3 text-[16px] text-white/85"
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0"
+                          style={{ backgroundColor: ACCENT }}
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </Band>
 
       {/* SECURITY (black) */}
       <Band id="security" dark>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
-          <div>
-            <Eyebrow dark>Security</Eyebrow>
-            <div className="mt-5">
-              <Heading as="h3" dark>
-                Enterprise-grade security
-              </Heading>
+        <Eyebrow dark>Security</Eyebrow>
+        <div className="mt-5">
+          <Heading as="h3" dark>
+            Enterprise-grade security
+          </Heading>
+        </div>
+        <Sub dark className="mt-5">
+          Your client data is non-negotiable. We hold the highest standards of
+          security and compliance, so it stays yours.
+        </Sub>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {securityCards.map((card) => (
+            <div
+              key={card.title}
+              className="flex flex-col border border-white/10 bg-white/[0.03] p-7 md:p-8"
+            >
+              <span className="flex h-11 w-11 items-center justify-center border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-[#9ff690]">
+                {card.icon}
+              </span>
+              <h3
+                className="mt-6 text-xl text-white"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                {card.title}
+              </h3>
+              <p className="mt-2 text-[17px] leading-8 text-white/55">
+                {card.body}
+              </p>
             </div>
-            <Sub dark className="mt-5">
-              Your client data is non-negotiable. We hold the highest
-              standards of security and compliance, so it stays yours.
-            </Sub>
-          </div>
-          <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
-            {securityCards.map((card) => (
-              <div key={card.title} className="flex flex-col sm:px-7 sm:first:pl-0 sm:last:pr-0">
-                <span style={{ color: ACCENT }}>{card.icon}</span>
-                <h3
-                  className="mt-5 text-lg text-white"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-7 text-white/50">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </Band>
 
@@ -998,7 +1083,7 @@ export default function AgentflowPage() {
             />
           </div>
 
-          <div>
+          <div className="max-w-[480px]">
             <div className="space-y-5 text-[17px] leading-8 text-white/70 md:text-[19px] md:leading-9">
               <p>Hey,</p>
               <p>I used to run an agency that was growing at a good pace.</p>
@@ -1024,7 +1109,7 @@ export default function AgentflowPage() {
               <p className="mt-4 text-[17px] font-medium text-white">
                 Vishal Singh
               </p>
-              <p className="mt-0.5 text-[15px] text-white/50">
+              <p className="mt-0.5 text-[17px] text-white/50">
                 Founder, Harmony AI
               </p>
             </div>

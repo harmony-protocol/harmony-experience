@@ -81,7 +81,7 @@ function CellContent({ value, accent }: { value: Cell; accent: boolean }) {
   if (value === true) return <CheckBadge accent={accent} />;
   if (value === false) return <XBadge />;
   return (
-    <span className="text-[12.5px] leading-snug text-black/45">{value}</span>
+    <span className="text-[15px] leading-snug text-black/45">{value}</span>
   );
 }
 
@@ -115,7 +115,7 @@ export function Comparison() {
                       />
                     </span>
                   ) : (
-                    <span className="text-[13px] font-medium text-black/45">
+                    <span className="text-[15px] font-medium text-black/45">
                       {col}
                     </span>
                   )}
@@ -133,7 +133,7 @@ export function Comparison() {
                   scope="row"
                   className="sticky left-0 z-10 border-t border-black/10 bg-[#fafafa] py-4 pr-4 text-left"
                 >
-                  <span className="flex items-center gap-2.5 whitespace-nowrap text-[14px] font-medium text-black md:text-[15px]">
+                  <span className="flex items-center gap-2.5 whitespace-nowrap text-[16px] font-medium text-black md:text-[17px]">
                     <span className="text-black/35">{row.icon}</span>
                     {row.label}
                   </span>

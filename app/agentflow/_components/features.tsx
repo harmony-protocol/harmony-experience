@@ -19,7 +19,9 @@ const INTEGRATIONS = [
   { name: "QuickBooks", src: `${LOGO_DIR}/quickbooks.png`, w: 2345, h: 600 },
   { name: "Granola", src: `${LOGO_DIR}/granola.webp`, w: 545, h: 114 },
   { name: "Jira", src: `${LOGO_DIR}/jira.webp`, w: 545, h: 114 },
-  { name: "GitHub", src: `${LOGO_DIR}/github.webp`, w: 545, h: 114 },
+  { name: "Asana", src: `${LOGO_DIR}/asana.webp`, w: 545, h: 114 },
+  { name: "Teams", src: `${LOGO_DIR}/team.webp`, w: 506, h: 106 },
+  { name: "Telegram", src: `${LOGO_DIR}/telegram.webp`, w: 545, h: 114 },
 ];
 
 function PulseDot({ delay = "0s" }: { delay?: string }) {
@@ -41,31 +43,46 @@ const GRID_LOGOS = [
   "Gmail",
   "Slack",
   "Airtable",
-  "HubSpot",
-  "Zoom",
   "Notion",
+  "Zoom",
+  "HubSpot",
   "Google Sheets",
   "Granola",
   "Google Calendar",
+  "Teams",
+  "Stripe",
+  "Asana",
 ];
 
-export function IntegrationsGrid() {
-  const logos = GRID_LOGOS.map(
-    (n) => INTEGRATIONS.find((i) => i.name === n)!,
-  );
+export function IntegrationsRow() {
+  const logos = GRID_LOGOS.map((n) =>
+    INTEGRATIONS.find((i) => i.name === n),
+  ).filter((i): i is (typeof INTEGRATIONS)[number] => Boolean(i));
   return (
-    <div className="grid grid-cols-3 gap-x-4 gap-y-4">
-      {logos.map((app) => (
-        <div key={app.name} className="flex h-14 items-center justify-center px-1">
-          <Image
-            src={app.src}
-            alt={app.name}
-            width={app.w}
-            height={app.h}
-            className="h-auto max-h-12 w-full object-contain"
-          />
-        </div>
-      ))}
+    <div className="grid grid-cols-3 items-center gap-x-6 gap-y-12 lg:grid-cols-6">
+      {logos.map((app, i) => {
+        const col = i % 6;
+        const edge =
+          col === 0
+            ? "lg:justify-start"
+            : col === 5
+              ? "lg:justify-end"
+              : "";
+        return (
+          <div
+            key={app.name}
+            className={`${i < 6 ? "flex" : "hidden lg:flex"} h-[30px] items-center justify-center ${edge}`}
+          >
+            <Image
+              src={app.src}
+              alt={app.name}
+              width={app.w}
+              height={app.h}
+              className="h-[30px] w-auto max-w-full object-contain opacity-90"
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -102,7 +119,7 @@ function TraitCard({
         <h3 className="text-xl text-white" style={{ fontFamily: "var(--font-schibsted)" }}>
           {title}
         </h3>
-        <p className="mt-2 text-[15px] leading-7 text-white/55">{body}</p>
+        <p className="mt-2 text-[17px] leading-8 text-white/55">{body}</p>
       </div>
     </div>
   );
