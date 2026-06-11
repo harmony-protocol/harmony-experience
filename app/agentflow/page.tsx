@@ -116,7 +116,7 @@ function Sub({
 }) {
   return (
     <p
-      className={`max-w-lg text-base leading-7 md:text-[17px] md:leading-8 ${dark ? "text-white/55" : "text-[#4d4d4d]"} ${className}`}
+      className={`max-w-lg text-[17px] leading-8 ${dark ? "text-white/55" : "text-[#4d4d4d]"} ${className}`}
     >
       {children}
     </p>
@@ -143,7 +143,7 @@ function PrimaryButton({
           alt=""
           width={16}
           height={15}
-          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:translate-x-6"
+          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:-translate-y-7"
         />
         <Image
           src="/assets/talk-to-sales-icon.svg"
@@ -151,7 +151,7 @@ function PrimaryButton({
           aria-hidden
           width={16}
           height={15}
-          className="absolute h-[15px] w-4 -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0"
+          className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
         />
       </span>
       <span>Book a Call</span>
@@ -590,7 +590,7 @@ export default function AgentflowPage() {
             We help B2B founders
             <br className="hidden md:block" /> automate work operations
           </Heading>
-          <p className="mt-6 max-w-md text-balance text-base leading-7 text-white/55 md:text-lg md:leading-8">
+          <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
             We help B2B founders and agency owners automate messy daily work
             and scale faster with AI systems
           </p>
@@ -659,7 +659,7 @@ export default function AgentflowPage() {
                       alt={index < trustedLogos.length ? logo.name : ""}
                       width={logo.width}
                       height={logo.height}
-                      className="h-8 w-auto invert opacity-75"
+                      className="h-7 w-auto invert opacity-75"
                     />
                   </div>
                 ))}
@@ -695,7 +695,7 @@ export default function AgentflowPage() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690]">
                     {item.icon}
                   </span>
-                  <h3 className="text-[16px] font-medium text-white md:text-[17px]">
+                  <h3 className="text-[17px] font-medium text-white">
                     {item.title}
                   </h3>
                 </div>
@@ -706,7 +706,7 @@ export default function AgentflowPage() {
       </section>
 
       {/* 2b. WHAT WE DO (white) */}
-      <Band id="results">
+      <Band id="results" className="pb-14 md:pb-20">
         <Eyebrow>What We Do</Eyebrow>
         <div className="mt-5">
           <Heading>How we help you scale faster</Heading>
@@ -743,7 +743,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* 3. WORKFLOWS WE RUN (white) */}
-      <Band id="workflows">
+      <Band id="workflows" className="pt-14 md:pt-20">
         <Eyebrow>What We Take Over</Eyebrow>
         <div className="mt-5">
           <Heading>Agents, workflows, and dashboards</Heading>
@@ -840,10 +840,10 @@ export default function AgentflowPage() {
                       {cap.icon}
                     </span>
                     <div>
-                      <h3 className="text-base font-medium text-white md:text-[17px]">
+                      <h3 className="text-[17px] font-medium text-white">
                         {cap.title}
                       </h3>
-                      <p className="mt-1 text-base leading-8 text-white/55 md:text-[17px]">
+                      <p className="mt-1 text-[17px] leading-8 text-white/55">
                         {cap.body}
                       </p>
                     </div>
@@ -908,11 +908,16 @@ export default function AgentflowPage() {
       <Band id="pricing" dark>
         <Eyebrow dark>Pricing</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Predictable pricing, no surprises</Heading>
+          <Heading dark>
+            Predictable pricing,
+            <br />
+            no surprises
+          </Heading>
         </div>
         <Sub dark className="mt-5">
-          One plan for your whole team. One flat monthly fee, built and run by
-          us.
+          One plan for your whole team.
+          <br />
+          One flat monthly fee, built and run by us.
         </Sub>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -930,7 +935,7 @@ export default function AgentflowPage() {
                 >
                   {plan.name}
                 </h3>
-                <p className="mt-4 text-[15px] text-white/55">
+                <p className="mt-4 text-[17px] text-white/55">
                   {plan.description}
                 </p>
 
@@ -967,14 +972,14 @@ export default function AgentflowPage() {
                 </a>
 
                 <div className="mt-10 border-t border-white/10 pt-9">
-                  <p className="text-[15px] font-medium text-white/45">
+                  <p className="text-[17px] font-medium text-white/45">
                     What&apos;s Included
                   </p>
                   <ul className="mt-7 space-y-5">
                     {plan.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-3 text-[16px] text-white/85"
+                        className="flex items-center gap-3 text-[17px] text-white/85"
                       >
                         <span
                           className="h-1.5 w-1.5 shrink-0"
@@ -992,7 +997,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* SECURITY (black) */}
-      <Band id="security" dark>
+      <Band id="security" dark className="pt-12 pb-32 md:pt-14 md:pb-40">
         <Eyebrow dark>Security</Eyebrow>
         <div className="mt-5">
           <Heading as="h3" dark>
@@ -1053,7 +1058,7 @@ export default function AgentflowPage() {
             <p className="mt-4 text-[17px] font-medium text-black">
               Have more questions?
             </p>
-            <p className="mt-1 text-[15px] text-[#4d4d4d]">
+            <p className="mt-1 text-[17px] text-[#4d4d4d]">
               Reach out and we will walk you through it.
             </p>
             <a
@@ -1135,7 +1140,7 @@ export default function AgentflowPage() {
             <div className="mt-5 flex flex-col items-center">
               <Heading dark>Ready to get your week back?</Heading>
             </div>
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/55 md:text-[17px] md:leading-8">
+            <p className="mt-5 max-w-xl text-[17px] leading-8 text-white/55">
               Join the teams using Harmony to scale operations, cut costs, and
               deliver results faster. Book a call and we will map your biggest
               time leaks live, then show you the system that plugs them.
@@ -1199,7 +1204,7 @@ export default function AgentflowPage() {
             </div>
           </div>
 
-          <div className="flex border-b border-white/10 px-7 py-9 text-[16px] text-white/55 md:justify-end md:px-10">
+          <div className="flex border-b border-white/10 px-7 py-9 text-[17px] text-white/55 md:justify-end md:px-10">
             <div className="flex items-center gap-8 text-white/55">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
                 <FacebookIcon />

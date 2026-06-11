@@ -51,26 +51,27 @@ export function AgentflowNav() {
             href={CAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group hidden h-10 items-center gap-2 overflow-hidden pl-1.5 pr-4 text-[13px] font-medium text-black transition hover:brightness-95 md:inline-flex"
+            className="group hidden h-10 items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95 md:inline-flex"
             style={{ backgroundColor: CTA_ACCENT }}
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-black">
+            <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
               <Image
                 src="/assets/talk-to-sales-icon.svg"
                 alt=""
                 width={16}
                 height={15}
-                className="h-[15px] w-4"
+                className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:-translate-y-7"
+              />
+              <Image
+                src="/assets/talk-to-sales-icon.svg"
+                alt=""
+                aria-hidden
+                width={16}
+                height={15}
+                className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
               />
             </span>
-            <span className="h-5 overflow-hidden">
-              <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-5">
-                <span className="flex h-5 items-center">Book a Call</span>
-                <span className="flex h-5 items-center" aria-hidden="true">
-                  Book a Call
-                </span>
-              </span>
-            </span>
+            <span>Book a Call</span>
           </a>
           <button
             type="button"

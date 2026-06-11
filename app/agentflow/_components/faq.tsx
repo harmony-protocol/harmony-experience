@@ -8,6 +8,10 @@ const items = [
     a: "Harmony is a done-for-you service that comes with its own platform. We take on your requests and build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team, all in our desktop app. Instead of you wiring up DIY tools, we find the operational bottlenecks in your day to day work and solve them properly, so you actually save time and attention. Our goal is to replace a human VA at a fraction of the cost.",
   },
   {
+    q: "Who is Harmony for?",
+    a: "Harmony is built for B2B services firms doing six to eight figures in annual revenue. Marketing agencies, consultancies, and professional services teams where the founder is still deep in client work, ops, and delivery. If manual work is slowing growth and you do not want to keep hiring your way out of it, Harmony is for you.",
+  },
+  {
     q: "How fast will I receive my new automation requests?",
     a: "We try to deliver within 48 hours for simple requests. For new integrations and more complex workflows, it can take up to a week.",
   },

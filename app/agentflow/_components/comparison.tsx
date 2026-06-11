@@ -81,13 +81,13 @@ function CellContent({ value, accent }: { value: Cell; accent: boolean }) {
   if (value === true) return <CheckBadge accent={accent} />;
   if (value === false) return <XBadge />;
   return (
-    <span className="text-[15px] leading-snug text-black/45">{value}</span>
+    <span className="text-[17px] leading-snug text-black/45">{value}</span>
   );
 }
 
 export function Comparison() {
   return (
-    <div className="mt-12 overflow-x-auto [scrollbar-width:thin]">
+    <div className="mt-12 mb-16 overflow-x-auto [scrollbar-width:thin] md:mb-24">
       <table className="w-full min-w-[840px] border-separate border-spacing-0">
         <thead>
           <tr>
@@ -115,7 +115,7 @@ export function Comparison() {
                       />
                     </span>
                   ) : (
-                    <span className="text-[15px] font-medium text-black/45">
+                    <span className="text-[17px] font-medium text-black/45">
                       {col}
                     </span>
                   )}
@@ -133,7 +133,7 @@ export function Comparison() {
                   scope="row"
                   className="sticky left-0 z-10 border-t border-black/10 bg-[#fafafa] py-4 pr-4 text-left"
                 >
-                  <span className="flex items-center gap-2.5 whitespace-nowrap text-[16px] font-medium text-black md:text-[17px]">
+                  <span className="flex items-center gap-2.5 whitespace-nowrap text-[17px] font-medium text-black">
                     <span className="text-black/35">{row.icon}</span>
                     {row.label}
                   </span>
