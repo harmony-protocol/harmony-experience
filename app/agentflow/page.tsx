@@ -25,6 +25,8 @@ import {
   Workflow,
 } from "lucide-react";
 import { AgentflowNav } from "./_components/nav";
+import { CalInit } from "./_components/cal-init";
+import { HeroVideo } from "./_components/hero-video";
 import { Solutions } from "./_components/solutions";
 import { IntegrationsRow } from "./_components/features";
 import { Comparison } from "./_components/comparison";
@@ -45,10 +47,8 @@ const cabin = Cabin({
 
 const ACCENT = "#9ff690";
 const CTA_ACCENT = "#9ff690";
-const CAL_URL = "https://cal.com/harmony-vishal/discovery";
-
-// Paste the YouTube video id of the VSL here (the part after watch?v=).
-const VSL_YOUTUBE_ID = "";
+const CAL_LINK = "harmony-vishal/discovery";
+const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
   title: "We help B2B founders automate work operations | Harmony AI",
@@ -123,18 +123,12 @@ function Sub({
   );
 }
 
-function PrimaryButton({
-  href = CAL_URL,
-}: {
-  href?: string;
-}) {
-  const external = href.startsWith("http");
+function PrimaryButton() {
   return (
-    <a
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
-      className="group inline-flex h-10 items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
+    <button
+      type="button"
+      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >
       <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
@@ -155,7 +149,7 @@ function PrimaryButton({
         />
       </span>
       <span>Book a Call</span>
-    </a>
+    </button>
   );
 }
 
@@ -554,6 +548,7 @@ export default function AgentflowPage() {
         }
       `}</style>
 
+      <CalInit />
       <AgentflowNav />
 
       {/* 1. HERO (black) */}
@@ -600,39 +595,8 @@ export default function AgentflowPage() {
           </div>
 
           {/* YouTube VSL */}
-          <div className="mt-16 w-full max-w-[880px]">
-            <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-2 shadow-[0_0_100px_rgba(159,246,144,0.1)]">
-              {VSL_YOUTUBE_ID ? (
-                <iframe
-                  className="aspect-video w-full rounded-xl bg-black"
-                  src={`https://www.youtube-nocookie.com/embed/${VSL_YOUTUBE_ID}`}
-                  title="Harmony video sales letter"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl bg-[#070707]">
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute -bottom-24 right-0 h-[300px] w-[420px] rounded-full blur-[90px]"
-                    style={{ backgroundColor: "rgba(61,142,47,0.35)" }}
-                  />
-                  <div className="flex flex-col items-center gap-4">
-                    <span
-                      className="flex h-14 w-14 items-center justify-center rounded-full text-black"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <svg viewBox="0 0 16 16" className="h-5 w-5 translate-x-px" fill="currentColor">
-                        <path d="M4 2.5v11l9-5.5z" />
-                      </svg>
-                    </span>
-                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-white/45">
-                      Watch the 2 minute walkthrough
-                    </span>
-                  </div>
-                </div>
-              )}
-            </div>
+          <div className="mt-10 w-full max-w-[880px]">
+            <HeroVideo />
           </div>
         </div>
 
@@ -953,11 +917,10 @@ export default function AgentflowPage() {
                   )}
                 </div>
 
-                <a
-                  href={CAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-9 flex h-12 items-center justify-center border text-[14px] font-medium uppercase transition ${
+                <button
+                  type="button"
+      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+                  className={`mt-9 flex h-12 cursor-pointer items-center justify-center border text-[14px] font-medium uppercase transition ${
                     plan.highlighted
                       ? "border-transparent text-black hover:brightness-95"
                       : "border-[#9ff690] text-white hover:bg-white/10"
@@ -969,7 +932,7 @@ export default function AgentflowPage() {
                   }
                 >
                   {plan.cta}
-                </a>
+                </button>
 
                 <div className="mt-10 border-t border-white/10 pt-9">
                   <p className="text-[17px] font-medium text-white/45">
@@ -1061,14 +1024,13 @@ export default function AgentflowPage() {
             <p className="mt-1 text-[17px] text-[#4d4d4d]">
               Reach out and we will walk you through it.
             </p>
-            <a
-              href={CAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
+            <button
+              type="button"
+      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+              className="mt-5 cursor-pointer rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
             >
               Contact us
-            </a>
+            </button>
           </div>
           <Faq />
         </div>
