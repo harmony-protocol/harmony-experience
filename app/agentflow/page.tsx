@@ -710,7 +710,7 @@ export default function AgentflowPage() {
       <Band id="workflows" className="pt-14 md:pt-20">
         <Eyebrow>What We Take Over</Eyebrow>
         <div className="mt-5">
-          <Heading>Agents, workflows, and dashboards</Heading>
+          <Heading>We remove time sinks across your team</Heading>
         </div>
         <Sub className="mt-5">
           We detect time sinks across your organization, then automate them
