@@ -461,7 +461,7 @@ const footerColumns = [
     title: "Useful",
     links: [
       { label: "Solution", href: "./solution" },
-      { label: "Privacy Policy", href: "./legal-page/privacy" },
+      { label: "Privacy Policy", href: "./privacy" },
       { label: "Terms & Conditions", href: "./legal-page/terms" },
     ],
   },
