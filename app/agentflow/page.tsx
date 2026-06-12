@@ -563,6 +563,7 @@ export default function AgentflowPage() {
             width={1404}
             height={3408}
             sizes="280px"
+            preload
             className="h-auto w-full object-contain object-top"
           />
         </div>
@@ -576,6 +577,7 @@ export default function AgentflowPage() {
             width={1684}
             height={4088}
             sizes="280px"
+            preload
             className="h-auto w-full object-contain object-top"
           />
         </div>
