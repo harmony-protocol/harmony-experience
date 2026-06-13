@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
-import { AgentflowNav } from "../_components/nav";
 
 const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -64,8 +63,6 @@ export default function AgentflowPrivacyPage() {
       className={`${schibsted.variable} ${cabin.variable} min-h-screen bg-black text-white`}
       style={{ fontFamily: "var(--font-cabin)" }}
     >
-      <AgentflowNav />
-
       <main className="mx-auto w-[92%] max-w-[820px] px-0 pb-24 pt-28 md:pt-32">
         <Link
           href="/"

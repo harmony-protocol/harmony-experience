@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./_components/navbar";
-import { Footer } from "./_components/footer";
-import { Chrome } from "./_components/chrome";
+import { AgentflowNav } from "./_components/nav";
+import { SiteFooter } from "./_components/site-footer";
+import { CalInit } from "./_components/cal-init";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,13 +44,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-[#020202] text-zinc-100"
         suppressHydrationWarning
       >
-        <Chrome>
-          <Navbar />
-        </Chrome>
+        <CalInit />
+        <AgentflowNav />
         <main className="flex-1">{children}</main>
-        <Chrome>
-          <Footer />
-        </Chrome>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
@@ -25,6 +26,8 @@ const links = [
 
 export function AgentflowNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => href.startsWith("/") && pathname === href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
@@ -49,7 +52,12 @@ export function AgentflowNav() {
                 {...(link.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="text-base text-white/60 transition hover:text-white"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`text-base transition ${
+                  isActive(link.href)
+                    ? "font-medium text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
               >
                 {link.label}
               </a>
@@ -112,7 +120,12 @@ export function AgentflowNav() {
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
                 onClick={() => setOpen(false)}
-                className="py-2.5 text-base text-white/70 transition hover:text-white"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`py-2.5 text-base transition ${
+                  isActive(link.href)
+                    ? "font-medium text-white"
+                    : "text-white/70 hover:text-white"
+                }`}
               >
                 {link.label}
               </a>
