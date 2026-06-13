@@ -4,6 +4,7 @@ import "./globals.css";
 import { AgentflowNav } from "./_components/nav";
 import { SiteFooter } from "./_components/site-footer";
 import { CalInit } from "./_components/cal-init";
+import { brandFontClassName, bodyStyle } from "./_lib/brand-fonts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,10 +39,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${brandFontClassName} ${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body
-        className="min-h-full flex flex-col bg-[#020202] text-zinc-100"
+        className="min-h-full flex flex-col bg-black text-white"
+        style={bodyStyle}
         suppressHydrationWarning
       >
         <CalInit />

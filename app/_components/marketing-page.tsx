@@ -1,5 +1,17 @@
 import Image from "next/image";
-import { Check, X, ArrowRight } from "lucide-react";
+import { Check, X } from "lucide-react";
+import { headingStyle } from "../_lib/brand-fonts";
+import { resolveIntegrationLogo } from "../_lib/integration-logos";
+import {
+  SolutionsShell,
+  SolutionsSection,
+  SolutionsSub,
+} from "./solutions-shell";
+
+const ACCENT = "#9ff690";
+const CTA_ACCENT = "#9ff690";
+const CAL_LINK = "harmony-vishal/discovery";
+const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 /* ----------------------------- TYPES ----------------------------- */
 
@@ -9,18 +21,14 @@ export type AudienceConfig = {
   tagline: string;
   metaDescription: string;
   hero: { headline: string; subtitle: string };
-  /** Per-audience integration logos. If omitted, the section is hidden. */
   integrations?: { name: string; src: string }[];
   pain?: { eyebrow: string; headline: string; intro: string; items: string[] };
   turn?: { eyebrow: string; headline: string; body: string };
   personas?: { eyebrow: string; headline: string; items: string[] };
   features: { eyebrow: string; title: string; items: string[] }[];
-  /** Defaults to true. Set false in the JSON to hide the 10x vs 1x section. */
   comparison?: boolean;
   closing: { eyebrow: string; headline: string; body: string };
 };
-
-/* --------------------- CONSTANTS (shared all pages) --------------------- */
 
 const harmonyEdge = [
   "Pre-built world class AI platform",
@@ -40,56 +48,103 @@ const agencyReality = [
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      className="mb-3 text-sm font-medium uppercase text-zinc-500"
-      style={{
-        fontFamily: "var(--font-jetbrains)",
-        letterSpacing: "0.16em",
-      }}
-    >
+    <span className="inline-flex w-fit items-center gap-1.5 border border-[#9ff690] bg-[rgba(162,249,147,0.10)] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] text-white">
+      <span className="h-1.5 w-1.5" style={{ backgroundColor: ACCENT }} />
       {children}
-    </p>
+    </span>
   );
 }
 
-export function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2
-      className="max-w-2xl pb-1 font-['New_York',Georgia,ui-serif,serif] text-3xl font-medium leading-[1.2] tracking-[-0.025em] md:text-4xl"
-      style={{
-        backgroundImage:
-          "linear-gradient(115deg,#fafaf9 0%,#d6d3d1 34%,#a1a1aa 58%,#e7e5e4 82%,#71717a 100%)",
-        backgroundClip: "text",
-        WebkitBackgroundClip: "text",
-        color: "transparent",
-        WebkitTextFillColor: "transparent",
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
-
-export function PrimaryCTA({
-  size = "md",
-  label = "Book a Call",
-  href = "https://cal.com/harmony-vishal/discovery",
+export function SectionHeading({
+  as: Tag = "h2",
+  children,
+  className = "",
 }: {
-  size?: "md" | "lg";
-  label?: string;
-  href?: string;
+  as?: "h1" | "h2" | "h3";
+  children: React.ReactNode;
+  className?: string;
 }) {
-  const padding = size === "lg" ? "px-5 py-2.5" : "px-4 py-2";
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 rounded-lg bg-zinc-100 ${padding} text-base font-medium text-zinc-950 transition hover:bg-white`}
+    <Tag
+      className={`max-w-2xl font-normal leading-[1.1] text-white ${
+        Tag === "h1"
+          ? "text-[40px] md:text-[56px]"
+          : "text-[32px] md:text-[46px]"
+      } ${className}`}
+      style={headingStyle}
     >
-      {label}
-      <ArrowRight className="h-4 w-4" strokeWidth={2} />
-    </a>
+      {children}
+    </Tag>
+  );
+}
+
+function PrimaryButton() {
+  return (
+    <button
+      type="button"
+      data-cal-link={CAL_LINK}
+      data-cal-config={CAL_CONFIG}
+      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
+      style={{ backgroundColor: CTA_ACCENT }}
+    >
+      <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          width={16}
+          height={15}
+          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:-translate-y-7"
+        />
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          aria-hidden
+          width={16}
+          height={15}
+          className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
+        />
+      </span>
+      <span>Book a Call</span>
+    </button>
+  );
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-4">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex items-start gap-3 text-[17px] leading-8 text-white/70"
+        >
+          <span
+            className="mt-3 h-1.5 w-1.5 shrink-0"
+            style={{ backgroundColor: ACCENT }}
+          />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function SectionIntro({
+  eyebrow,
+  title,
+  body,
+}: {
+  eyebrow: string;
+  title: string;
+  body?: string;
+}) {
+  return (
+    <div className="max-w-2xl">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <div className="mt-5">
+        <SectionHeading>{title}</SectionHeading>
+      </div>
+      {body ? <SolutionsSub className="mt-5">{body}</SolutionsSub> : null}
+    </div>
   );
 }
 
@@ -97,178 +152,166 @@ export function PrimaryCTA({
 
 export function MarketingPage({ audience }: { audience: AudienceConfig }) {
   return (
-    <main className="relative isolate overflow-hidden bg-[#020202] text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_60vmax_at_50%_0%,#141416_0%,#070708_44%,#020202_100%)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,244,245,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(244,244,245,0.05)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.12] [mask-image:linear-gradient(to_bottom,black_0%,transparent_72%)]" />
+    <SolutionsShell>
+      <SolutionsSection bordered={false}>
+        <Eyebrow>{audience.shortLabel}</Eyebrow>
+        <div className="mt-6 max-w-3xl">
+          <SectionHeading as="h1">{audience.hero.headline}</SectionHeading>
+        </div>
+        <SolutionsSub className="mt-6 max-w-xl">{audience.hero.subtitle}</SolutionsSub>
+        <div className="mt-8">
+          <PrimaryButton />
+        </div>
+      </SolutionsSection>
 
-      <div
-        className="mx-auto pt-32 pb-32 md:pt-[200px]"
-        style={{ maxWidth: 720, width: "92%" }}
-      >
-        {/* 1. HERO */}
-        <section>
-          <h1
-            className="max-w-3xl pb-2 font-['New_York',Georgia,ui-serif,serif] text-5xl font-medium leading-[1.1] tracking-[-0.035em] md:text-6xl"
-            style={{
-              backgroundImage:
-                "linear-gradient(115deg,#fafaf9 0%,#d6d3d1 34%,#a1a1aa 58%,#e7e5e4 82%,#71717a 100%)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {audience.hero.headline}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-            {audience.hero.subtitle}
-          </p>
-          <div className="mt-10">
-            <PrimaryCTA size="lg" />
-          </div>
-        </section>
-
-        {/* 2. INTEGRATES WITH (optional) */}
-        {audience.integrations && audience.integrations.length > 0 && (
-          <section className="mt-20">
-            <p
-              className="text-sm font-medium uppercase text-zinc-500"
-              style={{
-                fontFamily: "var(--font-jetbrains)",
-                letterSpacing: "0.16em",
-              }}
-            >
-              Integrates with
-            </p>
-            <div className="mt-8 flex max-w-xl flex-wrap items-center gap-x-8 gap-y-5">
-              {audience.integrations.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex items-center gap-2.5 opacity-90"
-                >
-                  <Image
-                    src={tool.src}
-                    alt={tool.name}
-                    width={22}
-                    height={22}
-                    className="h-[22px] w-[22px] object-contain"
-                  />
-                  <span className="text-lg text-zinc-200">{tool.name}</span>
-                </div>
-              ))}
-              <span className="text-lg text-zinc-500">and more…</span>
-            </div>
-          </section>
-        )}
-
-        {/* 3. PAIN (optional) */}
-        {audience.pain && (
-          <section className="mt-32">
-            <Eyebrow>{audience.pain.eyebrow}</Eyebrow>
-            <SectionHeading>{audience.pain.headline}</SectionHeading>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-              {audience.pain.intro}
-            </p>
-            <ul className="mt-10 max-w-xl space-y-4">
-              {audience.pain.items.map((pain) => (
-                <li
-                  key={pain}
-                  className="flex items-start gap-4 text-lg leading-8 text-zinc-300"
-                >
-                  <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600" />
-                  {pain}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {/* 4. TURN (optional) */}
-        {audience.turn && (
-          <section className="mt-32">
-            <Eyebrow>{audience.turn.eyebrow}</Eyebrow>
-            <SectionHeading>{audience.turn.headline}</SectionHeading>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-              {audience.turn.body}
-            </p>
-            <div className="mt-10">
-              <PrimaryCTA />
-            </div>
-          </section>
-        )}
-
-        {/* 5. PERSONAS (optional) */}
-        {audience.personas && (
-          <section className="mt-32">
-            <Eyebrow>{audience.personas.eyebrow}</Eyebrow>
-            <SectionHeading>{audience.personas.headline}</SectionHeading>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {audience.personas.items.map((persona) => (
-                <span
-                  key={persona}
-                  className="rounded-full border border-zinc-800 bg-zinc-900/50 px-3.5 py-1.5 text-sm text-zinc-300"
-                >
-                  {persona}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* 6. FEATURE BLOCKS */}
-        {audience.features.map((block) => (
-          <section key={block.eyebrow} className="mt-32">
-            <Eyebrow>{block.eyebrow}</Eyebrow>
-            <SectionHeading>{block.title}</SectionHeading>
-            <ul className="mt-10 max-w-md space-y-4">
-              {block.items.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-4 text-lg leading-8 text-zinc-100"
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 ring-1 ring-emerald-400/40">
-                    <Check
-                      className="h-3.5 w-3.5 text-emerald-300"
-                      strokeWidth={2.5}
+      {audience.integrations && audience.integrations.length > 0 && (
+        <SolutionsSection>
+          <Eyebrow>Integrates with</Eyebrow>
+          <div className="mt-10 flex max-w-4xl flex-wrap items-center gap-x-10 gap-y-8">
+            {audience.integrations.map((tool) => {
+              const logo = resolveIntegrationLogo(tool.src);
+              return (
+                <div key={tool.name} className="flex h-11 items-center">
+                  {logo.isFullLogo ? (
+                    <Image
+                      src={logo.src}
+                      alt={tool.name}
+                      width={logo.width}
+                      height={logo.height}
+                      className="h-11 w-auto max-w-[180px] object-contain opacity-90"
                     />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10">
-              <PrimaryCTA />
-            </div>
-          </section>
-        ))}
+                  ) : (
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={logo.src}
+                        alt=""
+                        width={logo.width}
+                        height={logo.height}
+                        className="h-11 w-11 object-contain opacity-90"
+                      />
+                      <span className="text-[17px] text-white/85">
+                        {tool.name}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+            <span className="text-[17px] text-white/45">and more…</span>
+          </div>
+        </SolutionsSection>
+      )}
 
-        {/* 7. COMPARISON (defaults to true; set comparison: false to hide) */}
-        {audience.comparison !== false && (
-        <section className="mt-32">
-          <Eyebrow>Why Harmony?</Eyebrow>
-          <SectionHeading>10× the work of a traditional agency.</SectionHeading>
+      {audience.pain && (
+        <SolutionsSection>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
+            <SectionIntro
+              eyebrow={audience.pain.eyebrow}
+              title={audience.pain.headline}
+              body={audience.pain.intro}
+            />
+            <BulletList items={audience.pain.items} />
+          </div>
+        </SolutionsSection>
+      )}
 
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
-            <div>
-              <div className="flex items-center gap-3">
-                <span
-                  className="text-sm font-medium uppercase text-emerald-300/80"
-                  style={{
-                    fontFamily: "var(--font-jetbrains)",
-                    letterSpacing: "0.16em",
-                  }}
-                >
-                  Harmony AI
-                </span>
+      {audience.turn && (
+        <SolutionsSection>
+          <SectionIntro
+            eyebrow={audience.turn.eyebrow}
+            title={audience.turn.headline}
+            body={audience.turn.body}
+          />
+          <div className="mt-8">
+            <PrimaryButton />
+          </div>
+        </SolutionsSection>
+      )}
+
+      {audience.personas && (
+        <SolutionsSection>
+          <SectionIntro
+            eyebrow={audience.personas.eyebrow}
+            title={audience.personas.headline}
+          />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {audience.personas.items.map((persona) => (
+              <div
+                key={persona}
+                className="border border-white/10 bg-white/[0.03] px-5 py-4 text-[16px] leading-8 text-white/75"
+              >
+                {persona}
               </div>
+            ))}
+          </div>
+        </SolutionsSection>
+      )}
+
+      {audience.features.length > 0 && (
+        <SolutionsSection>
+          <div className="max-w-2xl">
+            <Eyebrow>What Harmony handles</Eyebrow>
+            <div className="mt-5">
+              <SectionHeading>Workflows we automate for you</SectionHeading>
+            </div>
+            <SolutionsSub className="mt-5">
+              Built, managed, and improved by our team so you do not have to
+              wire up another tool yourself.
+            </SolutionsSub>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {audience.features.map((block) => (
+              <div
+                key={block.eyebrow}
+                className="flex flex-col border border-white/10 bg-white/[0.03] p-7 md:p-8"
+              >
+                <Eyebrow>{block.eyebrow}</Eyebrow>
+                <h3
+                  className="mt-5 text-xl text-white"
+                  style={headingStyle}
+                >
+                  {block.title}
+                </h3>
+                <ul className="mt-6 space-y-4">
+                  {block.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-[17px] leading-8 text-white/70"
+                    >
+                      <span
+                        className="mt-3 h-1.5 w-1.5 shrink-0"
+                        style={{ backgroundColor: ACCENT }}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </SolutionsSection>
+      )}
+
+      {audience.comparison !== false && (
+        <SolutionsSection>
+          <SectionIntro
+            eyebrow="Why Harmony?"
+            title="10× the work of a traditional agency."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            <div className="border border-white/10 bg-white/[0.03] p-7 md:p-8">
+              <p className="text-xs font-medium uppercase tracking-[0.06em] text-[#9ff690]">
+                Harmony AI
+              </p>
               <ul className="mt-6 space-y-4">
                 {harmonyEdge.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-4 text-lg leading-8 text-zinc-200"
+                    className="flex items-start gap-3 text-[17px] leading-8 text-white/70"
                   >
                     <Check
-                      className="mt-1.5 h-4 w-4 shrink-0 text-emerald-400"
+                      className="mt-1.5 h-4 w-4 shrink-0 text-[#9ff690]"
                       strokeWidth={2.2}
                     />
                     {item}
@@ -276,27 +319,18 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
                 ))}
               </ul>
             </div>
-
-            <div>
-              <div className="flex items-center gap-3">
-                <span
-                  className="text-sm font-medium uppercase text-zinc-500"
-                  style={{
-                    fontFamily: "var(--font-jetbrains)",
-                    letterSpacing: "0.16em",
-                  }}
-                >
-                  Traditional agencies
-                </span>
-              </div>
+            <div className="border border-white/10 bg-white/[0.03] p-7 md:p-8">
+              <p className="text-xs font-medium uppercase tracking-[0.06em] text-white/45">
+                Traditional agencies
+              </p>
               <ul className="mt-6 space-y-4">
                 {agencyReality.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-4 text-lg leading-8 text-zinc-500"
+                    className="flex items-start gap-3 text-[17px] leading-8 text-white/45"
                   >
                     <X
-                      className="mt-1.5 h-4 w-4 shrink-0 text-zinc-600"
+                      className="mt-1.5 h-4 w-4 shrink-0 text-white/25"
                       strokeWidth={2}
                     />
                     {item}
@@ -305,22 +339,27 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
               </ul>
             </div>
           </div>
-        </section>
-        )}
+        </SolutionsSection>
+      )}
 
-        {/* 8. FINAL CTA */}
-        <section className="mt-32">
-          <Eyebrow>{audience.closing.eyebrow}</Eyebrow>
-          <SectionHeading>{audience.closing.headline}</SectionHeading>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-            {audience.closing.body}
-          </p>
-          <div className="mt-10">
-            <PrimaryCTA size="lg" />
+      <SolutionsSection bordered={false}>
+        <div className="relative border border-white/10 bg-black p-7 md:p-10">
+          <span className="absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
+          <span className="absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
+          <span className="absolute -bottom-px -left-px h-1.5 w-1.5 bg-white" />
+          <span className="absolute -bottom-px -right-px h-1.5 w-1.5 bg-white" />
+
+          <SectionIntro
+            eyebrow={audience.closing.eyebrow}
+            title={audience.closing.headline}
+            body={audience.closing.body}
+          />
+          <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <PrimaryButton />
+            <p className="text-[17px] text-white/45">Vishal Singh, Founder</p>
           </div>
-          <p className="mt-8 text-lg text-zinc-500">Vishal Singh, Founder</p>
-        </section>
-      </div>
-    </main>
+        </div>
+      </SolutionsSection>
+    </SolutionsShell>
   );
 }

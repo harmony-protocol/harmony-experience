@@ -395,8 +395,7 @@ const pricingPlans = [
     highlighted: true,
     features: [
       "In-depth audit of your current flows",
-      "Personalized AI executive assistants",
-      "Custom dashboards and automations",
+      "Custom AI agents, workflows and dashboards",
       "One feature request at a time",
       "Email, Slack, and Calls integration",
       "CRM and Ticketing integration",
@@ -1015,8 +1014,8 @@ export default function AgentflowPage() {
       {/* 10b. FOUNDER NOTE (black) */}
       <Band id="founder" dark>
         <Eyebrow dark>Founder&apos;s Note</Eyebrow>
-        <div className="mt-10 grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_1fr] lg:gap-16">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-2xl border border-white/10">
+        <div className="mt-10 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-10">
+          <div className="relative aspect-[4/5] w-full max-w-[400px] shrink-0 overflow-hidden rounded-2xl border border-white/10">
             <Image
               src="/assets/founder-vishal.avif"
               alt="Vishal Singh, Founder of Harmony AI"
@@ -1026,7 +1025,7 @@ export default function AgentflowPage() {
             />
           </div>
 
-          <div className="max-w-[480px]">
+          <div className="max-w-[460px]">
             <div className="space-y-5 text-[17px] leading-8 text-white/70 md:text-[19px] md:leading-9">
               <p>Hey,</p>
               <p>I used to run an agency that was growing at a good pace.</p>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
 
 const schibsted = Schibsted_Grotesk({
@@ -64,15 +63,8 @@ export default function AgentflowPrivacyPage() {
       style={{ fontFamily: "var(--font-cabin)" }}
     >
       <main className="mx-auto w-[92%] max-w-[820px] px-0 pb-24 pt-28 md:pt-32">
-        <Link
-          href="/"
-          className="text-[15px] text-white/45 transition hover:text-white"
-        >
-          ← Back to home
-        </Link>
-
         <h1
-          className="mt-8 text-[36px] font-medium leading-tight text-white md:text-[48px]"
+          className="text-[36px] font-medium leading-tight text-white md:text-[48px]"
           style={{ fontFamily: "var(--font-schibsted)" }}
         >
           Privacy Policy

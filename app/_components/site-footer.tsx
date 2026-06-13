@@ -7,15 +7,14 @@ const footerColumns = [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Pricing", href: "/#pricing" },
-      { label: "Contact", href: "/#" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Useful",
     links: [
-      { label: "Solution", href: "/#" },
+      { label: "Solutions", href: "/solutions" },
       { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms & Conditions", href: "/#" },
     ],
   },
 ];
@@ -99,13 +98,13 @@ export function SiteFooter() {
 
         <div className="flex border-b border-white/10 px-7 py-9 text-[17px] text-white/55 md:justify-end md:px-10">
           <div className="flex items-center gap-8 text-white/55">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
+            <a href="https://www.facebook.com/profile.php?id=61589399653731" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition hover:text-white">
               <FacebookIcon />
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="transition hover:text-white">
+            <a href="https://x.com/harmonyai_" target="_blank" rel="noopener noreferrer" aria-label="X" className="transition hover:text-white">
               <XIcon />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition hover:text-white">
+            <a href="https://www.linkedin.com/company/getharmony" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition hover:text-white">
               <LinkedinIcon />
             </a>
           </div>
