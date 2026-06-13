@@ -24,25 +24,25 @@ const team = [
     name: "Vishal Singh",
     role: "CEO & Head of Product",
     image: "/assets/about/vishal.avif",
-    linkedin: "https://linkedin.com/company/getharmony",
+    linkedin: "https://www.linkedin.com/in/vishalvibes/",
   },
   {
     name: "Anurag Maurya",
     role: "CTO & AI Researcher",
     image: "/assets/about/anurag.webp",
-    linkedin: "https://linkedin.com/company/getharmony",
+    linkedin: "https://www.linkedin.com/in/anurag-maurya-83513317b/",
   },
   {
     name: "Sid",
     role: "Automations Expert",
     image: "/assets/about/sid.webp",
-    linkedin: "https://linkedin.com/company/getharmony",
+    linkedin: "https://www.linkedin.com/in/siddharthshekharr/",
   },
   {
     name: "Ankit Raj",
     role: "AI Scalability Consultant",
     image: "/assets/about/ankit.webp",
-    linkedin: "https://linkedin.com/company/getharmony",
+    linkedin: "https://www.linkedin.com/in/anktrj/",
   },
 ];
 

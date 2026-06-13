@@ -175,13 +175,28 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
                   key={tool.name}
                   className="flex h-9 items-center justify-center lg:shrink-0"
                 >
-                  <Image
-                    src={logo.src}
-                    alt={tool.name}
-                    width={logo.width}
-                    height={logo.height}
-                    className="h-9 w-auto max-w-full object-contain opacity-90 lg:max-w-[140px]"
-                  />
+                  {logo.isFullLogo ? (
+                    <Image
+                      src={logo.src}
+                      alt={tool.name}
+                      width={logo.width}
+                      height={logo.height}
+                      className="h-9 w-auto max-w-full object-contain opacity-90 lg:max-w-[140px]"
+                    />
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src={logo.src}
+                        alt=""
+                        width={logo.width}
+                        height={logo.height}
+                        className="h-7 w-7 shrink-0 object-contain opacity-90"
+                      />
+                      <span className="text-[17px] font-medium text-white/85">
+                        {tool.name}
+                      </span>
+                    </div>
+                  )}
                 </div>
               );
             })}
