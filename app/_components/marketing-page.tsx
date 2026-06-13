@@ -173,14 +173,14 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
               return (
                 <div
                   key={tool.name}
-                  className="flex h-[30px] items-center justify-center lg:shrink-0"
+                  className="flex h-9 items-center justify-center lg:shrink-0"
                 >
                   <Image
                     src={logo.src}
                     alt={tool.name}
                     width={logo.width}
                     height={logo.height}
-                    className="h-[30px] w-auto max-w-full object-contain opacity-90 lg:max-w-[120px]"
+                    className="h-9 w-auto max-w-full object-contain opacity-90 lg:max-w-[140px]"
                   />
                 </div>
               );

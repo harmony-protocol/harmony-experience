@@ -625,12 +625,16 @@ export default function AgentflowPage() {
               {whoWeHelp.map((item) => (
                 <div
                   key={item.title}
-                  className="flex min-h-20 items-center gap-4 rounded-none border border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition hover:border-[#9ff690]/35 hover:bg-[#101210]"
+                  className={`group min-h-20 items-center gap-4 rounded-none border-[1.5px] border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition duration-300 hover:border-[#9ff690]/60 hover:bg-[#0e120e] ${
+                    item.title === "Ecommerce Agencies"
+                      ? "hidden lg:flex"
+                      : "flex"
+                  }`}
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690]">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690] transition duration-300 group-hover:border-[#9ff690]/70 group-hover:bg-[rgba(159,246,144,0.12)] group-hover:text-[#b6f9aa]">
                     {item.icon}
                   </span>
-                  <h3 className="text-[17px] font-medium text-white">
+                  <h3 className="text-[17px] font-medium text-white transition duration-300 group-hover:text-[#9ff690]">
                     {item.title}
                   </h3>
                 </div>

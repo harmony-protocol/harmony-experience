@@ -20,7 +20,7 @@ export function SolutionsSection({
     <section
       className={`relative overflow-hidden ${bordered ? "border-b border-white/10" : ""} ${className}`}
     >
-      <div className="relative mx-auto w-[92%] max-w-[1320px] px-4 py-20 md:px-8 md:py-28">
+      <div className="relative mx-auto w-[92%] max-w-[1200px] py-20 md:py-28">
         <div aria-hidden className={GRID} />
         <div className="relative">{children}</div>
       </div>
