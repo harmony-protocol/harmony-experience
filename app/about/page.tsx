@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
 import { Target, Sparkles, RefreshCcw } from "lucide-react";
+import { RevealText } from "../_components/reveal-text";
 
 const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -69,12 +70,10 @@ export const metadata: Metadata = {
     "Harmony is a done-for-you AI service that helps teams and leaders automate their operations.",
 };
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span
-      className="text-sm uppercase tracking-[0.16em] text-[#9ff690]"
-      style={{ fontFamily: "var(--font-jetbrains)" }}
-    >
+    <span className="inline-flex items-center gap-1.5 border border-[#9ff690] bg-[rgba(162,249,147,0.10)] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] text-white">
+      <span className="h-1.5 w-1.5" style={{ backgroundColor: "#9ff690" }} />
       {children}
     </span>
   );
@@ -127,13 +126,7 @@ export default function AboutPage() {
       <main className="pb-24 pt-28 md:pt-32">
         {/* Hero: tag + centered heading + subtitle + CTA */}
         <div className="mx-auto flex w-[92%] max-w-[820px] flex-col items-center text-center">
-          <span className="inline-flex items-center gap-1.5 border border-[#9ff690] bg-[rgba(162,249,147,0.10)] px-2 py-1 text-xs font-medium uppercase tracking-[0.06em] text-white">
-            <span
-              className="h-1.5 w-1.5"
-              style={{ backgroundColor: "#9ff690" }}
-            />
-            About
-          </span>
+          <Tag>About</Tag>
           <h1
             className="mt-6 text-[34px] font-normal leading-[1.1] text-white md:text-[52px]"
             style={{ fontFamily: "var(--font-schibsted)" }}
@@ -162,16 +155,27 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Team: centered heading + bounded marquee */}
+        {/* Our Story: scroll-linked word reveal */}
+        <section className="mx-auto mt-24 w-[92%] max-w-[1080px] md:mt-32">
+          <Tag>Our Story</Tag>
+          <RevealText
+            text="Harmony was born from a simple observation: talented teams were drowning in repetitive busywork while their real potential stayed untapped. We saw that while plenty of technical tools exist, none could be deployed quickly on a fixed price. So we rebuilt the agentic AI stack from scratch, specifically for growing businesses."
+            className="mt-8 max-w-[820px] text-[26px] leading-[1.3] text-white md:text-[38px] md:leading-[1.25]"
+            style={{ fontFamily: "var(--font-schibsted)" }}
+          />
+        </section>
+
+        {/* Team: leadership + bounded marquee */}
         <section className="mt-24 md:mt-32">
-          <div className="mx-auto w-[92%] max-w-[820px] text-center">
+          <div className="mx-auto w-[92%] max-w-[1080px]">
+            <Tag>Leadership</Tag>
             <h2
-              className="text-[28px] font-normal leading-[1.1] text-white md:text-[40px]"
+              className="mt-5 text-[28px] font-normal leading-[1.1] text-white md:text-[40px]"
               style={{ fontFamily: "var(--font-schibsted)" }}
             >
               Meet our team of AI experts
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-[16px] leading-8 text-white/60 md:text-[17px]">
+            <p className="mt-4 max-w-md text-[16px] leading-8 text-white/60 md:text-[17px]">
               We are a team of ex-business owners, engineers, and passionate AI
               experts
             </p>
@@ -226,40 +230,42 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Principles */}
-        <section className="mt-24 md:mt-32">
-          <div className="mx-auto w-[92%] max-w-[820px] text-center">
-            <Eyebrow>Our Principles</Eyebrow>
-            <h2
-              className="mt-4 text-[28px] font-normal leading-[1.1] text-white md:text-[40px]"
-              style={{ fontFamily: "var(--font-schibsted)" }}
-            >
-              Principles that guide us
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-[16px] leading-8 text-white/60 md:text-[17px]">
-              A few beliefs shape every system we build and every decision we
-              make.
-            </p>
-          </div>
+        {/* Our Values / Principles */}
+        <section className="mx-auto mt-24 w-[92%] max-w-[1080px] md:mt-32">
+          <Tag>Our Values</Tag>
+          <h2
+            className="mt-5 text-[28px] font-normal leading-[1.1] text-white md:text-[40px]"
+            style={{ fontFamily: "var(--font-schibsted)" }}
+          >
+            Principles that guide us
+          </h2>
+          <p className="mt-4 max-w-xl text-[16px] leading-8 text-white/60 md:text-[17px]">
+            A few beliefs shape every system we build, every hire we make, and
+            every client relationship.
+          </p>
 
-          <div className="mx-auto mt-12 grid w-[92%] max-w-[1080px] gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
             {principles.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col border border-white/10 bg-white/[0.03] p-7 md:p-8"
+                className="relative flex min-h-[300px] flex-col border border-white/10 bg-white/[0.02] p-7 md:p-8"
               >
+                <span className="pointer-events-none absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
+                <span className="pointer-events-none absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
                 <span className="flex h-11 w-11 items-center justify-center border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-[#9ff690]">
                   {item.icon}
                 </span>
-                <h3
-                  className="mt-6 text-xl text-white"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-[17px] leading-8 text-white/55">
-                  {item.body}
-                </p>
+                <div className="mt-auto pt-12">
+                  <h3
+                    className="text-xl text-white"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[17px] leading-8 text-white/55">
+                    {item.body}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
