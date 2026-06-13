@@ -10,10 +10,10 @@ import {
   Gauge,
   Laptop,
   Plug,
-  Tag,
   Target,
   Timer,
   UserRound,
+  Wallet,
   X,
 } from "lucide-react";
 
@@ -38,12 +38,12 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Bot className="h-4 w-4" strokeWidth={1.6} />,
     label: "AI systems built for you",
-    cells: [true, false, false, false, false],
+    cells: [true, false, false, true, false],
   },
   {
     icon: <Plug className="h-4 w-4" strokeWidth={1.6} />,
     label: "Built into your tools",
-    cells: [true, true, true, false, "Limited"],
+    cells: [true, true, true, true, "Limited"],
   },
   {
     icon: <Gauge className="h-4 w-4" strokeWidth={1.6} />,
@@ -53,7 +53,7 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Target className="h-4 w-4" strokeWidth={1.6} />,
     label: "Strategy and execution",
-    cells: [true, false, "Depends", "Strategy only", "Execution only"],
+    cells: [true, false, "Depends", true, "Execution only"],
   },
   {
     icon: <Timer className="h-4 w-4" strokeWidth={1.6} />,
@@ -61,9 +61,9 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
     cells: [true, "Setup varies", "Ramp-up", false, "Onboarding"],
   },
   {
-    icon: <Tag className="h-4 w-4" strokeWidth={1.6} />,
-    label: "Priced on outcomes",
-    cells: [true, false, false, false, false],
+    icon: <Wallet className="h-4 w-4" strokeWidth={1.6} />,
+    label: "Budget-friendly",
+    cells: [true, "Per seat + API costs", "High", "High", "$4k/mo"],
   },
 ];
 
