@@ -9,11 +9,18 @@ const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 const CTA_ACCENT = "#9ff690";
 
 const links = [
-  { label: "Who We Help", href: "#who-we-help" },
-  { label: "Workflows", href: "#workflows" },
-  { label: "Process", href: "#process" },
+  { label: "About", href: "/about" },
   { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  {
+    label: "Blog",
+    href: "https://theworkflowfix.substack.com",
+    external: true,
+  },
+  {
+    label: "Join Us",
+    href: "https://tally.so/r/m60LZY",
+    external: true,
+  },
 ];
 
 export function AgentflowNav() {
@@ -23,7 +30,7 @@ export function AgentflowNav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
       <nav className="mx-auto flex h-16 w-[92%] max-w-[1200px] items-center justify-between">
         <div className="flex items-center gap-10">
-          <Link href="/agentflow" className="block w-[118px]" aria-label="Harmony home">
+          <Link href="/" className="block w-[118px]" aria-label="Harmony home">
             <Image
               src="/assets/logo-full-dark.png"
               alt="Harmony"
@@ -39,6 +46,9 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="text-base text-white/60 transition hover:text-white"
               >
                 {link.label}
@@ -98,6 +108,9 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 onClick={() => setOpen(false)}
                 className="py-2.5 text-base text-white/70 transition hover:text-white"
               >

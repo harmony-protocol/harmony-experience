@@ -68,7 +68,7 @@ export default function AgentflowPrivacyPage() {
 
       <main className="mx-auto w-[92%] max-w-[820px] px-0 pb-24 pt-28 md:pt-32">
         <Link
-          href="/agentflow"
+          href="/"
           className="text-[15px] text-white/45 transition hover:text-white"
         >
           ← Back to home

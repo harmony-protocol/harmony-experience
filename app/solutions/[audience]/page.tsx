@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import audiences from "../_data/audiences.json";
+import audiences from "../../_data/audiences.json";
 import {
   MarketingPage,
   type AudienceConfig,
-} from "../_components/marketing-page";
+} from "../../_components/marketing-page";
 
 const data = audiences as Record<string, AudienceConfig>;
 
