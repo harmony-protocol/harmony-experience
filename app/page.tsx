@@ -226,36 +226,51 @@ function Band({
 
 /* ------------------------------ CONTENT ------------------------------ */
 
+/* Base logo height in px. Each logo's display height = LOGO_BASE_HEIGHT *
+   multiplier, so wordmarks with different visual weights can be tuned to a
+   uniform optical height. Width is always auto, so aspect ratio is preserved. */
+const LOGO_BASE_HEIGHT = 28;
+
 const trustedLogos = [
   {
-    name: "Sparklé",
-    src: "https://framerusercontent.com/images/0tQJ7SlKdpCZUVbUjxOEy57XRhA.svg",
-    width: 96,
-    height: 30,
+    name: "Integral Chat",
+    src: "/assets/client-logos/integralchat.png",
+    width: 872,
+    height: 218,
+    multiplier: 1,
+    offsetY: 0,
   },
   {
-    name: "Craftgram",
-    src: "https://framerusercontent.com/images/hsbt5NG4UUe3LO7ERSFGv8A0PrA.svg",
-    width: 94,
-    height: 27,
+    name: "Intelliox",
+    src: "/assets/client-logos/intelliox.png",
+    width: 792,
+    height: 170,
+    multiplier: 0.7,
+    offsetY: 0,
   },
   {
-    name: "Pulse",
-    src: "https://framerusercontent.com/images/O7fimt1JVKhKUjjZOGgeAWTdLQ.svg",
-    width: 120,
-    height: 25,
+    name: "Maritime 22",
+    src: "/assets/client-logos/maritime22.png",
+    width: 1204,
+    height: 240,
+    multiplier: 1,
+    offsetY: 0,
   },
   {
-    name: "Swift",
-    src: "https://framerusercontent.com/images/yg73mxfKVqYxGdl9PXd5goIE.svg",
-    width: 80,
-    height: 21,
+    name: "Sarg",
+    src: "/assets/client-logos/sarg.png",
+    width: 860,
+    height: 246,
+    multiplier: 1,
+    offsetY: 0,
   },
   {
-    name: "ZenZap",
-    src: "https://framerusercontent.com/images/6Fbv7vEmmB0WPOWiVDEZNhoZ0.svg",
-    width: 68,
-    height: 19,
+    name: "Telo AI",
+    src: "/assets/client-logos/teloai.png",
+    width: 594,
+    height: 236,
+    multiplier: 1.15,
+    offsetY: -2,
   },
 ];
 
@@ -377,14 +392,17 @@ const pricingPlans = [
     price: "$500",
     period: "/month",
     cta: "Book a Call",
-    highlighted: false,
+    highlighted: true,
     features: [
       "In-depth audit of your current flows",
       "Personalized AI executive assistants",
       "Custom dashboards and automations",
-      "Weekly check-ins and upgrades",
-      "Email, Slack, and CRM integrations",
       "One feature request at a time",
+      "Email, Slack, and Calls integration",
+      "CRM and Ticketing integration",
+      "Marketing stack integration",
+      "Notion and Airtable integration",
+      "In-house quality AI expert support",
     ],
   },
   {
@@ -393,14 +411,12 @@ const pricingPlans = [
     price: "$1,500",
     period: "/month",
     cta: "Book a Call",
-    highlighted: true,
+    highlighted: false,
     features: [
       "Everything in Growth",
-      "Unlimited feature requests",
-      "Dedicated AI engineer",
-      "Voice and phone agents",
-      "Custom agents on your data",
-      "Private deployment in your cloud",
+      "3 parallel requests at a time",
+      "Dedicated fractional AI engineer",
+      "Customized theme and branding in app",
     ],
   },
   {
@@ -412,11 +428,9 @@ const pricingPlans = [
     highlighted: false,
     features: [
       "Everything in Scale",
-      "Autonomous ops team, 24/7",
-      "Private models, fine-tuned for you",
-      "Dedicated engineering pod",
-      "Any integration you need",
-      "Guaranteed SLAs and migration",
+      "Private deployment in your cloud",
+      "Handling customer facing use cases",
+      "Guaranteed SLAs",
     ],
   },
 ];
@@ -564,7 +578,7 @@ export default function AgentflowPage() {
               Trusted by forward-thinking teams worldwide
             </p>
             <div className="relative mt-5 min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)] md:mt-0 md:pl-10">
-              <div className="af-logo-marquee flex w-max items-center gap-12 pr-12">
+              <div className="af-logo-marquee flex w-max items-center gap-20 pr-20">
                 {[...trustedLogos, ...trustedLogos].map((logo, index) => (
                   <div
                     key={`${logo.name}-${index}`}
@@ -576,7 +590,12 @@ export default function AgentflowPage() {
                       alt={index < trustedLogos.length ? logo.name : ""}
                       width={logo.width}
                       height={logo.height}
-                      className="h-7 w-auto invert opacity-75"
+                      style={{
+                        height: LOGO_BASE_HEIGHT * logo.multiplier,
+                        width: "auto",
+                        transform: `translateY(${logo.offsetY}px)`,
+                      }}
+                      className="opacity-75"
                     />
                   </div>
                 ))}
