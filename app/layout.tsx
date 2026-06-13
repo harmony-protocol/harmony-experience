@@ -27,8 +27,25 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://getharmony.ai"),
   title: "Harmony - AI Agents for Work",
   description: "Stop syncing, start shipping",
+  openGraph: {
+    siteName: "Harmony AI",
+    type: "website",
+    images: [
+      {
+        url: "/assets/link-perview.png",
+        width: 1200,
+        height: 630,
+        alt: "Harmony AI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/assets/link-perview.png"],
+  },
 };
 
 export default function RootLayout({

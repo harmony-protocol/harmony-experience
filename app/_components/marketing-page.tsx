@@ -167,37 +167,27 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
       {audience.integrations && audience.integrations.length > 0 && (
         <SolutionsSection>
           <Eyebrow>Integrates with</Eyebrow>
-          <div className="mt-10 flex max-w-4xl flex-wrap items-center gap-x-10 gap-y-8">
-            {audience.integrations.map((tool) => {
+          <div className="mt-10 grid w-full grid-cols-3 items-center gap-x-4 gap-y-8 lg:flex lg:justify-between lg:gap-y-0">
+            {audience.integrations.slice(0, 6).map((tool) => {
               const logo = resolveIntegrationLogo(tool.src);
               return (
-                <div key={tool.name} className="flex h-11 items-center">
-                  {logo.isFullLogo ? (
-                    <Image
-                      src={logo.src}
-                      alt={tool.name}
-                      width={logo.width}
-                      height={logo.height}
-                      className="h-11 w-auto max-w-[180px] object-contain opacity-90"
-                    />
-                  ) : (
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src={logo.src}
-                        alt=""
-                        width={logo.width}
-                        height={logo.height}
-                        className="h-11 w-11 object-contain opacity-90"
-                      />
-                      <span className="text-[17px] text-white/85">
-                        {tool.name}
-                      </span>
-                    </div>
-                  )}
+                <div
+                  key={tool.name}
+                  className="flex h-[30px] items-center justify-center lg:shrink-0"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={tool.name}
+                    width={logo.width}
+                    height={logo.height}
+                    className="h-[30px] w-auto max-w-full object-contain opacity-90 lg:max-w-[120px]"
+                  />
                 </div>
               );
             })}
-            <span className="text-[17px] text-white/45">and more…</span>
+            <span className="col-span-3 text-[17px] text-white/45 lg:col-span-1 lg:shrink-0">
+              and more…
+            </span>
           </div>
         </SolutionsSection>
       )}

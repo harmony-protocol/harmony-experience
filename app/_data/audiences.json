@@ -32,14 +32,6 @@
       {
         "name": "Sheets",
         "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
-        "name": "TutorBird",
-        "src": "/assets/integrations/icon/tutorbird.png"
-      },
-      {
-        "name": "Google Ads",
-        "src": "/assets/integrations/icon/googleads.png"
       }
     ],
     "pain": {
@@ -148,24 +140,12 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Calendar",
-        "src": "/assets/integrations/icon/google_calendar.webp"
-      },
-      {
         "name": "Slack",
         "src": "/assets/integrations/icon/slack.webp"
       },
       {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
         "name": "Notion",
         "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
-        "name": "Jira",
-        "src": "/assets/integrations/icon/jira.webp"
       },
       {
         "name": "GitHub",
@@ -174,10 +154,6 @@
       {
         "name": "Linear",
         "src": "/assets/integrations/icon/svg/linear.svg"
-      },
-      {
-        "name": "Figma",
-        "src": "/assets/integrations/icon/figma.webp"
       },
       {
         "name": "HubSpot",
@@ -290,10 +266,6 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Outlook",
-        "src": "/assets/integrations/icon/outlook.webp"
-      },
-      {
         "name": "Calendar",
         "src": "/assets/integrations/icon/google_calendar.webp"
       },
@@ -302,20 +274,16 @@
         "src": "/assets/integrations/icon/svg/whatsapp.svg"
       },
       {
-        "name": "Phone",
-        "src": "/assets/integrations/icon/phone_apple.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
         "name": "HubSpot",
         "src": "/assets/integrations/icon/hubspot.webp"
       },
       {
         "name": "Salesforce",
         "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
       }
     ],
     "pain": {
@@ -435,16 +403,8 @@
         "src": "/assets/integrations/icon/google_docs.webp"
       },
       {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
         "name": "Notion",
         "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
-        "name": "Confluence",
-        "src": "/assets/integrations/icon/confluence.webp"
       }
     ],
     "pain": {
@@ -548,10 +508,6 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Calendar",
-        "src": "/assets/integrations/icon/google_calendar.webp"
-      },
-      {
         "name": "Slack",
         "src": "/assets/integrations/icon/slack.webp"
       },
@@ -570,18 +526,6 @@
       {
         "name": "HubSpot",
         "src": "/assets/integrations/icon/hubspot.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
-        "name": "Salesforce",
-        "src": "/assets/integrations/icon/salesforce.webp"
-      },
-      {
-        "name": "Granola",
-        "src": "/assets/integrations/icon/granola.webp"
       }
     ],
     "pain": {
@@ -679,10 +623,6 @@
         "src": "/assets/integrations/icon/google_calendar.webp"
       },
       {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
         "name": "Notion",
         "src": "/assets/integrations/icon/notion.webp"
       },
@@ -691,24 +631,12 @@
         "src": "/assets/integrations/icon/airtable.webp"
       },
       {
-        "name": "LinkedIn",
-        "src": "/assets/integrations/icon/linkedin.webp"
-      },
-      {
         "name": "Slack",
         "src": "/assets/integrations/icon/slack.webp"
       },
       {
         "name": "HubSpot",
         "src": "/assets/integrations/icon/hubspot.webp"
-      },
-      {
-        "name": "Salesforce",
-        "src": "/assets/integrations/icon/salesforce.webp"
-      },
-      {
-        "name": "Telegram",
-        "src": "/assets/integrations/icon/svg/telegram.svg"
       }
     ],
     "pain": {
@@ -802,10 +730,6 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Outlook",
-        "src": "/assets/integrations/icon/outlook.webp"
-      },
-      {
         "name": "Calendar",
         "src": "/assets/integrations/icon/google_calendar.webp"
       },
@@ -824,18 +748,6 @@
       {
         "name": "LinkedIn",
         "src": "/assets/integrations/icon/linkedin.webp"
-      },
-      {
-        "name": "Otter",
-        "src": "/assets/integrations/icon/otter.webp"
-      },
-      {
-        "name": "Granola",
-        "src": "/assets/integrations/icon/granola.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
       }
     ],
     "pain": {
@@ -929,16 +841,8 @@
         "src": "/assets/integrations/icon/slack.webp"
       },
       {
-        "name": "Calendar",
-        "src": "/assets/integrations/icon/google_calendar.webp"
-      },
-      {
         "name": "GitHub",
         "src": "/assets/integrations/icon/github.webp"
-      },
-      {
-        "name": "GitLab",
-        "src": "/assets/integrations/icon/svg/gitlab.svg"
       },
       {
         "name": "Jira",
@@ -951,14 +855,6 @@
       {
         "name": "Notion",
         "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
-        "name": "Confluence",
-        "src": "/assets/integrations/icon/confluence.webp"
-      },
-      {
-        "name": "PagerDuty",
-        "src": "/assets/integrations/icon/pagerduty.webp"
       },
       {
         "name": "Sentry",
@@ -1060,44 +956,20 @@
         "src": "/assets/integrations/icon/slack.webp"
       },
       {
-        "name": "Calendar",
-        "src": "/assets/integrations/icon/google_calendar.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
-        "name": "Notion",
-        "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
-        "name": "Asana",
-        "src": "/assets/integrations/icon/asana.webp"
+        "name": "HubSpot",
+        "src": "/assets/integrations/icon/hubspot.webp"
       },
       {
         "name": "Figma",
         "src": "/assets/integrations/icon/figma.webp"
       },
       {
-        "name": "PostHog",
-        "src": "/assets/integrations/icon/posthog.webp"
-      },
-      {
-        "name": "Mixpanel",
-        "src": "/assets/integrations/icon/mixpanel.webp"
-      },
-      {
-        "name": "HubSpot",
-        "src": "/assets/integrations/icon/hubspot.webp"
+        "name": "Notion",
+        "src": "/assets/integrations/icon/notion.webp"
       },
       {
         "name": "Google Ads",
         "src": "/assets/integrations/icon/googleads.png"
-      },
-      {
-        "name": "Ahrefs",
-        "src": "/assets/integrations/icon/ahrefs.webp"
       }
     ],
     "pain": {
@@ -1207,16 +1079,8 @@
         "src": "/assets/integrations/icon/svg/whatsapp.svg"
       },
       {
-        "name": "iMessage",
-        "src": "/assets/integrations/icon/imessage.webp"
-      },
-      {
         "name": "Phone",
         "src": "/assets/integrations/icon/phone_apple.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
       }
     ],
     "pain": {
@@ -1332,14 +1196,6 @@
         "src": "/assets/integrations/icon/notion.webp"
       },
       {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
-        "name": "Google Docs",
-        "src": "/assets/integrations/icon/google_docs.webp"
-      },
-      {
         "name": "HubSpot",
         "src": "/assets/integrations/icon/hubspot.webp"
       },
@@ -1449,18 +1305,6 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Outlook",
-        "src": "/assets/integrations/icon/outlook.webp"
-      },
-      {
-        "name": "Calendar",
-        "src": "/assets/integrations/icon/google_calendar.webp"
-      },
-      {
-        "name": "Slack",
-        "src": "/assets/integrations/icon/slack.webp"
-      },
-      {
         "name": "LinkedIn",
         "src": "/assets/integrations/icon/linkedin.webp"
       },
@@ -1473,8 +1317,12 @@
         "src": "/assets/integrations/icon/salesforce.webp"
       },
       {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
+        "name": "Calendar",
+        "src": "/assets/integrations/icon/google_calendar.webp"
+      },
+      {
+        "name": "Slack",
+        "src": "/assets/integrations/icon/slack.webp"
       }
     ],
     "pain": {
@@ -1568,10 +1416,6 @@
         "src": "/assets/integrations/icon/gmail.webp"
       },
       {
-        "name": "Outlook",
-        "src": "/assets/integrations/icon/outlook.webp"
-      },
-      {
         "name": "Calendar",
         "src": "/assets/integrations/icon/google_calendar.webp"
       },
@@ -1580,20 +1424,16 @@
         "src": "/assets/integrations/icon/svg/whatsapp.svg"
       },
       {
-        "name": "Phone",
-        "src": "/assets/integrations/icon/phone_apple.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
         "name": "HubSpot",
         "src": "/assets/integrations/icon/hubspot.webp"
       },
       {
         "name": "Salesforce",
         "src": "/assets/integrations/icon/salesforce.webp"
+      },
+      {
+        "name": "Outlook",
+        "src": "/assets/integrations/icon/outlook.webp"
       }
     ],
     "pain": {
@@ -1709,24 +1549,8 @@
         "src": "/assets/integrations/icon/google_sheets.webp"
       },
       {
-        "name": "Google Docs",
-        "src": "/assets/integrations/icon/google_docs.webp"
-      },
-      {
-        "name": "Google Drive",
-        "src": "/assets/integrations/icon/google_drive.webp"
-      },
-      {
-        "name": "Notion",
-        "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
         "name": "Slack",
         "src": "/assets/integrations/icon/slack.webp"
-      },
-      {
-        "name": "Teams",
-        "src": "/assets/integrations/icon/microsoft_teams.webp"
       },
       {
         "name": "HubSpot",
@@ -1852,22 +1676,6 @@
       {
         "name": "LinkedIn",
         "src": "/assets/integrations/icon/linkedin.webp"
-      },
-      {
-        "name": "Notion",
-        "src": "/assets/integrations/icon/notion.webp"
-      },
-      {
-        "name": "Confluence",
-        "src": "/assets/integrations/icon/confluence.webp"
-      },
-      {
-        "name": "Sheets",
-        "src": "/assets/integrations/icon/google_sheets.webp"
-      },
-      {
-        "name": "HubSpot",
-        "src": "/assets/integrations/icon/hubspot.webp"
       }
     ],
     "pain": {

@@ -49,7 +49,7 @@ const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
-  title: "We help B2B founders automate work operations | Harmony AI",
+  title: "Harmony AI | Run Your Operations on Autopilot",
   description:
     "Harmony builds personalized AI systems for B2B founders and agency owners. The followups, reporting, and admin run in the background, so you can lead the business instead of the busywork.",
 };
@@ -625,7 +625,7 @@ export default function AgentflowPage() {
               {whoWeHelp.map((item) => (
                 <div
                   key={item.title}
-                  className="flex min-h-20 items-center gap-4 rounded-[4px] border border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition hover:border-[#9ff690]/35 hover:bg-[#101210]"
+                  className="flex min-h-20 items-center gap-4 rounded-none border border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition hover:border-[#9ff690]/35 hover:bg-[#101210]"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690]">
                     {item.icon}
