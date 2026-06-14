@@ -401,7 +401,7 @@ const IMPROVE_BARS = [6, 8, 10, 12, 14, 17, 20, 24, 28, 33, 39, 46, 54, 64, 75, 
 function ImproveVisual() {
   return (
     <div className="flex h-full flex-col justify-center gap-5 p-6 md:p-8">
-      <div className="flex h-[150px] items-end justify-between">
+      <div className="mt-8 flex h-[190px] items-end justify-between">
         {IMPROVE_BARS.map((h, i) => (
           <span
             key={i}
