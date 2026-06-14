@@ -395,7 +395,7 @@ const pricingPlans = [
     highlighted: true,
     features: [
       "In-depth audit of your current flows",
-      "Custom agents, workflows and dashboards in plans",
+      "AI agents, workflows and dashboards",
       "One feature request at a time",
       "Email, Slack, and Calls integration",
       "CRM and Ticketing integration",
