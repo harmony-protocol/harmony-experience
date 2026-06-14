@@ -3,6 +3,7 @@ import { Cabin, Schibsted_Grotesk } from "next/font/google";
 import Image from "next/image";
 import {
   Bot,
+  Briefcase,
   ChartNoAxesCombined,
   CircleDollarSign,
   Clock,
@@ -18,7 +19,6 @@ import {
   Repeat,
   Rocket,
   Server,
-  ShoppingBag,
   Sparkles,
   Users,
   UsersRound,
@@ -288,8 +288,8 @@ const whoWeHelp = [
     title: "Consulting Firms",
   },
   {
-    icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Ecommerce Agencies",
+    icon: <Briefcase className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Recruitment Agencies",
   },
   {
     icon: <CodeXml className="h-5 w-5" strokeWidth={1.6} />,
@@ -321,7 +321,7 @@ const whatWeDo = [
   },
   {
     icon: <Users className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Boost team efficiency",
+    title: "Multiply team output",
     body: "We cut operational drag and busywork so the same team delivers more.",
   },
   {
@@ -616,7 +616,7 @@ export default function AgentflowPage() {
               className="mx-auto max-w-[680px] text-center text-[32px] font-normal leading-[1.1] text-white md:text-[46px]"
               style={{ fontFamily: "var(--font-schibsted)" }}
             >
-              For overloaded leaders
+              For overloaded teams
               <br />
               facing <span className="text-[#9ff690]">time shortage</span>
             </h2>
@@ -626,7 +626,7 @@ export default function AgentflowPage() {
                 <div
                   key={item.title}
                   className={`group min-h-20 items-center gap-4 rounded-none border-[1.5px] border-white/[0.08] bg-[#0b0c0c] px-5 py-4 transition duration-300 hover:border-[#9ff690]/60 hover:bg-[#0e120e] ${
-                    item.title === "Ecommerce Agencies"
+                    item.title === "Recruitment Agencies"
                       ? "hidden lg:flex"
                       : "flex"
                   }`}
