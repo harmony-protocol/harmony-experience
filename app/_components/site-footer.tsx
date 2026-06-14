@@ -14,6 +14,8 @@ const footerColumns = [
     title: "Useful",
     links: [
       { label: "Solutions", href: "/solutions" },
+      { label: "Blog", href: "/blog" },
+      { label: "Newsletter", href: "https://theworkflowfix.substack.com" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -51,7 +53,7 @@ export function SiteFooter() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-7 bg-[radial-gradient(circle,rgba(159,246,144,0.34)_1px,transparent_1.5px)] bg-[size:20px_20px] opacity-30" />
         <div className="pointer-events-none absolute -top-1 left-0 h-2 w-2 bg-white" />
         <div className="pointer-events-none absolute -top-1 right-0 h-2 w-2 bg-white" />
-        <div className="flex flex-col gap-14 border-y border-white/10 px-7 py-20 md:px-10 lg:flex-row lg:items-start lg:justify-between lg:py-24">
+        <div className="flex flex-col gap-14 border-y border-white/10 px-7 py-20 md:px-10 lg:flex-row lg:items-start lg:justify-between lg:py-24 lg:pr-24">
           <div>
             <a href="/" className="block w-[150px]" aria-label="Harmony home">
               <Image
@@ -80,16 +82,22 @@ export function SiteFooter() {
               <div key={col.title}>
                 <p className="text-[18px] text-white/30">{col.title}</p>
                 <ul className="mt-6 space-y-5">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-[18px] text-white/42 transition hover:text-white"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  {col.links.map((link) => {
+                    const external = link.href.startsWith("http");
+                    return (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          {...(external
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className="text-[18px] text-white/42 transition hover:text-white"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

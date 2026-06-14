@@ -14,8 +14,7 @@ const links = [
   { label: "Pricing", href: "#pricing" },
   {
     label: "Blog",
-    href: "https://theworkflowfix.substack.com",
-    external: true,
+    href: "/blog",
   },
   {
     label: "Join Us",
@@ -27,7 +26,12 @@ const links = [
 export function AgentflowNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = (href: string) => href.startsWith("/") && pathname === href;
+  const isActive = (href: string) => {
+    if (!href.startsWith("/")) return false;
+    if (href === "/") return pathname === "/";
+    // Active on the page itself and any nested route (e.g. /blog and /blog/*).
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">

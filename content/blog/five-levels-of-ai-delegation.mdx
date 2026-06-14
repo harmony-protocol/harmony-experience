@@ -1,0 +1,254 @@
+export const meta = {
+  title: "Michael Hyatt's five levels of delegation in the age of AI",
+  description:
+    "Michael Hyatt's five-level delegation model, applied to AI. From 'do exactly as I say' to fully autonomous agents, and how to move tasks up the ladder as trust is earned.",
+  date: "2026-05-31",
+  author: "Vishal Singh",
+  tags: ["AI Agents"],
+  kicker: "Delegation Levels",
+  hero: {
+    src: "/blog/five-levels-of-ai-delegation/cover.avif",
+    width: 1672,
+    height: 941,
+    alt: "The five levels of AI delegation, from instruction to autonomy",
+  },
+};
+
+Michael Hyatt's five-level delegation model is a useful way to decide how much authority to give AI. The model moves from direct instruction to independent action:
+
+1. Do exactly as I say.
+2. Research and report.
+3. Research and recommend.
+4. Decide and inform me.
+5. Act independently.
+
+When applied to AI, these levels help answer a practical question: should AI simply assist, or should it be allowed to act?
+
+Most people use AI at Level 1 today. When we use ChatGPT, Claude, or Claude Code, we often tell the system exactly what to do: rewrite this, summarize this, fix this bug, generate this function, format this note, or explain this concept. That is useful, but it is only the starting point.
+
+The real opportunity is to keep shifting tasks from Level 1 toward Level 5 as AI becomes better at handling our specific cases. We should not jump to full autonomy immediately. But when AI repeatedly performs a task well, understands our preferences, follows our constraints, and produces reliable outputs, we should gradually increase the level of delegation.
+
+The higher the level of delegation, the more useful AI can become. But higher autonomy also requires clearer boundaries, stronger review, and better risk controls.
+
+## Level 1: Do exactly as I say
+
+At this level, AI follows a specific instruction. The human has already decided what needs to be done. AI is used only to execute.
+
+This is the way most people currently use tools like ChatGPT, Claude, and Claude Code. They give a direct command and expect a direct output.
+
+Examples:
+
+- rewrite this paragraph in a professional tone;
+- summarize this transcript into five bullet points;
+- format these notes as a table;
+- correct grammar and spelling;
+- translate this message;
+- extract action items from this document;
+- fix this specific coding error;
+- write this function using these exact requirements.
+
+A Level 1 prompt might be:
+
+> "Rewrite this email to make it shorter and more polite. Do not add any new information."
+
+Or, in a coding context:
+
+> "Fix this TypeScript error without changing the rest of the file."
+
+This is the safest and simplest form of AI delegation. It works well for narrow tasks where the desired output is clear.
+
+The main risk is that AI may still change meaning, omit details, or add assumptions. Even at Level 1, the human should review the output before using it.
+
+At this level, AI is a tool.
+
+## Level 2: Research and report
+
+At Level 2, AI gathers information and reports back. It does not recommend a decision.
+
+Examples:
+
+- summarize a topic;
+- collect background information;
+- explain a concept;
+- compare basic facts;
+- summarize customer feedback;
+- extract themes from documents;
+- prepare a briefing note.
+
+A Level 2 prompt might be:
+
+> "Research the pros and cons of using AI chatbots in customer support. Present the findings neutrally. Do not recommend a decision."
+
+This level is useful when the human needs context before deciding. AI helps reduce the time spent reading, searching, and organizing information.
+
+The risk is that AI may provide incomplete or inaccurate information. For important topics, the user should ask for sources and verify key claims.
+
+At this level, AI is a research assistant.
+
+## Level 3: Research and recommend
+
+At Level 3, AI evaluates information and recommends a course of action. The human still makes the final decision.
+
+Examples:
+
+- compare vendors and recommend one;
+- review a strategy and suggest improvements;
+- analyze survey results and recommend next steps;
+- identify risks in a project plan;
+- prioritize a list of tasks;
+- recommend improvements to a sales or marketing process.
+
+A Level 3 prompt might be:
+
+> "Compare these three CRM tools for a 20-person sales team. Evaluate them on cost, ease of use, integrations, reporting, and scalability. Recommend the best option and explain the trade-offs."
+
+This level is valuable because AI can structure decisions, surface alternatives, and identify risks. But AI recommendations should not be accepted blindly.
+
+To get useful recommendations, the human should provide:
+
+- context;
+- decision criteria;
+- constraints;
+- assumptions;
+- examples of good outcomes;
+- areas where AI should flag uncertainty.
+
+At this level, AI is an analyst.
+
+## Level 4: Decide and inform me
+
+At Level 4, AI is allowed to make decisions within defined limits and then inform the human. This is suitable for low-risk, reversible, rules-based decisions.
+
+Examples:
+
+- categorize support tickets;
+- route emails into folders;
+- prioritize leads using a scoring system;
+- flag invoices that match certain rules;
+- classify customer messages by topic;
+- schedule meetings based on preset preferences;
+- send internal reminders.
+
+A Level 4 instruction might be:
+
+> "Classify incoming customer messages as billing, technical support, cancellation risk, or general inquiry. Escalate anything urgent, emotional, legal, or unclear. Send me a daily summary."
+
+The key is to define the boundaries. AI should know what it can decide, what it cannot decide, and when to escalate.
+
+Useful boundaries include:
+
+- "Do not send external messages without approval."
+- "Escalate anything involving legal or financial risk."
+- "Only approve items below this limit."
+- "Flag uncertainty instead of guessing."
+- "Log every action taken."
+
+The risk at this level is automation bias. Humans may stop checking AI decisions because the system appears efficient. If AI is wrong, mistakes can scale quickly.
+
+At this level, AI is an operating assistant.
+
+## Level 5: Act independently
+
+At Level 5, AI acts independently within a defined domain. It can plan steps, use tools, complete workflows, and act without approval for every decision. This is the highest-risk level and should be used only with strong controls.
+
+Examples:
+
+- an AI support agent resolving routine tickets;
+- an AI scheduling agent coordinating meetings;
+- an AI sales agent following up with leads;
+- an AI finance workflow matching invoices;
+- an AI coding agent opening pull requests;
+- an AI operations agent monitoring dashboards and triggering alerts.
+
+A safer Level 5 instruction might be:
+
+> "Manage routine internal scheduling. You may propose times, send scheduling messages, and update calendar holds. Escalate anything involving clients, board members, legal matters, performance issues, or protected focus time."
+
+A risky Level 5 instruction would be:
+
+> "Manage my inbox and respond however you think best."
+
+That gives AI too much authority without enough boundaries.
+
+Level 5 requires:
+
+- clear goals;
+- limited permissions;
+- escalation rules;
+- audit logs;
+- human override;
+- testing;
+- monitoring;
+- privacy controls;
+- rollback procedures.
+
+At this level, AI is an autonomous agent inside a governed system.
+
+## The goal is to move tasks up the levels
+
+The point of this framework is not to keep AI permanently at Level 1. Level 1 is where most usage starts, but it should not be where every task stays.
+
+As AI becomes better at handling our specific cases, we should gradually shift suitable tasks from Level 1 to Level 2, then Level 3, then Level 4, and eventually Level 5.
+
+For example, the first time we use AI for a task, we may say: "Do exactly this." After several successful attempts, we may ask it to research options. Later, we may ask it to recommend the best option. Once it has learned the rules and the task is low-risk, we may allow it to make the decision and inform us. Eventually, for narrow and repeatable workflows, we may allow it to act independently.
+
+This progression matters because the value of AI increases with context and trust. The more AI understands our preferences, constraints, examples, systems, and edge cases, the more responsibility it can handle.
+
+But movement up the levels should be earned. AI should move to a higher level only when it has shown reliability at the previous level. A useful rule is:
+
+> Delegate upward gradually, but review aggressively.
+
+## Matching the level to the risk
+
+Not all work should be delegated to AI at the same level.
+
+Low-risk work can often be delegated at Levels 1 to 3. Examples include drafting, summarizing, formatting, brainstorming, and organizing information.
+
+Moderate-risk work may use Levels 3 to 4 with review. Examples include vendor comparisons, internal process recommendations, lead prioritization, and customer message classification.
+
+High-risk work should usually stay at Levels 1 to 3 with human control. Examples include legal decisions, medical guidance, financial approvals, hiring decisions, disciplinary action, compliance matters, and public statements.
+
+The key question is: what happens if AI is wrong? If the cost of error is low and the action is reversible, higher delegation may be acceptable. If the cost of error is high, the human should stay closer to the decision.
+
+## Human oversight changes by level
+
+"Human in the loop" does not mean the same thing at every level.
+
+- At Level 1, the human reviews the output.
+- At Level 2, the human checks the information.
+- At Level 3, the human accepts, rejects, or modifies the recommendation.
+- At Level 4, the human monitors decisions and handles exceptions.
+- At Level 5, the human designs the system, sets boundaries, audits performance, and retains override authority.
+
+As AI autonomy increases, the human role shifts from operator to supervisor.
+
+## AI delegation checklist
+
+Before delegating work to AI, ask:
+
+- What do I want AI to do?
+- Is AI executing, researching, recommending, deciding, or acting independently?
+- What information can AI use?
+- What information is off-limits?
+- What decisions must stay with humans?
+- What should AI do when uncertain?
+- When should AI escalate?
+- What is the worst-case outcome if AI is wrong?
+- Is the action reversible?
+- Has AI performed this task reliably enough to move up one level?
+
+## Conclusion
+
+Hyatt's five levels of delegation provide a simple framework for using AI responsibly.
+
+- At Level 1, AI follows instructions.
+- At Level 2, AI researches.
+- At Level 3, AI recommends.
+- At Level 4, AI decides within limits.
+- At Level 5, AI acts independently inside a governed system.
+
+Most people begin at Level 1, especially when using tools like ChatGPT, Claude, or Claude Code. That is natural. But the long-term goal is to keep moving suitable tasks up the delegation ladder as AI becomes more capable and more familiar with our specific workflows.
+
+The goal is not to push every task to the highest level. The goal is to match the level of AI autonomy to the risk, context, and required judgment.
+
+Used well, AI can reduce busywork, improve analysis, and speed up execution. Used carelessly, it can scale mistakes. The best approach is controlled progression: start with clear instructions, observe performance, add context, expand authority, and increase autonomy only when the system has earned it.

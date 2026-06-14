@@ -1082,9 +1082,9 @@ export default function AgentflowPage() {
               <Heading dark>Ready to get your week back?</Heading>
             </div>
             <p className="mt-5 max-w-xl text-[17px] leading-8 text-white/55">
-              Join the teams using Harmony to scale operations, cut costs, and
-              deliver results faster. Book a call and we will map your biggest
-              time leaks live, then show you the system that plugs them.
+              Book a discovery call and together we will go through your
+              processes, find the biggest time leaks, and map the system that
+              plugs them.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <PrimaryButton />
