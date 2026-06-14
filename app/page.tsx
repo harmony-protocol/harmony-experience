@@ -49,9 +49,9 @@ const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
-  title: "Harmony AI | Run Your Operations on Autopilot",
+  title: "Harmony: Personalized AI Automations for B2B Teams",
   description:
-    "Harmony builds personalized AI systems for B2B founders and agency owners. The followups, reporting, and admin run in the background, so you can lead the business instead of the busywork.",
+    "Harmony is an AI automation agency for B2B teams. We build the agents and workflows that run customer success, hiring and onboarding, and team productivity in the background, so you can lead the business instead of the busywork.",
 };
 
 /* ------------------------------ ATOMS ------------------------------ */

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import audiences from "./_data/audiences.json";
 import { getAllPosts } from "./_data/blog";
+import agents from "./agents/_data/agents.json";
 
 const SITE_URL = "https://getharmony.ai";
 
@@ -30,6 +31,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  const agentEntries: MetadataRoute.Sitemap = agents.map((agent) => ({
+    url: `${SITE_URL}/agents/${agent.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   const posts = await getAllPosts();
   const postEntries: MetadataRoute.Sitemap = posts.map(({ slug, meta }) => ({
     url: `${SITE_URL}/blog/${slug}`,
@@ -38,5 +45,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...solutionEntries, ...postEntries];
+  return [
+    ...staticEntries,
+    ...solutionEntries,
+    ...agentEntries,
+    ...postEntries,
+  ];
 }
