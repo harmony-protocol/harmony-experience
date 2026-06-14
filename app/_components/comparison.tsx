@@ -28,7 +28,7 @@ type Cell = boolean | string;
 
 const competitors = [
   { label: "SaaS Tool", icon: AppWindow },
-  { label: "Full-time Hire", icon: UserRound },
+  { label: "Full-time AI Hire", icon: UserRound },
   { label: "Agency", icon: Building2 },
   { label: "Freelancer / VA", icon: Laptop },
 ];
@@ -63,7 +63,7 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Wallet className="h-4 w-4" strokeWidth={1.6} />,
     label: "Budget-friendly",
-    cells: [true, "Per seat + API costs", "High", "High", "$4k/mo"],
+    cells: [true, "Per seat + API costs", "$15k/mo", "$30k + retainer", "$4k/mo/hire"],
   },
 ];
 

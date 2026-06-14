@@ -3,7 +3,6 @@ import { Cabin, Schibsted_Grotesk } from "next/font/google";
 import Image from "next/image";
 import {
   Bot,
-  Building2,
   ChartNoAxesCombined,
   CircleDollarSign,
   Clock,
@@ -13,6 +12,7 @@ import {
   Landmark,
   LayoutDashboard,
   Lock,
+  Magnet,
   MessagesSquare,
   Monitor,
   Repeat,
@@ -285,7 +285,7 @@ const whoWeHelp = [
   },
   {
     icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Consultancies",
+    title: "Consulting Firms",
   },
   {
     icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
@@ -301,15 +301,15 @@ const whoWeHelp = [
   },
   {
     icon: <CircleDollarSign className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Accounting Firms",
+    title: "Financial Services Firms",
   },
   {
-    icon: <Building2 className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Real Estate Services",
+    icon: <Magnet className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Lead Gen Agencies",
   },
   {
     icon: <Landmark className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Investment Firms",
+    title: "Investment Houses",
   },
 ];
 
@@ -317,17 +317,17 @@ const whatWeDo = [
   {
     icon: <Clock className="h-5 w-5" strokeWidth={1.6} />,
     title: "Free founders from busywork",
-    body: "Client calls, project management, follow-ups, reporting. We take it off your plate so your time goes to growth.",
-  },
-  {
-    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Fix operational drag",
-    body: "Shifting demands, subcontractor churn, and manual work become clean systems that run on their own.",
+    body: "We audit and automate the time-sinks in the founder's day.",
   },
   {
     icon: <Users className="h-5 w-5" strokeWidth={1.6} />,
     title: "Boost team efficiency",
-    body: "More output without more input. We automate repetitive work so the same team delivers more.",
+    body: "We cut operational drag and busywork so the same team delivers more.",
+  },
+  {
+    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Automate repetitive VA work",
+    body: "Routine VA-level tasks run on autopilot, with no extra hiring.",
   },
 ];
 
@@ -335,17 +335,17 @@ const extendedTeam = [
   {
     icon: <UsersRound className="h-5 w-5" strokeWidth={1.6} />,
     title: "An extension of your team",
-    body: "We work like an in-house team, not a vendor you have to chase. Your goals are our goals.",
+    body: "We work like an in-house team, not a vendor you chase.",
   },
   {
     icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
     title: "Top-tier service",
-    body: "Senior people on your account and fast responses. No ticket queues, no junior handoffs.",
+    body: "Senior people on your account, fast responses, no queues.",
   },
   {
     icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.6} />,
     title: "We work where you work",
-    body: "We collaborate with you in Slack and Trello, so you always see what is happening and what is next.",
+    body: "We collaborate in Slack and Trello, so you always see what is next.",
   },
 ];
 
@@ -406,7 +406,7 @@ const pricingPlans = [
   },
   {
     name: "Scale",
-    description: "For growing teams scaling their operations",
+    description: "Teams scaling fast",
     price: "$1,500",
     period: "/month",
     cta: "Book a Call",
@@ -415,7 +415,7 @@ const pricingPlans = [
       "Everything in Growth",
       "3 parallel requests at a time",
       "Dedicated fractional AI engineer",
-      "Customized theme and branding in app",
+      "Custom themed platform",
     ],
   },
   {
@@ -648,11 +648,10 @@ export default function AgentflowPage() {
       <Band id="results" className="pb-14 md:pb-20">
         <Eyebrow>What We Do</Eyebrow>
         <div className="mt-5">
-          <Heading>How we help you scale faster</Heading>
+          <Heading>What we do for you</Heading>
         </div>
         <Sub className="mt-5">
-          Every system we build comes back to the same three outcomes for
-          founder-led B2B teams.
+          We focus on producing these top three outcomes for our clients.
         </Sub>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -693,7 +692,7 @@ export default function AgentflowPage() {
         </div>
         <Sub className="mt-5">
           We detect time sinks across your organization, then automate them
-          with connected agents, workflows, dashboards, and integrations.
+          with agents, workflows and dashboards.
         </Sub>
 
         <div className="mt-12">
@@ -712,8 +711,8 @@ export default function AgentflowPage() {
           <Heading dark>From audit to autopilot</Heading>
         </div>
         <Sub dark className="mt-5">
-          A done-for-you rollout. Here is exactly what happens, from the first
-          48 hours through ongoing optimization.
+          Our unique 4-phase process takes you from audit to autopilot, fully
+          done for you.
         </Sub>
         <Solutions />
       </Band>
@@ -723,16 +722,11 @@ export default function AgentflowPage() {
         <Eyebrow>How We Work</Eyebrow>
         <div className="mt-5">
           <Heading>
-            Like an extended team,
+            We work like your
             <br />
-            not a vendor
+            extended team
           </Heading>
         </div>
-        <Sub className="mt-5">
-          You get top-tier service and real collaboration in the tools you
-          already use.
-        </Sub>
-
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {extendedTeam.map((item) => (
             <div
@@ -766,13 +760,13 @@ export default function AgentflowPage() {
             {/* Text column: header + the three capabilities as a clean list */}
             <div className="flex flex-col lg:col-span-4 lg:pt-6">
               <div className="lg:pr-10">
-                <Eyebrow dark>Our Platform</Eyebrow>
+                <Eyebrow dark>Our Edge</Eyebrow>
                 <div className="mt-5">
                   <Heading dark>One platform powers it all</Heading>
                 </div>
                 <Sub dark className="mt-5">
-                  Everything we build runs on our own powerful platform your
-                  team will enjoy using.
+                  Everything we build runs on our own powerful platform, not
+                  off-the-shelf tools.
                 </Sub>
               </div>
 
@@ -834,15 +828,11 @@ export default function AgentflowPage() {
           <Eyebrow>Why Us</Eyebrow>
           <div className="mt-5">
             <Heading>
-            Not another tool.
+            Not your typical
             <br />
-            Not another agency.
+            agency.
           </Heading>
           </div>
-          <Sub className="mt-5">
-            Harmony is an AI-native operations partner that ships outcomes, not
-            software you have to run yourself.
-          </Sub>
         </div>
         <Comparison />
       </Band>
@@ -857,12 +847,6 @@ export default function AgentflowPage() {
             no surprises
           </Heading>
         </div>
-        <Sub dark className="mt-5">
-          One plan for your whole team.
-          <br />
-          One flat monthly fee, built and run by us.
-        </Sub>
-
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
             <div
@@ -984,8 +968,8 @@ export default function AgentflowPage() {
             </div>
             <div className="mt-10 flex -space-x-2">
               {[
-                "/assets/dummy-images/dummy-girl-image-1.webp",
-                "/assets/dummy-images/dummy-boy-image-3.webp",
+                "/assets/about/vishal.avif",
+                "/assets/about/anurag.webp",
               ].map((src) => (
                 <Image
                   key={src}
@@ -993,7 +977,7 @@ export default function AgentflowPage() {
                   alt=""
                   width={40}
                   height={40}
-                  className="h-10 w-10 rounded-full border-2 border-[#fafafa] object-cover"
+                  className="h-10 w-10 rounded-full border-2 border-[#fafafa] object-cover object-top"
                 />
               ))}
             </div>

@@ -18,14 +18,14 @@ const solutions: Solution[] = [
     id: "solution-01",
     label: "First 48 Hours",
     title: "Audit and plan",
-    body: "We map your week and your numbers, pinpoint the top 3 time leaks, and hand you a clear plan for what we will automate first.",
+    body: "We map your week and your workload, pinpoint the top 3 time leaks, and hand you a clear plan for what we automate first.",
     chips: ["Time-leak audit", "Top 3 priorities", "Clear action plan"],
   },
   {
     id: "solution-02",
     label: "First Week",
     title: "Build and deploy",
-    body: "We build, test, and ship the core agents and workflows for your biggest bottlenecks, wired into the tools you already use and running live.",
+    body: "We build, test, and ship the core agents and workflows for your biggest bottlenecks.",
     chips: ["Core workflows", "Wired into your tools", "Live in production"],
   },
   {
