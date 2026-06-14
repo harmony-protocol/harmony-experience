@@ -1,0 +1,41 @@
+# Harmony
+
+> Harmony is an AI automation agency for B2B teams. We build personalized AI agents and workflows that run customer success, hiring and onboarding, and team productivity in the background, so founders can lead the business instead of the busywork.
+
+Harmony works inside the tools teams already use (Gmail, Slack, Calendar, Notion, HubSpot, Salesforce, and more). Engagements are done-for-you: we audit your current flows, then build, run, and maintain custom agents, workflows, and dashboards. Plans start at the Growth tier and scale up to Enterprise.
+
+## Pages
+
+- [Home](https://getharmony.ai/): What Harmony does, who we help, pricing, and security.
+- [About](https://getharmony.ai/about): The team, mission, and how we work.
+- [Solutions](https://getharmony.ai/solutions): Industry-specific automation playbooks.
+- [Blog](https://getharmony.ai/blog): Essays on delegating work to AI agents.
+- [Contact](https://getharmony.ai/contact): Book a call or get in touch.
+
+## Solutions
+
+- [Tutors and coaches](https://getharmony.ai/solutions/tutors)
+- [B2B startups](https://getharmony.ai/solutions/startups)
+- [Real estate services](https://getharmony.ai/solutions/realtors)
+- [Law firms](https://getharmony.ai/solutions/lawyers)
+- [Marketing agencies](https://getharmony.ai/solutions/agencies)
+- [Investment firms](https://getharmony.ai/solutions/investors)
+- [Sales teams](https://getharmony.ai/solutions/sales)
+- [Engineering teams](https://getharmony.ai/solutions/engineering)
+- [Marketers](https://getharmony.ai/solutions/marketers)
+- [Healthcare](https://getharmony.ai/solutions/healthcare)
+- [Consultancies](https://getharmony.ai/solutions/consultants)
+- [Staffing firms](https://getharmony.ai/solutions/staffing-firms)
+- [Mortgage brokers](https://getharmony.ai/solutions/mortgage-brokers)
+- [Accounting firms](https://getharmony.ai/solutions/accounting-firms)
+- [Human resources](https://getharmony.ai/solutions/human-resources)
+
+## Blog
+
+- [The smart founder's guide to delegating work to AI agents](https://getharmony.ai/blog/founders-guide-to-delegating-work-to-ai-agents)
+- [Michael Hyatt's five levels of delegation in the age of AI](https://getharmony.ai/blog/five-levels-of-ai-delegation)
+- [CLEAR delegation in the age of AI](https://getharmony.ai/blog/clear-delegation-in-the-age-of-ai)
+
+## Optional
+
+- [Privacy Policy](https://getharmony.ai/privacy): How Harmony handles data, with end-to-end encryption, zero data retention, and data isolation.
