@@ -105,7 +105,7 @@ const categories: Category[] = [
     title: "Personal Productivity",
     description: "We run your inbox, calendar, and daily prep so you start every day already ahead.",
     workflows: [
-      { name: "Email Triage & Followups", desc: "Sort threads, draft replies, chase followups.", hue: "teal",
+      { name: "Email Triage & Followups", desc: "Sort threads, draft replies, do followups.", hue: "teal",
         inputs: ["Mailboxes", "Rules", "Your Voice"], stages: [{ label: "Triage", tools: ["gmail", "outlook"] }, { label: "Draft & Track", tools: ["gmail", "outlook"] }],
         tierLabels: ["Reply Now", "Later", "Waiting"], middles: ["Draft", "Schedule", "Followup"], outputs: ["Sent", "Queued", "Chased"] },
       { name: "Calendar Management", desc: "Book meetings, defend focus time.", hue: "sky",

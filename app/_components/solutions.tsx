@@ -19,28 +19,28 @@ const solutions: Solution[] = [
     label: "First 48 Hours",
     title: "Audit and plan",
     body: "We map your week and your workload, pinpoint the top 3 time leaks, and hand you a clear plan for what we automate first.",
-    chips: ["Time-leak audit", "Top 3 priorities", "Clear action plan"],
+    chips: ["Time-leak audit", "Action plan"],
   },
   {
     id: "solution-02",
     label: "First Week",
     title: "Build and deploy",
     body: "We build, test, and ship the core agents and workflows for your biggest bottlenecks.",
-    chips: ["Core workflows", "Wired into your tools", "Live in production"],
+    chips: ["Core workflows", "Wired in"],
   },
   {
     id: "solution-03",
     label: "First Month",
     title: "Solve more problems",
     body: "We keep building: new systems for new problems. Each one takes another job off your plate.",
-    chips: ["More systems built", "More problems solved", "Across your stack"],
+    chips: ["More systems", "More problems solved"],
   },
   {
     id: "solution-04",
     label: "Ongoing",
     title: "Improve and scale",
-    body: "We keep finding bottlenecks and shipping new automations as you grow, so the system gets better every week, with no work from you.",
-    chips: ["Find new bottlenecks", "Continuous improvement", "Fully managed"],
+    body: "We keep finding bottlenecks and shipping automations as you grow, so the system gets better every week.",
+    chips: ["New bottlenecks", "Always improving"],
   },
 ];
 
@@ -127,7 +127,7 @@ function GlowBorderChip({
         />
       </span>
       <span
-        className="relative rounded-[5px] border bg-black px-3 py-1.5 text-[11px] text-white/75"
+        className="relative rounded-[5px] border bg-black px-3 py-1.5 text-[13px] text-white/75"
         style={{ borderColor: "rgba(159,246,144,0.12)" }}
       >
         {children}
@@ -348,7 +348,7 @@ const PROBLEM_FEED = [
 
 function SolveVisual() {
   return (
-    <div className="flex h-full flex-col justify-center gap-5 py-6 pl-7 pr-6 md:py-8 md:pl-12 md:pr-8">
+    <div className="flex h-full flex-col justify-center gap-5 py-6 pl-10 pr-6 md:py-8 md:pl-16 md:pr-8">
       <div
         className="h-[190px] overflow-hidden"
         style={{
@@ -390,7 +390,7 @@ function SolveVisual() {
         </div>
       </div>
       <GlowBorderChip className="self-start">
-        One new system every week
+        New systems every week
       </GlowBorderChip>
     </div>
   );
@@ -426,7 +426,6 @@ function ImproveVisual() {
             saved every week by month one
           </p>
         </div>
-        <GlowBorderChip>Continuously optimized</GlowBorderChip>
       </div>
     </div>
   );
@@ -545,14 +544,14 @@ export function Solutions() {
                     {s.chips.map((chip) => (
                       <span
                         key={chip}
-                        className="border border-white/10 bg-white/[0.08] px-3 py-1.5 text-[12.5px] text-white/75"
+                        className="border border-white/10 bg-white/[0.08] px-3 py-1.5 text-[15px] text-white/75"
                       >
                         {chip}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="relative min-h-[300px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">
+                <div className="relative min-h-[380px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-32 -top-24 h-[280px] w-[420px] rounded-full blur-[100px]"

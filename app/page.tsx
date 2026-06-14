@@ -4,13 +4,14 @@ import Image from "next/image";
 import {
   Bot,
   Briefcase,
+  CalendarCheck,
   ChartNoAxesCombined,
   CircleDollarSign,
-  Clock,
   CodeXml,
   Database,
   Globe,
   Landmark,
+  LayersPlus,
   LayoutDashboard,
   Lock,
   Magnet,
@@ -20,7 +21,6 @@ import {
   Rocket,
   Server,
   Sparkles,
-  Users,
   UsersRound,
   Workflow,
 } from "lucide-react";
@@ -313,21 +313,24 @@ const whoWeHelp = [
   },
 ];
 
+// Ordered apex (foundation) to base (scale): freeing the founder/leader's time
+// is the foundation, and it scales out into team output and clean operations.
 const whatWeDo = [
   {
-    icon: <Clock className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Free founders from busywork",
-    body: "We audit and automate the time-sinks in the founder's day.",
+    icon: <CalendarCheck className="h-[22px] w-[22px]" strokeWidth={1.6} />,
+    title: "Free up the founder",
   },
   {
-    icon: <Users className="h-5 w-5" strokeWidth={1.6} />,
+    icon: <LayersPlus className="h-[22px] w-[22px]" strokeWidth={1.6} />,
     title: "Multiply team output",
-    body: "We cut operational drag and busywork so the same team delivers more.",
   },
   {
-    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
+    icon: <Workflow className="h-[22px] w-[22px]" strokeWidth={1.6} />,
+    title: "Cut operational sludge",
+  },
+  {
+    icon: <Repeat className="h-[22px] w-[22px]" strokeWidth={1.6} />,
     title: "Automate repetitive VA work",
-    body: "Routine VA-level tasks run on autopilot, with no extra hiring.",
   },
 ];
 
@@ -646,37 +649,60 @@ export default function AgentflowPage() {
 
       {/* 2b. WHAT WE DO (white) */}
       <Band id="results" className="pb-14 md:pb-20">
-        <Eyebrow>What We Do</Eyebrow>
+        <Eyebrow>Outcomes</Eyebrow>
         <div className="mt-5">
           <Heading>What we do for you</Heading>
         </div>
         <Sub className="mt-5">
-          We focus on producing these top three outcomes for our clients.
+          We focus on producing these outcomes, in order of priority.
         </Sub>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {whatWeDo.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col border border-black/10 bg-white p-7 md:p-8"
-            >
-              <span
-                className="flex h-11 w-11 items-center justify-center border border-black/10 text-black"
-                style={{ backgroundColor: "rgba(159,246,144,0.14)" }}
-              >
-                {item.icon}
-              </span>
-              <h3
-                className="mt-6 text-xl text-black"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                {item.title}
-              </h3>
-              <p className="mt-2 text-[17px] leading-8 text-[#4d4d4d]">
-                {item.body}
-              </p>
-            </div>
-          ))}
+        <div className="mt-14 flex items-stretch justify-start gap-4 md:gap-6">
+          {/* foundation-to-scale axis */}
+          <div className="hidden flex-col items-center py-2 md:flex">
+            <span className="text-[17px] font-medium text-black/50">
+              Foundation
+            </span>
+            <div className="mt-3 w-px flex-1 bg-black/40" />
+            <span
+              className="h-0 w-0 border-x-[5px] border-t-[7px] border-x-transparent"
+              style={{ borderTopColor: "rgba(0,0,0,0.4)" }}
+            />
+            <span className="mt-3 text-[17px] font-medium text-black/50">
+              Scale
+            </span>
+          </div>
+
+          {/* left-aligned growth ramp: narrow foundation up top, widening as it scales out */}
+          <div className="flex w-full max-w-[760px] flex-col items-start gap-2.5">
+            {whatWeDo.map((item, i) => {
+              const width = ["md:w-[54%]", "md:w-[69%]", "md:w-[84%]", "md:w-full"][i];
+              const alpha = [0.72, 0.55, 0.38, 0.22][i];
+              return (
+                <div
+                  key={item.title}
+                  className={`flex w-full items-center gap-5 rounded-xl border border-[#9ff690]/40 px-5 py-4 md:px-7 md:py-5 ${width}`}
+                  style={{ backgroundColor: `rgba(159,246,144,${alpha})` }}
+                >
+                  <span
+                    className="text-lg font-medium leading-none text-black/45 md:text-xl"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3
+                    className="text-[16px] leading-tight text-black md:text-[19px]"
+                    style={{ fontFamily: "var(--font-schibsted)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <span className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center text-[#3f7d33]/60">
+                    {item.icon}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </Band>
 
@@ -711,8 +737,8 @@ export default function AgentflowPage() {
           <Heading dark>From audit to autopilot</Heading>
         </div>
         <Sub dark className="mt-5">
-          Our unique 4-phase process takes you from audit to autopilot, fully
-          done for you.
+          Our unique 4-phase process takes you from audit to autopilot, in as
+          little as 2 weeks.
         </Sub>
         <Solutions />
       </Band>
