@@ -130,7 +130,7 @@ export default async function BlogPostPage({
   return (
     <article
       className="mx-auto w-[92%] max-w-[920px]"
-      style={{ padding: "120px 0 128px" }}
+      style={{ padding: "120px 0 128px", fontFamily: "var(--font-geist-sans)" }}
     >
       <script
         type="application/ld+json"

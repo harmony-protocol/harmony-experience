@@ -1,4 +1,4 @@
-import { Cabin, Schibsted_Grotesk } from "next/font/google";
+import { Cabin, Inter, Schibsted_Grotesk } from "next/font/google";
 
 export const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -12,7 +12,14 @@ export const cabin = Cabin({
   variable: "--font-cabin",
 });
 
-export const brandFontClassName = `${schibsted.variable} ${cabin.variable}`;
+// Body font for the blog.
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const brandFontClassName = `${schibsted.variable} ${cabin.variable} ${inter.variable}`;
 
 export const headingStyle = { fontFamily: "var(--font-schibsted)" } as const;
-export const bodyStyle = { fontFamily: "var(--font-cabin)" } as const;
+// Body font, site-wide. Geist (was Cabin).
+export const bodyStyle = { fontFamily: "var(--font-geist-sans)" } as const;

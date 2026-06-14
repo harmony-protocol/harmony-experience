@@ -48,7 +48,7 @@ export function AgentflowNav() {
             />
           </Link>
 
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="relative top-[2px] hidden items-center gap-7 md:flex">
             {links.map((link) => (
               <a
                 key={link.label}
@@ -100,9 +100,9 @@ export function AgentflowNav() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center text-white md:hidden"
+            className="flex h-11 w-11 items-center justify-center text-white md:hidden"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
+            <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
               {open ? (
                 <path d="M6 6l12 12M18 6L6 18" />
               ) : (

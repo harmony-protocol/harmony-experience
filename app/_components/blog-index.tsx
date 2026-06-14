@@ -112,7 +112,7 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
   return (
     <div
       className="mx-auto w-[92%] max-w-[1200px]"
-      style={{ padding: "140px 0 128px" }}
+      style={{ padding: "140px 0 128px", fontFamily: "var(--font-geist-sans)" }}
     >
       {/* Hero */}
       <header>

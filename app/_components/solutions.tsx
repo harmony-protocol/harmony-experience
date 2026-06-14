@@ -481,7 +481,7 @@ export function Solutions() {
               className="group flex w-full flex-col gap-3.5 text-left"
             >
               <span
-                className={`flex items-center gap-2.5 text-[12px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-300 ${
+                className={`flex items-center gap-2.5 text-[17px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-300 ${
                   isActive
                     ? "text-white opacity-100"
                     : "text-white opacity-30 group-hover:opacity-60"

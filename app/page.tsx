@@ -395,7 +395,7 @@ const pricingPlans = [
     highlighted: true,
     features: [
       "In-depth audit of your current flows",
-      "Custom AI agents, workflows and dashboards",
+      "Custom agents, workflows and dashboards in plans",
       "One feature request at a time",
       "Email, Slack, and Calls integration",
       "CRM and Ticketing integration",
@@ -440,7 +440,7 @@ export default function AgentflowPage() {
   return (
     <div
       className={`${schibsted.variable} ${cabin.variable} bg-black text-white`}
-      style={{ fontFamily: "var(--font-cabin)" }}
+      style={{ fontFamily: "var(--font-geist-sans)" }}
     >
       <style>{`
         @keyframes af-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -786,7 +786,7 @@ export default function AgentflowPage() {
                       <h3 className="text-[17px] font-medium text-white">
                         {cap.title}
                       </h3>
-                      <p className="mt-1 text-[17px] leading-8 text-white/55">
+                      <p className="mt-0.5 text-[17px] leading-7 text-white/55">
                         {cap.body}
                       </p>
                     </div>
@@ -882,7 +882,7 @@ export default function AgentflowPage() {
                   {plan.description}
                 </p>
 
-                <div className="mt-16 flex items-end gap-2">
+                <div className="mt-8 flex items-end gap-2">
                   <span
                     className="text-5xl leading-none text-white"
                     style={{ fontFamily: "var(--font-schibsted)" }}
@@ -1018,8 +1018,8 @@ export default function AgentflowPage() {
       {/* 10b. FOUNDER NOTE (black) */}
       <Band id="founder" dark>
         <Eyebrow dark>Founder&apos;s Note</Eyebrow>
-        <div className="mt-10 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-10">
-          <div className="relative aspect-[4/5] w-full max-w-[400px] shrink-0 overflow-hidden rounded-2xl border border-white/10">
+        <div className="mt-10 flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-stretch lg:gap-10">
+          <div className="relative aspect-[4/5] w-full max-w-[400px] shrink-0 overflow-hidden rounded-2xl border border-white/10 lg:aspect-auto">
             <Image
               src="/assets/founder-vishal.avif"
               alt="Vishal Singh, Founder of Harmony AI"

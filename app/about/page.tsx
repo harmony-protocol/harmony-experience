@@ -114,7 +114,7 @@ export default function AboutPage() {
   return (
     <div
       className={`${schibsted.variable} ${cabin.variable} min-h-screen bg-black text-white`}
-      style={{ fontFamily: "var(--font-cabin)" }}
+      style={{ fontFamily: "var(--font-geist-sans)" }}
     >
       <style>{`
         @keyframes about-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <br className="hidden md:block" /> and firms scale faster
           </h1>
           <p className="mt-6 max-w-xl text-[17px] leading-8 text-white/60">
-            A done-for-you AI team that automates the busywork in the
+            Your extended AI team that automates the busywork in the
             background, so you can focus on growing the business.
           </p>
           <div className="mt-8">
