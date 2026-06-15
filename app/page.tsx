@@ -121,11 +121,12 @@ function Sub({
   );
 }
 
-function PrimaryButton() {
+function PrimaryButton({ location }: { location: string }) {
   return (
     <button
       type="button"
       data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+      data-loc={location}
       className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >
@@ -559,7 +560,7 @@ export default function AgentflowPage() {
             and scale faster with AI systems
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton />
+            <PrimaryButton location="hero" />
             <GhostButton href="#process">How it works</GhostButton>
           </div>
 
@@ -909,6 +910,7 @@ export default function AgentflowPage() {
                 <button
                   type="button"
       data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+                  data-loc="pricing"
                   className={`mt-9 flex h-12 cursor-pointer items-center justify-center border text-[14px] font-medium uppercase transition ${
                     plan.highlighted
                       ? "border-transparent text-black hover:brightness-95"
@@ -1016,6 +1018,7 @@ export default function AgentflowPage() {
             <button
               type="button"
       data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+              data-loc="faq"
               className="mt-5 cursor-pointer rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
             >
               Contact us
@@ -1097,7 +1100,7 @@ export default function AgentflowPage() {
               plugs them.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <PrimaryButton />
+              <PrimaryButton location="founder" />
               <GhostButton href="#process">How it works</GhostButton>
             </div>
           </div>

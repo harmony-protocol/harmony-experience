@@ -242,6 +242,7 @@ export function Comparison() {
               type="button"
               data-cal-link={CAL_LINK}
               data-cal-config={CAL_CONFIG}
+              data-loc="comparison"
               className="inline-flex h-9 cursor-pointer items-center whitespace-nowrap px-4 text-[15px] font-medium text-black transition hover:brightness-95"
               style={{ backgroundColor: ACCENT }}
             >

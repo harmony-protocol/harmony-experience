@@ -74,6 +74,7 @@ export function AgentflowNav() {
             type="button"
             data-cal-link={CAL_LINK}
             data-cal-config={CAL_CONFIG}
+            data-loc="nav"
             className="group hidden h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95 md:inline-flex"
             style={{ backgroundColor: CTA_ACCENT }}
           >
@@ -138,6 +139,7 @@ export function AgentflowNav() {
               type="button"
               data-cal-link={CAL_LINK}
               data-cal-config={CAL_CONFIG}
+              data-loc="nav"
               onClick={() => setOpen(false)}
               className="group mt-3 inline-flex h-12 cursor-pointer items-center justify-center gap-3 overflow-hidden pl-2 pr-5 text-base font-medium text-black"
               style={{ backgroundColor: CTA_ACCENT }}

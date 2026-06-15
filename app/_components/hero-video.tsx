@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { preconnect } from "react-dom";
 import { WistiaPlayer } from "@wistia/wistia-player-react";
+import { track } from "../_lib/analytics";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -25,6 +26,10 @@ export function HeroVideo() {
   preconnect("https://fast.wistia.net");
   preconnect("https://embed-ssl.wistia.com");
 
+  // Funnel: engagement signal. Fire once per mount so autoplay/replays don't
+  // inflate the count.
+  const played = useRef(false);
+
   useEffect(() => {
     if (!isDev) return;
     const w = window as unknown as { _wq?: unknown[] };
@@ -33,6 +38,15 @@ export function HeroVideo() {
   }, []);
 
   return (
-    <WistiaPlayer mediaId="6mhelhqw1m" aspect={16 / 9} doNotTrack={isDev} />
+    <WistiaPlayer
+      mediaId="6mhelhqw1m"
+      aspect={16 / 9}
+      doNotTrack={isDev}
+      onPlay={() => {
+        if (played.current) return;
+        played.current = true;
+        track("Video Play");
+      }}
+    />
   );
 }

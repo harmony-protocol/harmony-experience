@@ -84,6 +84,7 @@ function PrimaryButton() {
       type="button"
       data-cal-link={CAL_LINK}
       data-cal-config={CAL_CONFIG}
+      data-loc="marketing"
       className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >

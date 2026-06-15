@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { track } from "../_lib/analytics";
 
 /* Loads the official Cal.com vanilla embed once and themes it. Any element on
    the page with data-cal-link="harmony-vishal/discovery" then opens the booking
@@ -53,7 +54,27 @@ export function CalInit() {
     });
     // Warm the modal booking iframe in the background so it opens faster.
     Cal("preload", { calLink: "harmony-vishal/discovery", type: "modal" });
+    // Funnel: a confirmed booking is the conversion.
+    Cal("on", {
+      action: "bookingSuccessful",
+      callback: () => track("Call Booked"),
+    });
     /* eslint-enable */
+  }, []);
+
+  // Funnel: intent signal. Any "Book a Call" CTA carries data-cal-link; the
+  // optional data-loc attribute tells us which placement was clicked.
+  useEffect(() => {
+    function handleCalClick(e: MouseEvent) {
+      const trigger = (e.target as HTMLElement | null)?.closest?.(
+        "[data-cal-link]",
+      );
+      if (!trigger) return;
+      const location = trigger.getAttribute("data-loc") ?? "unknown";
+      track("Book a Call Clicked", { location });
+    }
+    document.addEventListener("click", handleCalClick, true);
+    return () => document.removeEventListener("click", handleCalClick, true);
   }, []);
 
   return null;
