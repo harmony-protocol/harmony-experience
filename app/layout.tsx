@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import PlausibleProvider from "next-plausible";
 import { Geist, Geist_Mono, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { AgentflowNav } from "./_components/nav";
@@ -61,7 +62,9 @@ export default function RootLayout({
       className={`${brandFontClassName} ${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${jakarta.variable} h-full antialiased`}
     >
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager. Kept for the other tags in the container.
+            Plausible no longer loads through GTM; it loads via next-plausible
+            below so adblockers blocking GTM no longer drop our analytics. */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -86,10 +89,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <CalInit />
-        <AgentflowNav />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        {/* Plausible loads via next-plausible. src and endpoint come from
+            withPlausibleProxy in next.config.ts, so no src prop here. The
+            provider renders the script only in production. */}
+        <PlausibleProvider>
+          <CalInit />
+          <AgentflowNav />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </PlausibleProvider>
       </body>
     </html>
   );
