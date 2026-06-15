@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
 import { Target, Sparkles, RefreshCcw } from "lucide-react";
 import { RevealText } from "../_components/reveal-text";
+import { MountTracker } from "../_components/view-tracker";
 
 const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ function PrimaryButton() {
       type="button"
       data-cal-link={CAL_LINK}
       data-cal-config={CAL_CONFIG}
+      data-loc="about"
       className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: "#9ff690" }}
     >
@@ -116,6 +118,7 @@ export default function AboutPage() {
       className={`${schibsted.variable} ${cabin.variable} min-h-screen bg-black text-white`}
       style={{ fontFamily: "var(--font-geist-sans)" }}
     >
+      <MountTracker event="About Page Viewed" />
       <style>{`
         @keyframes about-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .about-marquee { animation: about-marquee 45s linear infinite; }

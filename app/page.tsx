@@ -25,6 +25,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { HeroVideo } from "./_components/hero-video";
+import { ViewTracker } from "./_components/view-tracker";
 import { Solutions } from "./_components/solutions";
 import { IntegrationsRow } from "./_components/features";
 import { Comparison } from "./_components/comparison";
@@ -865,6 +866,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* 8. PRICING (black) */}
+      <ViewTracker targetId="pricing" event="Pricing Section Viewed" />
       <Band id="pricing" dark>
         <Eyebrow dark>Pricing</Eyebrow>
         <div className="mt-5">
