@@ -1,6 +1,7 @@
 // Thin wrapper around Plausible's custom-event API. Plausible is loaded in
-// production via Google Tag Manager, so in local/dev there is nothing to call.
-// We no-op outside production so local traffic never pollutes analytics.
+// production by next-plausible (PlausibleProvider in app/layout.tsx), which
+// defines window.plausible. The provider only renders the script in production,
+// so we no-op outside production too and local traffic never pollutes analytics.
 
 declare global {
   interface Window {
