@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import PlausibleProvider from "next-plausible";
+import { PlausibleInit } from "./_components/plausible-init";
 import { Geist, Geist_Mono, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { AgentflowNav } from "./_components/nav";
@@ -89,15 +89,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        {/* Plausible loads via next-plausible. src and endpoint come from
-            withPlausibleProxy in next.config.ts, so no src prop here. The
-            provider renders the script only in production. */}
-        <PlausibleProvider>
-          <CalInit />
-          <AgentflowNav />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </PlausibleProvider>
+        {/* Plausible: official tracker, bundled and first-party. Events post
+            to /pl/event, rewritten to plausible.io by an Amplify edge rule. */}
+        <PlausibleInit />
+        <CalInit />
+        <AgentflowNav />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

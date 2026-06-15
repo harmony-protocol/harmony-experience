@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import { withPlausibleProxy } from "next-plausible";
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -29,12 +28,4 @@ const withMDX = createMDX({
   },
 });
 
-// Proxy Plausible through our own domain so the tracker loads as a first-party
-// request (served at /js/script.js, events posted to /api/event, both rewritten
-// to plausible.io). This recovers the events that adblockers were dropping when
-// the script loaded through Google Tag Manager.
-export default withMDX(
-  withPlausibleProxy({
-    src: "https://plausible.io/js/pa-DtJKzZ8D3ET6YirNDAgoV.js",
-  })(nextConfig),
-);
+export default withMDX(nextConfig);
