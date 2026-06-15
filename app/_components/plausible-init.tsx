@@ -6,10 +6,11 @@ import { init } from "@plausible-analytics/tracker";
 let started = false;
 
 /* Initializes the official Plausible tracker on the client. The tracking code
-   is bundled with the app, so it loads first-party and adblockers cannot block
-   it. Events post to /pl/event, which Amplify rewrites (status 200) to
-   plausible.io/api/event at the edge, so the real client IP and User-Agent
-   reach Plausible and the hits get recorded.
+   is bundled with the app, so the script always loads first-party and
+   adblockers cannot block it. Events post directly to plausible.io (the default
+   endpoint) so the real client IP and User-Agent reach Plausible and the hits
+   get recorded. We tried proxying events through Amplify, but the edge rewrite
+   dropped the client identity and Plausible silently discarded everything.
 
    init runs during render (not in an effect) so window.plausible is bound
    before any child MountTracker/ViewTracker effect fires. Only runs in
@@ -23,7 +24,6 @@ export function PlausibleInit() {
     started = true;
     init({
       domain: "getharmony.ai",
-      endpoint: "/pl/event",
     });
   }
 

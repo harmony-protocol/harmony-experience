@@ -89,8 +89,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        {/* Plausible: official tracker, bundled and first-party. Events post
-            to /pl/event, rewritten to plausible.io by an Amplify edge rule. */}
+        {/* Plausible: official tracker. Script is bundled (adblock cannot block
+            it); events post directly to plausible.io. See plausible-init. */}
         <PlausibleInit />
         <CalInit />
         <AgentflowNav />
