@@ -29,8 +29,9 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://getharmony.ai"),
-  title: "Harmony - AI Agents for Work",
-  description: "Stop syncing, start shipping",
+  title: "Harmony | AI Automations for B2B Teams",
+  description:
+    "Harmony is an AI automation agency for B2B teams. We build the agents and workflows that run customer success, hiring and onboarding, and team productivity in the background, so you can lead the business instead of the busywork.",
   openGraph: {
     siteName: "Harmony AI",
     type: "website",
