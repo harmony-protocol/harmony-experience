@@ -7,7 +7,6 @@ import {
   CalendarCheck,
   ChartNoAxesCombined,
   CircleDollarSign,
-  CodeXml,
   Database,
   Globe,
   Landmark,
@@ -20,6 +19,7 @@ import {
   Repeat,
   Rocket,
   Server,
+  ShoppingBag,
   Sparkles,
   UsersRound,
   Workflow,
@@ -286,16 +286,16 @@ const whoWeHelp = [
     title: "B2B Startups",
   },
   {
-    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Consulting Firms",
+    icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Ecommerce Agencies",
   },
   {
     icon: <Briefcase className="h-5 w-5" strokeWidth={1.6} />,
     title: "Recruitment Agencies",
   },
   {
-    icon: <CodeXml className="h-5 w-5" strokeWidth={1.6} />,
-    title: "IT Services Firms",
+    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
+    title: "IT and Consulting Firms",
   },
   {
     icon: <Monitor className="h-5 w-5" strokeWidth={1.6} />,
