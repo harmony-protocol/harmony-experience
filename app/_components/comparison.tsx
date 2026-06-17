@@ -28,7 +28,7 @@ type Cell = boolean | string;
 
 const competitors = [
   { label: "SaaS Tool", icon: AppWindow },
-  { label: "Full-time AI Hire", icon: UserRound },
+  { label: "AI Transformation Hire", icon: UserRound },
   { label: "Agency", icon: Building2 },
   { label: "Freelancer / VA", icon: Laptop },
 ];
@@ -48,7 +48,7 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Gauge className="h-4 w-4" strokeWidth={1.6} />,
     label: "Fully managed for you",
-    cells: [true, false, true, true, "Limited"],
+    cells: [true, false, false, true, "Limited"],
   },
   {
     icon: <Target className="h-4 w-4" strokeWidth={1.6} />,
@@ -63,7 +63,13 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Wallet className="h-4 w-4" strokeWidth={1.6} />,
     label: "Budget-friendly",
-    cells: [true, "Per seat + API costs", "$15k/mo", "$30k + retainer", "$4k/mo/hire"],
+    cells: [
+      true,
+      "Per seat + API costs",
+      "$15k/mo",
+      "$30k + retainer",
+      "$4k/mo/hire",
+    ],
   },
 ];
 
@@ -124,8 +130,7 @@ export function Comparison() {
         <div
           className="grid"
           style={{
-            gridTemplateColumns:
-              "minmax(210px, 250px) 1.12fr repeat(4, 1fr)",
+            gridTemplateColumns: "minmax(210px, 250px) 1.12fr repeat(4, 1fr)",
             gridTemplateRows: `auto repeat(${TOTAL}, auto) auto`,
           }}
         >
@@ -156,7 +161,10 @@ export function Comparison() {
           </motion.div>
 
           {/* Header row */}
-          <div style={{ gridColumn: 1, gridRow: 1 }} className="sticky left-0 z-20 -mt-3 bg-[#fafafa]" />
+          <div
+            style={{ gridColumn: 1, gridRow: 1 }}
+            className="sticky left-0 z-20 -mt-3 bg-[#fafafa]"
+          />
           <motion.div
             {...reveal(0)}
             style={{ gridColumn: 2, gridRow: 1 }}
@@ -178,7 +186,10 @@ export function Comparison() {
               className="flex items-end justify-center px-3 pb-5"
             >
               <span className="flex flex-col items-center gap-2">
-                <col.icon className="h-[18px] w-[18px] text-black/30" strokeWidth={1.6} />
+                <col.icon
+                  className="h-[18px] w-[18px] text-black/30"
+                  strokeWidth={1.6}
+                />
                 <span className="whitespace-nowrap text-[15px] font-medium text-black/45">
                   {col.label}
                 </span>
@@ -228,7 +239,10 @@ export function Comparison() {
           })}
 
           {/* Footer row: CTA inside the Harmony card */}
-          <div style={{ gridColumn: 1, gridRow: FOOTER_ROW }} className="sticky left-0 z-20 -mb-3 bg-[#fafafa]" />
+          <div
+            style={{ gridColumn: 1, gridRow: FOOTER_ROW }}
+            className="sticky left-0 z-20 -mb-3 bg-[#fafafa]"
+          />
           <motion.div
             {...reveal(0.4)}
             style={{ gridColumn: 2, gridRow: FOOTER_ROW }}
