@@ -74,20 +74,16 @@ const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 
 function reveal(delay: number) {
   return {
-    initial: { opacity: 0, y: 14 },
+    initial: { opacity: 0, y: 8 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-60px" },
-    transition: { duration: 0.45, delay, ease: EASE },
+    transition: { duration: 0.4, delay, ease: EASE },
   };
 }
 
-function HarmonyCheck({ delay }: { delay: number }) {
+function HarmonyCheck() {
   return (
-    <motion.span
-      initial={{ scale: 0, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ type: "spring", stiffness: 380, damping: 22, delay }}
+    <span
       className="inline-flex h-5 w-5 items-center justify-center rounded-full"
       style={{
         backgroundColor: ACCENT,
@@ -95,7 +91,7 @@ function HarmonyCheck({ delay }: { delay: number }) {
       }}
     >
       <Check className="h-3 w-3 text-black" strokeWidth={3} />
-    </motion.span>
+    </span>
   );
 }
 
@@ -177,7 +173,7 @@ export function Comparison() {
           {competitors.map((col, ci) => (
             <motion.div
               key={col.label}
-              {...reveal(0.05 + ci * 0.04)}
+              {...reveal(0)}
               style={{ gridColumn: ci + 3, gridRow: 1 }}
               className="flex items-end justify-center px-3 pb-5"
             >
@@ -193,7 +189,7 @@ export function Comparison() {
           {/* Data rows */}
           {rows.map((row, ri) => {
             const gridRow = ri + 2;
-            const delay = 0.08 + ri * 0.05;
+            const delay = 0.04 + ri * 0.03;
             return (
               <div key={row.label} className="group/row contents">
                 <motion.div
@@ -214,7 +210,7 @@ export function Comparison() {
                   style={{ gridColumn: 2, gridRow }}
                   className="z-10 flex items-center justify-center border-t border-white/10 px-4 py-4 transition-colors duration-200 group-hover/row:bg-white/[0.04]"
                 >
-                  <HarmonyCheck delay={delay + 0.15} />
+                  <HarmonyCheck />
                 </motion.div>
 
                 {row.cells.slice(1).map((cell, ci) => (

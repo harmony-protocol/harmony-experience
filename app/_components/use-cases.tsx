@@ -8,6 +8,7 @@ import {
   Coffee,
   Handshake,
   ListChecks,
+  Megaphone,
   PenLine,
   Settings2,
   Target,
@@ -134,20 +135,20 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "hiring-onboarding",
-    icon: <Users className="h-4 w-4" strokeWidth={2} />,
-    title: "Hiring & Onboarding",
-    description: "We move candidates from applied to onboarded without the endless back and forth.",
+    id: "fulfillment",
+    icon: <Settings2 className="h-4 w-4" strokeWidth={2} />,
+    title: "Fulfillment",
+    description: "We run the handoffs, approvals, and SOPs that quietly keep the business moving.",
     workflows: [
-      { name: "Sourcing", desc: "Post roles, screen inbound.", hue: "emerald",
-        inputs: ["Job Spec", "Channels", "ICP"], stages: [{ label: "Post", tools: ["linkedin"] }, { label: "Screen", tools: ["gmail"] }],
-        tierLabels: ["Strong", "Maybe", "Pass"], middles: ["Advance", "Hold", "Reject"], outputs: ["Shortlist", "Replies", "Archive"] },
-      { name: "Interviewing", desc: "Coordinate panels and prep.", hue: "teal",
-        inputs: ["Shortlist", "Panel", "Slots"], stages: [{ label: "Coordinate", tools: ["calendar", "gmail"] }, { label: "Brief", tools: ["notion"] }],
-        tierLabels: ["Onsite", "Phone", "Async"], middles: ["Schedule", "Prep", "Score"], outputs: ["Booked", "Briefs", "Scorecards"] },
-      { name: "Onboarding", desc: "Provision and ramp new hires.", hue: "sky",
-        inputs: ["New Hire", "Accounts", "Plan"], stages: [{ label: "Provision", tools: ["slack"] }, { label: "Brief", tools: ["notion"] }],
-        tierLabels: ["Day 1", "Week 1", "Month 1"], middles: ["Setup", "Intro", "Train"], outputs: ["Access", "Plan", "Checklist"] },
+      { name: "SOPs", desc: "Run the play on every trigger.", hue: "cyan",
+        inputs: ["Triggers", "SOPs", "Owners"], stages: [{ label: "Detect", tools: ["slack", "gmail"] }, { label: "Run", tools: ["notion"] }],
+        tierLabels: ["Auto", "Review", "Manual"], middles: ["Execute", "Approve", "Assign"], outputs: ["Done", "Logged", "Routed"] },
+      { name: "Approvals", desc: "Route requests, log decisions.", hue: "sky",
+        inputs: ["Requests", "Policy", "Approvers"], stages: [{ label: "Intake", tools: ["slack"] }, { label: "Route", tools: ["notion"] }],
+        tierLabels: ["Auto", "Manager", "Finance"], middles: ["Approve", "Hold", "Reject"], outputs: ["Approved", "Logged", "Notified"] },
+      { name: "Vendors", desc: "Audit spend and renewals.", hue: "emerald",
+        inputs: ["Vendors", "Renewals", "Spend"], stages: [{ label: "Audit", tools: ["sheets"] }, { label: "Queue", tools: ["slack"] }],
+        tierLabels: ["Renew", "Review", "Cancel"], middles: ["Notify", "Negotiate", "Cut"], outputs: ["Queued", "Flagged", "Saved"] },
     ],
   },
   {
@@ -185,6 +186,23 @@ const categories: Category[] = [
     ],
   },
   {
+    id: "hiring-onboarding",
+    icon: <Users className="h-4 w-4" strokeWidth={2} />,
+    title: "Hiring & Onboarding",
+    description: "We move candidates from applied to onboarded without the endless back and forth.",
+    workflows: [
+      { name: "Sourcing", desc: "Post roles, screen inbound.", hue: "emerald",
+        inputs: ["Job Spec", "Channels", "ICP"], stages: [{ label: "Post", tools: ["linkedin"] }, { label: "Screen", tools: ["gmail"] }],
+        tierLabels: ["Strong", "Maybe", "Pass"], middles: ["Advance", "Hold", "Reject"], outputs: ["Shortlist", "Replies", "Archive"] },
+      { name: "Interviewing", desc: "Coordinate panels and prep.", hue: "teal",
+        inputs: ["Shortlist", "Panel", "Slots"], stages: [{ label: "Coordinate", tools: ["calendar", "gmail"] }, { label: "Brief", tools: ["notion"] }],
+        tierLabels: ["Onsite", "Phone", "Async"], middles: ["Schedule", "Prep", "Score"], outputs: ["Booked", "Briefs", "Scorecards"] },
+      { name: "Onboarding", desc: "Provision and ramp new hires.", hue: "sky",
+        inputs: ["New Hire", "Accounts", "Plan"], stages: [{ label: "Provision", tools: ["slack"] }, { label: "Brief", tools: ["notion"] }],
+        tierLabels: ["Day 1", "Week 1", "Month 1"], middles: ["Setup", "Intro", "Train"], outputs: ["Access", "Plan", "Checklist"] },
+    ],
+  },
+  {
     id: "sales-assistance",
     icon: <Target className="h-4 w-4" strokeWidth={2} />,
     title: "Sales Assistance",
@@ -202,23 +220,6 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "operations",
-    icon: <Settings2 className="h-4 w-4" strokeWidth={2} />,
-    title: "Operations",
-    description: "We run the handoffs, approvals, and SOPs that quietly keep the business moving.",
-    workflows: [
-      { name: "SOPs", desc: "Run the play on every trigger.", hue: "cyan",
-        inputs: ["Triggers", "SOPs", "Owners"], stages: [{ label: "Detect", tools: ["slack", "gmail"] }, { label: "Run", tools: ["notion"] }],
-        tierLabels: ["Auto", "Review", "Manual"], middles: ["Execute", "Approve", "Assign"], outputs: ["Done", "Logged", "Routed"] },
-      { name: "Approvals", desc: "Route requests, log decisions.", hue: "sky",
-        inputs: ["Requests", "Policy", "Approvers"], stages: [{ label: "Intake", tools: ["slack"] }, { label: "Route", tools: ["notion"] }],
-        tierLabels: ["Auto", "Manager", "Finance"], middles: ["Approve", "Hold", "Reject"], outputs: ["Approved", "Logged", "Notified"] },
-      { name: "Vendors", desc: "Audit spend and renewals.", hue: "emerald",
-        inputs: ["Vendors", "Renewals", "Spend"], stages: [{ label: "Audit", tools: ["sheets"] }, { label: "Queue", tools: ["slack"] }],
-        tierLabels: ["Renew", "Review", "Cancel"], middles: ["Notify", "Negotiate", "Cut"], outputs: ["Queued", "Flagged", "Saved"] },
-    ],
-  },
-  {
     id: "finance-admin",
     icon: <Calculator className="h-4 w-4" strokeWidth={2} />,
     title: "Finance & Admin",
@@ -233,6 +234,23 @@ const categories: Category[] = [
       { name: "Reporting", desc: "Assemble the numbers on time.", hue: "sky",
         inputs: ["Data", "Metrics", "Cadence"], stages: [{ label: "Aggregate", tools: ["sheets", "salesforce"] }, { label: "Build", tools: ["docs"] }],
         tierLabels: ["Weekly", "Monthly", "Quarterly"], middles: ["Update", "Review", "Forecast"], outputs: ["Dashboard", "Statement", "Deck"] },
+    ],
+  },
+  {
+    id: "ads-management",
+    icon: <Megaphone className="h-4 w-4" strokeWidth={2} />,
+    title: "Ads Management",
+    description: "We launch campaigns, watch spend and ROAS, and pause the losers before budget leaks.",
+    workflows: [
+      { name: "Setup", desc: "Turn briefs into live campaigns.", hue: "cyan",
+        inputs: ["Brief", "Audiences", "Creative"], stages: [{ label: "Build", tools: ["sheets"] }, { label: "Launch", tools: ["slack"] }],
+        tierLabels: ["Search", "Social", "Display"], middles: ["Target", "Bid", "Creative"], outputs: ["Live", "Pixel", "Tracking"] },
+      { name: "Monitor", desc: "Watch spend, ROAS, and pacing.", hue: "amber",
+        inputs: ["Spend", "ROAS", "Pacing"], stages: [{ label: "Pull", tools: ["sheets"] }, { label: "Flag", tools: ["slack"] }],
+        tierLabels: ["Winning", "Flat", "Bleeding"], middles: ["Scale", "Hold", "Pause"], outputs: ["Alerts", "Pacing", "Digest"] },
+      { name: "Optimize", desc: "Reallocate budget, report results.", hue: "violet",
+        inputs: ["Metrics", "Goals", "Cadence"], stages: [{ label: "Analyze", tools: ["sheets"] }, { label: "Report", tools: ["docs"] }],
+        tierLabels: ["Scale", "Tune", "Cut"], middles: ["Adjust", "Test", "Reallocate"], outputs: ["Changes", "Report", "Forecast"] },
     ],
   },
 ];
@@ -448,7 +466,7 @@ export function UseCases({
     return (
       <div className="w-full overflow-hidden border border-black/[0.08] bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_30px_60px_-32px_rgba(13,32,9,0.18)]">
         {/* Tabs */}
-        <div className="grid w-full grid-cols-2 bg-[#fafafa] sm:grid-cols-4">
+        <div className="grid w-full grid-cols-2 bg-[#fafafa] sm:grid-cols-3">
           {categories.map((c, i) => {
             const on = i === active;
             return (
@@ -457,7 +475,7 @@ export function UseCases({
                 type="button"
                 onClick={() => setActive(i)}
                 aria-pressed={on}
-                className={`group relative inline-flex min-h-[72px] items-center justify-center gap-2.5 border-black/[0.06] px-3 py-3 text-[14.5px] font-medium transition max-sm:border-b max-sm:[&:nth-child(2n)]:border-l sm:[&:not(:nth-child(4n+1))]:border-l sm:[&:nth-child(-n+4)]:border-b ${
+                className={`group relative inline-flex min-h-[72px] items-center justify-center gap-2.5 border-black/[0.06] px-3 py-3 text-[14.5px] font-medium transition max-sm:border-b max-sm:[&:nth-child(2n)]:border-l sm:[&:not(:nth-child(3n+1))]:border-l sm:[&:nth-child(-n+6)]:border-b ${
                   on
                     ? "z-10 bg-white text-black"
                     : "text-[#666] hover:bg-white hover:text-black"
@@ -507,7 +525,7 @@ export function UseCases({
 
   return (
     <div className="w-full rounded-3xl border border-zinc-800/80 bg-zinc-900/20 p-5 md:p-8">
-      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-3">
         {categories.map((c, i) => {
           const on = i === active;
           return (

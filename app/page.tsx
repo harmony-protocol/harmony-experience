@@ -31,6 +31,8 @@ import { IntegrationsRow } from "./_components/features";
 import { Comparison } from "./_components/comparison";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
+import { CaseStudies } from "./_components/case-studies";
+import { ReclaimCalculator } from "./_components/reclaim-calculator";
 
 const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -72,10 +74,7 @@ function Eyebrow({
           : "bg-black text-white"
       }`}
     >
-      <span
-        className="h-1.5 w-1.5"
-        style={{ backgroundColor: ACCENT }}
-      />
+      <span className="h-1.5 w-1.5" style={{ backgroundColor: ACCENT }} />
       {children}
     </span>
   );
@@ -126,7 +125,8 @@ function PrimaryButton({ location }: { location: string }) {
   return (
     <button
       type="button"
-      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+      data-cal-link={CAL_LINK}
+      data-cal-config={CAL_CONFIG}
       data-loc={location}
       className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
@@ -557,8 +557,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> automate work operations
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We help B2B founders and agency owners automate messy daily work
-            and scale faster with AI systems
+            We help B2B founders and agency owners automate messy daily work and
+            scale faster with AI systems
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
@@ -678,7 +678,12 @@ export default function AgentflowPage() {
           {/* left-aligned growth ramp: narrow foundation up top, widening as it scales out */}
           <div className="flex w-full max-w-[760px] flex-col items-start gap-2.5">
             {whatWeDo.map((item, i) => {
-              const width = ["md:w-[54%]", "md:w-[69%]", "md:w-[84%]", "md:w-full"][i];
+              const width = [
+                "md:w-[54%]",
+                "md:w-[69%]",
+                "md:w-[84%]",
+                "md:w-full",
+              ][i];
               const alpha = [0.72, 0.55, 0.38, 0.22][i];
               return (
                 <div
@@ -719,8 +724,8 @@ export default function AgentflowPage() {
           </Heading>
         </div>
         <Sub className="mt-5">
-          We detect time sinks across your organization, then automate them
-          with agents, workflows and dashboards.
+          We detect time sinks across your organization, then automate them with
+          agents, workflows and dashboards.
         </Sub>
 
         <div className="mt-12">
@@ -729,11 +734,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* 4. PROCESS (black) */}
-      <Band
-        id="process"
-        dark
-        bgImage="/assets/green-animation-bg.png"
-      >
+      <Band id="process" dark bgImage="/assets/green-animation-bg.png">
         <Eyebrow dark>Process</Eyebrow>
         <div className="mt-5">
           <Heading dark>From audit to autopilot</Heading>
@@ -856,13 +857,39 @@ export default function AgentflowPage() {
           <Eyebrow>Why Us</Eyebrow>
           <div className="mt-5">
             <Heading>
-            Not your typical
-            <br />
-            agency.
-          </Heading>
+              Not your typical
+              <br />
+              agency
+            </Heading>
           </div>
         </div>
         <Comparison />
+      </Band>
+
+      {/* 7b. CASE STUDIES (black) */}
+      <Band id="case-studies" dark>
+        <Eyebrow dark>Case Studies</Eyebrow>
+        <div className="mt-5">
+          <Heading dark>A closer look at our work</Heading>
+        </div>
+        <Sub dark className="mt-5">
+          Teams that handed the messy work to custom AI agents and systems.
+        </Sub>
+        <div className="mt-14">
+          <CaseStudies />
+        </div>
+      </Band>
+
+      {/* 7c. RECLAIM CALCULATOR (light, separates the two dark bands) */}
+      <Band id="roi">
+        <Eyebrow>Cost Calculator</Eyebrow>
+        <div className="mt-5">
+          <Heading>How much is busywork costing you?</Heading>
+        </div>
+        <Sub className="mt-5">
+          Weight your team by what their time is worth.
+        </Sub>
+        <ReclaimCalculator />
       </Band>
 
       {/* 8. PRICING (black) */}
@@ -911,7 +938,8 @@ export default function AgentflowPage() {
 
                 <button
                   type="button"
-      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+                  data-cal-link={CAL_LINK}
+                  data-cal-config={CAL_CONFIG}
                   data-loc="pricing"
                   className={`mt-9 flex h-12 cursor-pointer items-center justify-center border text-[14px] font-medium uppercase transition ${
                     plan.highlighted
@@ -997,19 +1025,18 @@ export default function AgentflowPage() {
               <Heading as="h3">Got any questions? We have answers</Heading>
             </div>
             <div className="mt-10 flex -space-x-2">
-              {[
-                "/assets/about/vishal.avif",
-                "/assets/about/anurag.webp",
-              ].map((src) => (
-                <Image
-                  key={src}
-                  src={src}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 rounded-full border-2 border-[#fafafa] object-cover object-top"
-                />
-              ))}
+              {["/assets/about/vishal.avif", "/assets/about/anurag.webp"].map(
+                (src) => (
+                  <Image
+                    key={src}
+                    src={src}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full border-2 border-[#fafafa] object-cover object-top"
+                  />
+                ),
+              )}
             </div>
             <p className="mt-4 text-[17px] font-medium text-black">
               Have more questions?
@@ -1019,7 +1046,8 @@ export default function AgentflowPage() {
             </p>
             <button
               type="button"
-      data-cal-link={CAL_LINK} data-cal-config={CAL_CONFIG}
+              data-cal-link={CAL_LINK}
+              data-cal-config={CAL_CONFIG}
               data-loc="faq"
               className="mt-5 cursor-pointer rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
             >
