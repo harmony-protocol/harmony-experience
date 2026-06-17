@@ -178,7 +178,7 @@ export function ReclaimCalculator() {
             {money(total)}
           </div>
           <div className="mt-2 text-[17px] text-white/55">
-            every year in payroll, plus the growth and freedom it quietly costs you
+            every year in payroll, plus the growth and freedom
           </div>
         </div>
 

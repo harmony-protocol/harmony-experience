@@ -26,3 +26,54 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Range slider (ROI calculator): light-green filled track on the left, with a
+   square white thumb that sits taller than the bar. */
+.range-slider {
+  height: 10px;
+  border-radius: 0;
+}
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 0;
+  background: #ffffff;
+  border: 3px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+.range-slider::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 0;
+  background: #ffffff;
+  border: 3px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+/* Very slow ambient zoom (Ken Burns) on case-study card images. */
+.ken-burns {
+  animation: ken-burns 18s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns,
+  .range-slider::-webkit-slider-thumb {
+    animation: none;
+    transition: none;
+  }
+}

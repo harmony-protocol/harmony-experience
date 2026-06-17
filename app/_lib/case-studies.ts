@@ -18,6 +18,7 @@ export type CaseStudy = {
   logo: Logo; // white wordmark (sits on the accent background)
   accent: string; // card / hero background colour (fallback + photo tint)
   photo?: string; // header image, under /public/assets/case-studies/
+  cardPhotoPos?: string; // object-position for the homepage card image only
   /* homepage card */
   metric: string; // big headline figure (PLACEHOLDER for now)
   cardLine: string; // short result label shown on the card
@@ -36,10 +37,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "Maritime 22",
     industry: "Maritime consultancy",
     duration: "8 months",
-    country: "UK and UAE",
+    country: "🇬🇧 UK and 🇦🇪 UAE",
     logo: { src: "/assets/client-logos/maritime22.png", w: 1204, h: 240 },
     accent: "#0e3b3b",
-    photo: "/assets/case-studies/martime22-header.webp",
+    photo: "/assets/case-studies/maritime22-header.avif",
+    cardPhotoPos: "70% center",
     metric: "00",
     cardLine: "Admin work autopilot for the whole firm",
     headline: "We turned a manual chartering desk into one that runs itself.",
@@ -69,7 +71,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "Telo AI",
     industry: "Lead qualification agency",
     duration: "6 months",
-    country: "UK",
+    country: "🇬🇧 UK",
     logo: { src: "/assets/client-logos/teloai.png", w: 594, h: 236, cls: "h-10" },
     accent: "#27224f",
     photo: "/assets/case-studies/telo-header.avif",
@@ -102,7 +104,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "Intelliox",
     industry: "Financial advisory for startups",
     duration: "1 year",
-    country: "India",
+    country: "🇮🇳 India",
     logo: { src: "/assets/client-logos/intelliox.png", w: 792, h: 170, cls: "h-7" },
     accent: "#13294a",
     photo: "/assets/case-studies/intelliox-header.avif",

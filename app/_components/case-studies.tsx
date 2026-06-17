@@ -43,6 +43,7 @@ function Card({ study }: { study: CaseStudy }) {
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="ken-burns object-cover"
+            style={{ objectPosition: study.cardPhotoPos }}
           />
           {/* legibility scrim, single top-to-bottom gradient */}
           <div

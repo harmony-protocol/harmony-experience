@@ -79,9 +79,9 @@ export default async function CaseStudyPage({
     <div className="mx-auto w-[92%] max-w-[1200px] py-14 md:py-20">
       <Link
         href="/#case-studies"
-        className="inline-flex items-center gap-2 text-sm text-white/55 transition hover:text-white"
+        className="mt-3 inline-flex items-center gap-1.5 text-[17px] text-white/55 transition hover:text-white"
       >
-        <ArrowLeft className="h-4 w-4" strokeWidth={1.6} />
+        <ArrowLeft className="h-[18px] w-[18px]" strokeWidth={2.25} />
         Back
       </Link>
 
@@ -111,7 +111,14 @@ export default async function CaseStudyPage({
               className="object-cover"
               priority
             />
-            <div aria-hidden className="absolute inset-0 bg-black/55" />
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 60%)",
+              }}
+            />
           </>
         )}
         <Image
@@ -141,7 +148,7 @@ export default async function CaseStudyPage({
       {/* Body: main prose + sidebar */}
       <div className="mt-16 grid gap-12 md:grid-cols-[1fr_280px] md:gap-16">
         <div className="space-y-12 md:order-1">
-          <p className="text-[19px] leading-9 text-white/85">{study.summary}</p>
+          <p className="text-[17px] leading-8 text-white/85">{study.summary}</p>
           <Block title="The challenge" paras={study.challenge} />
           <Block title="What we built" paras={study.solution} />
           <Block title="The outcome" paras={[study.outcome]} />
