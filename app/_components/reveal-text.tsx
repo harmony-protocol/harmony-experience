@@ -14,26 +14,40 @@ export function RevealText({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const container = useRef<HTMLParagraphElement>(null);
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start 0.85", "end 0.55"],
   });
 
-  const words = text.split(" ");
+  // Split into paragraphs on blank lines, keeping one continuous reveal
+  // across every word so the scroll animation flows through the whole block.
+  const paragraphs = text.split(/\n{2,}/).map((p) => p.trim().split(" "));
+  const totalWords = paragraphs.reduce((n, words) => n + words.length, 0);
+
+  let wordOffset = 0;
 
   return (
-    <p ref={container} className={className} style={style}>
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word key={`${word}-${i}`} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
+    <div ref={container} className={className} style={style}>
+      {paragraphs.map((words, p) => {
+        const para = (
+          <p key={`p-${p}`} className={p > 0 ? "mt-6 md:mt-8" : undefined}>
+            {words.map((word, i) => {
+              const index = wordOffset + i;
+              const start = index / totalWords;
+              const end = start + 1 / totalWords;
+              return (
+                <Word key={`${word}-${index}`} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              );
+            })}
+          </p>
         );
+        wordOffset += words.length;
+        return para;
       })}
-    </p>
+    </div>
   );
 }
 
