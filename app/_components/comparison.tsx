@@ -37,13 +37,13 @@ const competitors = [
 const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
   {
     icon: <Bot className="h-4 w-4" strokeWidth={1.6} />,
-    label: "AI systems built for you",
+    label: "Custom AI systems",
     cells: [true, false, false, true, false],
   },
   {
-    icon: <Plug className="h-4 w-4" strokeWidth={1.6} />,
-    label: "Built into your tools",
-    cells: [true, true, true, true, "Limited"],
+    icon: <Target className="h-4 w-4" strokeWidth={1.6} />,
+    label: "Strategy and execution",
+    cells: [true, false, "Depends", true, "Execution only"],
   },
   {
     icon: <Gauge className="h-4 w-4" strokeWidth={1.6} />,
@@ -51,9 +51,9 @@ const rows: { icon: React.ReactNode; label: string; cells: Cell[] }[] = [
     cells: [true, false, false, true, "Limited"],
   },
   {
-    icon: <Target className="h-4 w-4" strokeWidth={1.6} />,
-    label: "Strategy and execution",
-    cells: [true, false, "Depends", true, "Execution only"],
+    icon: <Plug className="h-4 w-4" strokeWidth={1.6} />,
+    label: "Built into your tools",
+    cells: [true, true, true, true, "Limited"],
   },
   {
     icon: <Timer className="h-4 w-4" strokeWidth={1.6} />,
@@ -211,7 +211,7 @@ export function Comparison() {
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-black/[0.08] bg-white text-black/40">
                     {row.icon}
                   </span>
-                  <span className="whitespace-nowrap text-[16px] font-medium text-black">
+                  <span className="text-[16px] font-medium leading-tight text-black">
                     {row.label}
                   </span>
                 </motion.div>

@@ -21,7 +21,6 @@ import {
   Server,
   ShoppingBag,
   Sparkles,
-  UsersRound,
   Workflow,
 } from "lucide-react";
 import { HeroVideo } from "./_components/hero-video";
@@ -173,6 +172,34 @@ function GhostButton({
     >
       {children}
     </a>
+  );
+}
+
+function StepBox({
+  icon,
+  title,
+  body,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div className="flex w-full min-w-0 flex-col border border-black/10 bg-white p-5 md:p-6">
+      <span
+        className="flex h-10 w-10 items-center justify-center border border-black/10 text-black"
+        style={{ backgroundColor: "rgba(159,246,144,0.14)" }}
+      >
+        {icon}
+      </span>
+      <h3
+        className="mt-4 text-lg text-black"
+        style={{ fontFamily: "var(--font-schibsted)" }}
+      >
+        {title}
+      </h3>
+      <p className="mt-1.5 text-[15px] leading-6 text-[#4d4d4d]">{body}</p>
+    </div>
   );
 }
 
@@ -336,21 +363,36 @@ const whatWeDo = [
   },
 ];
 
-const extendedTeam = [
+/* Step 01 has two entry points that branch-merge into the flow: the customer
+   shares a request, or we suggest one. */
+const entryBoxes = [
   {
-    icon: <UsersRound className="h-5 w-5" strokeWidth={1.6} />,
-    title: "An extension of your team",
-    body: "We work like an in-house team, not a vendor you chase.",
+    icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.6} />,
+    title: "You share a request",
+    body: "You bring us a task, a problem, or an idea.",
   },
   {
     icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Top-tier service",
-    body: "Senior people on your account, fast responses, no queues.",
+    title: "We spot an opportunity",
+    body: "We notice a new automation opportunity.",
+  },
+];
+
+const flowBoxes = [
+  {
+    icon: <LayoutDashboard className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Get the plan",
+    body: "You get a clear plan from us before any work starts.",
   },
   {
-    icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.6} />,
-    title: "We work where you work",
-    body: "We collaborate in Slack and Trello, so you always see what is next.",
+    icon: <CalendarCheck className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Approve and build",
+    body: "You approve, and the build begins.",
+  },
+  {
+    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Deploy and iterate",
+    body: "You watch it go live, then get better as you use it.",
   },
 ];
 
@@ -392,7 +434,7 @@ const securityCards = [
 
 const pricingPlans = [
   {
-    name: "Growth",
+    name: "Growth Partner",
     description: "Founder-led small teams",
     price: "$500",
     period: "/month",
@@ -410,14 +452,14 @@ const pricingPlans = [
     ],
   },
   {
-    name: "Scale",
-    description: "Teams scaling fast",
+    name: "Scale Partner",
+    description: "Mid-sized teams with Pods",
     price: "$1,500",
     period: "/month",
     cta: "Book a Call",
     highlighted: false,
     features: [
-      "Everything in Growth",
+      "Everything in Growth Partner",
       "3 parallel requests at a time",
       "Dedicated fractional AI engineer",
       "Custom themed platform",
@@ -431,7 +473,7 @@ const pricingPlans = [
     cta: "Talk to Sales",
     highlighted: false,
     features: [
-      "Everything in Scale",
+      "Everything in Scale Partner",
       "Private deployment in your cloud",
       "Handling customer facing use cases",
       "Guaranteed SLAs",
@@ -756,27 +798,101 @@ export default function AgentflowPage() {
             extended team
           </Heading>
         </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {extendedTeam.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col border border-black/10 bg-white p-7 md:p-8"
+        {/* Desktop: two entry boxes branch-merge into the linear flow */}
+        <div className="mt-14 hidden items-stretch md:flex">
+          <div className="flex flex-1 flex-col justify-center gap-3">
+            <StepBox {...entryBoxes[0]} />
+            <span className="self-start px-1 text-[13px] font-medium uppercase tracking-[0.12em] text-black/40">
+              or
+            </span>
+            <StepBox {...entryBoxes[1]} />
+          </div>
+
+          {/* tree connector: both entry boxes merge into the next step */}
+          <div className="relative w-12 shrink-0" aria-hidden>
+            <svg
+              className="absolute inset-0 h-full w-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              fill="none"
             >
-              <span
-                className="flex h-11 w-11 items-center justify-center border border-black/10 text-black"
-                style={{ backgroundColor: "rgba(159,246,144,0.14)" }}
-              >
-                {item.icon}
-              </span>
-              <h3
-                className="mt-6 text-xl text-black"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                {item.title}
-              </h3>
-              <p className="mt-2 text-[17px] leading-8 text-[#4d4d4d]">
-                {item.body}
-              </p>
+              <path
+                d="M0 25 H55 V50 H100"
+                stroke="rgba(0,0,0,0.2)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d="M0 75 H55 V50"
+                stroke="rgba(0,0,0,0.2)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+
+          {flowBoxes.map((box, i) => (
+            <div key={box.title} className="contents">
+              {i > 0 && (
+                <div className="flex w-10 shrink-0 items-center" aria-hidden>
+                  <span className="h-px w-full bg-black/20" />
+                </div>
+              )}
+              <div className="flex flex-1 items-center">
+                <StepBox {...box} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile: two entry options side by side that branch-merge downward
+            into the linear flow (vertical version of the desktop tree) */}
+        <div className="mt-10 md:hidden">
+          <div
+            className="grid w-full gap-3"
+            style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)" }}
+          >
+            <StepBox {...entryBoxes[0]} />
+            <StepBox {...entryBoxes[1]} />
+          </div>
+
+          {/* both entry boxes drop a line that joins in the middle */}
+          <div className="relative h-12 w-full" aria-hidden>
+            <svg
+              className="absolute inset-0 h-full w-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <path
+                d="M25 0 V55 H50"
+                stroke="rgba(0,0,0,0.2)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d="M75 0 V55 H50"
+                stroke="rgba(0,0,0,0.2)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d="M50 55 V100"
+                stroke="rgba(0,0,0,0.2)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+
+          {flowBoxes.map((box, i) => (
+            <div key={box.title}>
+              {i > 0 && (
+                <div className="flex justify-center" aria-hidden>
+                  <span className="h-6 w-px bg-black/20" />
+                </div>
+              )}
+              <StepBox {...box} />
             </div>
           ))}
         </div>
@@ -1075,15 +1191,18 @@ export default function AgentflowPage() {
           <div className="max-w-[460px]">
             <div className="space-y-5 text-[17px] leading-8 text-white/70 md:text-[19px] md:leading-9">
               <p>Hey,</p>
-              <p>I used to run an agency that was growing at a good pace.</p>
+              <p>
+                I used to run a B2B services agency that was growing at 1.5x
+                quarter over quarter.
+              </p>
               <p>
                 But managing my team, vendors, and clients across multiple time
                 zones became harder than the work itself.
               </p>
               <p>I eventually had to shut it down.</p>
               <p>
-                That experience led me to start Harmony, to solve this for
-                everyone.
+                That led me to start Harmony, to solve this for all by building
+                the systems and agents that I wish we had.
               </p>
             </div>
 
