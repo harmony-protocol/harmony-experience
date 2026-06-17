@@ -42,13 +42,13 @@ function Card({ study }: { study: CaseStudy }) {
             alt={study.client}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="ken-burns object-cover"
+            className="object-cover"
             style={{ objectPosition: study.cardPhotoPos }}
           />
-          {/* legibility scrim, single top-to-bottom gradient */}
+          {/* legibility scrim, lightens on hover to brighten the photo */}
           <div
             aria-hidden
-            className="absolute inset-0"
+            className="absolute inset-0 transition-opacity duration-500 ease-out group-hover:opacity-60"
             style={{
               background:
                 "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)",

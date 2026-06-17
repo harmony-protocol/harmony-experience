@@ -56,22 +56,7 @@ body {
   cursor: pointer;
 }
 
-/* Very slow ambient zoom (Ken Burns) on case-study card images. */
-.ken-burns {
-  animation: ken-burns 18s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-@keyframes ken-burns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .ken-burns,
   .range-slider::-webkit-slider-thumb {
     animation: none;
     transition: none;
