@@ -857,9 +857,9 @@ export default function AgentflowPage() {
           <Eyebrow>Why Us</Eyebrow>
           <div className="mt-5">
             <Heading>
-              More partner
+              Not a traditional agency,
               <br />
-              than agency
+              an ongoing partner
             </Heading>
           </div>
         </div>
