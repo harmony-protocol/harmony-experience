@@ -147,7 +147,7 @@ function PrimaryButton({ location }: { location: string }) {
           className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
         />
       </span>
-      <span>Book a Call</span>
+      <span>Book a free call</span>
     </button>
   );
 }
@@ -438,7 +438,7 @@ const pricingPlans = [
     description: "Founder-led small teams",
     price: "$500",
     period: "/month",
-    cta: "Book a Call",
+    cta: "Book a free call",
     highlighted: true,
     features: [
       "In-depth audit of your current flows",
@@ -456,7 +456,7 @@ const pricingPlans = [
     description: "Mid-sized teams with Pods",
     price: "$1,500",
     period: "/month",
-    cta: "Book a Call",
+    cta: "Book a free call",
     highlighted: false,
     features: [
       "Everything in Growth Partner",

@@ -32,16 +32,16 @@ function Stepper({
       type="button"
       aria-label={`${dir > 0 ? "Increase" : "Decrease"} ${label}`}
       onClick={() => onChange(Math.max(min, value + dir * step))}
-      className="flex h-11 w-11 shrink-0 items-center justify-center text-black/45 transition hover:bg-[#9ff690]/20 hover:text-black"
+      className="flex h-11 w-10 shrink-0 items-center justify-center text-black/45 transition hover:bg-[#9ff690]/20 hover:text-black md:w-11"
     >
       {dir > 0 ? <Plus className="h-4 w-4" /> : <Minus className="h-4 w-4" />}
     </button>
   );
   return (
-    <div className="inline-flex items-stretch border border-black/15 bg-white">
+    <div className="flex w-full items-stretch border border-black/15 bg-white md:w-auto">
       <Btn dir={-1} />
       <span
-        className="flex min-w-[92px] items-center justify-center border-x border-black/10 px-3 text-[18px] text-black"
+        className="flex min-w-0 flex-1 items-center justify-center whitespace-nowrap border-x border-black/10 px-2 text-[18px] text-black md:min-w-[92px] md:flex-none md:px-3"
         style={{ fontFamily: "var(--font-schibsted)" }}
       >
         {prefix}
@@ -81,12 +81,12 @@ function Role({
       >
         {label}
       </span>
-      <div className="mt-4 flex flex-wrap items-center gap-3">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:flex md:flex-wrap md:items-center">
         <Stepper
           value={count}
           step={1}
           min={0}
-          suffix={count === 1 ? " person" : " people"}
+          suffix={count === 1 ? " head" : " heads"}
           onChange={onCount}
           label={`${label} headcount`}
         />
@@ -142,7 +142,7 @@ export function ReclaimCalculator() {
   return (
     <div className="mt-12 grid gap-px overflow-hidden border border-black/10 bg-black/10 lg:grid-cols-[1.05fr_1fr]">
       {/* Inputs */}
-      <div className="flex flex-col gap-7 bg-[#fafafa] p-8 md:p-10">
+      <div className="flex flex-col gap-7 bg-[#fafafa] p-5 md:p-10">
         <Role
           label="You & leadership"
           count={leadCount}
@@ -166,7 +166,7 @@ export function ReclaimCalculator() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col justify-center gap-7 bg-black p-8 md:p-10">
+      <div className="flex flex-col justify-center gap-7 bg-black p-5 md:p-10">
         <div>
           <div className="text-[13px] uppercase tracking-[0.08em] text-white/40">
             Busywork is costing you
@@ -205,7 +205,7 @@ export function ReclaimCalculator() {
           className="inline-flex h-11 w-fit cursor-pointer items-center px-6 text-base font-medium text-black transition hover:brightness-95"
           style={{ backgroundColor: ACCENT }}
         >
-          Book a Call
+          Book a free call
         </button>
       </div>
     </div>

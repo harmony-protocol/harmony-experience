@@ -107,7 +107,7 @@ function PrimaryButton() {
           className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
         />
       </span>
-      <span>Book a Call</span>
+      <span>Book a free call</span>
     </button>
   );
 }

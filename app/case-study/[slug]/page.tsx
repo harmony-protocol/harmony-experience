@@ -182,7 +182,7 @@ export default async function CaseStudyPage({
           className="mt-6 inline-flex h-11 cursor-pointer items-center px-6 text-base font-medium text-black transition hover:brightness-95"
           style={{ backgroundColor: ACCENT }}
         >
-          Book a Call
+          Book a free call
         </button>
       </div>
     </div>

@@ -256,7 +256,7 @@ export function Comparison() {
               className="inline-flex h-9 cursor-pointer items-center whitespace-nowrap px-4 text-[15px] font-medium text-black transition hover:brightness-95"
               style={{ backgroundColor: ACCENT }}
             >
-              Book a Call
+              Book a free call
             </button>
           </motion.div>
           {competitors.map((col, ci) => (
