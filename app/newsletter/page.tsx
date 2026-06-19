@@ -145,7 +145,7 @@ export default function NewsletterPage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center bg-white p-10 md:p-12 lg:p-14">
+              <div className="flex items-center justify-center bg-[#f4f4f4] p-10 md:p-12 lg:p-14">
                 <NewsletterImage />
               </div>
             </div>
