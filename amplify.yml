@@ -8,6 +8,8 @@ frontend:
         - pnpm install
     build:
       commands:
+        - echo "KIT_API_KEY=$KIT_API_KEY" >> .env
+        - echo "KIT_FORM_ID=$KIT_FORM_ID" >> .env
         - pnpm build
   artifacts:
     baseDirectory: .next
