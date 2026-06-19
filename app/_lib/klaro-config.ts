@@ -14,18 +14,25 @@
 // (or require analytics_storage) so it actually waits for this signal.
 function signalGtm(granted: boolean): void {
   if (typeof window === "undefined") return;
-  const w = window as unknown as { dataLayer?: unknown[] };
+  const w = window as unknown as {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
   w.dataLayer = w.dataLayer || [];
   const state = granted ? "granted" : "denied";
-  // gtag pushes its arguments list; a real array is read the same way by GTM.
-  // Analytics only, no advertising/marketing signals.
-  w.dataLayer.push([
-    "consent",
-    "update",
-    {
-      analytics_storage: state,
-    },
-  ]);
+  // Route through the global gtag defined by the consent-default script in
+  // layout.tsx. GTM's consent API only registers the "arguments" object that
+  // gtag pushes; a plain array push is ignored, so the update never lands.
+  // Fall back to a local gtag shim (same arguments-object shape) if the global
+  // is missing. Analytics only, no advertising/marketing signals.
+  const gtag =
+    typeof w.gtag === "function"
+      ? w.gtag
+      : function () {
+          // eslint-disable-next-line prefer-rest-params
+          (w.dataLayer as unknown[]).push(arguments);
+        };
+  gtag("consent", "update", { analytics_storage: state });
 }
 
 export const klaroConfig = {
