@@ -779,18 +779,18 @@ export default function AgentflowPage() {
       <Band id="process" dark bgImage="/assets/green-animation-bg.png">
         <Eyebrow dark>Process</Eyebrow>
         <div className="mt-5">
-          <Heading dark>From audit to autopilot</Heading>
+          <Heading dark>Here's how we work</Heading>
         </div>
         <Sub dark className="mt-5">
-          Our unique 4-phase process takes you from audit to autopilot, in as
-          little as 2 weeks.
+          Step-by-step breakdown of our 4-phase process to shift your business
+          to autopilot.
         </Sub>
         <Solutions />
       </Band>
 
       {/* 4a. HOW WE WORK (white) */}
       <Band id="extended-team">
-        <Eyebrow>How We Work</Eyebrow>
+        <Eyebrow>Collaboration</Eyebrow>
         <div className="mt-5">
           <Heading>
             We work like your
@@ -1241,7 +1241,7 @@ export default function AgentflowPage() {
           <div className="relative z-[1] flex flex-col items-center py-24 text-center md:py-32">
             <Eyebrow dark>Get Started</Eyebrow>
             <div className="mt-5 flex flex-col items-center">
-              <Heading dark>Ready to get your week back?</Heading>
+              <Heading dark>Get your evenings back</Heading>
             </div>
             <p className="mt-5 max-w-xl text-[17px] leading-8 text-white/55">
               Book a discovery call and together we will go through your
