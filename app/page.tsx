@@ -599,8 +599,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> the messy boring work
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We help B2B and professional services founders automate operations
-            and scale with AI systems
+            We help B2B founders and professional services owners rapidly scale
+            their business using AI systems
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
