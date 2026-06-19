@@ -599,8 +599,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We help services founders get unstuck from the busywork and scale
-            rapidly with AI systems.
+            We help services founders get unstuck from the busywork and rapidly
+            scale with AI systems.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
