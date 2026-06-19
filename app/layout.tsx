@@ -63,6 +63,17 @@ export default function RootLayout({
       className={`${brandFontClassName} ${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${jakarta.variable} h-full antialiased`}
     >
       <head>
+        {/* Google Consent Mode v2 default. beforeInteractive is injected into
+            <head> and runs ahead of the afterInteractive GTM snippet below, so
+            analytics_storage starts "denied" on the very first load. Tags that
+            respect consent (Microsoft Clarity, GA, etc.) stay off until the
+            visitor opts in; Klaro then flips analytics_storage to "granted" via
+            signalGtm in klaro-config.ts. wait_for_update gives Klaro a moment to
+            send that signal before consent-gated tags decide whether to fire. */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',personalization_storage:'denied',wait_for_update:500});`}
+        </Script>
         {/* Google Tag Manager. Kept for the other tags in the container.
             Plausible no longer loads through GTM; it loads via next-plausible
             below so adblockers blocking GTM no longer drop our analytics. */}

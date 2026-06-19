@@ -6,9 +6,12 @@
    site theme in globals.css (scoped to .harmony-klaro). */
 
 // Pushes the consent signal to the GTM dataLayer (Google Consent Mode v2).
-// This is additive and safe: the existing GTM snippet in layout.tsx keeps
-// loading, and tags configured for consent will read these signals. It does
-// nothing on its own until a consent-default + triggers are set up in GTM.
+// The consent-default ("denied") is set in layout.tsx before GTM loads, so this
+// is the "update" that flips analytics_storage to "granted" once the visitor
+// opts in. The GTM snippet keeps loading regardless; tags configured to respect
+// consent (e.g. Microsoft Clarity) read these signals to decide whether to fire.
+// Remaining manual step: enable consent on the Clarity tag in the GTM container
+// (or require analytics_storage) so it actually waits for this signal.
 function signalGtm(granted: boolean): void {
   if (typeof window === "undefined") return;
   const w = window as unknown as { dataLayer?: unknown[] };
