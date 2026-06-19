@@ -10,8 +10,11 @@
 // is the "update" that flips analytics_storage to "granted" once the visitor
 // opts in. The GTM snippet keeps loading regardless; tags configured to respect
 // consent (e.g. Microsoft Clarity) read these signals to decide whether to fire.
-// Remaining manual step: enable consent on the Clarity tag in the GTM container
-// (or require analytics_storage) so it actually waits for this signal.
+// Manual step in the GTM container: keep analytics_storage required on the
+// Clarity tag (built-in or "additional consent") AND trigger it on the custom
+// "consent_granted" event pushed below. Relying on GTM to auto re-fire a
+// consent-held tag is unreliable; the explicit event makes the firing
+// deterministic while consent gating still holds.
 function signalGtm(granted: boolean): void {
   if (typeof window === "undefined") return;
   const w = window as unknown as {
@@ -33,6 +36,13 @@ function signalGtm(granted: boolean): void {
           (w.dataLayer as unknown[]).push(arguments);
         };
   gtag("consent", "update", { analytics_storage: state });
+  // Explicit trigger hook: once analytics consent is granted, fire a custom
+  // event so a GTM trigger can fire Clarity (and any other analytics tag)
+  // directly, instead of waiting on GTM's flaky consent re-fire. Only on grant,
+  // so we never nudge tags to fire while consent is denied.
+  if (granted) {
+    w.dataLayer.push({ event: "consent_granted" });
+  }
 }
 
 export const klaroConfig = {
