@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPost, getPostSlugs } from "../../_data/blog";
+import { BlogSubscribe } from "./_components/blog-subscribe";
 
 const SITE_URL = "https://getharmony.ai";
 
@@ -185,17 +186,9 @@ export default async function BlogPostPage({
         <Post />
       </div>
 
-      {/* Newsletter subscribe (Substack embed) */}
+      {/* Newsletter subscribe */}
       <div className="mx-auto mt-16 max-w-[720px] border-t border-white/10 pt-12">
-        <div className="mx-auto w-full max-w-[480px]">
-          <iframe
-            src="https://theworkflowfix.substack.com/embed?transparent=1&light=1"
-            title="Subscribe to The Workflow Fix newsletter"
-            height={150}
-            scrolling="no"
-            style={{ border: 0, background: "transparent", width: "100%" }}
-          />
-        </div>
+        <BlogSubscribe />
       </div>
     </article>
   );

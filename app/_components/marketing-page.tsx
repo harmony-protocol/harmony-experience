@@ -94,7 +94,7 @@ function PrimaryButton() {
           alt=""
           width={16}
           height={15}
-          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:-translate-y-7"
+          className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:translate-x-7"
         />
         <Image
           src="/assets/talk-to-sales-icon.svg"
@@ -102,7 +102,7 @@ function PrimaryButton() {
           aria-hidden
           width={16}
           height={15}
-          className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
+          className="absolute h-[15px] w-4 -translate-x-7 transition-transform duration-300 ease-out group-hover:translate-x-0"
         />
       </span>
       <span>Book a free call</span>

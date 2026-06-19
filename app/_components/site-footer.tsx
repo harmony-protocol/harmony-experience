@@ -16,7 +16,7 @@ const footerColumns = [
     title: "Useful",
     links: [
       { label: "Solutions", href: "/solutions" },
-      { label: "Newsletter", href: "https://theworkflowfix.substack.com" },
+      { label: "Newsletter", href: "/newsletter" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
