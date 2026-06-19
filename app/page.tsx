@@ -595,12 +595,12 @@ export default function AgentflowPage() {
 
         <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-14 pt-36 text-center md:pb-20 md:pt-44">
           <Heading as="h1" dark>
-            We help founders automate
-            <br className="hidden md:block" /> the messy boring work
+            We help founders scale
+            <br className="hidden md:block" /> rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We help B2B founders and professional services owners rapidly scale
-            their business using AI systems
+            We help services founders get unstuck from the busywork and scale
+            rapidly with AI systems.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
