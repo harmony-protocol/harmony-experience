@@ -593,7 +593,7 @@ export default function AgentflowPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-20 pt-36 text-center md:pt-44">
+        <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-14 pt-36 text-center md:pb-20 md:pt-44">
           <Heading as="h1" dark>
             We help founders automate
             <br className="hidden md:block" /> the messy boring work
