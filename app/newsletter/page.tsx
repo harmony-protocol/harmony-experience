@@ -12,6 +12,7 @@ const schibsted = Schibsted_Grotesk({
 
 const ACCENT = "#9ff690";
 const NEWSLETTER_IMAGE = "/assets/newsletter/newsletter-image.png";
+const LINK_PREVIEW_IMAGE = "/assets/link-previews/newsletter.jpg";
 
 const reviews = [
   {
@@ -67,16 +68,16 @@ export const metadata: Metadata = {
     url: "/newsletter",
     images: [
       {
-        url: NEWSLETTER_IMAGE,
-        width: 1122,
-        height: 1402,
-        alt: "The Workflow Fix newsletter welcome letter",
+        url: LINK_PREVIEW_IMAGE,
+        width: 1920,
+        height: 1080,
+        alt: "The Workflow Fix newsletter",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: [NEWSLETTER_IMAGE],
+    images: [LINK_PREVIEW_IMAGE],
   },
 };
 
