@@ -1,30 +1,222 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 body {
   /* Pure black to match the fixed nav (bg-black). This unlayered rule would
      otherwise override Tailwind's bg-black utility, so pin it to #000 here. */
   background: #000;
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Cookie consent (Klaro) theming. Klaro reads these CSS variables (with
+   built-in fallbacks), so overriding them here matches the banner to the site:
+   black panel, white text, green accent, square corners, Geist body font. */
+.klaro {
+  --font-family: var(--font-geist-sans), Arial, sans-serif;
+  --title-font-family: var(--font-schibsted), var(--font-geist-sans), sans-serif;
+  --font-size: 14px;
+  --border-radius: 0px;
+
+  /* Panel + text */
+  --dark1: #0b0c0c; /* notice / modal background */
+  --light1: #ffffff; /* primary text */
+  --light2: #9a9a9a; /* muted text + dividers */
+  --light3: #6f6f6f;
+
+  /* Secondary / decline button + borders */
+  --dark2: #1d211d;
+  --dark3: #9a9a9a;
+
+  /* Green accent (accept button + active toggle) with dark text on it */
+  --green1: #9ff690;
+  --green2: #b6f9aa;
+  --green3: #9ff690;
+  --button-text-color: #0b0c0c;
+
+  /* Toggle slider: gray OFF track + white knob so it reads in both states
+     (knob stays white on the green ON track too). */
+  --white2: #4b514b; /* OFF track */
+  --white3: #ffffff; /* knob */
+
+  /* Compact card pinned to the bottom-left (desktop). */
+  --notice-left: 20px;
+  --notice-right: auto;
+  --notice-bottom: 20px;
+  --notice-max-width: 300px;
+}
+
+/* Subtle grey edge on the notice card. */
+.klaro .cookie-notice:not(.cookie-modal-notice) {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Compact card pinned bottom-left from tablet up (>=640px). Forced so it beats
+   Klaro's default full-width bottom bar, which we keep only on phones (<640px).
+   Crisp keeps the bottom-right corner. */
+@media (min-width: 640px) {
+  .klaro .cookie-notice:not(.cookie-modal-notice) {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+    width: auto !important;
+    max-width: 330px !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  }
+}
+
+/* Phones (<640px): full-width bottom bar gets a light gray top line to set it
+   apart from the page (same grey as the desktop border), no side/bottom
+   borders. */
+@media (max-width: 639px) {
+  .klaro .cookie-notice:not(.cookie-modal-notice) {
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  }
+}
+
+/* Decline on the notice, styled like the header "How it works" ghost button.
+   The outline is an inset box-shadow (not a real border) so it stays the same
+   outer size as the borderless Accept all button. */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-decline {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: inset 0 0 0 1px #b5f4a2 !important;
+}
+
+/* Even, slightly tighter padding on the notice card (Klaro defaults to a 0 top
+   and 1em elsewhere, which read as uneven). Right is trimmed a touch more. */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
+  padding: 14px 10px 14px 14px !important;
+}
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body > p:first-child {
+  margin-top: 0 !important;
+}
+
+/* Wider horizontal padding inside the notice's Decline and Accept all buttons. */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-decline,
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-ok .cm-btn {
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+
+/* Accept all one weight step thicker (regular -> medium). */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-ok .cm-btn {
+  font-weight: 500 !important;
+}
+
+/* "Customize" shows as a small lucide sliders icon (portaled in by
+   cookie-consent.tsx). Hide the text (kept in the DOM for screen readers), and
+   color the icon light grey, turning green on hover (icon uses currentColor). */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-learn-more {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: #9a9a9a !important;
+  transition: color 0.15s ease;
+}
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-learn-more:hover {
+  color: #9ff690 !important;
+}
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-learn-more svg {
+  vertical-align: middle;
+  margin-left: 6px !important; /* nudge right, off the left padding */
+  transform: translateY(6px) !important; /* nudge down to line up with buttons */
+}
+/* Klaro aligns the .cn-ok row (Customize icon + buttons) to the text baseline,
+   which drops the small icon low. Center it so the icon lines up with the
+   Decline / Accept all buttons. */
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-ok {
+  align-items: center !important;
+}
+
+/* Keep the notice/modal above Crisp's chat launcher. On mobile the full-width
+   notice and the bottom-right chat icon overlap; this keeps the notice on top
+   and clickable instead of getting covered. */
+.klaro .cookie-notice,
+.klaro .cookie-modal {
+  z-index: 2147483647 !important;
+}
+
+/* Klaro focuses the container when it opens, which shows the browser's white
+   focus ring around the box. Suppress it on these non-interactive containers;
+   buttons and links keep their own focus styles for accessibility. */
+.klaro .cookie-notice:focus,
+.klaro .cookie-notice:focus-visible,
+.klaro .cookie-notice .cn-body:focus,
+.klaro .cookie-notice .cn-body:focus-visible,
+.klaro .cookie-modal:focus,
+.klaro .cookie-modal .cm-modal:focus {
+  outline: none;
+}
+
+/* Customize modal footer buttons, ordered left to right: Decline (subtle text),
+   Accept all (ghost outline matching the header "How it works" button: 1px
+   #b5f4a2), Save choices (our solid green primary, on the right). !important
+   beats Klaro's own equal-specificity rules regardless of load order. */
+.klaro .cookie-modal .cm-footer-buttons .cm-btn.cm-btn-decline,
+.klaro .cookie-modal .cm-footer-buttons .cm-btn.cm-btn-danger {
+  order: 0;
+  background-color: transparent !important;
+  color: #9a9a9a !important;
+  border: none !important;
+}
+.klaro .cookie-modal .cm-footer-buttons .cm-btn.cm-btn-accept-all {
+  order: 1;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid #b5f4a2 !important;
+}
+.klaro .cookie-modal .cm-footer-buttons .cm-btn.cm-btn-accept {
+  order: 2;
+  background-color: #9ff690 !important;
+  color: #000000 !important;
+  border: none !important;
 }
 
 /* Range slider (ROI calculator): light-green filled track on the left, with a
@@ -60,5 +252,86 @@ body {
   .range-slider::-webkit-slider-thumb {
     animation: none;
     transition: none;
+  }
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
   }
 }

@@ -57,6 +57,7 @@ function Stepper({
 function Role({
   label,
   count,
+  countMin = 0,
   hours,
   hoursMax,
   rate,
@@ -66,6 +67,7 @@ function Role({
 }: {
   label: string;
   count: number;
+  countMin?: number;
   hours: number;
   hoursMax: number;
   rate: number;
@@ -85,7 +87,7 @@ function Role({
         <Stepper
           value={count}
           step={1}
-          min={0}
+          min={countMin}
           suffix={count === 1 ? " head" : " heads"}
           onChange={onCount}
           label={`${label} headcount`}
@@ -146,6 +148,7 @@ export function ReclaimCalculator() {
         <Role
           label="You & leadership"
           count={leadCount}
+          countMin={1}
           hours={leadHours}
           hoursMax={40}
           rate={leadRate}

@@ -6,6 +6,7 @@ import "./globals.css";
 import { AgentflowNav } from "./_components/nav";
 import { SiteFooter } from "./_components/site-footer";
 import { CalInit } from "./_components/cal-init";
+import { CookieConsent } from "./_components/cookie-consent";
 import { brandFontClassName, bodyStyle } from "./_lib/brand-fonts";
 
 const geistSans = Geist({
@@ -73,6 +74,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TH63R2V6');`}
         </Script>
         {/* End Google Tag Manager */}
+        {/* Crisp live chat. Loads its launcher in the bottom-right corner. */}
+        <Script id="crisp-chat" strategy="afterInteractive">
+          {`window.$crisp=[];window.CRISP_WEBSITE_ID="a7e30915-923c-440d-99c3-6ae92875bfcf";(function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`}
+        </Script>
+        {/* End Crisp live chat */}
       </head>
       <body
         className="min-h-full flex flex-col bg-black text-white"
@@ -93,6 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             it); events post directly to plausible.io. See plausible-init. */}
         <PlausibleInit />
         <CalInit />
+        <CookieConsent />
         <AgentflowNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />

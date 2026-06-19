@@ -5,7 +5,7 @@ import { useState } from "react";
 const items = [
   {
     q: "What is Harmony, exactly?",
-    a: "Harmony is a done-for-you service that comes with its own platform. We take on your requests and build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team, all in our desktop app. Instead of you wiring up DIY tools, we find the operational bottlenecks in your day to day work and solve them properly, so you actually save time and attention. Our goal is to replace a human VA at a fraction of the cost.",
+    a: "Harmony is a done-for-you service that comes with its own platform. We take on your requests and build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team, all in our desktop app. Instead of you wiring up DIY tools, we find the operational bottlenecks in your day to day work and solve them properly, so you actually save time and attention.",
   },
   {
     q: "Who is Harmony for?",
@@ -57,7 +57,14 @@ export function Faq() {
               <span
                 className={`flex h-6 w-6 shrink-0 items-center justify-center text-black/50 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
               >
-                <svg viewBox="0 0 14 14" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
+                <svg
+                  viewBox="0 0 14 14"
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                >
                   <path d="M7 1v12M1 7h12" />
                 </svg>
               </span>

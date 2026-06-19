@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CookieSettingsLink } from "./cookie-settings-link";
 
 const footerColumns = [
   {
@@ -8,13 +9,13 @@ const footerColumns = [
       { label: "About", href: "/about" },
       { label: "Pricing", href: "/#pricing" },
       { label: "Contact", href: "/contact" },
+      { label: "Blog", href: "/blog" },
     ],
   },
   {
     title: "Useful",
     links: [
       { label: "Solutions", href: "/solutions" },
-      { label: "Blog", href: "/blog" },
       { label: "Newsletter", href: "https://theworkflowfix.substack.com" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
@@ -98,6 +99,11 @@ export function SiteFooter() {
                       </li>
                     );
                   })}
+                  {col.title === "Useful" && (
+                    <li>
+                      <CookieSettingsLink className="cursor-pointer text-[18px] text-white/42 transition hover:text-white" />
+                    </li>
+                  )}
                 </ul>
               </div>
             ))}
