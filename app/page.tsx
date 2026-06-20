@@ -443,12 +443,22 @@ const pricingPlans = [
     features: [
       "In-depth audit of your current flows",
       "AI agents, workflows and dashboards",
-      "One feature request at a time",
-      "Email, Slack, and Calls integration",
-      "CRM and Ticketing integration",
-      "Marketing stack integration",
-      "Notion and Airtable integration",
-      "In-house quality AI expert support",
+      {
+        label: "Automation across your operations",
+        tags: [
+          "Founder's productivity",
+          "GTM",
+          "Sales",
+          "Fulfillment",
+          "Client relations",
+          "Finances",
+          "Admin",
+        ],
+      },
+      "Weekly strategy calls",
+      "One automation built at a time",
+      "Team-wide Harmony platform access",
+      "We work like your extended team",
     ],
   },
   {
@@ -460,7 +470,7 @@ const pricingPlans = [
     highlighted: false,
     features: [
       "Everything in Growth Partner",
-      "3 parallel requests at a time",
+      "Three automations built in parallel",
       "Dedicated fractional AI engineer",
       "Custom themed platform",
     ],
@@ -595,8 +605,8 @@ export default function AgentflowPage() {
 
         <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-14 pt-36 text-center md:pb-20 md:pt-44">
           <Heading as="h1" dark>
-            We help founders scale
-            <br className="hidden md:block" /> rapidly using AI systems
+            We help services founders
+            <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
             We build AI systems across GTM, sales, fulfillment, client relations,
@@ -1076,18 +1086,38 @@ export default function AgentflowPage() {
                     What&apos;s Included
                   </p>
                   <ul className="mt-7 space-y-5">
-                    {plan.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-center gap-3 text-[17px] text-white/85"
-                      >
-                        <span
-                          className="h-1.5 w-1.5 shrink-0"
-                          style={{ backgroundColor: ACCENT }}
-                        />
-                        {feature}
-                      </li>
-                    ))}
+                    {plan.features.map((feature) => {
+                      const tagged = typeof feature !== "string";
+                      const label = tagged ? feature.label : feature;
+                      return (
+                        <li
+                          key={label}
+                          className={`flex gap-3 text-[17px] text-white/85 ${
+                            tagged ? "items-start" : "items-center"
+                          }`}
+                        >
+                          <span
+                            className={`h-1.5 w-1.5 shrink-0 ${tagged ? "mt-2.5" : ""}`}
+                            style={{ backgroundColor: ACCENT }}
+                          />
+                          <div>
+                            {label}
+                            {tagged && (
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                {feature.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="border border-white/15 bg-white/[0.03] px-2.5 py-1 text-[13px] text-white/70"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
