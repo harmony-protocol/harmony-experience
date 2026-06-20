@@ -51,9 +51,9 @@ const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
-  title: "Harmony | AI Automations for B2B Teams",
+  title: "Harmony | AI Systems to Scale Services Businesses",
   description:
-    "Harmony is an AI automation agency for B2B teams. We build the agents and workflows that run customer success, hiring and onboarding, and team productivity in the background, so you can lead the business instead of the busywork.",
+    "Harmony builds AI systems for services businesses across GTM, sales, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
 };
 
 /* ------------------------------ ATOMS ------------------------------ */
@@ -599,8 +599,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We help services founders get unstuck from the busywork and rapidly
-            scale with AI systems.
+            We build AI systems across GTM, sales, fulfillment, and admin work
+            to get you unstuck and scale rapidly
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
