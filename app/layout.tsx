@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/link-perview.png",
+        url: "/assets/link-previews/default.jpg",
         width: 1200,
         height: 630,
         alt: "Harmony AI",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/assets/link-perview.png"],
+    images: ["/assets/link-previews/default.jpg"],
   },
 };
 
