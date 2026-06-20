@@ -599,8 +599,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We build AI systems across GTM, sales, fulfillment, and admin work
-            to get you unstuck and scale rapidly
+            We build AI systems across GTM, sales, fulfillment, client relations,
+            and admin to get you unstuck and scale rapidly
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
