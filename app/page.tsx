@@ -53,7 +53,7 @@ const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 export const metadata: Metadata = {
   title: "Harmony | AI Systems to Scale Services Businesses",
   description:
-    "Harmony builds AI systems for services businesses across GTM, sales, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
+    "Harmony builds AI systems for services businesses across marketing, sales, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
 };
 
 /* ------------------------------ ATOMS ------------------------------ */
@@ -447,7 +447,7 @@ const pricingPlans = [
         label: "Automation across your operations",
         tags: [
           "Founder's productivity",
-          "GTM",
+          "Marketing",
           "Sales",
           "Fulfillment",
           "Client relations",
@@ -609,7 +609,7 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
-            We build AI systems across GTM, sales, fulfillment, client relations,
+            We build AI systems across marketing, sales, fulfillment, relations,
             and admin to get you unstuck and scale rapidly
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
