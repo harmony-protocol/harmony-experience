@@ -16,8 +16,10 @@ import {
   Magnet,
   MessagesSquare,
   Monitor,
+  Moon,
   Repeat,
   Rocket,
+  Scale,
   Server,
   ShoppingBag,
   Sparkles,
@@ -479,8 +481,8 @@ const whoWeHelp = [
     title: "Marketing Agencies",
   },
   {
-    icon: <Rocket className="h-5 w-5" strokeWidth={1.6} />,
-    title: "B2B Startups",
+    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
+    title: "IT and Consulting Firms",
   },
   {
     icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
@@ -491,8 +493,8 @@ const whoWeHelp = [
     title: "Recruitment Agencies",
   },
   {
-    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
-    title: "IT and Consulting Firms",
+    icon: <Magnet className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Lead Gen Agencies",
   },
   {
     icon: <Monitor className="h-5 w-5" strokeWidth={1.6} />,
@@ -503,8 +505,8 @@ const whoWeHelp = [
     title: "Financial Services Firms",
   },
   {
-    icon: <Magnet className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Lead Gen Agencies",
+    icon: <Scale className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Law Firms",
   },
   {
     icon: <Landmark className="h-5 w-5" strokeWidth={1.6} />,
@@ -537,6 +539,34 @@ const whatWeDo = [
     tag: "Scale",
     title: "Run and scale your business on autopilot",
     body: "The operation keeps running and growing without you in the loop.",
+  },
+];
+
+// "Magic as a Service" outcomes: short, direct, graphic-forward. One line each.
+const magicMetrics = [
+  {
+    icon: <CircleDollarSign className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Increase your margins",
+  },
+  {
+    icon: <Magnet className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Explode your marketing",
+  },
+  {
+    icon: <Rocket className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Onboard way more clients",
+  },
+  {
+    icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Supercharge client service",
+  },
+  {
+    icon: <Database className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Crush all back office work",
+  },
+  {
+    icon: <Moon className="h-5 w-5" strokeWidth={1.5} />,
+    title: "Get your evenings back",
   },
 ];
 
@@ -986,6 +1016,39 @@ export default function AgentflowPage() {
             </div>
           </>
         )}
+      </Band>
+
+      {/* 2c. MAGIC AS A SERVICE (black) */}
+      <Band id="magic" dark className="pb-24 md:pb-36">
+        <Eyebrow dark>Benefits</Eyebrow>
+        <div className="mt-5">
+          <Heading dark>It's Magic as a Service</Heading>
+        </div>
+        <Sub dark className="mt-5 md:max-w-none md:whitespace-nowrap">
+          Subscribe to peace of mind. We care about your business, not just the
+          tech.
+        </Sub>
+
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {magicMetrics.map((m) => (
+            <div
+              key={m.title}
+              className="group relative flex flex-col overflow-hidden rounded-none border-[1.5px] border-white/[0.08] bg-[#0b0c0c] p-7 transition duration-300 hover:border-[#9ff690]/60 hover:bg-[#0e120e]"
+            >
+              {/* hover glow */}
+              <span className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#9ff690]/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690] transition duration-300 group-hover:border-[#9ff690]/70 group-hover:bg-[rgba(159,246,144,0.12)] group-hover:text-[#b6f9aa]">
+                {m.icon}
+              </span>
+              <h3
+                className="relative mt-5 whitespace-nowrap text-[18px] leading-tight text-white"
+                style={{ fontFamily: "var(--font-schibsted)" }}
+              >
+                {m.title}
+              </h3>
+            </div>
+          ))}
+        </div>
       </Band>
 
       {/* 3. WORKFLOWS WE RUN (white) */}
