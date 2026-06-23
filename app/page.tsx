@@ -1054,12 +1054,12 @@ export default function AgentflowPage() {
 
       {/* 3. WORKFLOWS WE RUN (white) */}
       <Band id="workflows" className="pt-14 md:pt-20">
-        <Eyebrow>What We Take Over</Eyebrow>
+        <Eyebrow>Example Use Cases</Eyebrow>
         <div className="mt-5">
           <Heading>
-            We automate all parts
+            We automate your
             <br />
-            of your business
+            business, piece by piece
           </Heading>
         </div>
         <Sub className="mt-5">

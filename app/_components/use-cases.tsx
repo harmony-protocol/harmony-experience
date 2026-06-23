@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import {
   Calculator,
+  CheckCircle2,
   Coffee,
   Handshake,
   ListChecks,
@@ -411,10 +412,14 @@ function Tree({
           {wf.outputs.map((label) => (
             <Cell key={label}>
               <div
-                className={`flex items-center justify-center rounded-lg border px-1 py-2 text-center ${
+                className={`flex items-center justify-center gap-1.5 rounded-lg border px-1 py-2 text-center ${
                   light ? "border-black/10 bg-white" : "border-zinc-800 bg-zinc-950"
                 }`}
               >
+                <CheckCircle2
+                  className={`h-3.5 w-3.5 shrink-0 ${light ? "text-emerald-500" : "text-emerald-400"}`}
+                  strokeWidth={2}
+                />
                 <span className={`text-xs leading-tight ${light ? "text-black/80" : "text-zinc-300"}`}>
                   {label}
                 </span>
