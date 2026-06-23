@@ -9,6 +9,7 @@ import {
   CircleDollarSign,
   Database,
   Globe,
+  Heart,
   Landmark,
   LayersPlus,
   LayoutDashboard,
@@ -557,7 +558,7 @@ const magicMetrics = [
     title: "Onboard way more clients",
   },
   {
-    icon: <MessagesSquare className="h-5 w-5" strokeWidth={1.5} />,
+    icon: <Heart className="h-5 w-5" strokeWidth={1.5} />,
     title: "Supercharge client service",
   },
   {
@@ -918,7 +919,7 @@ export default function AgentflowPage() {
       </section>
 
       {/* 2b. WHAT WE DO (white) */}
-      <Band id="results" className="pb-14 md:pb-20">
+      <Band id="results" className="pb-24 md:pb-32">
         <Eyebrow>Outcomes</Eyebrow>
         <div className="mt-5">
           <Heading>Why you need AI systems?</Heading>

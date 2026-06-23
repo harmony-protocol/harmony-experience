@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import {
   Calculator,
+  CheckCircle2,
   Coffee,
   Handshake,
   ListChecks,
@@ -31,7 +32,6 @@ const ICON: Record<string, string> = {
   airtable: "/assets/integrations/icon/airtable.webp",
   zoom: "/assets/integrations/icon/zoom.webp",
 };
-const HARMONY_LOGO = "/assets/logo-full-light.png";
 
 /* ----------------------------- PALETTES ----------------------------- */
 // One hue family per workflow, ramped light -> dark across its 3 tiers.
@@ -415,36 +415,20 @@ function Tree({
           {wf.outputs.map((label) => (
             <Cell key={label}>
               <div
-                className={`flex flex-col items-center gap-1.5 rounded-lg border px-1 py-1.5 text-center ${
+                className={`flex items-center justify-center gap-1.5 rounded-lg border px-1 py-2 text-center ${
                   light ? "border-black/10 bg-white" : "border-zinc-800 bg-zinc-950"
                 }`}
               >
+                <CheckCircle2
+                  className={`h-3.5 w-3.5 shrink-0 ${light ? "text-emerald-500" : "text-emerald-400"}`}
+                  strokeWidth={2}
+                />
                 <span className={`text-xs font-medium leading-tight ${light ? "text-black" : "text-zinc-100"}`}>
                   {label}
-                </span>
-                <span
-                  className={`flex h-5 items-center gap-1 rounded border px-1 ${
-                    light
-                      ? "border-black/10 bg-[#fafafa]"
-                      : "border-zinc-700/60 bg-zinc-900/60"
-                  }`}
-                  title="Surfaces in Harmony"
-                >
-                  <Image
-                    src={HARMONY_LOGO}
-                    alt="Harmony"
-                    width={726}
-                    height={176}
-                    className={`h-auto w-[58px] object-contain ${light ? "opacity-45" : "invert opacity-60"}`}
-                  />
                 </span>
               </div>
             </Cell>
           ))}
-        </div>
-
-        <div className="[mask-image:linear-gradient(to_bottom,black,transparent)]">
-          <ForkIn line={line} />
         </div>
       </div>
     </div>
