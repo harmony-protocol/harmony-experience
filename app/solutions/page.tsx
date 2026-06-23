@@ -16,17 +16,20 @@ export default function SolutionsPage() {
   const entries = Object.entries(data);
 
   return (
-    <SolutionsShell>
-      <SolutionsSection bordered={false}>
+    <SolutionsShell topPadded={false}>
+      <SolutionsSection
+        bordered={false}
+        innerClassName="pt-28 pb-20 md:pt-32 md:pb-28"
+      >
         <div className="mx-auto max-w-[680px] text-center">
           <Eyebrow>Solutions</Eyebrow>
           <h1
             className="mt-6 text-[32px] font-normal leading-[1.1] text-white md:text-[46px]"
             style={headingStyle}
           >
-            Built for overloaded leaders
+            AI powered systems
             <br />
-            facing <span className="text-[#9ff690]">time shortage</span>
+            built for <span className="text-[#9ff690]">your business</span>
           </h1>
           <SolutionsSub className="mx-auto mt-5">
             Choose the path closest to your business and see how Harmony
