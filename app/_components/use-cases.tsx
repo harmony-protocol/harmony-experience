@@ -5,7 +5,6 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import {
   Calculator,
-  CheckCircle2,
   Coffee,
   Handshake,
   ListChecks,
@@ -323,7 +322,7 @@ function Tree({
     <div>
       <div className="flex items-start gap-2.5">
         <span
-          className={`mt-[10px] h-2 w-2 shrink-0 ${
+          className={`ml-1 mt-[10px] h-2 w-2 shrink-0 ${
             light ? "bg-[#9ff690]" : "bg-emerald-400"
           }`}
         />
@@ -334,13 +333,10 @@ function Tree({
           >
             {wf.name}
           </h4>
-          <p className={`mt-2 text-[17px] leading-8 ${light ? "text-[#4d4d4d]" : "text-zinc-500"}`}>
-            {wf.desc}
-          </p>
         </div>
       </div>
 
-      <div className="mt-7">
+      <div className="mt-10 pb-6 md:pb-8">
         <div className="grid grid-cols-3">
           {wf.inputs.map((label) => (
             <Cell key={label}>
@@ -415,15 +411,11 @@ function Tree({
           {wf.outputs.map((label) => (
             <Cell key={label}>
               <div
-                className={`flex items-center justify-center gap-1.5 rounded-lg border px-1 py-2 text-center ${
+                className={`flex items-center justify-center rounded-lg border px-1 py-2 text-center ${
                   light ? "border-black/10 bg-white" : "border-zinc-800 bg-zinc-950"
                 }`}
               >
-                <CheckCircle2
-                  className={`h-3.5 w-3.5 shrink-0 ${light ? "text-emerald-500" : "text-emerald-400"}`}
-                  strokeWidth={2}
-                />
-                <span className={`text-xs font-medium leading-tight ${light ? "text-black" : "text-zinc-100"}`}>
+                <span className={`text-xs leading-tight ${light ? "text-black/80" : "text-zinc-300"}`}>
                   {label}
                 </span>
               </div>
