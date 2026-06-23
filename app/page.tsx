@@ -203,6 +203,176 @@ function StepBox({
   );
 }
 
+/* ---- Further-benefit concept graphics: one per metric, illustrative not data.
+   Each reads off the parent card's `group` hover. No fabricated numbers. */
+
+// Margin: a before/after pair of revenue bars split into cost + margin, with a
+// legend. The "after" margin grows further on hover, showing it widening.
+function MarginGraphic() {
+  return (
+    <div className="w-full" aria-hidden>
+      <div className="flex items-center gap-2.5">
+        <span className="w-9 shrink-0 text-[9px] font-medium uppercase tracking-[0.08em] text-black/35">
+          Before
+        </span>
+        <div className="flex h-3 flex-1 overflow-hidden">
+          <span className="h-full w-[76%] bg-black/[0.12]" />
+          <span className="h-full flex-1 bg-[#9ff690]/55" />
+        </div>
+      </div>
+      <div className="mt-2.5 flex items-center gap-2.5">
+        <span className="w-9 shrink-0 text-[9px] font-medium uppercase tracking-[0.08em] text-[#3f7d33]">
+          After
+        </span>
+        <div className="flex h-3 flex-1 overflow-hidden">
+          <span className="h-full w-[54%] bg-black/[0.12] transition-[width] duration-700 ease-out group-hover:w-[40%]" />
+          <span className="h-full flex-1 bg-[#9ff690]" />
+        </div>
+      </div>
+      <div className="mt-3.5 flex items-center gap-4 text-[9px] font-medium uppercase tracking-[0.08em]">
+        <span className="flex items-center gap-1.5 text-black/40">
+          <span className="h-2 w-2 bg-black/15" />
+          Cost
+        </span>
+        <span className="flex items-center gap-1.5 text-[#3f7d33]">
+          <span className="h-2 w-2 bg-[#9ff690]" />
+          Margin
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// Revenue: an area chart with baseline gridlines, a gradient fill, a rising line
+// and a haloed end marker. Directional only, no axis values.
+function RevenueGraphic() {
+  return (
+    <div className="relative h-[72px] w-full" aria-hidden>
+      <svg
+        viewBox="0 0 160 72"
+        preserveAspectRatio="none"
+        className="absolute inset-0 h-full w-full"
+        fill="none"
+      >
+        <defs>
+          <linearGradient id="revFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={ACCENT} stopOpacity="0.32" />
+            <stop offset="100%" stopColor={ACCENT} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {[20, 40, 60].map((y) => (
+          <line
+            key={y}
+            x1="0"
+            y1={y}
+            x2="160"
+            y2={y}
+            stroke="rgba(0,0,0,0.06)"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        ))}
+        <path
+          d="M2,60 L34,53 L66,46 L98,36 L130,22 L158,10 L158,70 L2,70 Z"
+          fill="url(#revFill)"
+        />
+        <path
+          d="M2,60 L34,53 L66,46 L98,36 L130,22 L158,10"
+          stroke={ACCENT}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+      <span
+        className="absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#9ff690] ring-4 ring-[#9ff690]/20 transition-transform duration-300 ease-out group-hover:scale-125"
+        style={{ left: "98%", top: "14%" }}
+      />
+    </div>
+  );
+}
+
+// Relations: a hub-and-spoke network. Round HTML nodes sit over stretched SVG
+// links so they stay circular at any width; satellites pulse out on hover.
+function RelationsGraphic() {
+  const hub = { x: 50, y: 50 };
+  const sats = [
+    { x: 12, y: 20 },
+    { x: 15, y: 82 },
+    { x: 86, y: 16 },
+    { x: 90, y: 78 },
+  ];
+  return (
+    <div className="relative h-[72px] w-full" aria-hidden>
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        className="absolute inset-0 h-full w-full"
+        fill="none"
+      >
+        {sats.map((s, i) => (
+          <line
+            key={i}
+            x1={hub.x}
+            y1={hub.y}
+            x2={s.x}
+            y2={s.y}
+            stroke={ACCENT}
+            strokeWidth="1.5"
+            vectorEffect="non-scaling-stroke"
+            className="opacity-70"
+          />
+        ))}
+      </svg>
+      <span
+        className="absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#9ff690]/30"
+        style={{ left: `${hub.x}%`, top: `${hub.y}%` }}
+      />
+      <span
+        className="absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#9ff690]"
+        style={{ left: `${hub.x}%`, top: `${hub.y}%` }}
+      />
+      {sats.map((s, i) => (
+        <span
+          key={i}
+          className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#9ff690] bg-white transition-transform duration-300 ease-out group-hover:scale-125"
+          style={{ left: `${s.x}%`, top: `${s.y}%`, transitionDelay: `${i * 60}ms` }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Fulfillment: a tidy task queue, every item ticked off. Checks lift in sequence
+// on hover, reading as work getting fulfilled on its own.
+function FulfillmentGraphic() {
+  const widths = ["92%", "74%", "84%"];
+  return (
+    <div className="flex w-full flex-col gap-3" aria-hidden>
+      {widths.map((w, i) => (
+        <div key={i} className="flex items-center gap-2.5">
+          <span
+            className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#9ff690] text-black transition-transform duration-300 ease-out group-hover:scale-110"
+            style={{ transitionDelay: `${i * 90}ms` }}
+          >
+            <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none">
+              <path
+                d="M2.5 6.3 L5 8.6 L9.5 3.5"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="h-2 bg-black/10" style={{ width: w }} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Band({
   id,
   dark = false,
@@ -342,25 +512,41 @@ const whoWeHelp = [
   },
 ];
 
-// Ordered apex (foundation) to base (scale): freeing the founder/leader's time
-// is the foundation, and it scales out into team output and clean operations.
+// Four outcomes an AI system produces, each tied to a lever founders feel.
 const whatWeDo = [
   {
-    icon: <CalendarCheck className="h-[22px] w-[22px]" strokeWidth={1.6} />,
+    icon: <CalendarCheck className="h-5 w-5" strokeWidth={1.6} />,
+    tag: "Time",
     title: "Free up the founder",
+    body: "Hours back in your week, off the busywork that drains it.",
   },
   {
-    icon: <LayersPlus className="h-[22px] w-[22px]" strokeWidth={1.6} />,
+    icon: <LayersPlus className="h-5 w-5" strokeWidth={1.6} />,
+    tag: "Output",
     title: "Multiply team output",
+    body: "Every person ships more while your headcount stays flat.",
   },
   {
-    icon: <Workflow className="h-[22px] w-[22px]" strokeWidth={1.6} />,
-    title: "Cut operational sludge",
+    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
+    tag: "Automation",
+    title: "Automate repetitive busywork",
+    body: "Recurring tasks run on their own, the same way every time.",
   },
   {
-    icon: <Repeat className="h-[22px] w-[22px]" strokeWidth={1.6} />,
-    title: "Automate repetitive VA work",
+    icon: <Rocket className="h-5 w-5" strokeWidth={1.6} />,
+    tag: "Scale",
+    title: "Run and scale your business on autopilot",
+    body: "The operation keeps running and growing without you in the loop.",
   },
+];
+
+// The results those outcomes add up to: the metrics people actually track.
+// Each carries a concept graphic that illustrates that effect (no fake data).
+const resultsRow = [
+  { title: "Wider margins", graphic: <MarginGraphic /> },
+  { title: "More revenue", graphic: <RevenueGraphic /> },
+  { title: "Stronger relations", graphic: <RelationsGraphic /> },
+  { title: "Effortless fulfillment", graphic: <FulfillmentGraphic /> },
 ];
 
 /* Step 01 has two entry points that branch-merge into the flow: the customer
@@ -705,12 +891,13 @@ export default function AgentflowPage() {
       <Band id="results" className="pb-14 md:pb-20">
         <Eyebrow>Outcomes</Eyebrow>
         <div className="mt-5">
-          <Heading>What we do for you</Heading>
+          <Heading>Why you need AI systems?</Heading>
         </div>
         <Sub className="mt-5">
-          We focus on producing these outcomes, in order of priority.
+          We help free you up and scale the business on autopilot.
         </Sub>
 
+        {/* foundation-to-scale growth ramp: what an AI system produces */}
         <div className="mt-14 flex items-stretch justify-start gap-4 md:gap-6">
           {/* foundation-to-scale axis */}
           <div className="hidden flex-col items-center py-2 md:flex">
@@ -727,7 +914,7 @@ export default function AgentflowPage() {
             </span>
           </div>
 
-          {/* left-aligned growth ramp: narrow foundation up top, widening as it scales out */}
+          {/* left-aligned ramp: narrow foundation up top, widening as it scales out */}
           <div className="flex w-full max-w-[760px] flex-col items-start gap-2.5">
             {whatWeDo.map((item, i) => {
               const width = [
@@ -763,6 +950,42 @@ export default function AgentflowPage() {
             })}
           </div>
         </div>
+
+        {/* the results those outcomes add up to.
+            Hidden for now; flip `false` to re-enable. */}
+        {false && (
+          <>
+            <p className="mt-10 text-[15px] text-[#4d4d4d]">Further benefits</p>
+            <div className="mt-4 grid grid-cols-2 gap-px border border-black/10 bg-black/[0.08] lg:grid-cols-4">
+              {resultsRow.map((r) => (
+                <div
+                  key={r.title}
+                  className="group relative flex flex-col justify-between gap-7 overflow-hidden bg-white p-6 transition-colors duration-300 hover:bg-[#fbfffa]"
+                >
+                  {/* hover glow */}
+                  <span className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#9ff690]/25 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+
+                  {/* label */}
+                  <div className="relative flex items-center gap-2">
+                    <span
+                      className="h-1.5 w-1.5"
+                      style={{ backgroundColor: ACCENT }}
+                    />
+                    <span
+                      className="text-[17px] leading-tight text-black"
+                      style={{ fontFamily: "var(--font-schibsted)" }}
+                    >
+                      {r.title}
+                    </span>
+                  </div>
+
+                  {/* per-metric concept graphic */}
+                  <div className="relative">{r.graphic}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </Band>
 
       {/* 3. WORKFLOWS WE RUN (white) */}
@@ -770,9 +993,9 @@ export default function AgentflowPage() {
         <Eyebrow>What We Take Over</Eyebrow>
         <div className="mt-5">
           <Heading>
-            We remove time sinks
+            We automate all parts
             <br />
-            across your team
+            of your business
           </Heading>
         </div>
         <Sub className="mt-5">
