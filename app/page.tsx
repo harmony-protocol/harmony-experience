@@ -567,7 +567,7 @@ const magicMetrics = [
   },
   {
     icon: <Moon className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Get your evenings back",
+    title: "Train your team effortlessly",
   },
 ];
 
