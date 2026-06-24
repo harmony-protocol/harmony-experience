@@ -555,7 +555,7 @@ const magicShifts = [
     after: "Busywork runs itself at high speed",
   },
   {
-    before: "Onboarding caps your client load",
+    before: "Can't scale the number of clients",
     after: "More clients onboarded with same headcount",
   },
   {
