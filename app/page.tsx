@@ -483,7 +483,7 @@ const whoWeHelp = [
   },
   {
     icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
-    title: "IT and Consulting Firms",
+    title: "IT & Management Consulting",
   },
   {
     icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
@@ -559,7 +559,7 @@ const magicMetrics = [
   },
   {
     icon: <Heart className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Supercharge client service",
+    title: "Increase client retention",
   },
   {
     icon: <Database className="h-5 w-5" strokeWidth={1.5} />,
