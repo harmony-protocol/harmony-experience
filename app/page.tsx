@@ -563,7 +563,7 @@ const magicMetrics = [
   },
   {
     icon: <Database className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Crush all back office work",
+    title: "Automate the busywork",
   },
   {
     icon: <Moon className="h-5 w-5" strokeWidth={1.5} />,
