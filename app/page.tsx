@@ -830,7 +830,7 @@ export default function AgentflowPage() {
             We help services founders
             <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
-          <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/55">
+          <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/80">
             We build AI systems across marketing, sales, fulfillment, relations,
             and admin to get you unstuck and scale rapidly
           </p>
