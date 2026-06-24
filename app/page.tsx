@@ -830,7 +830,7 @@ export default function AgentflowPage() {
             We help services founders
             <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
-          <p className="mt-6 max-w-md text-balance text-[17px] leading-8 text-white/80">
+          <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80">
             We build AI systems across marketing, sales, fulfillment, relations,
             and admin to get you unstuck and scale rapidly
           </p>
@@ -895,9 +895,9 @@ export default function AgentflowPage() {
               className="mx-auto max-w-[680px] text-center text-[32px] font-normal leading-[1.1] text-white md:text-[46px]"
               style={{ fontFamily: "var(--font-schibsted)" }}
             >
-              For overloaded teams
+              For <span className="text-[#9ff690]">6-8 figure</span> services
               <br />
-              facing <span className="text-[#9ff690]">time shortage</span>
+              firms ready to scale
             </h2>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
@@ -930,7 +930,7 @@ export default function AgentflowPage() {
           <Heading>Why you need AI systems?</Heading>
         </div>
         <Sub className="mt-5">
-          We help free you up and scale the business on autopilot.
+          Our AI systems free you up and scale the business on autopilot.
         </Sub>
 
         {/* foundation-to-scale growth ramp: what an AI system produces */}
@@ -1037,10 +1037,10 @@ export default function AgentflowPage() {
         <div className="mt-14 border border-white/10">
           {/* header */}
           <div className="grid grid-cols-2 border-b border-white/10">
-            <div className="px-5 py-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#f0908f] md:px-7">
+            <div className="px-5 py-3.5 text-[15px] font-medium uppercase tracking-[0.08em] text-[#f0908f] md:px-7">
               Before Harmony
             </div>
-            <div className="border-l border-white/10 px-5 py-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#9ff690] md:px-7">
+            <div className="border-l border-white/10 px-5 py-3.5 text-[15px] font-medium uppercase tracking-[0.08em] text-[#9ff690] md:px-7">
               After Harmony
             </div>
           </div>
