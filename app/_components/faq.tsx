@@ -5,11 +5,11 @@ import { useState } from "react";
 const items = [
   {
     q: "What is Harmony, exactly?",
-    a: "Harmony is a done-for-you service that comes with its own platform. We take on your requests and build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team, all in our desktop app. Instead of you wiring up DIY tools, we find the operational bottlenecks in your day to day work and solve them properly, so you actually save time and attention.",
+    a: "A done-for-you service with its own platform. We build, run, and keep improving personalized AI assistants, workflows, and dashboards for your team. Instead of you wiring up DIY tools, we find your operational bottlenecks and solve them properly, so you save real time and attention.",
   },
   {
     q: "Who is Harmony for?",
-    a: "Harmony is built for B2B services firms doing six to eight figures in annual revenue. Marketing agencies, consultancies, and professional services teams where the founder is still deep in client work, ops, and delivery. If manual work is slowing growth and you do not want to keep hiring your way out of it, Harmony is for you.",
+    a: "B2B services firms doing six to eight figures: agencies, consultancies, and professional services teams where the founder is still deep in delivery. If manual work is slowing growth and you do not want to hire your way out of it, Harmony is for you.",
   },
   {
     q: "How fast will I receive my new automation requests?",
@@ -17,7 +17,7 @@ const items = [
   },
   {
     q: "How is Harmony giving unlimited access for a fixed price?",
-    a: "We have gone deep into research and engineered the top workflows to run with high accuracy and low token consumption. To get technical, we built our own caching library, tool execution engine, tools, and data processing algorithms to make Harmony faster, better, and cheaper than OpenClaw for major business use cases. We have also set a new state of the art on some of these use cases in terms of accuracy, with results soon to be published.",
+    a: "We engineered the top workflows to run with high accuracy and low token use. We built our own caching, tool execution engine, and data processing to make Harmony faster, better, and cheaper than OpenClaw for major business use cases, setting a new state of the art on accuracy for some of them.",
   },
   {
     q: "What if I don't like the output Harmony produces?",
@@ -25,15 +25,19 @@ const items = [
   },
   {
     q: "How is Harmony different from ChatGPT or OpenClaw?",
-    a: "ChatGPT and OpenClaw are general purpose, DIY tools. Harmony is an operations automation service for small firms, agencies, and startups. It is set up and managed by our team instead of being DIY, with an extreme focus on usability and reliability. It is a business grade product.",
+    a: "ChatGPT and OpenClaw are general purpose DIY tools. Harmony is an operations automation service, set up and managed by our team, built for usability and reliability. It is a business grade product.",
   },
   {
-    q: "How do I migrate to Harmony from OpenClaw, Zo, or Viktor?",
-    a: "We do it for you. If you are a startup, agency, or small firm, just book a call. We will go through all your workflows, set up the integrations, build your dashboards, and migrate everything for you.",
+    q: "What happens if I already have some automations running?",
+    a: "We will not touch them. If needed, we rebuild and test them first, then switch you over to our platform and integrated service.",
   },
   {
     q: "Is my data secure?",
-    a: "Yes. We enforce org level data isolation at the database level and have multiple security checks in place.",
+    a: "Yes. We enforce org level data isolation at the database level and have multiple security checks in place. We also sign an NDA and a data protection agreement with every client.",
+  },
+  {
+    q: "What happens to my systems if I cancel my subscription?",
+    a: "Two options. Keep them running: everything we built stays live for a small maintenance fee covering API and platform costs, you just stop new builds and support. Or fully offboard: we hand over every system as markdown files you can rebuild elsewhere.",
   },
 ];
 

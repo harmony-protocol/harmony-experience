@@ -23,16 +23,16 @@ const solutions: Solution[] = [
   },
   {
     id: "solution-02",
-    label: "First Week",
-    title: "Build and deploy",
-    body: "We build, test, and ship the core agents and workflows for your biggest bottlenecks.",
-    chips: ["Core workflows", "Wired in"],
+    label: "First 14 Days",
+    title: "Solve top 3 pain points",
+    body: "We ship systems that fix your three biggest time leaks.",
+    chips: ["Agents", "Workflows", "Dashboards"],
   },
   {
     id: "solution-03",
     label: "First Month",
-    title: "Solve more problems",
-    body: "We keep building: new systems for new problems. Each one takes another job off your plate.",
+    title: "Take work off every desk",
+    body: "We keep shipping systems across your business, each one takes another job off your plate.",
     chips: ["More systems", "More problems solved"],
   },
   {

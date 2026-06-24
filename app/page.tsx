@@ -130,7 +130,7 @@ function PrimaryButton({ location }: { location: string }) {
       data-cal-link={CAL_LINK}
       data-cal-config={CAL_CONFIG}
       data-loc={location}
-      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-3 text-base font-medium text-black transition hover:brightness-95"
+      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-5 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >
       <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
@@ -828,7 +828,7 @@ export default function AgentflowPage() {
         <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-14 pt-36 text-center md:pb-20 md:pt-44">
           <Heading as="h1" dark>
             We help services founders
-            <br className="hidden md:block" /> scale rapidly using AI systems
+            <br className="hidden md:block" /> get their evenings back
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80">
             We build AI systems across marketing, sales, fulfillment, relations,
