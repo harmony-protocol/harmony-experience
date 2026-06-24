@@ -567,7 +567,7 @@ const magicShifts = [
     after: "High-quality content creation on autopilot",
   },
   {
-    before: "New hires take weeks",
+    before: "Training new hires takes weeks",
     after: "AI handles onboarding and training",
   },
   {
@@ -1031,8 +1031,7 @@ export default function AgentflowPage() {
           <Heading dark>It's Magic as a Service</Heading>
         </div>
         <Sub dark className="mt-5 md:max-w-none md:whitespace-nowrap">
-          Subscribe to peace of mind. We care about your business, not just the
-          tech.
+          Same team, same hours, a completely different operation.
         </Sub>
 
         <div className="mt-14 border border-white/10">
