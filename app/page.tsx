@@ -828,7 +828,7 @@ export default function AgentflowPage() {
         <div className="relative z-10 mx-auto flex w-[92%] max-w-[1200px] flex-col items-center pb-14 pt-36 text-center md:pb-20 md:pt-44">
           <Heading as="h1" dark>
             We help services founders
-            <br className="hidden md:block" /> get their evenings back
+            <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80">
             We build AI systems across marketing, sales, fulfillment, relations,
