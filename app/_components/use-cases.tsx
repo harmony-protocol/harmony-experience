@@ -11,9 +11,9 @@ import {
   ListChecks,
   Megaphone,
   PenLine,
-  Settings2,
   Target,
   Users,
+  Workflow as WorkflowIcon,
 } from "lucide-react";
 
 /* ------------------------------ ICONS ------------------------------ */
@@ -95,6 +95,8 @@ type Category = {
   id: string;
   icon: ReactNode;
   title: string;
+  // Shorter label used on phone, where the full title would truncate.
+  shortTitle?: string;
   description: string;
   workflows: [Workflow, Workflow, Workflow];
 };
@@ -104,6 +106,7 @@ const categories: Category[] = [
     id: "personal-productivity",
     icon: <Coffee className="h-4 w-4" strokeWidth={2} />,
     title: "Personal Productivity",
+    shortTitle: "Productivity",
     description: "We run your inbox, calendar, and daily prep so you start every day already ahead.",
     workflows: [
       { name: "Email Triage & Followups", desc: "Sort threads, draft replies, do followups.", hue: "teal",
@@ -121,6 +124,7 @@ const categories: Category[] = [
     id: "project-management",
     icon: <ListChecks className="h-4 w-4" strokeWidth={2} />,
     title: "Project Management",
+    shortTitle: "Projects",
     description: "We keep projects moving, assignments clear, deadlines visible, blockers surfaced.",
     workflows: [
       { name: "Tracking", desc: "Watch status across boards.", hue: "sky",
@@ -136,7 +140,7 @@ const categories: Category[] = [
   },
   {
     id: "fulfillment",
-    icon: <Settings2 className="h-4 w-4" strokeWidth={2} />,
+    icon: <WorkflowIcon className="h-4 w-4" strokeWidth={2} />,
     title: "Fulfillment",
     description: "We run the handoffs, approvals, and SOPs that quietly keep the business moving.",
     workflows: [
@@ -155,6 +159,7 @@ const categories: Category[] = [
     id: "content-creation",
     icon: <PenLine className="h-4 w-4" strokeWidth={2} />,
     title: "Content Creation",
+    shortTitle: "Content",
     description: "We turn ideas into a steady stream of published, on-brand content.",
     workflows: [
       { name: "Drafting", desc: "Research and write to voice.", hue: "violet",
@@ -172,6 +177,7 @@ const categories: Category[] = [
     id: "client-relationships",
     icon: <Handshake className="h-4 w-4" strokeWidth={2} />,
     title: "Client Relationships",
+    shortTitle: "Clients",
     description: "We keep every client warm, updated, and renewed before they think to ask.",
     workflows: [
       { name: "Followups", desc: "Never drop a thread again.", hue: "rose",
@@ -189,6 +195,7 @@ const categories: Category[] = [
     id: "hiring-onboarding",
     icon: <Users className="h-4 w-4" strokeWidth={2} />,
     title: "Hiring & Onboarding",
+    shortTitle: "Hiring",
     description: "We move candidates from applied to onboarded without the endless back and forth.",
     workflows: [
       { name: "Sourcing", desc: "Post roles, screen inbound.", hue: "emerald",
@@ -206,6 +213,7 @@ const categories: Category[] = [
     id: "sales-assistance",
     icon: <Target className="h-4 w-4" strokeWidth={2} />,
     title: "Sales Assistance",
+    shortTitle: "Sales",
     description: "We keep the pipeline clean and moving, from call notes to followups to proposals.",
     workflows: [
       { name: "Call Analysis", desc: "Turn calls into actions.", hue: "amber",
@@ -223,6 +231,7 @@ const categories: Category[] = [
     id: "finance-admin",
     icon: <Calculator className="h-4 w-4" strokeWidth={2} />,
     title: "Finance & Admin",
+    shortTitle: "Finance",
     description: "We assemble the reports, reconcile the books, and chase renewals before they slip.",
     workflows: [
       { name: "Invoicing", desc: "Draft, send, and chase invoices.", hue: "fuchsia",
@@ -457,6 +466,8 @@ export function UseCases({
                 onClick={() => setActive(i)}
                 aria-pressed={on}
                 className={`group relative inline-flex min-h-[72px] items-center justify-center gap-2.5 border-black/[0.06] px-3 py-3 text-[14.5px] font-medium transition max-sm:border-b max-sm:[&:nth-child(2n)]:border-l sm:[&:not(:nth-child(3n+1))]:border-l sm:[&:nth-child(-n+6)]:border-b ${
+                  c.id === "ads-management" ? "max-sm:hidden" : ""
+                } ${
                   on
                     ? "z-10 bg-white text-black"
                     : "text-[#666] hover:bg-white hover:text-black"
@@ -477,7 +488,16 @@ export function UseCases({
                 >
                   {c.icon}
                 </span>
-                <span className="truncate">{c.title}</span>
+                <span className="truncate">
+                  {c.shortTitle ? (
+                    <>
+                      <span className="sm:hidden">{c.shortTitle}</span>
+                      <span className="hidden sm:inline">{c.title}</span>
+                    </>
+                  ) : (
+                    c.title
+                  )}
+                </span>
               </button>
             );
           })}
