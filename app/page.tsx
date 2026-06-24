@@ -645,7 +645,7 @@ const securityCards = [
   {
     icon: <Server className="h-5 w-5" strokeWidth={1.6} />,
     title: "Data isolation",
-    body: "Org-level isolation with row level security (RLS) at the database, so each team's data stays separate.",
+    body: "Org-level isolation with row level security keeps each team's data separate.",
   },
 ];
 
