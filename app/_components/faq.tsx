@@ -12,20 +12,28 @@ const items = [
     a: "B2B services firms doing six to eight figures: agencies, consultancies, and professional services teams where the founder is still deep in delivery. If manual work is slowing growth and you do not want to hire your way out of it, Harmony is for you.",
   },
   {
+    q: "When is the right time to start automating?",
+    a: "When manual, repeatable work starts eating your team's time and slowing growth. If a process runs the same way each time, it is ready. You do not need everything documented first, we map it for you in the audit.",
+  },
+  {
+    q: "How do you work with our in-house team?",
+    a: "We work alongside your team in Slack, with regular check-ins, calls, and Loom walkthroughs. You bring the requests, we build and ship, and your team stays in the loop the whole way.",
+  },
+  {
     q: "How fast will I receive my new automation requests?",
     a: "We try to deliver within 48 hours for simple requests. For new integrations and more complex workflows, it can take up to a week.",
   },
   {
-    q: "How is Harmony giving unlimited access for a fixed price?",
-    a: "We engineered the top workflows to run with high accuracy and low token use. We built our own caching, tool execution engine, and data processing to make Harmony faster, better, and cheaper than OpenClaw for major business use cases, setting a new state of the art on accuracy for some of them.",
+    q: "How are you giving unlimited token usage at fixed pricing?",
+    a: "We engineered the top workflows to run with high accuracy and low token use. We built our own caching, tool execution engine, and data processing, so the Harmony AI Platform runs faster, better, and cheaper than OpenClaw for major business use cases, setting a new state of the art on accuracy for some of them.",
   },
   {
-    q: "What if I don't like the output Harmony produces?",
+    q: "What if I don't like the output from the AI systems?",
     a: "No worries. We keep fine tuning it to your needs until it actually solves your problem end to end.",
   },
   {
-    q: "How is Harmony different from ChatGPT or OpenClaw?",
-    a: "ChatGPT and OpenClaw are general purpose DIY tools. Harmony is an operations automation service, set up and managed by our team, built for usability and reliability. It is a business grade product.",
+    q: "Why can I not do it myself?",
+    a: "You can. But figuring out what can be automated reliably, and what cannot, is its own job that takes expert engineers and researchers. Mapping every system and testing the automations rigorously also eats a lot of time. DIY is great when you are new or prototyping, but taking it to production across your whole company usually needs expert help.",
   },
   {
     q: "What happens if I already have some automations running?",
