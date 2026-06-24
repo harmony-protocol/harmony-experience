@@ -465,7 +465,7 @@ export function UseCases({
                 type="button"
                 onClick={() => setActive(i)}
                 aria-pressed={on}
-                className={`group relative inline-flex min-h-[72px] items-center justify-center gap-2.5 border-black/[0.06] px-3 py-3 text-[14.5px] font-medium transition max-sm:border-b max-sm:[&:nth-child(2n)]:border-l sm:[&:not(:nth-child(3n+1))]:border-l sm:[&:nth-child(-n+6)]:border-b ${
+                className={`group relative inline-flex min-h-[72px] cursor-pointer items-center justify-center gap-2.5 border-black/[0.06] px-3 py-3 text-[14.5px] font-medium transition focus:outline-none focus-visible:outline-none max-sm:border-b max-sm:[&:nth-child(2n)]:border-l sm:[&:not(:nth-child(3n+1))]:border-l sm:[&:nth-child(-n+6)]:border-b ${
                   c.id === "ads-management" ? "max-sm:hidden" : ""
                 } ${
                   on

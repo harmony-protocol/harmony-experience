@@ -1031,7 +1031,7 @@ export default function AgentflowPage() {
           <Heading dark>It's Magic as a Service</Heading>
         </div>
         <Sub dark className="mt-5 md:max-w-none md:whitespace-nowrap">
-          Same team, same hours, a completely different operation.
+          Scale faster with your existing team, and get your evenings back.
         </Sub>
 
         <div className="mt-14 border border-white/10">
