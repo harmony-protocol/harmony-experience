@@ -1034,41 +1034,54 @@ export default function AgentflowPage() {
           Scale faster with your existing team, and get your evenings back.
         </Sub>
 
-        <div className="mt-14 border border-white/10">
-          {/* header */}
-          <div className="grid grid-cols-2 border-b border-white/10">
-            <div className="px-5 py-3.5 text-[15px] font-medium uppercase tracking-[0.08em] text-[#f0908f] md:px-7">
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
+          {/* Before card */}
+          <div className="border border-[#f0908f]/25 bg-[#f0908f]/[0.04] p-6 md:p-8">
+            <p className="text-[15px] font-medium uppercase tracking-[0.08em] text-[#f0908f]">
               Before Harmony
-            </div>
-            <div className="border-l border-white/10 px-5 py-3.5 text-[15px] font-medium uppercase tracking-[0.08em] text-[#9ff690] md:px-7">
-              After Harmony
-            </div>
+            </p>
+            <ul className="mt-6 space-y-4">
+              {magicShifts.map((shift) => (
+                <li
+                  key={shift.before}
+                  className="flex items-start gap-2.5 text-[17px] leading-7 text-white/55"
+                >
+                  <CircleX
+                    aria-hidden
+                    className="mt-1 h-[18px] w-[18px] shrink-0 text-[#f0908f]"
+                    strokeWidth={1.6}
+                  />
+                  {shift.before}
+                </li>
+              ))}
+            </ul>
           </div>
-          {magicShifts.map((shift, i) => (
-            <div
-              key={shift.after}
-              className={`grid grid-cols-2 ${
-                i < magicShifts.length - 1 ? "border-b border-white/[0.07]" : ""
-              }`}
-            >
-              <div className="flex items-start gap-2.5 px-5 py-4 text-[17px] leading-7 text-white/55 md:px-7">
-                <CircleX
-                  aria-hidden
-                  className="mt-1 h-[18px] w-[18px] shrink-0 text-[#f0908f]"
-                  strokeWidth={1.6}
-                />
-                {shift.before}
-              </div>
-              <div className="flex items-start gap-2.5 border-l border-white/10 px-5 py-4 text-[17px] leading-7 text-white md:px-7">
-                <CircleCheck
-                  aria-hidden
-                  className="mt-1 h-[18px] w-[18px] shrink-0 text-[#9ff690]"
-                  strokeWidth={1.6}
-                />
-                {shift.after}
-              </div>
-            </div>
-          ))}
+
+          {/* After card */}
+          <div className="relative overflow-hidden border border-[#9ff690]/30 bg-[#9ff690]/[0.05] p-6 md:p-8">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#9ff690]/15 blur-3xl"
+            />
+            <p className="relative text-[15px] font-medium uppercase tracking-[0.08em] text-[#9ff690]">
+              After Harmony
+            </p>
+            <ul className="relative mt-6 space-y-4">
+              {magicShifts.map((shift) => (
+                <li
+                  key={shift.after}
+                  className="flex items-start gap-2.5 text-[17px] leading-7 text-white"
+                >
+                  <CircleCheck
+                    aria-hidden
+                    className="mt-1 h-[18px] w-[18px] shrink-0 text-[#9ff690]"
+                    strokeWidth={1.6}
+                  />
+                  {shift.after}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Band>
 
