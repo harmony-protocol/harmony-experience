@@ -5,12 +5,11 @@ import {
   Bot,
   Briefcase,
   CalendarCheck,
-  ChartNoAxesCombined,
   CircleCheck,
   CircleDollarSign,
   CircleX,
+  Compass,
   Database,
-  Globe,
   Landmark,
   LayersPlus,
   LayoutDashboard,
@@ -130,7 +129,7 @@ function PrimaryButton({ location }: { location: string }) {
       data-cal-link={CAL_LINK}
       data-cal-config={CAL_CONFIG}
       data-loc={location}
-      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-5 text-base font-medium text-black transition hover:brightness-95"
+      className="group inline-flex h-10 cursor-pointer items-center gap-2 overflow-hidden pl-1 pr-4 text-base font-medium text-black transition hover:brightness-95"
       style={{ backgroundColor: CTA_ACCENT }}
     >
       <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
@@ -478,11 +477,11 @@ const trustedLogos = [
 
 const whoWeHelp = [
   {
-    icon: <Globe className="h-5 w-5" strokeWidth={1.6} />,
+    icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
     title: "Marketing Agencies",
   },
   {
-    icon: <ChartNoAxesCombined className="h-5 w-5" strokeWidth={1.6} />,
+    icon: <Compass className="h-5 w-5" strokeWidth={1.6} />,
     title: "IT & Management Consulting",
   },
   {
