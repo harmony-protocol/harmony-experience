@@ -10,6 +10,7 @@ import {
   CircleX,
   Compass,
   Database,
+  Eye,
   Landmark,
   LayersPlus,
   LayoutDashboard,
@@ -17,6 +18,7 @@ import {
   Magnet,
   MessagesSquare,
   Monitor,
+  PartyPopper,
   Repeat,
   Rocket,
   Scale,
@@ -180,11 +182,10 @@ function GhostButton({
 function StepBox({
   icon,
   title,
-  body,
 }: {
   icon: React.ReactNode;
   title: string;
-  body: string;
+  body?: string;
 }) {
   return (
     <div className="flex w-full min-w-0 flex-col border border-black/10 bg-white p-5 md:p-6">
@@ -200,7 +201,6 @@ function StepBox({
       >
         {title}
       </h3>
-      <p className="mt-1.5 text-[15px] leading-6 text-[#4d4d4d]">{body}</p>
     </div>
   );
 }
@@ -593,9 +593,9 @@ const entryBoxes = [
     body: "You bring us a task, a problem, or an idea.",
   },
   {
-    icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
+    icon: <Eye className="h-5 w-5" strokeWidth={1.6} />,
     title: "We spot an opportunity",
-    body: "We notice a new automation opportunity.",
+    body: "We notice a gap or an inefficiency.",
   },
 ];
 
@@ -606,13 +606,13 @@ const flowBoxes = [
     body: "You get a clear plan from us before any work starts.",
   },
   {
-    icon: <CalendarCheck className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Approve and build",
+    icon: <CircleCheck className="h-5 w-5" strokeWidth={1.6} />,
+    title: "You approve the plan",
     body: "You approve, and the build begins.",
   },
   {
-    icon: <Repeat className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Deploy and iterate",
+    icon: <PartyPopper className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Watch it go live",
     body: "You watch it go live, then get better as you use it.",
   },
 ];
@@ -1129,7 +1129,7 @@ export default function AgentflowPage() {
         </div>
         {/* Desktop: two entry boxes branch-merge into the linear flow */}
         <div className="mt-14 hidden items-stretch md:flex">
-          <div className="flex flex-1 flex-col justify-center gap-3">
+          <div className="flex flex-1 flex-col justify-center gap-6">
             <StepBox {...entryBoxes[0]} />
             <span className="self-start px-1 text-[13px] font-medium uppercase tracking-[0.12em] text-black/40">
               or
