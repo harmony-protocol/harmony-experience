@@ -6,10 +6,11 @@ import {
   Briefcase,
   CalendarCheck,
   ChartNoAxesCombined,
+  CircleCheck,
   CircleDollarSign,
+  CircleX,
   Database,
   Globe,
-  Heart,
   Landmark,
   LayersPlus,
   LayoutDashboard,
@@ -17,7 +18,6 @@ import {
   Magnet,
   MessagesSquare,
   Monitor,
-  Moon,
   Repeat,
   Rocket,
   Scale,
@@ -543,31 +543,36 @@ const whatWeDo = [
   },
 ];
 
-// "Magic as a Service" outcomes: short, direct, graphic-forward. One line each.
-const magicMetrics = [
+// "Magic as a Service" shifts: the day-to-day before Harmony vs after, one
+// pinpointed change per row. No fabricated numbers, just the felt difference.
+const magicShifts = [
   {
-    icon: <CircleDollarSign className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Increase your margins",
+    before: "Margins thin with every hire",
+    after: "Margins climb as AI absorbs the work",
   },
   {
-    icon: <Magnet className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Explode your marketing",
+    before: "Busywork eats the team's day",
+    after: "Busywork runs itself at high speed",
   },
   {
-    icon: <Rocket className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Onboard way more clients",
+    before: "Onboarding caps your client load",
+    after: "More clients onboarded with same headcount",
   },
   {
-    icon: <Heart className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Increase client retention",
+    before: "Clients drift when service slips",
+    after: "Client retention rises with automated fulfillment",
   },
   {
-    icon: <Database className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Automate the busywork",
+    before: "Marketing stalls when you're busy",
+    after: "High-quality content creation on autopilot",
   },
   {
-    icon: <Moon className="h-5 w-5" strokeWidth={1.5} />,
-    title: "Train your team effortlessly",
+    before: "New hires take weeks",
+    after: "AI handles onboarding and training",
+  },
+  {
+    before: "Scaling means hiring and firing",
+    after: "Scale up or down instantly",
   },
 ];
 
@@ -1030,23 +1035,39 @@ export default function AgentflowPage() {
           tech.
         </Sub>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {magicMetrics.map((m) => (
+        <div className="mt-14 border border-white/10">
+          {/* header */}
+          <div className="grid grid-cols-2 border-b border-white/10">
+            <div className="px-5 py-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#f0908f] md:px-7">
+              Before Harmony
+            </div>
+            <div className="border-l border-white/10 px-5 py-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#9ff690] md:px-7">
+              After Harmony
+            </div>
+          </div>
+          {magicShifts.map((shift, i) => (
             <div
-              key={m.title}
-              className="group relative flex flex-col overflow-hidden rounded-none border-[1.5px] border-white/[0.08] bg-[#0b0c0c] p-7 transition duration-300 hover:border-[#9ff690]/60 hover:bg-[#0e120e]"
+              key={shift.after}
+              className={`grid grid-cols-2 ${
+                i < magicShifts.length - 1 ? "border-b border-white/[0.07]" : ""
+              }`}
             >
-              {/* hover glow */}
-              <span className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#9ff690]/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#9ff690]/25 text-[#9ff690] transition duration-300 group-hover:border-[#9ff690]/70 group-hover:bg-[rgba(159,246,144,0.12)] group-hover:text-[#b6f9aa]">
-                {m.icon}
-              </span>
-              <h3
-                className="relative mt-5 whitespace-nowrap text-[18px] leading-tight text-white"
-                style={{ fontFamily: "var(--font-schibsted)" }}
-              >
-                {m.title}
-              </h3>
+              <div className="flex items-start gap-2.5 px-5 py-4 text-[17px] leading-7 text-white/55 md:px-7">
+                <CircleX
+                  aria-hidden
+                  className="mt-1 h-[18px] w-[18px] shrink-0 text-[#f0908f]"
+                  strokeWidth={1.6}
+                />
+                {shift.before}
+              </div>
+              <div className="flex items-start gap-2.5 border-l border-white/10 px-5 py-4 text-[17px] leading-7 text-white md:px-7">
+                <CircleCheck
+                  aria-hidden
+                  className="mt-1 h-[18px] w-[18px] shrink-0 text-[#9ff690]"
+                  strokeWidth={1.6}
+                />
+                {shift.after}
+              </div>
             </div>
           ))}
         </div>
