@@ -10,6 +10,7 @@ frontend:
       commands:
         - echo "KIT_API_KEY=$KIT_API_KEY" >> .env
         - echo "KIT_FORM_ID=$KIT_FORM_ID" >> .env
+        - echo "RESEND_API_KEY=$RESEND_API_KEY" >> .env
         - pnpm build
   artifacts:
     baseDirectory: .next
