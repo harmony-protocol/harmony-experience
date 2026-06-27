@@ -830,8 +830,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80">
-            Your extended AI team that runs the busywork in the background, so
-            you spend your time growing the business, not operating it
+            We build AI systems across marketing, sales, fulfillment, relations,
+            and admin to get you unstuck and scale rapidly
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />

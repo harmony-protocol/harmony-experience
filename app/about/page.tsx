@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Cabin, Schibsted_Grotesk } from "next/font/google";
-import { Target, Sparkles, RefreshCcw } from "lucide-react";
+import { Target, Sparkles, Clock } from "lucide-react";
 import { RevealText } from "../_components/reveal-text";
 import { MountTracker } from "../_components/view-tracker";
 
@@ -50,18 +50,18 @@ const team = [
 const principles = [
   {
     icon: <Target className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Outcomes, not software",
-    body: "We deliver working systems that run in the background, not another tool for you to manage yourself.",
+    title: "Outcomes over tools",
+    body: "We measure success by results, not the tools we hand over.",
   },
   {
     icon: <Sparkles className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Built around you",
-    body: "Every automation is personalized to your stack, your workflows, and the way your team actually operates.",
+    title: "Systems over grunt work",
+    body: "Your business should run on ideas, not repeatable busywork.",
   },
   {
-    icon: <RefreshCcw className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Always improving",
-    body: "We stay hands-on after launch, tuning and expanding your systems as your business grows.",
+    icon: <Clock className="h-5 w-5" strokeWidth={1.6} />,
+    title: "Founder time is the #1 asset",
+    body: "A founder's hours are finite, so we hand them back to you.",
   },
 ];
 
@@ -129,16 +129,17 @@ export default function AboutPage() {
       <main className="pb-24 pt-28 md:pt-32">
         {/* Hero: tag + centered heading + subtitle + CTA */}
         <div className="mx-auto flex w-[92%] max-w-[820px] flex-col items-center text-center">
-          <Tag>About</Tag>
+          <Tag>Mission</Tag>
           <h1
-            className="mt-6 text-[34px] font-normal leading-[1.1] text-white md:text-[52px]"
+            className="mt-6 text-[40px] font-normal leading-[1.1] text-white md:text-[56px]"
             style={{ fontFamily: "var(--font-schibsted)" }}
           >
-            We help businesses scale
+            To help a million
+            <br className="hidden md:block" /> business owners scale
           </h1>
-          <p className="mt-6 max-w-xl text-[19px] leading-9 text-white/60">
-            Your extended AI team that automates the busywork in the
-            background, so you can focus on growing the business.
+          <p className="mt-6 max-w-xl text-[19px] leading-9 text-white/80">
+            Business owners build the world we live in. We help them reach
+            their goals and reclaim their freedom using technology.
           </p>
           <div className="mt-8">
             <PrimaryButton />
@@ -254,14 +255,14 @@ So we built the Agentic AI service and systems we wished we had, not another age
             {principles.map((item) => (
               <div
                 key={item.title}
-                className="relative flex min-h-[300px] flex-col border border-white/10 bg-white/[0.02] p-7 md:p-8"
+                className="relative flex flex-col border border-white/10 bg-white/[0.02] p-7 md:p-8"
               >
                 <span className="pointer-events-none absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
                 <span className="pointer-events-none absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
                 <span className="flex h-11 w-11 items-center justify-center border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-[#9ff690]">
                   {item.icon}
                 </span>
-                <div className="mt-auto pt-12">
+                <div className="mt-6">
                   <h3
                     className="text-xl text-white"
                     style={{ fontFamily: "var(--font-schibsted)" }}
