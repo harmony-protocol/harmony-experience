@@ -120,7 +120,7 @@ export default function NewsletterPage() {
                   className="mt-6 text-[40px] font-normal leading-[1.05] text-black md:text-[52px]"
                   style={{ fontFamily: "var(--font-schibsted)" }}
                 >
-                  The Workflow Fix
+                  The Workflow Fix<sup className="align-super text-[0.4em] font-normal">&trade;</sup>
                 </h1>
 
                 <div className="mt-5 flex items-center gap-3">

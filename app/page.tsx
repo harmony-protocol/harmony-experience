@@ -830,8 +830,8 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> scale rapidly using AI systems
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80">
-            We build AI systems across marketing, sales, fulfillment, relations,
-            and admin to get you unstuck and scale rapidly
+            Your extended AI team that runs the busywork in the background, so
+            you spend your time growing the business, not operating it
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
@@ -1516,7 +1516,7 @@ export default function AgentflowPage() {
               data-loc="faq"
               className="mt-5 cursor-pointer rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
             >
-              Contact us
+              Book a call
             </button>
           </div>
           <Faq />

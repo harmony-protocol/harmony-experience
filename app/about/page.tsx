@@ -134,10 +134,9 @@ export default function AboutPage() {
             className="mt-6 text-[34px] font-normal leading-[1.1] text-white md:text-[52px]"
             style={{ fontFamily: "var(--font-schibsted)" }}
           >
-            We help startups, agencies
-            <br className="hidden md:block" /> and firms scale faster
+            We help businesses scale
           </h1>
-          <p className="mt-6 max-w-xl text-[17px] leading-8 text-white/60">
+          <p className="mt-6 max-w-xl text-[19px] leading-9 text-white/60">
             Your extended AI team that automates the busywork in the
             background, so you can focus on growing the business.
           </p>

@@ -12,15 +12,7 @@ const CTA_ACCENT = "#9ff690";
 const links = [
   { label: "About", href: "/about" },
   { label: "Pricing", href: "#pricing" },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
-  {
-    label: "Join Us",
-    href: "https://tally.so/r/m60LZY",
-    external: true,
-  },
+  { label: "Newsletter", href: "/newsletter" },
 ];
 
 export function AgentflowNav() {

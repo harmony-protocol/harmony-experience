@@ -5,9 +5,8 @@ import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 const CTA_ACCENT = "#9ff690";
-const CONTACT_EMAIL = "vishal@getharmony.ai";
 
-type FormState = "idle" | "success";
+type FormState = "idle" | "submitting" | "success" | "error";
 
 const labelClassName = "mb-2 block text-[14px] text-white";
 const inputClassName =
@@ -24,49 +23,58 @@ function FormCorner({ className }: { className: string }) {
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const form = event.currentTarget;
     const data = new FormData(form);
 
-    if (data.get("website")) {
-      return;
+    const payload = {
+      firstName: String(data.get("firstName") ?? "").trim(),
+      lastName: String(data.get("lastName") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
+      website: String(data.get("website") ?? ""),
+    };
+
+    setState("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        setErrorMessage(
+          result?.error ?? "Something went wrong. Please try again.",
+        );
+        setState("error");
+        return;
+      }
+
+      setState("success");
+      form.reset();
+    } catch {
+      setErrorMessage("Could not reach the server. Please try again.");
+      setState("error");
     }
-
-    const firstName = String(data.get("firstName") ?? "").trim();
-    const lastName = String(data.get("lastName") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const phone = String(data.get("phone") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
-    const name = `${firstName} ${lastName}`.trim();
-
-    const subject = `Contact form: ${name}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      "",
-      "Message:",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-
-    setState("success");
-    form.reset();
   }
 
   if (state === "success") {
     return (
       <div className="border border-[#9ff690]/30 bg-[rgba(159,246,144,0.08)] p-8">
-        <p className="text-[18px] font-medium text-white">Email client opened</p>
+        <p className="text-[18px] font-medium text-white">Message sent</p>
         <p className="mt-3 text-[16px] leading-7 text-white/80">
-          Send the pre-filled message from your email app and we will get back to you shortly.
+          Thanks for reaching out. We have got your message and will get back to you shortly.
         </p>
         <button
           type="button"
@@ -155,9 +163,14 @@ export function ContactForm() {
         />
       </label>
 
+      {state === "error" && errorMessage ? (
+        <p className="text-[14px] leading-6 text-red-300">{errorMessage}</p>
+      ) : null}
+
       <button
         type="submit"
-        className="group flex h-12 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden pl-1 pr-4 text-[13px] font-medium uppercase tracking-[0.04em] text-black transition hover:brightness-95"
+        disabled={state === "submitting"}
+        className="group flex h-12 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden pl-1 pr-4 text-[13px] font-medium uppercase tracking-[0.04em] text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
         style={{ backgroundColor: CTA_ACCENT }}
       >
         <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-black">
@@ -177,7 +190,7 @@ export function ContactForm() {
             className="absolute h-[15px] w-4 translate-y-7 transition-transform duration-300 ease-out group-hover:translate-y-0"
           />
         </span>
-        Send Message
+        {state === "submitting" ? "Sending..." : "Send Message"}
       </button>
 
       <p className="text-center text-[13px] leading-6 text-white/50">

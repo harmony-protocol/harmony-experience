@@ -8,7 +8,7 @@ const footerColumns = [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Pricing", href: "/#pricing" },
-      { label: "Contact", href: "/contact" },
+      { label: "Newsletter", href: "/newsletter" },
       { label: "Blog", href: "/blog" },
     ],
   },
@@ -16,7 +16,8 @@ const footerColumns = [
     title: "Useful",
     links: [
       { label: "Solutions", href: "/solutions" },
-      { label: "Newsletter", href: "/newsletter" },
+      { label: "Contact", href: "/contact" },
+      { label: "Careers", href: "https://tally.so/r/m60LZY" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -69,7 +70,7 @@ export function SiteFooter() {
               className="mt-8 max-w-sm text-[18px] leading-[1.4] text-white"
               style={{ fontFamily: "var(--font-schibsted)" }}
             >
-              Stop stressing. Start scaling.
+              Get your evenings back
             </p>
             <p className="mt-8 font-mono text-[13px] uppercase leading-6 tracking-[0.12em] text-white/40">
               © 2026 Sarg Innovation Labs
