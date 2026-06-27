@@ -127,7 +127,7 @@ const tabs = [
 
 function PlanCard({ plan }: { plan: Plan }) {
   return (
-    <div className="relative flex min-h-[560px] flex-col border border-white/10 bg-black/80 p-7 backdrop-blur-[60px] md:p-9">
+    <div className="relative flex min-h-[560px] flex-col border border-white/10 bg-black/80 p-7 backdrop-blur-2xl md:p-9">
       <span className="absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
       <span className="absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
       <div className="flex flex-1 flex-col">
