@@ -1108,11 +1108,11 @@ export default function AgentflowPage() {
       <Band id="process" dark bgImage="/assets/green-animation-bg.png">
         <Eyebrow dark>Process</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Here's how we work</Heading>
+          <Heading dark>Here's what you get</Heading>
         </div>
         <Sub dark className="mt-5">
-          Step-by-step breakdown of our 4-phase process to shift your business
-          to autopilot.
+          We start delivering value from day one, getting into your processes
+          and becoming your extended team.
         </Sub>
         <Solutions />
       </Band>

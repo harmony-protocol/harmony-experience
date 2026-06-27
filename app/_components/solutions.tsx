@@ -2,8 +2,36 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import {
+  BookOpen,
+  Bot,
+  CalendarClock,
+  FileText,
+  KeyRound,
+  MessagesSquare,
+  Video,
+} from "lucide-react";
 
 const ACCENT = "#9ff690";
+
+// Pick a deliverable icon from the chip label so each tag shows its type
+// (doc, video, meeting, system, access) instead of a uniform check.
+function chipIcon(label: string) {
+  if (label.includes("Slack")) return MessagesSquare;
+  if (label.includes("Playbook") || label.includes("Resources"))
+    return BookOpen;
+  if (label.includes("Doc")) return FileText;
+  if (label.includes("Video")) return Video;
+  if (
+    label.includes("Call") ||
+    label.includes("Session") ||
+    label.includes("Review")
+  )
+    return CalendarClock;
+  if (label.includes("Platform Access")) return KeyRound;
+  if (label.includes("System")) return Bot;
+  return FileText;
+}
 
 type Solution = {
   id: string;
@@ -18,29 +46,45 @@ const solutions: Solution[] = [
     id: "solution-01",
     label: "First 48 Hours",
     title: "Audit and plan",
-    body: "We map your week and your workload, pinpoint the top 3 time leaks, and hand you a clear plan for what we automate first.",
-    chips: ["Time-leak audit", "Action plan"],
+    body: "We map your week, rank your top 3 time leaks, and plan what to automate first.",
+    chips: [
+      "60-min Strategy Call (With recording)",
+      "1 Month Automation Roadmap Doc",
+      "Slack Connect Onboarding",
+    ],
   },
   {
     id: "solution-02",
     label: "First 14 Days",
     title: "Solve top 3 pain points",
-    body: "We ship systems that fix your three biggest time leaks.",
-    chips: ["Agents", "Workflows", "Dashboards"],
+    body: "We ship systems for your biggest time leaks and get your team running on them.",
+    chips: [
+      "3 Live AI Systems",
+      "Harmony Platform Access",
+      "Personalized Team Onboarding Videos",
+    ],
   },
   {
     id: "solution-03",
     label: "First Month",
     title: "Take work off every desk",
-    body: "We keep shipping systems across your business, each one takes another job off your plate.",
-    chips: ["More systems", "More problems solved"],
+    body: "We keep shipping systems, each one takes another job off your plate.",
+    chips: [
+      "Weekly 45-min Planning Session",
+      "More Live AI Systems",
+      "Docs for Every Automation",
+    ],
   },
   {
     id: "solution-04",
-    label: "Ongoing",
+    label: "First Quarter",
     title: "Improve and scale",
-    body: "We keep finding bottlenecks and shipping automations as you grow, so the system gets better every week.",
-    chips: ["New bottlenecks", "Always improving"],
+    body: "We hunt new bottlenecks and show you the hours you got back.",
+    chips: [
+      "Quarterly Business Review",
+      "Time Reclaimed Report (Doc)",
+      "Premium Resources & Playbooks",
+    ],
   },
 ];
 
@@ -540,15 +584,29 @@ export function Solutions() {
                   <p className="mt-4 max-w-sm text-[17px] leading-8 text-white/55">
                     {s.body}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2 md:mt-auto md:pt-6">
-                    {s.chips.map((chip) => (
-                      <span
-                        key={chip}
-                        className="border border-white/10 bg-white/[0.08] px-3 py-1.5 text-[15px] text-white/75"
-                      >
-                        {chip}
-                      </span>
-                    ))}
+                  <div className="mt-6 md:mt-auto md:pt-6">
+                    <p className="text-xs font-medium uppercase tracking-[0.08em] text-white/40">
+                      Deliverables
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {s.chips.map((chip) => {
+                        const Icon = chipIcon(chip);
+                        return (
+                          <span
+                            key={chip}
+                            className="inline-flex items-center gap-1.5 border border-white/10 bg-white/[0.08] px-3 py-1.5 text-[15px] text-white/75"
+                          >
+                            <Icon
+                              className="h-3.5 w-3.5 shrink-0"
+                              strokeWidth={2}
+                              style={{ color: ACCENT }}
+                              aria-hidden
+                            />
+                            {chip}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
                 <div className="relative min-h-[380px] border-t border-white/10 bg-black/85 backdrop-blur-sm md:border-l md:border-t-0">

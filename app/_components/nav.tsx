@@ -11,6 +11,7 @@ const CTA_ACCENT = "#9ff690";
 
 const links = [
   { label: "About", href: "/about" },
+  { label: "Case Studies", href: "#case-studies" },
   { label: "Pricing", href: "#pricing" },
   { label: "Newsletter", href: "/newsletter" },
 ];
@@ -45,9 +46,6 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
-                {...(link.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-base transition ${
                   isActive(link.href)
@@ -113,9 +111,6 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
-                {...(link.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
                 onClick={() => setOpen(false)}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`py-2.5 text-base transition ${
