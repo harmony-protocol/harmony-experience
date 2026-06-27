@@ -9,8 +9,8 @@ import {
   CircleDollarSign,
   CircleX,
   Compass,
-  Database,
   Eye,
+  FileSignature,
   Landmark,
   LayersPlus,
   LayoutDashboard,
@@ -36,6 +36,7 @@ import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
 import { CaseStudies } from "./_components/case-studies";
 import { ReclaimCalculator } from "./_components/reclaim-calculator";
+import { PricingTiers } from "./_components/pricing-tiers";
 
 const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -381,19 +382,28 @@ function Band({
   children,
   className = "",
   bgImage,
+  staticBg = false,
 }: {
   id?: string;
   dark?: boolean;
   children: React.ReactNode;
   className?: string;
   bgImage?: string;
+  staticBg?: boolean;
 }) {
   return (
     <section
       id={id}
       className={`relative overflow-clip ${dark ? "bg-black" : "bg-[#fafafa]"}`}
     >
-      {bgImage && (
+      {bgImage && staticBg && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${bgImage})` }}
+        />
+      )}
+      {bgImage && !staticBg && (
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
@@ -637,78 +647,19 @@ const platformCapabilities = [
 
 const securityCards = [
   {
+    icon: <FileSignature className="h-5 w-5" strokeWidth={1.6} />,
+    title: "NDA & DPA Signed",
+    body: "We sign a mutual NDA and a Data Processing Agreement before any work.",
+  },
+  {
     icon: <Lock className="h-5 w-5" strokeWidth={1.6} />,
     title: "End-to-End Encryption",
     body: "All data encrypted in transit and at rest using AES-256.",
   },
   {
-    icon: <Database className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Zero Data Retention",
-    body: "Your data is never stored or used for model training.",
-  },
-  {
     icon: <Server className="h-5 w-5" strokeWidth={1.6} />,
     title: "Data isolation",
     body: "Org-level isolation with row level security keeps each team's data separate.",
-  },
-];
-
-const pricingPlans = [
-  {
-    name: "Growth Partner",
-    description: "Founder-led small teams",
-    price: "$500",
-    period: "/month",
-    cta: "Book a free call",
-    highlighted: true,
-    features: [
-      "In-depth audit of your current flows",
-      "AI agents, workflows and dashboards",
-      {
-        label: "Automation across your operations",
-        tags: [
-          "Founder's productivity",
-          "Marketing",
-          "Sales",
-          "Fulfillment",
-          "Client relations",
-          "Finances",
-          "Admin",
-        ],
-      },
-      "Weekly strategy calls",
-      "One automation built at a time",
-      "Team-wide Harmony platform access",
-      "We work like your extended team",
-    ],
-  },
-  {
-    name: "Scale Partner",
-    description: "Mid-sized teams with Pods",
-    price: "$1,500",
-    period: "/month",
-    cta: "Book a free call",
-    highlighted: false,
-    features: [
-      "Everything in Growth Partner",
-      "Three automations built in parallel",
-      "Dedicated fractional AI engineer",
-      "Custom themed platform",
-    ],
-  },
-  {
-    name: "Enterprise",
-    description: "Large teams, custom needs",
-    price: "Custom",
-    period: "",
-    cta: "Talk to Sales",
-    highlighted: false,
-    features: [
-      "Everything in Scale Partner",
-      "Private deployment in your cloud",
-      "Handling customer facing use cases",
-      "Guaranteed SLAs",
-    ],
   },
 ];
 
@@ -1318,7 +1269,7 @@ export default function AgentflowPage() {
           <Heading dark>A closer look at our work</Heading>
         </div>
         <Sub dark className="mt-5">
-          Teams that handed the messy work to custom AI agents and systems.
+          Used by service business founders and teams handling critical work.
         </Sub>
         <div className="mt-14">
           <CaseStudies />
@@ -1339,7 +1290,12 @@ export default function AgentflowPage() {
 
       {/* 8. PRICING (black) */}
       <ViewTracker targetId="pricing" event="Pricing Section Viewed" />
-      <Band id="pricing" dark>
+      <Band
+        id="pricing"
+        dark
+        bgImage="/assets/pricing-background.webp"
+        staticBg
+      >
         <Eyebrow dark>Pricing</Eyebrow>
         <div className="mt-5">
           <Heading dark>
@@ -1348,112 +1304,16 @@ export default function AgentflowPage() {
             no surprises
           </Heading>
         </div>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <div
-              key={plan.name}
-              className="relative flex min-h-[560px] flex-col border border-white/10 bg-black p-7 md:p-9"
-            >
-              <span className="absolute -left-px -top-px h-1.5 w-1.5 bg-white" />
-              <span className="absolute -right-px -top-px h-1.5 w-1.5 bg-white" />
-              <div className="flex flex-1 flex-col">
-                <h3
-                  className="text-2xl text-white"
-                  style={{ fontFamily: "var(--font-schibsted)" }}
-                >
-                  {plan.name}
-                </h3>
-                <p className="mt-4 text-[17px] text-white/55">
-                  {plan.description}
-                </p>
-
-                <div className="mt-8 flex items-end gap-2">
-                  <span
-                    className="text-5xl leading-none text-white"
-                    style={{ fontFamily: "var(--font-schibsted)" }}
-                  >
-                    {plan.price}
-                  </span>
-                  {plan.period && (
-                    <span className="pb-1.5 text-xl text-white/55">
-                      {plan.period}
-                    </span>
-                  )}
-                </div>
-
-                <button
-                  type="button"
-                  data-cal-link={CAL_LINK}
-                  data-cal-config={CAL_CONFIG}
-                  data-loc="pricing"
-                  className={`mt-9 flex h-12 cursor-pointer items-center justify-center border text-[14px] font-medium uppercase transition ${
-                    plan.highlighted
-                      ? "border-transparent text-black hover:brightness-95"
-                      : "border-[#9ff690] text-white hover:bg-white/10"
-                  }`}
-                  style={
-                    plan.highlighted
-                      ? { backgroundColor: CTA_ACCENT }
-                      : undefined
-                  }
-                >
-                  {plan.cta}
-                </button>
-
-                <div className="mt-10 border-t border-white/10 pt-9">
-                  <p className="text-[17px] font-medium text-white/45">
-                    What&apos;s Included
-                  </p>
-                  <ul className="mt-7 space-y-5">
-                    {plan.features.map((feature) => {
-                      const tagged = typeof feature !== "string";
-                      const label = tagged ? feature.label : feature;
-                      return (
-                        <li
-                          key={label}
-                          className={`flex gap-3 text-[17px] text-white/85 ${
-                            tagged ? "items-start" : "items-center"
-                          }`}
-                        >
-                          <span
-                            className={`h-1.5 w-1.5 shrink-0 ${tagged ? "mt-2.5" : ""}`}
-                            style={{ backgroundColor: ACCENT }}
-                          />
-                          <div>
-                            {label}
-                            {tagged && (
-                              <div className="mt-3 flex flex-wrap gap-2">
-                                {feature.tags.map((tag) => (
-                                  <span
-                                    key={tag}
-                                    className="border border-white/15 bg-white/[0.03] px-2.5 py-1 text-[13px] text-white/70"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PricingTiers />
       </Band>
 
       {/* SECURITY (black) */}
-      <Band id="security" dark className="pt-12 pb-32 md:pt-14 md:pb-40">
-        <Eyebrow dark>Security</Eyebrow>
+      <Band id="security" className="pt-20 pb-16 md:pt-28 md:pb-20">
+        <Eyebrow>Security</Eyebrow>
         <div className="mt-5">
-          <Heading as="h3" dark>
-            Enterprise-grade security
-          </Heading>
+          <Heading as="h3">Enterprise-grade security</Heading>
         </div>
-        <Sub dark className="mt-5">
+        <Sub className="mt-5">
           Your client data is non-negotiable. We hold the highest standards of
           security and compliance, so it stays yours.
         </Sub>
@@ -1462,18 +1322,21 @@ export default function AgentflowPage() {
           {securityCards.map((card) => (
             <div
               key={card.title}
-              className="flex flex-col border border-white/10 bg-white/[0.03] p-7 md:p-8"
+              className="flex flex-col border border-black/10 bg-white p-7 md:p-8"
             >
-              <span className="flex h-11 w-11 items-center justify-center border border-[#9ff690] bg-[rgba(162,249,147,0.10)] text-[#9ff690]">
+              <span
+                className="flex h-11 w-11 items-center justify-center border border-black/10 text-black"
+                style={{ backgroundColor: "rgba(159,246,144,0.18)" }}
+              >
                 {card.icon}
               </span>
               <h3
-                className="mt-6 text-xl text-white"
+                className="mt-6 text-xl text-black"
                 style={{ fontFamily: "var(--font-schibsted)" }}
               >
                 {card.title}
               </h3>
-              <p className="mt-2 text-[17px] leading-8 text-white/55">
+              <p className="mt-2 text-[17px] leading-8 text-[#4d4d4d]">
                 {card.body}
               </p>
             </div>
@@ -1482,7 +1345,7 @@ export default function AgentflowPage() {
       </Band>
 
       {/* 9. FAQ (white) */}
-      <Band id="faq">
+      <Band id="faq" className="pt-14 md:pt-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
           <div className="flex flex-col items-start">
             <Eyebrow>FAQ</Eyebrow>
@@ -1514,7 +1377,7 @@ export default function AgentflowPage() {
               data-cal-link={CAL_LINK}
               data-cal-config={CAL_CONFIG}
               data-loc="faq"
-              className="mt-5 cursor-pointer rounded-md bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
+              className="mt-5 cursor-pointer bg-black px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] text-white transition hover:bg-black/80"
             >
               Book a call
             </button>
