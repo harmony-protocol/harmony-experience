@@ -11,8 +11,8 @@ const CTA_ACCENT = "#9ff690";
 
 const links = [
   { label: "About", href: "/about" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Pricing", href: "/#pricing" },
   { label: "Newsletter", href: "/newsletter" },
 ];
 

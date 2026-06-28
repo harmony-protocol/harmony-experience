@@ -4,6 +4,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Text selection highlight uses the brand green so it matches the theme. */
+::selection {
+  background-color: #9ff690;
+  color: #0b0c0c;
+}
+::-moz-selection {
+  background-color: #9ff690;
+  color: #0b0c0c;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
