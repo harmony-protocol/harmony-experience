@@ -22,7 +22,7 @@ type Plan = {
 const partnerPlans: Plan[] = [
   {
     name: "Growth Partner",
-    description: "Founder-led small teams",
+    description: "For teams at $300K-$1M/year",
     price: "$500",
     period: "/month",
     cta: "Book a free call",
@@ -51,7 +51,7 @@ const partnerPlans: Plan[] = [
   },
   {
     name: "Scale Partner",
-    description: "Mid-sized teams with Pods",
+    description: "For teams at $1-10M/year",
     price: "$1,500",
     period: "/month",
     cta: "Book a free call",
@@ -65,7 +65,7 @@ const partnerPlans: Plan[] = [
   },
   {
     name: "Enterprise",
-    description: "Large teams, custom needs",
+    description: "For teams above $10M/year",
     price: "Custom",
     period: "",
     cta: "Talk to Sales",
