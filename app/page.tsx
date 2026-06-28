@@ -790,7 +790,7 @@ export default function AgentflowPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
-            <GhostButton href="#process">How it works</GhostButton>
+            <GhostButton href="#process">What you get</GhostButton>
           </div>
 
           {/* YouTube VSL */}
@@ -1067,7 +1067,7 @@ export default function AgentflowPage() {
         </div>
         <Sub dark className="mt-5">
           We start delivering value from day one, getting into your processes
-          and becoming your extended team.
+          and becoming your fractional AI department.
         </Sub>
         <Solutions />
       </Band>
@@ -1466,7 +1466,6 @@ export default function AgentflowPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <PrimaryButton location="founder" />
-              <GhostButton href="#process">How it works</GhostButton>
             </div>
           </div>
         </div>
