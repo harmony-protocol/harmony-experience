@@ -84,15 +84,16 @@ const workshopPlans: Plan[] = [
     name: "1:1 Consultation",
     description: "Founders and operators going hands-on",
     price: "$80",
-    period: "/hour",
+    period: "/session",
     cta: "Book a free call",
     highlighted: false,
     features: [
+      "60 minute recorded sessions",
       "Find where AI fits in your business",
       "Learn how to actually build and run it",
       "Bring your real workflows and blockers",
-      "Recorded so you can revisit it",
-      "Pay by the hour, no commitment",
+      "Personalized roadmap doc",
+      "Pay per session, no commitment",
     ],
   },
   {
@@ -103,7 +104,7 @@ const workshopPlans: Plan[] = [
     cta: "Book a free call",
     highlighted: true,
     features: [
-      "Eight live classes, one hour each",
+      "Eight live sessions, 60 minutes each",
       "Hands-on with your own use cases",
       "Every session recorded for the team",
       "One time, no monthly commitment",
