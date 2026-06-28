@@ -556,12 +556,12 @@ const whatWeDo = [
 // pinpointed change per row. No fabricated numbers, just the felt difference.
 const magicShifts = [
   {
-    before: "Margins thin with every hire",
-    after: "Margins climb as AI absorbs the work",
-  },
-  {
     before: "Busywork eats the team's day",
     after: "Busywork runs itself at high speed",
+  },
+  {
+    before: "Founder stuck in the weeds",
+    after: "Founder free to grow the business",
   },
   {
     before: "Can't scale the number of clients",
@@ -578,6 +578,10 @@ const magicShifts = [
   {
     before: "Training new hires takes weeks",
     after: "AI handles onboarding and training",
+  },
+  {
+    before: "Margins thin with every hire",
+    after: "Margins climb as AI absorbs the work",
   },
   {
     before: "Scaling means hiring and firing",
