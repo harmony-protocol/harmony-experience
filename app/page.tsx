@@ -790,7 +790,7 @@ export default function AgentflowPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
-            <GhostButton href="#process">What you get</GhostButton>
+            <GhostButton href="#process">See what you get</GhostButton>
           </div>
 
           {/* YouTube VSL */}
