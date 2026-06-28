@@ -162,9 +162,9 @@ export default function AboutPage() {
         <section className="mx-auto mt-24 w-[92%] max-w-[1080px] md:mt-32">
           <Tag>Our Story</Tag>
           <RevealText
-            text={`We started Harmony because we have run B2B businesses ourselves. Too much of the day goes to work that could be automated, and the growth work that actually moves revenue keeps getting pushed back.
+            text={`We started Harmony because we have run services businesses ourselves. Too much of the day goes to work that could be automated, and the growth work that actually moves revenue keeps getting pushed back.
 
-We tried the usual fixes. Agencies were slow, expensive, and never took real responsibility, and off-the-shelf tools just handed us more software to run ourselves.
+We tried the usual fixes. Every new hire became one more person to manage, and no tool we tried ever solved the problem completely.
 
 So we built the Agentic AI service and systems we wished we had, not another agency. One that helps you scale your business and takes the repeatable work off your plate, not the other way around.`}
             className="mt-8 max-w-[820px] text-[26px] leading-[1.3] text-white md:text-[38px] md:leading-[1.25]"
