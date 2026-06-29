@@ -48,7 +48,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You teach. Harmony does everything around it.",
-      "body": "Picture this: a parent inquiry hits at 9pm and a reply goes out in 60 seconds. A lesson ends and the parent report is already drafted. A practice paper is built and checked before the next session. Harmony does all of it, in the background, while you teach."
+      "body": "A parent messages at 9pm, a reply goes out in 60 seconds. A lesson ends, the report is already drafted. The next practice paper is ready before the session. Harmony runs it all in the background, while you teach."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same hours. Twice the students.",
+      "body": "The work around teaching, before Harmony and after.",
+      "items": [
+        { "before": "Parent messages pile up unanswered", "after": "Every parent gets a reply in minutes" },
+        { "before": "You're buried in admin after lessons", "after": "You're free to actually teach" },
+        { "before": "More students means more late nights", "after": "More students, same hours" },
+        { "before": "Leads go cold during lessons", "after": "Leads booked while you teach" },
+        { "before": "Reports eat your evenings", "after": "Lesson reports write themselves" },
+        { "before": "Marketing stalls when you're busy", "after": "Content goes out on autopilot" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for tutors like you",
@@ -175,7 +188,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "Your team builds. Harmony does everything around it.",
-      "body": "Picture this: every standup, every follow-up, every CRM entry, every weekly report, written by Harmony, ready for one-tap approval. Your team approves. It moves. While they ship."
+      "body": "Every standup, follow-up, CRM entry, and weekly report, written by Harmony and ready for one-tap approval. Your team approves. It moves. While they ship."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. More shipped.",
+      "body": "The overhead around building, before Harmony and after.",
+      "items": [
+        { "before": "Status spread across Slack, Jira, and docs", "after": "Status rolls up on its own" },
+        { "before": "Founders stuck in the busywork", "after": "Founders free to grow the company" },
+        { "before": "Follow-ups slip after every call", "after": "Follow-ups send themselves" },
+        { "before": "The CRM is always out of date", "after": "The CRM stays current automatically" },
+        { "before": "Onboarding new hires takes weeks", "after": "AI handles onboarding and training" },
+        { "before": "Margins thin with every hire", "after": "Margins climb as AI absorbs the work" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for teams like yours",
@@ -301,7 +327,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You sell. Harmony does everything around it.",
-      "body": "Picture this: a Zillow lead lands at 11pm and a reply goes out in 60 seconds. A showing wraps and the follow-up is already drafted. A listing posts and the marketing emails are out the door. Harmony does all of it, in the background, while you sell."
+      "body": "A Zillow lead lands at 11pm, a reply goes out in 60 seconds. A showing wraps, the follow-up is already drafted. A listing posts, the emails are out the door. Harmony runs it all in the background, while you sell."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same desk. Twice the deals.",
+      "body": "The work around selling, before Harmony and after.",
+      "items": [
+        { "before": "Portal leads go to the faster agent", "after": "Every lead gets a reply in minutes" },
+        { "before": "You're buried in transaction admin", "after": "You're free to list and sell" },
+        { "before": "More clients means more late nights", "after": "More clients, same hours" },
+        { "before": "Past clients drift away", "after": "Past clients stay, referrals grow" },
+        { "before": "Listings wait on your marketing", "after": "Listings market themselves" },
+        { "before": "Closing paperwork eats your evenings", "after": "Paperwork drafts itself" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for agents like you",
@@ -422,7 +461,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You practice. Harmony does everything around it.",
-      "body": "Picture this: a new client inquiry comes in and the intake is qualified before you call back. A consult ends and the engagement letter is already drafted. A retainer hour is logged the moment the call ends. Harmony does all of it, in the background, while you practice."
+      "body": "An inquiry comes in, the intake is qualified before you call back. A consult ends, the engagement letter is already drafted. A billable hour is logged the moment the call ends. Harmony runs it all in the background, while you practice."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same firm. More billable hours.",
+      "body": "The work around the law, before Harmony and after.",
+      "items": [
+        { "before": "Inquiries sit while you're in court", "after": "Every inquiry gets a reply in minutes" },
+        { "before": "You're stuck on intake and admin", "after": "You're free to practice law" },
+        { "before": "More clients means more late nights", "after": "More matters, same headcount" },
+        { "before": "Billable hours go unlogged", "after": "Hours log themselves after every call" },
+        { "before": "Routine drafting eats your day", "after": "Retainers and NDAs draft themselves" },
+        { "before": "Clients chase you for updates", "after": "Clients stay in the loop automatically" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for practices like yours",
@@ -532,7 +584,7 @@
     "pain": {
       "eyebrow": "Sound familiar?",
       "headline": "You're not just an agency. You're five jobs.",
-      "intro": "Account manager. Project lead. New business. Reporting. Client therapist. The actual work is the part you started the agency for, everything else just lands on you.",
+      "intro": "Account manager. Project lead. New business. Reporting. The client work is why you started, everything else just lands on you.",
       "items": [
         "Twelve client Slacks all asking 'any update?' at the same time.",
         "Recap emails after every single client call.",
@@ -543,7 +595,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "Your team delivers. Harmony does everything around it.",
-      "body": "Picture this: every client call ends with the recap already drafted, every Friday the weekly report is ready before the team logs in, every pitch follow-up goes out on time. Harmony does all of it, in the background, while your team ships great work."
+      "body": "Recaps drafted after every call. Reports ready before Friday standup. Pitch follow-ups out on time. Harmony runs it all in the background, while your team ships great work."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. Twice the agency.",
+      "body": "The everyday work that eats your week, before Harmony and after.",
+      "items": [
+        { "before": "Client updates eat the team's day", "after": "Status updates send themselves" },
+        { "before": "You're stuck doing account management", "after": "You're free to win new business" },
+        { "before": "More clients means more late nights", "after": "More clients, same size team" },
+        { "before": "Clients drift when comms slip", "after": "Clients stay, updates never slip" },
+        { "before": "Pitches steal your weekends", "after": "Proposals and follow-ups draft themselves" },
+        { "before": "Margins thin with every new hire", "after": "Margins grow as AI absorbs the busywork" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for agencies like yours",
@@ -579,23 +644,37 @@
         ]
       },
       {
-        "eyebrow": "Your new business",
-        "title": "A pipeline that runs itself.",
+        "eyebrow": "Your marketing",
+        "title": "A pipeline that fills itself.",
         "items": [
-          "Auto-draft proposal emails",
+          "Plan and produce content",
+          "Run outreach across channels",
+          "Auto-draft proposals",
           "Schedule pitch meetings",
           "Auto-update CRM",
           "Analyze sales calls"
         ]
       },
       {
-        "eyebrow": "Your operations",
-        "title": "Time, billing, and approvals, handled.",
+        "eyebrow": "Your finance",
+        "title": "The money side, handled.",
         "items": [
           "Track time and billing",
-          "Generate invoices",
-          "Approval workflows",
-          "Document processing"
+          "Generate and chase invoices",
+          "Follow up on late payments",
+          "Reconcile expenses",
+          "Roll up financial reporting"
+        ]
+      },
+      {
+        "eyebrow": "Your admin",
+        "title": "The busywork, gone.",
+        "items": [
+          "Run approval workflows",
+          "Process documents and contracts",
+          "Manage contractors and vendors",
+          "Schedule and coordinate",
+          "Search across everything instantly"
         ]
       }
     ],
@@ -654,7 +733,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You invest. Harmony does everything around it.",
-      "body": "Picture this: every pitch deck triaged before you open the email, every portfolio update summarized, every quarterly LP letter drafted before quarter-end. Harmony does all of it, in the background, while you invest."
+      "body": "Pitch decks triaged before you open the email. Portfolio updates summarized for you. LP letters drafted before quarter-end. Harmony runs it all in the background, while you invest."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same fund. More time with founders.",
+      "body": "The work around investing, before Harmony and after.",
+      "items": [
+        { "before": "Pitch decks pile up unread", "after": "Every deck is triaged for you" },
+        { "before": "You're buried in inbox and updates", "after": "You're free to back founders" },
+        { "before": "Portfolio updates scattered everywhere", "after": "Updates summarized in one place" },
+        { "before": "LP letters take a week to write", "after": "LP letters draft themselves" },
+        { "before": "Warm intros slip through the cracks", "after": "The right intros surface on their own" },
+        { "before": "Relationships go cold between rounds", "after": "Founder relationships stay warm" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for investors like you",
@@ -765,7 +857,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You sell. Harmony does everything around it.",
-      "body": "Picture this: every call ends with the follow-up drafted, the CRM updated, the next-step email queued, the at-risk deals flagged. Harmony does all of it, in the background, while you sell."
+      "body": "Every call ends with the follow-up drafted, the CRM updated, the next-step email queued, and the at-risk deals flagged. Harmony runs it all in the background, while you sell."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same hours. Bigger quota.",
+      "body": "Your day, before Harmony and after.",
+      "items": [
+        { "before": "Two-thirds of the day goes to admin", "after": "The day goes to selling" },
+        { "before": "Follow-ups slip past 5pm", "after": "Follow-ups send themselves after every call" },
+        { "before": "The CRM bites you at the QBR", "after": "The CRM stays current on its own" },
+        { "before": "Prospects cool while you're in demos", "after": "Prospects stay warm automatically" },
+        { "before": "You walk into calls unprepared", "after": "Every call brief is ready for you" },
+        { "before": "Forecasts are a guess", "after": "Pipeline rolls up on its own" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for sellers like you",
@@ -876,7 +981,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "Your team builds. Harmony does everything around it.",
-      "body": "Picture this: every Monday the standup summary is already in your inbox, every 1:1 brief is ready before the meeting, every release note drafts itself from merged PRs. Harmony does all of it, in the background, while your team builds."
+      "body": "Monday's standup summary is already in your inbox. Every 1:1 brief is ready before the meeting. Release notes draft themselves from merged PRs. Harmony runs it all in the background, while your team builds."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. More shipped.",
+      "body": "Your week, before Harmony and after.",
+      "items": [
+        { "before": "Five status standups every week", "after": "Status rolls up on its own" },
+        { "before": "You're stuck reporting, not leading", "after": "You're free to lead engineering" },
+        { "before": "Updates scattered across Slack and Jira", "after": "Updates summarized in one place" },
+        { "before": "1:1 prep for twelve reports", "after": "Every 1:1 brief is ready for you" },
+        { "before": "Release notes never get written", "after": "Release notes draft themselves from PRs" },
+        { "before": "Retros get buried in threads", "after": "Incident retros compile themselves" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for engineering leaders like you",
@@ -987,7 +1105,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You strategize. Harmony does everything around it.",
-      "body": "Picture this: every campaign brief drafted before the kickoff, every social post scheduled a week ahead, every weekly performance report compiled and explained. Harmony does all of it, in the background, while you build the brand."
+      "body": "Campaign briefs drafted before kickoff. Social posts scheduled a week ahead. Performance reports compiled and explained. Harmony runs it all in the background, while you build the brand."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. More output.",
+      "body": "Your week, before Harmony and after.",
+      "items": [
+        { "before": "Briefs and approvals eat your week", "after": "Briefs and approvals draft themselves" },
+        { "before": "You're chasing, not strategizing", "after": "You're free to do the strategy" },
+        { "before": "The content calendar runs behind", "after": "Content ships on schedule, on autopilot" },
+        { "before": "Vendors need constant chasing", "after": "Vendor chasing handles itself" },
+        { "before": "Reports take all Friday", "after": "Reports compile and explain themselves" },
+        { "before": "Campaigns stall when you're slammed", "after": "Campaigns keep moving without you" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for marketers like you",
@@ -1098,7 +1229,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You treat. Harmony does everything around it.",
-      "body": "Picture this: every patient message triaged in minutes, every session note drafted from the recording, every intake form completed before the first visit, every appointment confirmed without a phone call. Harmony does all of it, in the background, while you treat."
+      "body": "A patient messages, it's triaged in minutes. A session ends, the note is drafted from the recording. The intake form is done before the first visit. Harmony runs it all in the background, while you treat."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same clinic. More time with patients.",
+      "body": "The work around care, before Harmony and after.",
+      "items": [
+        { "before": "Patient messages pile up in the inbox", "after": "Every message is triaged in minutes" },
+        { "before": "You're buried in charting and admin", "after": "You're free to treat patients" },
+        { "before": "Notes eat your evenings", "after": "Session notes draft themselves" },
+        { "before": "No-shows from missed confirmations", "after": "Appointments confirm themselves" },
+        { "before": "Intake forms chase you", "after": "Intake is done before the first visit" },
+        { "before": "Insurance follow-ups slip", "after": "Claims and follow-ups handle themselves" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for clinicians like you",
@@ -1219,7 +1363,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You advise. Harmony does everything around it.",
-      "body": "Picture this: every client call ends with the recap drafted, every deliverable starts itself before you open the doc, every weekly progress update goes out without you typing it. Harmony does all of it, in the background, while you advise."
+      "body": "Every client call ends with the recap drafted. Every deliverable starts itself before you open the doc. Weekly progress updates go out without you typing them. Harmony runs it all in the background, while you advise."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. Twice the clients.",
+      "body": "The work around advising, before Harmony and after.",
+      "items": [
+        { "before": "Client updates eat your week", "after": "Status updates send themselves" },
+        { "before": "You're stuck on account management", "after": "You're free to do the actual work" },
+        { "before": "More clients means more late nights", "after": "More clients, same size team" },
+        { "before": "Recaps and notes pile up", "after": "Recaps drafted after every call" },
+        { "before": "New business slips when you're delivering", "after": "Proposals and follow-ups draft themselves" },
+        { "before": "Margins thin with every new hire", "after": "Margins grow as AI absorbs the busywork" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for consultants like you",
@@ -1340,7 +1497,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You place. Harmony does everything around it.",
-      "body": "Picture this: every inbound CV scored within minutes, every outreach personalized and sent, every interview panel scheduled across time zones without a back-and-forth. Harmony does all of it, in the background, while your team places."
+      "body": "Every inbound CV scored within minutes. Every outreach personalized and sent. Every interview panel scheduled across time zones, no back-and-forth. Harmony runs it all in the background, while your team places."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. More placements.",
+      "body": "The work around recruiting, before Harmony and after.",
+      "items": [
+        { "before": "CVs pile up unscreened", "after": "Every CV is scored in minutes" },
+        { "before": "You're buried in scheduling and admin", "after": "You're free to place great people" },
+        { "before": "Outreach goes out late, if at all", "after": "Personalized outreach sends itself" },
+        { "before": "Interviews take days to coordinate", "after": "Panels schedule themselves across time zones" },
+        { "before": "Candidates go cold mid-process", "after": "Candidates stay warm automatically" },
+        { "before": "More roles means more late nights", "after": "More placements, same size desk" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for recruiters like you",
@@ -1451,7 +1621,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You close. Harmony does everything around it.",
-      "body": "Picture this: every pre-approval inquiry replied to in 60 seconds, every borrower nudged for the missing W-2, every realtor partner updated on the closing pipeline. Harmony does all of it, in the background, while you fund."
+      "body": "A pre-approval inquiry gets a reply in 60 seconds. A borrower is nudged for the missing W-2. A realtor partner is updated on the pipeline. Harmony runs it all in the background, while you fund."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same desk. More loans funded.",
+      "body": "The work around closing, before Harmony and after.",
+      "items": [
+        { "before": "Inquiries go to the faster broker", "after": "Every inquiry gets a reply in minutes" },
+        { "before": "You're chasing documents all day", "after": "You're free to close loans" },
+        { "before": "Borrowers stall on missing docs", "after": "Borrowers are nudged automatically" },
+        { "before": "Realtor partners feel out of the loop", "after": "Partners stay updated on the pipeline" },
+        { "before": "Rate changes catch clients late", "after": "Clients hear about rates on time" },
+        { "before": "More files means more late nights", "after": "More loans funded, same hours" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for brokers like you",
@@ -1572,7 +1755,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You advise. Harmony does everything around it.",
-      "body": "Picture this: a new client inquiry hits and the intake is qualified before you call back. A return wraps and the client letter is already drafted. A receipt lands in the inbox and it's categorized before you open it. Harmony does all of it, in the background, while you advise."
+      "body": "An inquiry hits, the intake is qualified before you call back. A return wraps, the client letter is already drafted. A receipt lands, it's categorized before you open it. Harmony runs it all in the background, while you advise."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same firm. Twice the clients.",
+      "body": "The work around advising, before Harmony and after.",
+      "items": [
+        { "before": "Client emails sit during busy season", "after": "Every client gets a reply in minutes" },
+        { "before": "You're buried in bookkeeping and admin", "after": "You're free to advise clients" },
+        { "before": "More clients means more late nights", "after": "More clients, same headcount" },
+        { "before": "Receipts pile up uncategorized", "after": "Receipts categorize themselves" },
+        { "before": "Client letters eat your evenings", "after": "Letters and reports draft themselves" },
+        { "before": "Deadlines chase you", "after": "Filings and reminders run on autopilot" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for firms like yours",
@@ -1693,7 +1889,20 @@
     "turn": {
       "eyebrow": "What if it ran itself?",
       "headline": "You support people. Harmony does everything around it.",
-      "body": "Picture this: every interview scheduled across the panel in one pass, every reschedule handled before anyone notices, every FAQ answered in seconds, every new hire onboarded without a single dropped task. Harmony does all of it, in the background, while you do the people work."
+      "body": "Every interview is scheduled across the panel in one pass. Every reschedule is handled before anyone notices. Every FAQ is answered in seconds. New hires onboard without a dropped task. Harmony runs it all in the background, while you do the people work."
+    },
+    "shifts": {
+      "eyebrow": "Before and after",
+      "headline": "Same team. More people supported.",
+      "body": "The work around people, before Harmony and after.",
+      "items": [
+        { "before": "Interview scheduling eats your week", "after": "Interviews schedule themselves" },
+        { "before": "You're stuck on admin, not people", "after": "You're free to do the people work" },
+        { "before": "Employee FAQs flood your inbox", "after": "FAQs are answered in seconds" },
+        { "before": "Onboarding drops tasks", "after": "New hires onboard without a missed step" },
+        { "before": "Reschedules cause chaos", "after": "Reschedules handle themselves" },
+        { "before": "Policy and benefits questions pile up", "after": "Routine questions answer themselves" }
+      ]
     },
     "personas": {
       "eyebrow": "Built for HR teams like yours",

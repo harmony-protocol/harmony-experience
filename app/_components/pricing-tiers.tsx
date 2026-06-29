@@ -22,7 +22,7 @@ type Plan = {
 const partnerPlans: Plan[] = [
   {
     name: "Growth Partner",
-    description: "For teams at $300K-$1M/year",
+    description: "If you're doing $300K-$1M/year",
     price: "$500",
     period: "/month",
     cta: "Book a free call",
@@ -51,7 +51,7 @@ const partnerPlans: Plan[] = [
   },
   {
     name: "Scale Partner",
-    description: "For teams at $1-10M/year",
+    description: "If you're doing $1M-$10M/year",
     price: "$1,500",
     period: "/month",
     cta: "Book a free call",
@@ -65,7 +65,7 @@ const partnerPlans: Plan[] = [
   },
   {
     name: "Enterprise",
-    description: "For teams above $10M/year",
+    description: "If you're doing $10M+/year",
     price: "Custom",
     period: "",
     cta: "Talk to Sales",
@@ -245,9 +245,7 @@ export function PricingTiers() {
       {/* Plans */}
       <div
         className={`mt-12 grid gap-5 ${
-          plans.length === 2
-            ? "md:grid-cols-2 lg:max-w-4xl"
-            : "lg:grid-cols-3"
+          plans.length === 2 ? "md:grid-cols-2 lg:max-w-4xl" : "lg:grid-cols-3"
         }`}
       >
         {plans.map((plan) => (

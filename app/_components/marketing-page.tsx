@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check, X } from "lucide-react";
+import { Check, X, CircleCheck, CircleX } from "lucide-react";
 import { headingStyle } from "../_lib/brand-fonts";
 import { resolveIntegrationLogo } from "../_lib/integration-logos";
 import {
@@ -25,6 +25,12 @@ export type AudienceConfig = {
   pain?: { eyebrow: string; headline: string; intro: string; items: string[] };
   turn?: { eyebrow: string; headline: string; body: string };
   personas?: { eyebrow: string; headline: string; items: string[] };
+  shifts?: {
+    eyebrow: string;
+    headline: string;
+    body?: string;
+    items: { before: string; after: string }[];
+  };
   features: { eyebrow: string; title: string; items: string[] }[];
   comparison?: boolean;
   closing: { eyebrow: string; headline: string; body: string };
@@ -33,7 +39,7 @@ export type AudienceConfig = {
 const harmonyEdge = [
   "Pre-built world class AI platform",
   "Multifold faster deployment",
-  "Niche expertise in communication and admin work",
+  "Niche expertise in services businesses",
   "Better user experience with our desktop app",
 ];
 
@@ -216,7 +222,16 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
               title={audience.pain.headline}
               body={audience.pain.intro}
             />
-            <BulletList items={audience.pain.items} />
+            <div>
+              {/* Invisible eyebrow + gap mirrors SectionIntro's spacing so the
+                  bullets line up with the heading, not the eyebrow. */}
+              <div aria-hidden className="invisible hidden lg:block">
+                <Eyebrow>{audience.pain.eyebrow}</Eyebrow>
+              </div>
+              <div className="lg:mt-5">
+                <BulletList items={audience.pain.items} />
+              </div>
+            </div>
           </div>
         </SolutionsSection>
       )}
@@ -230,6 +245,65 @@ export function MarketingPage({ audience }: { audience: AudienceConfig }) {
           />
           <div className="mt-8">
             <PrimaryButton />
+          </div>
+        </SolutionsSection>
+      )}
+
+      {audience.shifts && audience.shifts.items.length > 0 && (
+        <SolutionsSection>
+          <SectionIntro
+            eyebrow={audience.shifts.eyebrow}
+            title={audience.shifts.headline}
+            body={audience.shifts.body}
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {/* Before card */}
+            <div className="border border-[#f0908f]/25 bg-[#f0908f]/[0.04] p-6 md:p-8">
+              <p className="text-[15px] font-medium uppercase tracking-[0.08em] text-[#f0908f]">
+                Today
+              </p>
+              <ul className="mt-6 space-y-4">
+                {audience.shifts.items.map((shift) => (
+                  <li
+                    key={shift.before}
+                    className="flex items-start gap-2.5 text-[17px] leading-7 text-white/55"
+                  >
+                    <CircleX
+                      aria-hidden
+                      className="mt-1 h-[18px] w-[18px] shrink-0 text-[#f0908f]"
+                      strokeWidth={1.6}
+                    />
+                    {shift.before}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* After card */}
+            <div className="relative overflow-hidden border border-[#9ff690]/30 bg-[#9ff690]/[0.05] p-6 md:p-8">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#9ff690]/15 blur-3xl"
+              />
+              <p className="relative text-[15px] font-medium uppercase tracking-[0.08em] text-[#9ff690]">
+                With Harmony
+              </p>
+              <ul className="relative mt-6 space-y-4">
+                {audience.shifts.items.map((shift) => (
+                  <li
+                    key={shift.after}
+                    className="flex items-start gap-2.5 text-[17px] leading-7 text-white"
+                  >
+                    <CircleCheck
+                      aria-hidden
+                      className="mt-1 h-[18px] w-[18px] shrink-0 text-[#9ff690]"
+                      strokeWidth={1.6}
+                    />
+                    {shift.after}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </SolutionsSection>
       )}
