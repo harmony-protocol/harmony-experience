@@ -2,7 +2,7 @@
   "tutors": {
     "title": "Harmony for Tutors",
     "shortLabel": "Tutors",
-    "tagline": "Run your tutoring practice on autopilot.",
+    "tagline": "More teaching, less admin and marketing.",
     "metaDescription": "Run your tutoring practice on autopilot. Harmony handles parent messages, lesson reports, scheduling, and admin, so you can focus on teaching.",
     "hero": {
       "headline": "Run your tutoring practice on autopilot.",
@@ -142,7 +142,7 @@
   "startups": {
     "title": "Harmony for Startups",
     "shortLabel": "Startups",
-    "tagline": "Run your startup on autopilot.",
+    "tagline": "Ship product, not status updates.",
     "metaDescription": "Run your startup on autopilot. Harmony handles communication, management, and admin overhead, so your team ships, not shuffles.",
     "hero": {
       "headline": "Run your startup on autopilot.",
@@ -281,7 +281,7 @@
   "realtors": {
     "title": "Harmony for Realtors",
     "shortLabel": "Realtors",
-    "tagline": "Run your real estate business on autopilot.",
+    "tagline": "Always first to the lead.",
     "metaDescription": "Run your real estate business on autopilot. Harmony handles client follow-ups, listing updates, and transaction admin, so you stay in front of clients and on top of deals.",
     "hero": {
       "headline": "Run your real estate business on autopilot.",
@@ -415,7 +415,7 @@
   "lawyers": {
     "title": "Harmony for Lawyers",
     "shortLabel": "Lawyers",
-    "tagline": "Run your practice on autopilot.",
+    "tagline": "Practice law, not paperwork.",
     "metaDescription": "Run your practice on autopilot. Harmony handles client communication, intake, routine drafting, and billing admin, so you can focus on the matter at hand.",
     "hero": {
       "headline": "Run your practice on autopilot.",
@@ -549,7 +549,7 @@
   "agencies": {
     "title": "Harmony for Agencies",
     "shortLabel": "Agencies",
-    "tagline": "Run your agency on autopilot.",
+    "tagline": "Great work out, busywork gone.",
     "metaDescription": "Run your agency on autopilot. Harmony handles client check-ins, status updates, project admin, and new business follow-ups, so your team delivers great work.",
     "hero": {
       "headline": "Run your agency on autopilot.",
@@ -687,7 +687,7 @@
   "investors": {
     "title": "Harmony for Investors",
     "shortLabel": "Investors",
-    "tagline": "Run your portfolio on autopilot.",
+    "tagline": "More time with founders, less inbox.",
     "metaDescription": "Run your portfolio on autopilot. Harmony handles dealflow triage, founder updates, LP reporting, and warm intros, so you can focus on backing great companies.",
     "hero": {
       "headline": "Run your portfolio on autopilot.",
@@ -1317,7 +1317,7 @@
   "consultants": {
     "title": "Harmony for Consultants",
     "shortLabel": "Consultants",
-    "tagline": "Run your consulting practice on autopilot.",
+    "tagline": "More strategy, less busywork.",
     "metaDescription": "Run your consulting practice on autopilot. Harmony handles client communication, deliverable drafts, scheduling, and billing admin, so you can focus on the advisory work.",
     "hero": {
       "headline": "Run your consulting practice on autopilot.",
@@ -1451,7 +1451,7 @@
   "staffing-firms": {
     "title": "Harmony for Staffing Firms",
     "shortLabel": "Staffing Firms",
-    "tagline": "Run your staffing firm on autopilot.",
+    "tagline": "More placements, less coordination.",
     "metaDescription": "Run your staffing firm on autopilot. Harmony handles candidate outreach, client comms, interview scheduling, and the admin between placements, so your recruiters spend their time placing.",
     "hero": {
       "headline": "Run your staffing firm on autopilot.",
@@ -1575,7 +1575,7 @@
   "mortgage-brokers": {
     "title": "Harmony for Mortgage Brokers",
     "shortLabel": "Mortgage Brokers",
-    "tagline": "Run your mortgage practice on autopilot.",
+    "tagline": "Fund more loans, chase fewer docs.",
     "metaDescription": "Run your mortgage practice on autopilot. Harmony handles client follow-ups, lender comms, document collection, and rate updates, so you can focus on closing loans.",
     "hero": {
       "headline": "Run your mortgage practice on autopilot.",
@@ -1709,7 +1709,7 @@
   "accounting-firms": {
     "title": "Harmony for Accounting Firms",
     "shortLabel": "Accounting Firms",
-    "tagline": "Run your accounting firm on autopilot.",
+    "tagline": "Advise clients, not receipts.",
     "metaDescription": "Run your accounting firm on autopilot. Harmony handles client comms, source-doc chasing, workpaper prep, and billing admin, so your team focuses on advisory work.",
     "hero": {
       "headline": "Run your accounting firm on autopilot.",
@@ -1843,7 +1843,7 @@
   "human-resources": {
     "title": "Harmony for Human Resources",
     "shortLabel": "Human Resources",
-    "tagline": "Run HR without running on empty.",
+    "tagline": "Support people, not paperwork.",
     "metaDescription": "Run HR without running on empty. Harmony schedules interviews, reschedules without back-and-forth, answers employee FAQs, and runs onboarding, so you can focus on people.",
     "hero": {
       "headline": "Run HR without running on empty.",
