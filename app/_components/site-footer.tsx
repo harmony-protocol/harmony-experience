@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CookieSettingsLink } from "./cookie-settings-link";
+import { TrackedLink } from "./tracked-link";
 
 const footerColumns = [
   {
@@ -88,15 +89,17 @@ export function SiteFooter() {
                     const external = link.href.startsWith("http");
                     return (
                       <li key={link.label}>
-                        <a
+                        <TrackedLink
                           href={link.href}
+                          event="Footer Link Clicked"
+                          eventProps={{ item: link.label }}
                           {...(external
                             ? { target: "_blank", rel: "noopener noreferrer" }
                             : {})}
                           className="text-[18px] text-white/42 transition hover:text-white"
                         >
                           {link.label}
-                        </a>
+                        </TrackedLink>
                       </li>
                     );
                   })}

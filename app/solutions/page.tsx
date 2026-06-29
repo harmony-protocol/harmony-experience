@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import audiences from "../_data/audiences.json";
+import { SolutionCardLink } from "../_components/solution-card-link";
 import {
   SolutionsShell,
   SolutionsSection,
-  SolutionsSub,
 } from "../_components/solutions-shell";
 import { Eyebrow } from "../_components/marketing-page";
 import type { AudienceConfig } from "../_components/marketing-page";
@@ -12,8 +11,19 @@ import { headingStyle } from "../_lib/brand-fonts";
 
 const data = audiences as Record<string, AudienceConfig>;
 
+// Cards we want surfaced first in the grid, in order. Everything else keeps its
+// natural order from the data file.
+const FEATURED_ORDER = ["agencies"];
+
 export default function SolutionsPage() {
-  const entries = Object.entries(data);
+  const entries = Object.entries(data).sort(([a], [b]) => {
+    const ai = FEATURED_ORDER.indexOf(a);
+    const bi = FEATURED_ORDER.indexOf(b);
+    if (ai === -1 && bi === -1) return 0;
+    if (ai === -1) return 1;
+    if (bi === -1) return -1;
+    return ai - bi;
+  });
 
   return (
     <SolutionsShell topPadded={false}>
@@ -31,17 +41,13 @@ export default function SolutionsPage() {
             <br />
             built for <span className="text-[#9ff690]">your business</span>
           </h1>
-          <SolutionsSub className="mx-auto mt-5">
-            Choose the path closest to your business and see how Harmony
-            automates the work slowing your team down.
-          </SolutionsSub>
         </div>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {entries.map(([slug, audience]) => (
             <li key={slug}>
-              <Link
-                href={`/solutions/${slug}`}
+              <SolutionCardLink
+                slug={slug}
                 className="group flex h-full min-h-[132px] flex-col justify-between rounded-none border border-white/10 bg-[#0b0c0c] p-5 transition hover:border-[#9ff690] hover:bg-[#101210] md:p-6"
               >
                 <div>
@@ -62,7 +68,7 @@ export default function SolutionsPage() {
                     strokeWidth={2}
                   />
                 </span>
-              </Link>
+              </SolutionCardLink>
             </li>
           ))}
         </ul>

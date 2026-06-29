@@ -28,6 +28,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { HeroVideo } from "./_components/hero-video";
+import { GhostButton } from "./_components/ghost-button";
 import { ViewTracker } from "./_components/view-tracker";
 import { Solutions } from "./_components/solutions";
 import { IntegrationsRow } from "./_components/features";
@@ -154,29 +155,6 @@ function PrimaryButton({ location }: { location: string }) {
       </span>
       <span>Book a free call</span>
     </button>
-  );
-}
-
-function GhostButton({
-  children,
-  href,
-  dark = true,
-}: {
-  children: React.ReactNode;
-  href: string;
-  dark?: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      className={`inline-flex h-10 items-center border px-5 text-base font-medium transition ${
-        dark
-          ? "border-[#b5f4a2] text-white hover:bg-white/10"
-          : "border-black/20 text-black hover:bg-black/5"
-      }`}
-    >
-      {children}
-    </a>
   );
 }
 
@@ -791,7 +769,9 @@ export default function AgentflowPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
-            <GhostButton href="#process">See what you get</GhostButton>
+            <GhostButton href="#process" event="See What You Get Clicked">
+              See what you get
+            </GhostButton>
           </div>
 
           {/* YouTube VSL */}

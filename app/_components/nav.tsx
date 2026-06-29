@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { track } from "../_lib/analytics";
 
 const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
@@ -46,6 +47,7 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={() => track("Nav Link Clicked", { item: link.label })}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-base transition ${
                   isActive(link.href)
@@ -111,7 +113,10 @@ export function AgentflowNav() {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  track("Nav Link Clicked", { item: link.label });
+                  setOpen(false);
+                }}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`py-2.5 text-base transition ${
                   isActive(link.href)
