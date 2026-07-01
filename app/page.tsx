@@ -763,9 +763,9 @@ export default function AgentflowPage() {
             <br className="hidden md:block" /> without working more hours
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80 md:max-w-3xl">
-            We build AI systems across your personal work, marketing,
-            fulfillment, client relations, and admin, to get you unstuck and
-            scale like clockwork
+            We implement proven AI systems for founder productivity, marketing,
+            client service, fulfillment, and admin, so you get unstuck and scale like
+            clockwork
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
@@ -862,10 +862,10 @@ export default function AgentflowPage() {
       <Band id="results" className="pb-24 md:pb-32">
         <Eyebrow>Outcomes</Eyebrow>
         <div className="mt-5">
-          <Heading>Why you need AI systems?</Heading>
+          <Heading>Why you need our AI systems?</Heading>
         </div>
         <Sub className="mt-5">
-          Our AI systems free you up and scale the business on autopilot.
+          Our proven AI systems free you up and move the firm to autopilot.
         </Sub>
 
         {/* foundation-to-scale growth ramp: what an AI system produces */}
