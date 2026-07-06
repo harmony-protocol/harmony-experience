@@ -6,23 +6,27 @@ function ArrowButton() {
   // white button + dark arrow, sits on the coloured card background.
   return (
     <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden bg-white">
-      <Image
-        src="/assets/talk-to-sales-icon.svg"
-        alt=""
-        width={16}
-        height={15}
-        className="h-[15px] w-4 transition-transform duration-300 ease-out group-hover:-translate-y-8"
-        style={{ filter: "invert(1)" }}
-      />
-      <Image
-        src="/assets/talk-to-sales-icon.svg"
-        alt=""
-        aria-hidden
-        width={16}
-        height={15}
-        className="absolute h-[15px] w-4 translate-y-8 transition-transform duration-300 ease-out group-hover:translate-y-0"
-        style={{ filter: "invert(1)" }}
-      />
+      <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-full">
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          width={16}
+          height={15}
+          className="h-[15px] w-4"
+          style={{ filter: "invert(1)" }}
+        />
+      </span>
+      <span className="absolute inset-0 flex -translate-x-full items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-0">
+        <Image
+          src="/assets/talk-to-sales-icon.svg"
+          alt=""
+          aria-hidden
+          width={16}
+          height={15}
+          className="h-[15px] w-4"
+          style={{ filter: "invert(1)" }}
+        />
+      </span>
     </span>
   );
 }
@@ -71,7 +75,7 @@ function Card({ study }: { study: CaseStudy }) {
       </div>
 
       <div className="relative z-[1] flex items-end justify-between gap-4">
-        <p className="max-w-[20ch] text-[17px] leading-7 text-white/90">
+        <p className="max-w-[22ch] text-[17px] leading-7 text-white/90">
           {study.cardLine}
         </p>
         <ArrowButton />

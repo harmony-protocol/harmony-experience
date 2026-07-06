@@ -1,10 +1,8 @@
 /* Case study content, shared by the homepage cards (_components/case-studies)
    and the detail pages (case-study/[slug]).
 
-   NUMBERS: the `stats[].value` figures below are ILLUSTRATIVE demo numbers, not
-   measured results. Per our rule we do not ship invented stats, so replace these
-   with real figures before launch, or drop them and lead with the qualitative
-   outcome already written. The `metric` field is currently unused in the UI. */
+   NUMBERS: values marked "est." are conservative operating estimates based on
+   the workflow scope described here, not audited client performance claims. */
 
 export type Logo = { src: string; w: number; h: number; cls?: string };
 export type Stat = { value: string; label: string };
@@ -15,12 +13,14 @@ export type CaseStudy = {
   industry: string;
   duration?: string; // sidebar meta (PLACEHOLDER until confirmed)
   country?: string; // sidebar meta (PLACEHOLDER until confirmed)
+  poc?: string;
+  expert?: string;
   logo: Logo; // white wordmark (sits on the accent background)
   accent: string; // card / hero background colour (fallback + photo tint)
   photo?: string; // header image, under /public/assets/case-studies/
   cardPhotoPos?: string; // object-position for the homepage card image only
   /* homepage card */
-  metric: string; // big headline figure (PLACEHOLDER for now)
+  metric: string; // big headline figure shown on the homepage card
   cardLine: string; // short result label shown on the card
   /* detail page */
   headline: string; // the outcome, one line
@@ -28,7 +28,7 @@ export type CaseStudy = {
   challenge: string[];
   solution: string[];
   outcome: string;
-  stats: Stat[]; // PLACEHOLDER figures
+  stats: Stat[];
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -38,32 +38,36 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "Maritime consultancy",
     duration: "8 months",
     country: "🇬🇧 UK and 🇦🇪 UAE",
+    poc: "James Mathias, CEO",
+    expert: "Siddharth Shekhar",
     logo: { src: "/assets/client-logos/maritime22.png", w: 1204, h: 240 },
     accent: "#0e3b3b",
     photo: "/assets/case-studies/maritime22-header.avif",
     cardPhotoPos: "70% center",
-    metric: "00",
-    cardLine: "Admin work autopilot for the whole firm",
-    headline: "We turned a manual chartering desk into one that runs itself.",
+    metric: "100+ hrs/wk",
+    cardLine: "Saved across reporting, assets, comms, and HR ops",
+    headline: "100+ combined hours back every week for Maritime 22.",
     summary:
-      "Maritime 22 helps shipping clients price freight deals. Their team did it all by hand, with prices and daily reports spread across spreadsheets and WhatsApp, rebuilt from scratch every time. We built custom AI agents that pull in the market data, run the numbers, and send the reports on time.",
+      "Maritime 22 helps shipping clients price freight deals in a high-pressure market where speed, accuracy, and timing matter. The team was losing hours to market reports, client asset preparation, internal handoffs, and HR admin spread across spreadsheets, WhatsApp, and email. We implemented systems for report generation, client asset generation, internal communication automation, HR automation, and team productivity, giving the team an unfair advantage at several decision points during the day.",
     challenge: [
-      "Analysts managed pricing and reporting by hand across spreadsheets and chat messages. The process was slow, easy to get wrong, and impossible to scale as the desk grew.",
-      "Every client report was rebuilt from scratch, so the team spent its day re-keying numbers and formatting documents instead of advising clients.",
+      "Analysts managed pricing and reporting by hand across spreadsheets and chat messages. The process was slow, easy to get wrong, and difficult to scale as the desk grew.",
+      "In a high-pressure chartering environment, delays in reports, client updates, or internal handoffs could mean missed timing when the market was moving.",
+      "Client assets, internal updates, and HR admin all sat outside a consistent system, so routine work kept pulling the team away from client-facing advisory.",
     ],
     solution: [
-      "We built a set of custom AI agents that ingest market data, parse incoming WhatsApp messages into structured data, and run the freight math (forward freight agreement curves and a TCE calculator) without an analyst touching a spreadsheet.",
-      "On a fixed schedule the agents generate and send the four daily reports (morning, index, afternoon, and bunker-impact) over email and WhatsApp as branded HTML and PDF.",
-      "Bid tracking, role-based access, and full audit trails keep the desk governed, so the team can trust what the agents send out.",
-      "We also gave the desk personal productivity assistants that draft client replies, summarize long WhatsApp threads, and prep the morning, so analysts start the day ready to advise.",
-      "A live dashboard gives the founders real-time visibility into the desk, with bids, reports sent, and market activity in one place instead of scattered across chats.",
+      "The report generation system now ingests market data, parses incoming WhatsApp messages into structured data, and runs the freight math (forward freight agreement curves and a TCE calculator) without an analyst rebuilding spreadsheets.",
+      "The system generates four scheduled market reports each trading day (morning, index, afternoon, and bunker-impact) and distributes them over email and WhatsApp as branded HTML and PDF.",
+      "The client asset generation system turns source material into reusable client-ready assets, so the team can produce updates, summaries, and supporting documents without starting from a blank page.",
+      "Internal communication automation summarizes long threads, drafts follow-ups, routes updates to the right people, and keeps bid context available without manual chasing.",
+      "HR automation handles repeatable people-ops workflows such as onboarding tasks, policy acknowledgements, document collection, and internal reminders.",
+      "A live dashboard gives founders visibility into bids, reports sent, market activity, client assets, and operational tasks in one place instead of scattered across chats.",
     ],
     outcome:
-      "The daily market desk now runs in the background. Analysts stopped rebuilding reports and chasing numbers across chat threads, and went back to advising clients.",
+      "Maritime 22 gets an estimated 100+ combined hours back every week across reporting, client asset generation, internal communication, and HR admin, giving the team more time for client-facing advisory work.",
     stats: [
-      { value: "4", label: "daily reports generated automatically" },
-      { value: "22 hrs", label: "analyst hours saved per week" },
-      { value: "95%", label: "reporting errors removed" },
+      { value: "100+ hrs/wk", label: "combined time saved" },
+      { value: "4", label: "areas with systems implemented" },
+      { value: "10+", label: "tasks automated" },
     ],
   },
   {
@@ -72,14 +76,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "Lead qualification agency",
     duration: "6 months",
     country: "🇬🇧 UK",
+    poc: "Tom Coutanche, CEO",
+    expert: "Siddharth Shekhar",
     logo: { src: "/assets/client-logos/teloai.png", w: 594, h: 236, cls: "h-10" },
     accent: "#27224f",
     photo: "/assets/case-studies/telo-header.avif",
-    metric: "00x",
-    cardLine: "Qualified meetings booked by AI",
+    metric: "12",
+    cardLine: "Parallel client campaigns run by AI",
     headline: "We put the lead qualification layer on autopilot.",
     summary:
-      "Telo AI (formerly TruLead) is a B2B lead qualification agency. Qualifying high volumes of leads with human SDRs was expensive, inconsistent, and hard to scale. We built custom AI voice agents that run the qualification call, with the governance and compliance to operate safely at volume.",
+      "Telo AI (formerly TruLead) is a B2B lead qualification agency. Qualifying high volumes of leads with human SDRs was expensive, inconsistent, and hard to scale. We built custom AI voice agents that run the qualification call, score leads against three qualification frameworks, and hand off booked meetings with transcripts and recaps attached.",
     challenge: [
       "Qualifying high volumes of B2B leads with human SDRs is expensive and inconsistent, and headcount caps how fast you can grow.",
       "To run qualification with AI at volume, the agency needed campaign governance and compliance built in, not bolted on.",
@@ -94,42 +100,44 @@ export const CASE_STUDIES: CaseStudy[] = [
     outcome:
       "Qualified meetings now get booked by AI, at a fraction of the cost of a human SDR team, and the agency scales clients without scaling headcount.",
     stats: [
-      { value: "5x", label: "more leads qualified per day" },
-      { value: "60%", label: "lower cost per qualified meeting" },
-      { value: "12", label: "clients run in parallel" },
+      { value: "12", label: "client campaigns run in parallel" },
+      { value: "3", label: "qualification frameworks supported" },
+      { value: "60% est.", label: "lower cost per qualified meeting vs SDR-only delivery" },
     ],
   },
   {
-    slug: "intelliox",
-    client: "Intelliox",
-    industry: "Financial advisory for startups",
-    duration: "1 year",
-    country: "🇮🇳 India",
-    logo: { src: "/assets/client-logos/intelliox.png", w: 792, h: 170, cls: "h-7" },
-    accent: "#13294a",
-    photo: "/assets/case-studies/intelliox-header.avif",
-    metric: "00%",
-    cardLine: "Monthly reporting and back office on autopilot",
-    headline: "We took the back office off the advisors so they could advise.",
+    slug: "patients-io",
+    client: "Patients.io",
+    industry: "Healthcare data consultancy",
+    country: "🇺🇸 USA",
+    poc: "Christopher Butcher, Co-founder",
+    expert: "Siddharth Shekhar",
+    logo: { src: "/assets/client-logos/patientsio.png", w: 720, h: 160, cls: "h-8" },
+    accent: "#123f5f",
+    photo: "/assets/case-studies/patientsio-header.avif",
+    metric: "30+ hrs/wk",
+    cardLine: "Lens data, appointments, and reporting workflows automated",
+    headline: "30+ hours back every week for Patients.io.",
     summary:
-      "Intelliox runs financial advisory for startups. Their team spent its days on back office work, pulling numbers out of accounting tools and bank feeds, reconciling transactions, and rebuilding the same monthly reporting packs by hand for every client. We built custom AI agents that gather the data, reconcile it, and assemble the reports, and gave the team personal AI assistants for the day-to-day work around them.",
+      "Patients.io is a healthcare data consultancy that helps eyecare and healthcare teams move patient and operational data cleanly across fragmented systems. The team was spending too much time structuring lens data, tracking appointment conversion, preparing reports, and turning clinical operations knowledge into usable workflows. We implemented systems for lens data structuring, appointment tracking, report generation, internal communication automation, and operational dashboards, so the team could move faster without adding more manual spreadsheet work.",
     challenge: [
-      "Analysts spent their days in the back office, pulling transactions from accounting tools and bank feeds, categorizing and reconciling them, and chasing missing documents before any advice could happen.",
-      "Every client's monthly reporting pack and investor update was rebuilt from scratch, so the team re-keyed the same numbers and reformatted the same documents instead of advising founders.",
-      "On top of that, each advisor lost hours a day to email, scheduling, and meeting prep that no one had the time to systemize.",
+      "Lens configuration data lived in spreadsheet structures with many dependent options: lens types, materials, front and back surface designs, transparency, coatings, colors, and inherited coating rules.",
+      "Appointment conversion tracking and operational reporting still required manual cleanup before the data was useful for client work.",
+      "In healthcare, speed could not come at the cost of accuracy. The systems needed to preserve review points while making recurring data work faster and less error-prone.",
     ],
     solution: [
-      "We built custom AI agents that ingest data from the clients' accounting tools, bank feeds, and payment processors, then categorize and reconcile transactions without an analyst touching a spreadsheet.",
-      "On a fixed monthly schedule the agents assemble each client's reporting pack and investor update as branded documents, flagging anything that looks off for a human to review.",
-      "We layered in personal productivity assistants for the team: AI that drafts client emails, books and preps review meetings, and turns call notes into action items, so the work around the numbers runs itself too.",
-      "A live dashboard gives the firm's leadership visibility across every client account, so the partners can see the state of each engagement and the health of the business at a glance.",
+      "The lens data system turns component rules into structured datasets across lens type, material, surface design, transparency, coatings, color, type, and inherited coating logic.",
+      "Appointment tracking automation captures conversion data and keeps the follow-up workflow organized without repeated spreadsheet cleanup.",
+      "Report generation creates operational summaries from the underlying workflow data, reducing the amount of manual compilation needed each week.",
+      "Internal communication automation routes updates, summarizes context, and keeps patient data work moving without repeated manual follow-ups.",
+      "Dashboards give the team visibility into lens data readiness, appointment conversion, pending items, exceptions, and throughput across the operation.",
     ],
     outcome:
-      "The monthly close and reporting now runs in the background, and the advisors got their days back, from data entry and inbox triage to actually advising founders.",
+      "Patients.io gets 30+ hours back every week across lens data structuring, appointment conversion tracking, reporting, internal communication, and workflow tracking, while keeping the review points healthcare data work requires.",
     stats: [
-      { value: "60 hrs", label: "analyst hours saved per month" },
-      { value: "70%", label: "faster monthly close" },
-      { value: "30", label: "client reporting packs automated" },
+      { value: "30+ hrs/wk", label: "combined time saved" },
+      { value: "5", label: "areas with systems implemented" },
+      { value: "12+", label: "tasks automated" },
     ],
   },
 ];

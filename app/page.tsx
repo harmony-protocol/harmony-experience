@@ -36,6 +36,7 @@ import { Comparison } from "./_components/comparison";
 import { Faq } from "./_components/faq";
 import { UseCases } from "./_components/use-cases";
 import { CaseStudies } from "./_components/case-studies";
+import { MobileAutoplayVideo } from "./_components/mobile-autoplay-video";
 import { ReclaimCalculator } from "./_components/reclaim-calculator";
 import { PricingTiers } from "./_components/pricing-tiers";
 
@@ -1175,7 +1176,7 @@ export default function AgentflowPage() {
                   <Heading dark>One platform powers it all</Heading>
                 </div>
                 <Sub dark className="mt-5">
-                  Everything we build runs on our own powerful platform, not
+                  Everything we build runs on our own AI PSA platform, not
                   off-the-shelf tools.
                 </Sub>
               </div>
@@ -1209,13 +1210,9 @@ export default function AgentflowPage() {
                 loop
                 playsInline
               />
-              <video
+              <MobileAutoplayVideo
                 className="h-full w-full object-cover md:hidden"
                 src="/assets/videos/hero-new-mobile.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
               />
             </div>
           </div>

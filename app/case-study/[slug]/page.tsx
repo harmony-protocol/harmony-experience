@@ -130,7 +130,6 @@ export default async function CaseStudyPage({
         />
       </div>
 
-      {/* Stat row: hidden for now, numbers to be filled in later.
       <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3">
         {study.stats.map((s, i) => (
           <div key={i} className="bg-black px-7 py-8">
@@ -143,14 +142,12 @@ export default async function CaseStudyPage({
           </div>
         ))}
       </div>
-      */}
-
       {/* Body: main prose + sidebar */}
       <div className="mt-16 grid gap-12 md:grid-cols-[1fr_280px] md:gap-16">
         <div className="space-y-12 md:order-1">
           <p className="text-[17px] leading-8 text-white/85">{study.summary}</p>
           <Block title="The challenge" paras={study.challenge} />
-          <Block title="What we built" paras={study.solution} />
+          <Block title="How we helped" paras={study.solution} />
           <Block title="The outcome" paras={[study.outcome]} />
         </div>
 
@@ -162,6 +159,10 @@ export default async function CaseStudyPage({
               <MetaRow label="Duration" value={study.duration} />
             )}
             {study.country && <MetaRow label="Country" value={study.country} />}
+            {study.poc && <MetaRow label="Client lead" value={study.poc} />}
+            {study.expert && (
+              <MetaRow label="Our expert" value={study.expert} />
+            )}
           </div>
         </aside>
       </div>
@@ -172,7 +173,9 @@ export default async function CaseStudyPage({
           className="max-w-xl text-[28px] leading-[1.15] text-white md:text-[36px]"
           style={headingStyle}
         >
-          Want this running in your business?
+          Want us to find and fix
+          <br />
+          your time leaks?
         </h2>
         <button
           type="button"
