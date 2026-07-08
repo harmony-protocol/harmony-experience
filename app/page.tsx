@@ -964,10 +964,10 @@ export default function AgentflowPage() {
       <Band id="magic" dark className="pb-24 md:pb-36">
         <Eyebrow dark>Benefits</Eyebrow>
         <div className="mt-5">
-          <Heading dark>It's Magic as a Service</Heading>
+          <Heading dark>It&apos;s Magic as a Service</Heading>
         </div>
-        <Sub dark className="mt-5 md:max-w-none md:whitespace-nowrap">
-          Scale faster with your existing team, and get your evenings back.
+        <Sub dark className="mt-5">
+          Your fractional AI department to scale your business on autopilot.
         </Sub>
 
         <div className="mt-14 grid gap-4 md:grid-cols-2">
@@ -1045,7 +1045,7 @@ export default function AgentflowPage() {
       <Band id="process" dark bgImage="/assets/green-animation-bg.png">
         <Eyebrow dark>Process</Eyebrow>
         <div className="mt-5">
-          <Heading dark>Here's what you get</Heading>
+          <Heading dark>Here&apos;s what you get</Heading>
         </div>
         <Sub dark className="mt-5">
           We start delivering value from day one, getting into your processes
@@ -1176,7 +1176,7 @@ export default function AgentflowPage() {
                   <Heading dark>One platform powers it all</Heading>
                 </div>
                 <Sub dark className="mt-5">
-                  Everything we build runs on our own AI PSA platform, not
+                  Everything we build runs on our proprietary AI platform, not
                   off-the-shelf tools.
                 </Sub>
               </div>
@@ -1262,7 +1262,11 @@ export default function AgentflowPage() {
       <Band id="roi">
         <Eyebrow>Cost Calculator</Eyebrow>
         <div className="mt-5">
-          <Heading>How much is busywork costing you?</Heading>
+          <Heading>
+            How much is busywork
+            <br />
+            costing you?
+          </Heading>
         </div>
         <Sub className="mt-5">
           Weight your team by what their time is worth.
