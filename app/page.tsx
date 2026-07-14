@@ -21,7 +21,6 @@ import {
   PartyPopper,
   Repeat,
   Rocket,
-  Scale,
   Server,
   ShoppingBag,
   Sparkles,
@@ -58,9 +57,9 @@ const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
-  title: "Harmony | AI Systems to Scale Services Businesses",
+  title: "Harmony | AI Systems for Digital Agencies",
   description:
-    "Harmony builds AI systems for services businesses across marketing, sales, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
+    "Harmony builds AI systems for digital services across marketing, sales, client service, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
 };
 
 /* ------------------------------ ATOMS ------------------------------ */
@@ -470,8 +469,12 @@ const whoWeHelp = [
     title: "Marketing Agencies",
   },
   {
+    icon: <Server className="h-5 w-5" strokeWidth={1.6} />,
+    title: "IT Services",
+  },
+  {
     icon: <Compass className="h-5 w-5" strokeWidth={1.6} />,
-    title: "IT & Management Consulting",
+    title: "Management Consulting",
   },
   {
     icon: <ShoppingBag className="h-5 w-5" strokeWidth={1.6} />,
@@ -492,10 +495,6 @@ const whoWeHelp = [
   {
     icon: <CircleDollarSign className="h-5 w-5" strokeWidth={1.6} />,
     title: "Financial Services Firms",
-  },
-  {
-    icon: <Scale className="h-5 w-5" strokeWidth={1.6} />,
-    title: "Law Firms",
   },
   {
     icon: <Landmark className="h-5 w-5" strokeWidth={1.6} />,
@@ -831,9 +830,9 @@ export default function AgentflowPage() {
               className="mx-auto max-w-[680px] text-center text-[32px] font-normal leading-[1.1] text-white md:text-[46px]"
               style={{ fontFamily: "var(--font-schibsted)" }}
             >
-              For <span className="text-[#9ff690]">6-8 figure</span> services
+              For <span className="text-[#9ff690]">6-8 figure</span> digital
               <br />
-              firms ready to scale
+              services ready to scale
             </h2>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
@@ -866,7 +865,7 @@ export default function AgentflowPage() {
           <Heading>Why you need our AI systems?</Heading>
         </div>
         <Sub className="mt-5">
-          Our proven AI systems free you up and move the firm to autopilot.
+          Our Agency Scaler OS frees you and puts your firm on autopilot.
         </Sub>
 
         {/* foundation-to-scale growth ramp: what an AI system produces */}
