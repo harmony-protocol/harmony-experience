@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { PlausibleInit } from "./_components/plausible-init";
+import { UmamiInit } from "./_components/umami-init";
 import { Geist, Geist_Mono, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { AgentflowNav } from "./_components/nav";
@@ -75,8 +75,8 @@ export default function RootLayout({
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',personalization_storage:'denied',wait_for_update:500});`}
         </Script>
         {/* Google Tag Manager. Kept for the other tags in the container.
-            Plausible no longer loads through GTM; it loads via next-plausible
-            below so adblockers blocking GTM no longer drop our analytics. */}
+            Umami no longer loads through GTM; it loads via its own script tag
+            below (UmamiInit). */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -106,9 +106,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        {/* Plausible: official tracker. Script is bundled (adblock cannot block
-            it); events post directly to plausible.io. See plausible-init. */}
-        <PlausibleInit />
+        {/* Umami: official Umami Cloud tracker. Auto-tracks pageviews and binds
+            window.umami for custom events. See umami-init. */}
+        <UmamiInit />
         <CalInit />
         <CookieConsent />
         <AgentflowNav />

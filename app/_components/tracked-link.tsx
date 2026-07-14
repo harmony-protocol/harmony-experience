@@ -3,9 +3,8 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { track } from "../_lib/analytics";
 
-/* Plain anchor that fires a Plausible custom event on click. Use anywhere a
-   server component needs a tracked link without becoming a client component
-   itself. */
+/* Plain anchor that fires a Umami custom event on click. Use anywhere a server
+   component needs a tracked link without becoming a client component itself. */
 export function TrackedLink({
   event,
   eventProps,

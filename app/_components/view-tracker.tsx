@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 import { track } from "../_lib/analytics";
 
-/* Fires a Plausible event once when the element with `targetId` first scrolls
-   into view. Used for section-level engagement goals (e.g. pricing seen). */
+/* Fires a Umami event once when the element with `targetId` first scrolls into
+   view. Used for section-level engagement goals (e.g. pricing seen). */
 export function ViewTracker({
   targetId,
   event,
@@ -31,7 +31,7 @@ export function ViewTracker({
   return null;
 }
 
-/* Fires a Plausible event once on mount. Used for whole-page view goals on
+/* Fires a Umami event once on mount. Used for whole-page view goals on
    server-rendered pages that need a client-side signal. */
 export function MountTracker({ event }: { event: string }) {
   useEffect(() => {
