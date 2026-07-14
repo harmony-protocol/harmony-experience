@@ -8,9 +8,9 @@ import { headingStyle } from "../_lib/brand-fonts";
 import { FirmFinder } from "./firm-finder";
 
 export const metadata: Metadata = {
-  title: "Solutions | Harmony for services firms",
+  title: "Solutions | Harmony for digital agencies",
   description:
-    "Check if Harmony supports your firm. We run marketing agencies, law firms, IT services, consulting, recruiting, finance, and investment houses, down to the niche inside each.",
+    "Check if Harmony supports your digital agency. We run marketing agencies, law firms, IT services, consulting, recruiting, finance, and investment houses, down to the niche inside each.",
 };
 
 export default function SolutionsPage() {

@@ -1250,7 +1250,7 @@ export default function AgentflowPage() {
           <Heading dark>A closer look at our work</Heading>
         </div>
         <Sub dark className="mt-5">
-          Used by service business founders and teams handling critical work.
+          Trusted by service business founders and teams for critical work.
         </Sub>
         <div className="mt-14">
           <CaseStudies />

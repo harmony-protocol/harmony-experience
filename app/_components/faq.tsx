@@ -9,7 +9,7 @@ const items = [
   },
   {
     q: "Who is Harmony for?",
-    a: "B2B services firms doing six to eight figures: agencies, consultancies, and professional services teams where the founder is still deep in delivery. If manual work is slowing growth and you do not want to hire your way out of it, Harmony is for you.",
+    a: "Digital services doing six to eight figures: agencies, consultancies, and professional services teams where the founder is still deep in delivery. If manual work is slowing growth and you do not want to hire your way out of it, Harmony is for you.",
   },
   {
     q: "When is the right time to start automating?",
