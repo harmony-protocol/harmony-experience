@@ -764,8 +764,8 @@ export default function AgentflowPage() {
           </Heading>
           <p className="mt-6 max-w-lg text-balance text-[19px] leading-9 text-white/80 md:max-w-3xl">
             We implement proven AI systems for founder productivity, marketing,
-            client service, fulfillment, and admin, so you get unstuck and scale like
-            clockwork
+            client service, fulfillment, and admin, so you get unstuck and scale
+            your agency
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <PrimaryButton location="hero" />
