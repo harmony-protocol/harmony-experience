@@ -57,7 +57,7 @@ const CAL_LINK = "harmony-vishal/discovery";
 const CAL_CONFIG = JSON.stringify({ layout: "month_view", theme: "dark" });
 
 export const metadata: Metadata = {
-  title: "Harmony | AI Systems for Digital Agencies",
+  title: "Harmony | AI Systems to Scale Your Agency",
   description:
     "Harmony builds AI systems for digital services across marketing, sales, client service, fulfillment, and admin work, so founders get unstuck from the busywork and scale rapidly.",
 };
